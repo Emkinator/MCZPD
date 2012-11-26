@@ -1,11 +1,12 @@
 #include <iostream>
 #include "Formulas.h"
 #include "Structs.h"
-#include "Microsim.cpp"
+#include "Microsim.h"
 // Main.cpp
 
 
 using namespace std;
+
 
 int main()
 {
@@ -18,3 +19,4 @@ int main()
     }
     return 0;
 }
+

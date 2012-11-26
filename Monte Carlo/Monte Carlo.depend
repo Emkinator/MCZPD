@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1353944188 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
+1353948607 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	"Formulas.h"
 	"Structs.h"
-	"Microsim.cpp"
+	"Microsim.h"
 
 1353939515 c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
@@ -16,15 +16,18 @@
 1353941796 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
 
-1353942527 c:\users\em\documents\github\mczpd\monte carlo\structs.h
+1353948299 c:\users\em\documents\github\mczpd\monte carlo\structs.h
 
-1353944189 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
+1353948605 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
 	<iostream>
 	"structs.h"
 	"formulas.h"
 
-1353944189 c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
+1353948359 c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
 	<iostream>
 	"structs.h"
 	"formulas.h"
+
+1353948931 c:\users\em\documents\github\mczpd\monte carlo\microsim.h
+	"Structs.h"
 
