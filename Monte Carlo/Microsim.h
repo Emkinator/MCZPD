@@ -3,7 +3,7 @@
 #include "Structs.h"
 namespace MC
 {
-    OutputStruct simulatePhoton();
+    OutputStruct* simulatePhoton();
 }
 
 

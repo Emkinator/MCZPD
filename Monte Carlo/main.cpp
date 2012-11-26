@@ -13,9 +13,10 @@ int main()
     cout << MC::exampleFormula(1,2) << endl;
     MC::PhotonClass testPhoton = MC::PhotonClass();
     cout << testPhoton.alive << endl;
+    MC::OutputStruct* ret = 0;
     for(int i = 1; i<100; i++)
     {
-        MC::simulatePhoton();
+        ret = MC::simulatePhoton();
     }
     return 0;
 }
