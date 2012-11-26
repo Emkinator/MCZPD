@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Formulas.cpp" />
+		<Unit filename="Formulas.h" />
+		<Unit filename="Microsim.cpp" />
+		<Unit filename="Structs.cpp" />
+		<Unit filename="Structs.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
