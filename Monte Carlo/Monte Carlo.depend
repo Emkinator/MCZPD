@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1354129707 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
+1354129826 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	"Formulas.h"
 	"Structs.h"
@@ -65,7 +65,7 @@
 	<fstream>
 	<string>
 
-1354129798 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
+1354130023 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
 	<fstream>
 

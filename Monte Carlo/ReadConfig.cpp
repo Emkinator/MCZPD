@@ -18,6 +18,8 @@ std::string ConfigClass::GetValue(std::string fieldName)
     while(file.good())
     {
         getline(file, line);
+        if(line[0] == '/')
+            continue;
         pos = line.find(fieldName.c_str());
         if(pos==0)
         {
