@@ -2,7 +2,7 @@
 #include "Formulas.h"
 #include "Structs.h"
 #include "Microsim.h"
-//#include "WriteToCVS.h"
+#include "WriteToCVS.h"
 // Main.cpp
 
 
@@ -14,15 +14,15 @@ int main()
     cout << MC::exampleFormula(1,2) << endl;
     MC::PhotonClass testPhoton = MC::PhotonClass();
     cout << testPhoton.alive << endl;
-    MC::OutputStruct* ret = NULL;
+    MC::OutputStruct ret;
     int a[100];
     for(int i = 0; i<100; i++)
     {
         ret = MC::simulatePhoton();
-        a[i] = ret->a;
+        a[i] = ret.a;
         cout << a[i] << endl;
     }
-    //MC::WriteCVS(a,"test",1,100);
+    MC::WriteCVS(a,"test",1,100);
     return 0;
 }
 

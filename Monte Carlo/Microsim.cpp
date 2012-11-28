@@ -5,13 +5,13 @@
 
 namespace MC
 {
-    OutputStruct* simulatePhoton() // returns pointer to OutputStruct with all the neccesary info
+    OutputStruct simulatePhoton() // returns pointer to OutputStruct with all the neccesary info
     {
         std::cout << "Photon simulated.." << std::endl;
         OutputStruct output;
         output.a = 1;
-        std::cout << output.a << " ";  //it works, but comment this line out and...
-        return (&output);
+       // std::cout << output.a << " ";  //it works, but comment this line out and...
+        return output;
     }
 }
 
