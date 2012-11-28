@@ -8,9 +8,10 @@ namespace MC
     OutputStruct* simulatePhoton() // returns pointer to OutputStruct with all the neccesary info
     {
         std::cout << "Photon simulated.." << std::endl;
-        OutputStruct* Output;
-        Output->a = 1;
-        return Output;
+        OutputStruct output;
+        output.a = 1;
+        std::cout << output.a << " ";  //it works, but comment this line out and...
+        return (&output);
     }
 }
 
