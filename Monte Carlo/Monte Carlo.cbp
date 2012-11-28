@@ -36,6 +36,8 @@
 		<Unit filename="Formulas.h" />
 		<Unit filename="Microsim.cpp" />
 		<Unit filename="Microsim.h" />
+		<Unit filename="ReadConfig.cpp" />
+		<Unit filename="ReadConfig.h" />
 		<Unit filename="Structs.cpp" />
 		<Unit filename="Structs.h" />
 		<Unit filename="WriteToCVS.h" />
