@@ -38,6 +38,7 @@
 		<Unit filename="Microsim.h" />
 		<Unit filename="Structs.cpp" />
 		<Unit filename="Structs.h" />
+		<Unit filename="WriteToCVS.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
