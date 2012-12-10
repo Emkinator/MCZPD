@@ -23,18 +23,27 @@ namespace MC
         private:
 
         public:
-            double z0, z1;      //coordiantes of the layer
+            double z[2];      //coordiantes of the layer
             double n;           //refractive index
             double mua;         //absorption coefficient
             double mus;         //scattering coefficient
             double g;           //anisotropy
+            double cos_critical[2]; //cosines of the critical angles, calculated later
 
-            LayerClass(double z0, double z1, double n, double mua, double mus, double g);
+            LayerClass();
     };
 
     struct OutputStruct
     {
-        int a;
+        double x, y, z; //die position
+        double w; //die weight
+    };
+
+    struct InputStruct
+    {
+        int count;
+        int wtolerance; //weight tolearance before chance to die
+        LayerClass * layers;
     };
 }
 #endif // STRUCTS_H_INCLUDED

@@ -15,17 +15,17 @@ int main()
     cout << MC::exampleFormula(1,2) << endl;
     MC::PhotonClass testPhoton = MC::PhotonClass();
     cout << testPhoton.alive << endl;
-    MC::OutputStruct ret;
-    int a[100];
     MC::ConfigClass config = MC::ConfigClass("config.txt");
-    cout << config.GetValue("value3") << endl;
-    cout << config.GetValue("value1") << endl;
-    cout << config.GetValue("value2") << endl;
-    for(int i = 0; i<100; i++)
+    MC::InputStruct in = InputStruct();
+    //some more params or func with them here
+    for(int i = 0; i<in.count; i++)
     {
-        ret = MC::simulatePhoton();
-        a[i] = ret.a;
-        cout << a[i] << endl;
+        MC::OutputStruct ret;
+        MC::PhotonClass photon = MC::PhotonClass();
+        while(photon.alive) {
+            MC::simulatePhoton(&in, &photon, &ret);
+        }
+        MC::Output(photon, ret);
     }
     MC::WriteCVS(a,"test",1,100);
     return 0;

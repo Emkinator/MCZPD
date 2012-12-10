@@ -15,3 +15,14 @@ MC::PhotonClass::PhotonClass()
     s = 0;
     sLeft = 0;
 }
+
+MC::LayerClass::LayerClass(double nz0, double nz1, double nn, double nmua, double nmus, double ng)
+{
+    using namespace MC;
+    z[0] = nz0;
+    z[1] = nz1;
+    n = nn;
+    mua = nmua;
+    mus = nmus;
+    g = ng;
+}

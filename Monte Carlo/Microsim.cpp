@@ -3,15 +3,22 @@
 #include "structs.h"
 #include "formulas.h"
 
+#define sign(num) ((num >> 31) | 1)
+#define isglass(layer) (in->layers[layer].mus == 0.0 && in->layers[layer].mua == 0.0)
+
 namespace MC
 {
-    OutputStruct simulatePhoton() // returns pointer to OutputStruct with all the neccesary info
+    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out) // returns pointer to OutputStruct with all the neccesary info
     {
         std::cout << "Photon simulated.." << std::endl;
-        OutputStruct output;
-        output.a = 1;
-       // std::cout << output.a << " ";  //it works, but comment this line out and...
-        return output;
+        if(MoveAndBound(in, photon)) { //move stuff and collison check
+            CrossMaybe(sign(photon.uz), in, photon, out); //collison action
+        } else {
+            LoseWeight(in, photon); //todo
+            Turn(in, photon); //todo
+        }
+        if(photon.alive && (photon->w < in.wtolerance))
+            LiveOrDie(photon); //todo
     }
 }
 
