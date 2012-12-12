@@ -30,7 +30,7 @@ namespace MC
             double g;           //anisotropy
             double cos_critical[2]; //cosines of the critical angles, calculated later
 
-            LayerClass();
+            LayerClass(double nz0, double nz1, double nn, double nmua, double nmus, double ng);
     };
 
     struct OutputStruct

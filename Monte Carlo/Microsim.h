@@ -3,7 +3,7 @@
 #include "Structs.h"
 namespace MC
 {
-    OutputStruct simulatePhoton();
+    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out); // returns pointer to OutputStruct with all the neccesary info
 }
 
 

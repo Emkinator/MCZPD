@@ -1,9 +1,11 @@
 #include "Formulas.h"
-
+#include <cmath>
+#include <stdlib.h> //for rand()
 #define cos0 (1.0-1.0E-12)
 #define cos90 1.0E-6
 #define sign(num) ((num >> 31) | 1)
 #define isglass(layer) (in->layers[layer].mus == 0.0 && in->layers[layer].mua == 0.0)
+#define random() ((rand() % 1000)/1000)
 
 int MC::exampleFormula(int a, int b)
 {
@@ -17,7 +19,7 @@ bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, 
 	double uz = photon->uz;
     if(isglass(layer)) { //glass step calculation, calculates till border
         if(uz == 0.0) { //horizontal in glass means it'll bever collide again
-            photon.alive = false;
+            photon->alive = false;
             return ret;
         }
         photon->s = (in->layers[layer].z[int(uz>0.0)] - photon->z)/uz; //int(uz>0.0) makes array index 1 on positive and 0 on negative
@@ -25,10 +27,9 @@ bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, 
     } else {
         double mut = in->layers[layer].mua + in->layers[layer].mus;
         if(photon->sLeft == 0.0) { //random step size
-            double rand;
-            do rand = random();
-            while(rand==0.0)
-            photon->s = -log(rand)/mut; //random step formula
+            double rnd;
+            do{ rnd = random(); }while(rnd!=0.0);
+            photon->s = -log(rnd)/mut; //random step formula
         } else { //use what was left last time
             photon->s = photon->sLeft/mut;
             photon->sLeft = 0.0;
@@ -49,7 +50,7 @@ bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, 
 }
 
 void MC::FresnelReflect(double * r, double * uzt, double sa1, double n, double nnext) //magic func #1
-{ //todo: try to reduce the elseifs
+{ //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
 	if(n==nnext) { //bounds match
 		*uzt = sa1;
 		*r = 0.0;
@@ -93,7 +94,7 @@ void MC::CrossMaybe(int dir, InputStruct * in, PhotonClass * photon) //went bit 
         r = 1.0;
     else
         FresnelReflect(&r, &uzt, dir * uz, n, nnext);
-    if(((layer == 1) || (layer == in.count)) && r<1.0) //reflect and die/drop mass
+    if(((layer == 1) || (layer == in->count)) && r<1.0) //reflect and die/drop mass
         LogPartialDying(r, in, photon, out); //todo
         photon->w *= r; //decrease weight
         photon->uz = -uz;
