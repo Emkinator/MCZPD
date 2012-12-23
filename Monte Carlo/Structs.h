@@ -43,7 +43,7 @@ namespace MC
     {
         int count;
         int wtolerance; //weight tolearance before chance to die
-        LayerClass * layers;
+        LayerClass* layers;
     };
 }
 #endif // STRUCTS_H_INCLUDED

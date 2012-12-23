@@ -10,10 +10,12 @@ template <typename T> int sign(T val) {
 
 namespace MC
 {
-    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out) // returns pointer to OutputStruct with all the neccesary info
+    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out)
     {
+
+
         std::cout << "Photon simulated.." << std::endl;
-        if(MoveAndBound(in, photon)) { //move stuff and collison check
+        /*if(MoveAndBound(in, photon)) { //move stuff and collison check
             CrossMaybe(sign(photon->uz), in, photon); //collison action
         } else {
             //LoseWeight(in, photon); //todo
@@ -21,7 +23,7 @@ namespace MC
         }
         if(photon->alive && (photon->w < in->wtolerance)) {
             //LiveOrDie(photon); //todo
-        }
+        } */
     }
 }
 
