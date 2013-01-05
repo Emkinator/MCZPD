@@ -1,4 +1,6 @@
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
 #include "Formulas.h"
 #include "Structs.h"
 #include "Microsim.h"
@@ -12,15 +14,18 @@ using namespace std;
 
 int main()
 {
-    MC::ConfigClass config = MC::ConfigClass("config.txt");
-    MC::InputStruct in = MC::InputStruct();
-    //some more params or func with them here
+    srand(time(NULL));
+    MC::InputStruct in = MC::InputStruct(2);
+    //in.CalculateCosC();  //doesn't work
+    in.wtolerance = 1e-60;
+    in.count = 2;
     for(int i = 0; i<=1000; i++)
     {
+        system("pause");
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
         MC::simulatePhoton(&in, &photon, &ret);
-       // MC::Output(photon, ret);
+       //MC::Output(photon, ret);
     }
     return 0;
 }

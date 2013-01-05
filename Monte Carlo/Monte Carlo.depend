@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1355584742 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
+1357385836 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
+	<time.h>
+	<stdlib.h>
 	"Formulas.h"
 	"Structs.h"
 	"Microsim.h"
@@ -10,20 +12,25 @@
 1353939515 c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 
-1355687712 c:\users\em\documents\github\mczpd\monte carlo\formulas.h
+1357304150 c:\users\em\documents\github\mczpd\monte carlo\formulas.h
 	"structs.h"
 
-1355584378 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
+1357393574 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 	<cmath>
 	<stdlib.h>
+	<iostream>
 
-1355176608 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
+1357393629 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
+	"ReadConfig.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
 
-1355686094 c:\users\em\documents\github\mczpd\monte carlo\structs.h
+1357344856 c:\users\em\documents\github\mczpd\monte carlo\structs.h
 
-1355584426 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
+1357304119 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
 	<iostream>
 	"structs.h"
 	"formulas.h"
@@ -69,7 +76,7 @@
 	<fstream>
 	<string>
 
-1354130023 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
+1356885995 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
 	<fstream>
 

@@ -1,5 +1,7 @@
-/commented line
-value1 = 1
-/value2 = 6
-value2 = 2
-value3 = three
+/layer1
+l1_z1 = 0
+l1_z2 = 0.1
+l1_n = 1.5
+l1_mua = 100
+l1_mus = 100
+l1_g = 0.86

@@ -8,19 +8,24 @@
 namespace MC
 {
 
-    void StepSize(PhotonClass* Photon, InputStruct* In);
+    void StepSize(PhotonClass* Photon, InputStruct* In); //internal
 
-    double SpinTheta(double g);
+    double SpinTheta(double g); //internal
 
     void Spin(double g, PhotonClass* Photon);
 
-    bool MoveAndBound(InputStruct * in, PhotonClass * photon); //gets step size, does some checks, moves and returns if bounds
+    bool MoveAndBound(InputStruct* in, PhotonClass* photon); //gets step size, does some checks, moves and returns if bounds
 
-    double FresnelReflect(double n1, double n2, double ca1, double* uzt);
+    double FresnelReflect(double n1, double n2, double ca1, double* uzt); //internal
 
-    void CrossMaybe(int dir, InputStruct * in, PhotonClass * photon);
+    void CrossMaybe(InputStruct* in, PhotonClass* photon);
+
+    void Roulette(InputStruct* in, PhotonClass* photon);
+
+    double SpecularReflect(double n1, double n2);
 
 }
+
 
 
 #endif // FORMULAS_H_INCLUDED

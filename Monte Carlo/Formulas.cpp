@@ -1,33 +1,40 @@
 #include "Formulas.h"
 #include <cmath>
 #include <stdlib.h> //for rand()
+#include <iostream>
 #define COS0 (1.0-1.0E-12)
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (num < 0)
-#define random() ((rand() % 1000)/1000)
+#define random() ((rand() % 1000)/1000.0)
 
-void MC::StepSize(PhotonClass* Photon, InputStruct* In)
+int debugtmp = 0;
+
+void MC::StepSize(PhotonClass* Photon, InputStruct* In) //Internal function
 {
+    std::cout << "Step size ";
+
     short layer = Photon->layer;
 	double mua = In->layers[layer].mua;
 	double mus = In->layers[layer].mus;
 
-	if(Photon->sLeft == 0.0)
+	if(Photon->sLeft < 0.0000000000001) //can't compare double with zero, though not sure if this is correct
 	{
 	    double rnd;
 	    do rnd = random();
 	    while(rnd == 0.0);
-	    Photon->s = (log(random()) / (mua+mus));
+	    Photon->s = -(log(random()) / (mua+mus));
+	    std::cout << Photon->s << std::endl;
 	}
 	else
 	{
 	    Photon->s = Photon->sLeft/(mua+mus);
 	    Photon->sLeft = 0.0;
 	}
+
 }
 
-double MC::SpinTheta(double g)
+double MC::SpinTheta(double g)  //Internal function
 {
     double cost;
 
@@ -49,6 +56,7 @@ void MC::Spin(double g, PhotonClass* Photon)
     double ux = Photon->ux;
     double uy = Photon->uy;
     double uz = Photon->uz;
+    std::cout << "Dir cos: " << ux << " " << uy << " " << uz << std::endl;
     double psi;
 
     cost = SpinTheta(g);
@@ -76,8 +84,8 @@ void MC::Spin(double g, PhotonClass* Photon)
     }
 }
 
-bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, does some checks, moves and returns if bounds
-{
+bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
+{//gets step size, does some checks, moves and returns if bounds
     bool ret = false;
     short layer = photon->layer;
 	double uz = photon->uz;
@@ -88,7 +96,7 @@ bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, 
 
     if(uz != 0.0) { //cross check
         double s = (in->layers[layer].z[int(uz>0.0)] - photon->z)/uz; //step size till bound
-        if(s > photon->s) { //if crosses, recalc some things
+        if(s < photon->s) { //if crosses, recalc some things
             photon->sLeft = (photon->s - s)*(mua+mus); //multiplied with mua+mus for cross-layer compability
             photon->s = s;
             ret = true;
@@ -98,10 +106,12 @@ bool MC::MoveAndBound(InputStruct * in, PhotonClass * photon) //gets step size, 
 	photon->x += photon->s * photon->ux; //actually move
 	photon->y += photon->s * photon->uy;
 	photon->z += photon->s * uz;
+    photon->w *= mua/(mua+mus);
+
 	return ret;
 }
 
-double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //magic func #1
+double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 { //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
 	double r;
 
@@ -124,7 +134,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //magic
 	else
 	{
 		double sa1, sa2, ca2; // sine of the incident and transmission angles & cos of transmisson angle
-		sa1 = sqrt(1-ca1*ca1); //simpler than looks, just pythagor from r^2 = x^2 + x^2
+		sa1 = sqrt(1-ca1*ca1); //simpler than looks, just pythagoras from r^2 = x^2 + x^2
 		sa2 = sa1*n1/n2;
 		if(sa2>=1.0)
 		{ //double check for total internal reflection, todo: check for better solution
@@ -147,11 +157,22 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //magic
 }
 
 
-void MC::CrossMaybe(int dir, InputStruct * in, PhotonClass * photon) //went bit haxish to not double up such a big func,
+void MC::CrossMaybe(InputStruct* in, PhotonClass* photon) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
+    std::cout << "Cross maybe" << std::endl;
+    if(debugtmp == 0)
+        debugtmp = 2;
+
+    system("pause");
 
     double uz = photon->uz; // z directional cosine.
+    int dir;
+    if(sign(uz))
+        dir = 1;
+    else
+        dir = -1;
+
     short layer = photon->layer;
     double n1 = in->layers[layer].n;
 	double n2 = in->layers[layer+dir].n;
@@ -178,3 +199,37 @@ void MC::CrossMaybe(int dir, InputStruct * in, PhotonClass * photon) //went bit 
         photon->uz = -uz; //reflect
 }
 
+void MC::Roulette(InputStruct* in, PhotonClass* photon)
+{
+    std::cout << "Weight: " << photon->w << std::endl;
+    std::cout << "Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
+    if(photon->w < in->wtolerance)
+    {
+        int tmp = rand() % 10;
+        if(tmp == 0)
+        {
+            photon->w *= 10.0;
+        }
+        else
+        {
+            photon->alive = false;
+        }
+    }
+
+    if(debugtmp>0)   //debugging stuff, pauses multiple times when CrossMaybe runs
+    {
+        system("pause");
+        debugtmp--;
+    }
+}
+
+double MC::SpecularReflect(double n1, double n2) //doesn't work, since n1 would always be 0. The other formula that's in the wong_thesis has 3 n variables, not sure how to use it.
+{//Called once on the start of the simulation
+	double r1;
+	double temp;
+
+	temp = n1-n2 / n1+n2;
+	r1 = temp*temp;
+
+	return (0.1); //temporary, should output r1
+}

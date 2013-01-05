@@ -12,18 +12,23 @@ namespace MC
 {
     void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out)
     {
-
-
-        std::cout << "Photon simulated.." << std::endl;
-        /*if(MoveAndBound(in, photon)) { //move stuff and collison check
-            CrossMaybe(sign(photon->uz), in, photon); //collison action
-        } else {
-            //LoseWeight(in, photon); //todo
-            //Turn(in, photon); //todo
+        int i = 0;
+        double uzt;
+        double spec = SpecularReflect(1,in->layers[0].n);
+        std::cout << "Specular reflectance: " << spec << std::endl;
+        photon->w -= spec;
+        while(photon->alive)
+        {
+            std::cout << "Cycle started" << std::endl;
+            if(MoveAndBound(in, photon))
+                CrossMaybe(in, photon);
+            Spin(in->layers[photon->layer].g, photon);
+            Roulette(in, photon);
+            i++;
+            std::cout << "Cycle " << i << " done" << std::endl << std::endl;
         }
-        if(photon->alive && (photon->w < in->wtolerance)) {
-            //LiveOrDie(photon); //todo
-        } */
+        std::cout << "Photon simulated.." << std::endl;
+
     }
 }
 

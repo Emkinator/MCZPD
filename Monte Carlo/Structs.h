@@ -30,7 +30,19 @@ namespace MC
             double g;           //anisotropy
             double cos_critical[2]; //cosines of the critical angles, calculated later
 
-            LayerClass(double nz0, double nz1, double nn, double nmua, double nmus, double ng);
+    };
+
+    class InputStruct //todo: change name to InputClass everywhere
+    {
+        private:
+
+        public:
+            int count;
+            double wtolerance;
+            LayerClass* layers;
+            InputStruct(int count);
+            void CalculateCosC();
+
     };
 
     struct OutputStruct
@@ -39,11 +51,6 @@ namespace MC
         double w; //die weight
     };
 
-    struct InputStruct
-    {
-        int count;
-        int wtolerance; //weight tolearance before chance to die
-        LayerClass* layers;
-    };
+
 }
 #endif // STRUCTS_H_INCLUDED
