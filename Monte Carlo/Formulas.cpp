@@ -6,7 +6,7 @@
 #define COS0 (1.0-1.0E-12)
 #define COS90 1.0E-6
 #define PI 3.14159265359
-#define sign(num) (num < 0)
+#define sign(num) (-(num < 0) | 1)
 #define random() ((rand() % 1000)/1000.0)
 
 
@@ -168,12 +168,7 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
     *filestr << "    Cross maybe" << std::endl;
 
     double uz = photon->uz; // z directional cosine.
-    int dir;
-    if(sign(uz))
-        dir = 1;
-    else
-        dir = -1;
-
+    int dir = sign(uz);
     short layer = photon->layer;
     double n1 = in->layers[layer].n;
 	double n2 = in->layers[layer+dir].n;
@@ -185,13 +180,14 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
     else
         r = FresnelReflect(n1, n2, uz, &uzt);
     std::cout << r << std::endl;
-    if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r<1.0)
+    if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r < 1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo
         photon->w *= r; //decrease weight
         photon->uz = -uz;
     }
     else if(random() > r) { //let trough at an angle
+        *filestr << "Crossing" << std::endl;
         photon->layer += dir; //layer id change
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;

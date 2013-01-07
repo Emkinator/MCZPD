@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <iostream>
+#include <fstream>
 
 MC::PhotonClass::PhotonClass()
 {
@@ -41,11 +42,30 @@ MC::InputStruct::InputStruct(int count)
     std::cout << "Done" << std::endl;
 }
 
-void MC::InputStruct::CalculateCosC() //doesn't work
+void MC::InputStruct::CalculateCosC(int count, std::ofstream* debuglog) //doesn't work
 {
 	double n1, n2;
+    layers[0].cos_critical[0] = 0.0;
+    *debuglog << "cos_Crit " << (layers[0].cos_critical[0]) << " ";
 
-	for(short i=1; i<=count; i++)
+    for(short i=1; i<=count; i++)
+    {
+        n1 = layers[i].n;
+		n2 = layers[i-1].n;
+		if(n1>n2) { //precision loss shouldnt matter cause that case would be discarded anyway
+            layers[i].cos_critical[0] = sqrt(1.0 - n2*n2/(n1*n1));
+            layers[i-1].cos_critical[1] = 0.0;
+		}
+		else {
+		    layers[i].cos_critical[0] = 0.0;
+            layers[i-1].cos_critical[1] = sqrt(1.0 - n1*n1/(n2*n2));
+		}
+		*debuglog << (layers[i-1].cos_critical[1]) << " " << (layers[i].cos_critical[0]) << " ";
+    }
+    layers[count].cos_critical[1] = 0.0;
+    *debuglog << (layers[count].cos_critical[1]) << std::endl << std::endl;
+
+    /*for(short i=1; i<=count; i++)
 	{
 		n1 = layers[i].n;
 		n2 = layers[i-1].n;
@@ -56,5 +76,5 @@ void MC::InputStruct::CalculateCosC() //doesn't work
 		n2 = layers[i+1].n;
 		layers[i].cos_critical[1] = n1>n2 ?
 		sqrt(1.0 - n2*n2/(n1*n1)) : 0.0;
-	}
+	}*/
 }

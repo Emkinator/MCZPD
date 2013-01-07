@@ -1,1405 +1,1086 @@
+cos_Crit 0 0.686349 0 0 0.699854 1 0 0
+
 Photon packet nr. 0
 
 Specular reflectance: 0.1
 Cycle started
   Cords: 0 0 0
   Weight: 0.9
-  Step size 0.0013172
+  Step size 0.0734838
   Dir cos: 0 0 1
 Cycle 1 done
 
 Cycle started
-  Cords: 0 0 0.0013172
+  Cords: 0 0 0.0734838
   Weight: 0.45
-  Step size 0.0557371
-  Dir cos: -0.0888888 -0.10474 0
+  Step size 0.106432
+  Dir cos: -0.817883 -0.288664 -0.497736
 Cycle 2 done
 
 Cycle started
-  Cords: -0.0049544 -0.0058379 0.0013172
+  Cords: -0.0870486 -0.030723 0.020509
   Weight: 0.225
-  Step size 0.104779
-  Dir cos: -0.0784803 -0.0876516 0.516258
+  Step size 0.0647314
+    Cross maybe
 Cycle 3 done
 
 Cycle started
-  Cords: -0.0131775 -0.0150219 0.05541
+  Cords: -0.0838437 -0.0714372 3.38813e-019
   Weight: 0.1125
-  Step size 0.00571446
-  Dir cos: -0.0468445 0.0581177 -0.839487
+  Step size 0.0190308
+  Dir cos: 0.0701277 -0.890892 0.448769
 Cycle 4 done
 
 Cycle started
-  Cords: -0.0134451 -0.0146898 0.0506128
+  Cords: -0.0825091 -0.0883916 0.00854043
   Weight: 0.05625
-  Step size 0.151828
+  Step size 0.0302568
     Cross maybe
 Cycle 5 done
 
 Cycle started
-  Cords: -0.0130878 -0.00806588 -2.5682e-018
+  Cords: -0.0991218 -0.106795 4.65021e-019
   Weight: 0.028125
-  Step size 0.0818749
-  Dir cos: 0.00510882 0.0946911 0.723528
+  Step size 0.00403426
+  Dir cos: -0.633526 -0.701834 0.32569
 Cycle 6 done
 
 Cycle started
-  Cords: -0.0126695 -0.000313057 0.0592387
+  Cords: -0.101678 -0.109627 0.00131392
   Weight: 0.0140625
-  Step size 0.0469524
-  Dir cos: 0.135768 -0.00987958 0.134429
+  Step size 0.00765756
+  Dir cos: -0.597148 -0.785211 0.163885
 Cycle 7 done
 
 Cycle started
-  Cords: -0.00629484 -0.000776926 0.0655505
+  Cords: -0.10625 -0.11564 0.00256888
   Weight: 0.00703125
-  Step size 0.0612088
-  Dir cos: 0.0998177 0.0542326 0.562303
+  Step size 0.0546812
+  Dir cos: -0.901422 -0.432812 0.0105798
 Cycle 8 done
 
 Cycle started
-  Cords: -0.000185118 0.00254258 0.0999684
+  Cords: -0.155541 -0.139306 0.00314739
   Weight: 0.00351563
-  Step size 0.0299828
+  Step size 0.136668
     Cross maybe
 Cycle 9 done
 
 Cycle started
-  Cords: -0.000173094 0.0025482 0.1
+  Cords: -0.153283 -0.135513 -7.34801e-020
   Weight: 0.00175781
-  Step size 0.0298812
-  Dir cos: 0.118304 0.0552008 -0.311298
+  Step size 0.131247
+  Dir cos: 0.416458 0.699693 0.580511
 Cycle 10 done
 
 Cycle started
-  Cords: 0.00336196 0.00419766 0.090698
+  Cords: -0.0986246 -0.0436804 0.0761901
   Weight: 0.000878906
-  Step size 0.0990251
-  Dir cos: 0.117721 0.0527413 -0.343895
+  Step size 0.00416908
+  Dir cos: 0.214887 0.865661 0.452167
 Cycle 11 done
 
 Cycle started
-  Cords: 0.0150193 0.00942037 0.0566438
+  Cords: -0.0977287 -0.0400714 0.0780752
   Weight: 0.000439453
-  Step size 0.0650977
-    Cross maybe
+  Step size 0.0154623
+  Dir cos: -0.00498119 0.661318 0.750089
 Cycle 12 done
 
 Cycle started
-  Cords: 0.018807 0.0089137 1.16213e-018
+  Cords: -0.0978057 -0.0298459 0.0896733
   Weight: 0.000219727
-  Step size 0.00199189
-  Dir cos: 0.0600214 -0.00802891 0.8976
+  Step size 0.0419665
+    Cross maybe
+Crossing
 Cycle 13 done
 
 Cycle started
-  Cords: 0.0189265 0.00889771 0.00178792
+  Cords: -0.0978582 -0.0212594 0.1
   Weight: 0.000109863
-  Step size 0.0288127
-  Dir cos: 0.0385786 -0.00574535 0.958846
+  Step size 0.0285362
+  Dir cos: -0.00537084 0.879091 0.476624
 Cycle 14 done
 
 Cycle started
-  Cords: 0.0200381 0.00873217 0.0294148
-  Weight: 5.49316e-005
-  Step size 0.067934
-  Dir cos: 2.53965e-005 0.128654 0.350617
+  Cords: -0.0980114 0.00382655 0.113601
+  Weight: 4.39453e-005
+  Step size 0.0490415
+  Dir cos: 0.00111969 0.805382 0.592755
 Cycle 15 done
 
 Cycle started
-  Cords: 0.0200398 0.0174721 0.0532336
-  Weight: 2.74658e-005
-  Step size 0.104779
+  Cords: -0.0979565 0.0433237 0.142671
+  Weight: 1.75781e-005
+  Step size 0.117694
     Cross maybe
 Cycle 16 done
 
 Cycle started
-  Cords: 0.0197673 0.0169802 0.1
-  Weight: 1.37329e-005
-  Step size 0.0578334
-  Dir cos: -0.00580434 -0.010478 -0.996191
+  Cords: -0.0685549 0.0322329 0.2
+  Weight: 7.03125e-006
+  Step size 0.0523172
+  Dir cos: 0.449726 -0.169644 -0.876908
 Cycle 17 done
 
 Cycle started
-  Cords: 0.0194316 0.0163743 0.0423869
-  Weight: 6.86646e-006
-  Step size 0.135905
-    Cross maybe
+  Cords: -0.0450265 0.0233576 0.154123
+  Weight: 2.8125e-006
+  Step size 0.0018332
+  Dir cos: 0.311617 -0.0713216 -0.947527
 Cycle 18 done
 
 Cycle started
-  Cords: 0.0150573 0.016039 1.83298e-018
-  Weight: 3.43323e-006
-  Step size 0.0828339
-  Dir cos: -0.0824241 -0.0063162 0.79868
+  Cords: -0.0444552 0.0232269 0.152386
+  Weight: 1.125e-006
+  Step size 0.00116343
+  Dir cos: 0.078327 -0.934426 -0.347439
 Cycle 19 done
 
 Cycle started
-  Cords: 0.0082298 0.0155158 0.0661578
-  Weight: 1.71661e-006
-  Step size 0.0631154
-    Cross maybe
+  Cords: -0.0443641 0.0221397 0.151981
+  Weight: 4.5e-007
+  Step size 0.0838323
+  Dir cos: 0.244848 -0.85775 0.452011
 Cycle 20 done
 
 Cycle started
-  Cords: 0.00724956 0.0179346 0.1
-  Weight: 8.58307e-007
-  Step size 0.0243054
-  Dir cos: -0.0252573 0.0623225 -0.871998
+  Cords: -0.0238379 -0.0497675 0.189875
+  Weight: 1.8e-007
+  Step size 0.106013
+    Cross maybe
 Cycle 21 done
 
 Cycle started
-  Cords: 0.00663567 0.0194494 0.0788057
-  Weight: 4.29153e-007
-  Step size 0.0167736
-  Dir cos: -0.124556 0.057924 -0.0109319
+  Cords: -0.0247196 -0.0833375 0.2
+  Weight: 7.2e-008
+  Step size 0.0709383
+  Dir cos: -0.0251378 -0.957096 -0.288679
 Cycle 22 done
 
 Cycle started
-  Cords: 0.00454641 0.020421 0.0786223
-  Weight: 2.14577e-007
-  Step size 0.0752539
-    Cross maybe
+  Cords: -0.0265028 -0.151232 0.179522
+  Weight: 2.88e-008
+  Step size 0.030902
+  Dir cos: 0.305157 -0.952279 -0.00664767
 Cycle 23 done
 
 Cycle started
-  Cords: 0.000926965 0.0258538 0.1
-  Weight: 1.07288e-007
-  Step size 0.0231462
-  Dir cos: -0.0694609 0.104262 -0.410259
+  Cords: -0.0170728 -0.18066 0.179316
+  Weight: 1.152e-008
+  Step size 0.0417355
+  Dir cos: 0.0427288 -0.995792 -0.081066
 Cycle 24 done
 
 Cycle started
-  Cords: -0.00068079 0.0282671 0.0905041
-  Weight: 5.36442e-008
-  Step size 0.0142509
-  Dir cos: -0.108768 0.0285589 -0.57436
+  Cords: -0.0152895 -0.222219 0.175933
+  Weight: 4.608e-009
+  Step size 0.0652818
+  Dir cos: -0.61783 -0.562702 -0.54923
 Cycle 25 done
 
 Cycle started
-  Cords: -0.00223084 0.0286741 0.0823189
-  Weight: 2.68221e-008
-  Step size 0.00901618
-  Dir cos: -0.0354846 0.0450483 -0.908705
+  Cords: -0.0556226 -0.258954 0.140078
+  Weight: 1.8432e-009
+  Step size 0.00661946
+  Dir cos: -0.915615 -0.207005 -0.344671
 Cycle 26 done
 
 Cycle started
-  Cords: -0.00255077 0.0290802 0.0741258
-  Weight: 1.3411e-008
-  Step size 0.0785109
-    Cross maybe
+  Cords: -0.0616835 -0.260324 0.137797
+  Weight: 7.3728e-010
+  Step size 0.00644852
+  Dir cos: -0.998072 0.0231939 0.0575757
 Cycle 27 done
 
 Cycle started
-  Cords: -0.00379746 0.0319785 2.3988e-018
-  Weight: 6.70552e-009
-  Step size 0.000908515
-  Dir cos: -0.0160651 0.0373484 0.955201
+  Cords: -0.0681195 -0.260174 0.138168
+  Weight: 2.94912e-010
+  Step size 0.0965511
+  Dir cos: -0.877177 -0.29765 -0.376783
 Cycle 28 done
 
 Cycle started
-  Cords: -0.00381206 0.0320125 0.000867815
-  Weight: 3.35276e-009
-  Step size 0.0262124
+  Cords: -0.152812 -0.288913 0.101789
+  Weight: 1.17965e-010
+  Step size 0.130865
     Cross maybe
 Cycle 29 done
 
 Cycle started
-  Cords: -0.00512689 0.0324008 3.36166e-020
-  Weight: 1.67638e-009
-  Step size 0.016195
-  Dir cos: -0.131254 0.0387629 0.0866302
+  Cords: -0.156568 -0.291151 0.1
+  Weight: 4.71859e-011
+  Step size 0.12614
+  Dir cos: -0.795059 -0.473804 0.378669
 Cycle 30 done
 
 Cycle started
-  Cords: -0.00725253 0.0330285 0.00140297
-  Weight: 8.3819e-010
-  Step size 0.111746
-    Cross maybe
+  Cords: -0.256857 -0.350917 0.147765
+  Weight: 1.88744e-011
+  Step size 0.0129385
+  Dir cos: -0.251175 0.352494 0.901476
 Cycle 31 done
 
 Cycle started
-  Cords: -0.00810389 0.0333942 5.88688e-020
-  Weight: 4.19095e-010
-  Step size 0.104857
-  Dir cos: -0.123579 0.0530784 0.203649
+  Cords: -0.260107 -0.346356 0.159429
+  Weight: 7.54975e-012
+  Step size 0.00725129
+  Dir cos: -0.570585 0.285088 0.770167
 Cycle 32 done
 
 Cycle started
-  Cords: -0.021062 0.0389599 0.0213541
-  Weight: 2.09548e-010
-  Step size 0.0535012
-  Dir cos: -0.0334088 -0.130311 0.202594
+  Cords: -0.264244 -0.344289 0.165014
+  Weight: 3.0199e-012
+  Step size 0.00330699
+  Dir cos: -0.685889 0.634049 -0.357125
 Cycle 33 done
 
 Cycle started
-  Cords: -0.0228494 0.0319881 0.0321931
-  Weight: 1.04774e-010
-  Step size 0.0900905
-  Dir cos: 0.046223 -0.129358 0.00923176
+  Cords: -0.266513 -0.342192 0.163833
+  Weight: 1.20796e-012
+  Step size 0.0191363
+  Dir cos: -0.705664 0.708046 0.0266303
 Cycle 34 done
 
 Cycle started
-  Cords: -0.0186852 0.0203341 0.0330248
-  Weight: 5.23869e-011
-  Step size 0.0257082
-  Dir cos: nan nan nan
+  Cords: -0.280016 -0.328643 0.164343
+  Weight: 4.83184e-013
+  Step size 0.0210036
+  Dir cos: -0.679206 0.705224 0.203318
 Cycle 35 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.61934e-011
-  Step size 0.0156671
-  Dir cos: nan nan nan
+  Cords: -0.294282 -0.313831 0.168613
+  Weight: 1.93274e-013
+  Step size 0.0612088
+  Dir cos: -0.761482 0.631383 0.14663
 Cycle 36 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.30967e-011
-  Step size 0.0958661
-  Dir cos: nan nan nan
+  Cords: -0.340892 -0.275185 0.177588
+  Weight: 7.73094e-014
+  Step size 0.0158727
+  Dir cos: -0.934527 0.355892 -0.000783097
 Cycle 37 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.54836e-012
-  Step size 0.0258757
-  Dir cos: nan nan nan
+  Cords: -0.355725 -0.269536 0.177576
+  Weight: 3.09238e-014
+  Step size 0.00859876
+  Dir cos: -0.776278 0.612275 0.150038
 Cycle 38 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.27418e-012
-  Step size 0.170562
-  Dir cos: nan nan nan
+  Cords: -0.3624 -0.264271 0.178866
+  Weight: 1.23695e-014
+  Step size 0.141511
+    Cross maybe
 Cycle 39 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.63709e-012
-  Step size 0.0216161
-  Dir cos: nan nan nan
+  Cords: -0.369359 -0.274873 0.2
+  Weight: 4.9478e-015
+  Step size 0.116863
+    Cross maybe
 Cycle 40 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.18545e-013
-  Step size 0.0289017
-  Dir cos: nan nan nan
+  Cords: -0.402286 -0.325041 0.1
+  Weight: 1.97912e-015
+  Step size 0.00024001
+  Dir cos: -0.28234 -0.430168 0.857461
 Cycle 41 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.09273e-013
-  Step size 0.0768559
-  Dir cos: nan nan nan
+  Cords: -0.402354 -0.325144 0.100206
+  Weight: 7.91648e-016
+  Step size 0.0274091
+  Dir cos: -0.548449 -0.0474204 0.834838
 Cycle 42 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.04636e-013
-  Step size 0.0105978
-  Dir cos: nan nan nan
+  Cords: -0.417387 -0.326444 0.123088
+  Weight: 3.16659e-016
+  Step size 0.0184085
+  Dir cos: -0.911073 0.113263 0.396381
 Cycle 43 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.02318e-013
-  Step size 0.00288146
-  Dir cos: nan nan nan
+  Cords: -0.434158 -0.324359 0.130385
+  Weight: 1.26664e-016
+  Step size 0.000401609
+  Dir cos: -0.949826 0.282015 -0.135271
 Cycle 44 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.11591e-014
-  Step size 0.0506676
-  Dir cos: nan nan nan
+  Cords: -0.43454 -0.324246 0.13033
+  Weight: 5.06655e-017
+  Step size 0.0297104
+  Dir cos: -0.463218 0.87399 0.146871
 Cycle 45 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.55795e-014
-  Step size 0.0919426
-  Dir cos: nan nan nan
+  Cords: -0.448302 -0.298279 0.134694
+  Weight: 2.02662e-017
+  Step size 0.0235802
+  Dir cos: -0.551662 0.826739 0.110325
 Cycle 46 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.27898e-014
-  Step size 0.0945238
-  Dir cos: nan nan nan
+  Cords: -0.46131 -0.278784 0.137295
+  Weight: 8.10648e-018
+  Step size 0.0757064
+  Dir cos: 0.0666169 0.988857 0.133129
 Cycle 47 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.39488e-015
-  Step size 0.0206245
-  Dir cos: nan nan nan
+  Cords: -0.456267 -0.203922 0.147374
+  Weight: 3.24259e-018
+  Step size 0.0234202
+  Dir cos: -0.913134 -0.113197 0.391629
 Cycle 48 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.19744e-015
-  Step size 0.135153
-  Dir cos: nan nan nan
+  Cords: -0.477653 -0.206573 0.156546
+  Weight: 1.29704e-018
+  Step size 0.0213089
+  Dir cos: -0.994235 0.0784005 0.07314
 Cycle 49 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.59872e-015
-  Step size 0.00416908
-  Dir cos: nan nan nan
+  Cords: -0.498839 -0.204902 0.158105
+  Weight: 5.18815e-019
+  Step size 0.0979498
+  Dir cos: 0.371746 0.864582 0.338087
 Cycle 50 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.99361e-016
-  Step size 0.0143175
-  Dir cos: nan nan nan
+  Cords: -0.462426 -0.120216 0.19122
+  Weight: 2.07526e-019
+  Step size 0.030902
+  Dir cos: 0.702289 0.670696 0.238655
 Cycle 51 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.9968e-016
-  Step size 0.0181203
-  Dir cos: nan nan nan
+  Cords: -0.440724 -0.0994906 0.198595
+  Weight: 8.30103e-020
+  Step size 0.0455652
+  Dir cos: 0.779247 0.377309 -0.500412
 Cycle 52 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.9984e-016
-  Step size 0.0303485
-  Dir cos: nan nan nan
+  Cords: -0.405218 -0.0822985 0.175794
+  Weight: 3.32041e-020
+  Step size 0.0297104
+  Dir cos: 0.791147 -0.532188 -0.301432
 Cycle 53 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 9.99201e-017
-  Step size 0.0330824
-  Dir cos: nan nan nan
+  Cords: -0.381713 -0.09811 0.166838
+  Weight: 1.32817e-020
+  Step size 0.0560429
+    Cross maybe
 Cycle 54 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.996e-017
-  Step size 0.0624137
-  Dir cos: nan nan nan
+  Cords: -0.347772 -0.0907917 0.2
+  Weight: 5.31266e-021
+  Step size 0.00803033
+  Dir cos: 0.706906 0.152424 -0.690688
 Cycle 55 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.498e-017
-  Step size 0.0122311
-  Dir cos: nan nan nan
+  Cords: -0.342095 -0.0895677 0.194454
+  Weight: 2.12506e-021
+  Step size 0.149787
+  Dir cos: 0.978349 -0.206018 -0.0197375
 Cycle 56 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.249e-017
-  Step size 0.0437335
-  Dir cos: nan nan nan
+  Cords: -0.195552 -0.120427 0.191497
+  Weight: 8.50026e-022
+  Step size 0.0229433
+    Cross maybe
 Cycle 57 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.245e-018
-  Step size 0.0835657
-  Dir cos: nan nan nan
+  Cords: -0.186509 -0.128056 0.2
+  Weight: 3.4001e-022
+  Step size 0.00837307
+  Dir cos: 0.620662 -0.523655 -0.583578
 Cycle 58 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.1225e-018
-  Step size 0.264916
-  Dir cos: nan nan nan
+  Cords: -0.181312 -0.132441 0.195114
+  Weight: 1.36004e-022
+  Step size 0.0983056
+  Dir cos: -0.218177 -0.941588 -0.256535
 Cycle 59 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.56125e-018
-  Step size 0.0319329
-  Dir cos: nan nan nan
+  Cords: -0.20276 -0.225004 0.169895
+  Weight: 5.44017e-023
+  Step size 0.0179768
+  Dir cos: 0.393463 -0.695491 -0.601231
 Cycle 60 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.80626e-019
-  Step size 0.00121463
-  Dir cos: nan nan nan
+  Cords: -0.195687 -0.237507 0.159087
+  Weight: 2.17607e-023
+  Step size 0.0101058
+  Dir cos: 0.107508 0.47897 -0.871223
 Cycle 61 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.90313e-019
-  Step size 0.0210797
-  Dir cos: nan nan nan
+  Cords: -0.1946 -0.232667 0.150282
+  Weight: 8.70427e-024
+  Step size 0.00532361
+  Dir cos: 0.121958 -0.261436 -0.957485
 Cycle 62 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.95156e-019
-  Step size 0.0497126
-  Dir cos: nan nan nan
+  Cords: -0.193951 -0.234058 0.145185
+  Weight: 3.48171e-024
+  Step size 0.00599551
+  Dir cos: 0.409337 -0.890572 -0.198305
 Cycle 63 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 9.75782e-020
-  Step size 0.0320277
-  Dir cos: nan nan nan
+  Cords: -0.191497 -0.239398 0.143996
+  Weight: 1.39268e-024
+  Step size 0.0128092
+  Dir cos: 0.47529 -0.75798 -0.446728
 Cycle 64 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.87891e-020
-  Step size 0.0498479
-  Dir cos: nan nan nan
+  Cords: -0.185409 -0.249107 0.138274
+  Weight: 5.57073e-025
+  Step size 0.00919614
+  Dir cos: 0.23268 -0.698498 -0.676728
 Cycle 65 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.43945e-020
-  Step size 0.0216161
-  Dir cos: nan nan nan
+  Cords: -0.183269 -0.25553 0.132051
+  Weight: 2.22829e-025
+  Step size 0.0135249
+  Dir cos: 0.0944398 -0.854115 -0.511438
 Cycle 66 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.21973e-020
-  Step size 0.00193704
-  Dir cos: nan nan nan
+  Cords: -0.181992 -0.267082 0.125133
+  Weight: 8.91317e-026
+  Step size 0.0111572
+  Dir cos: 0.109169 -0.919314 -0.378078
 Cycle 67 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.09864e-021
-  Step size 0.0625882
-  Dir cos: nan nan nan
+  Cords: -0.180774 -0.277339 0.120915
+  Weight: 3.56527e-026
+  Step size 0.151828
+    Cross maybe
 Cycle 68 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.04932e-021
-  Step size 0.198166
-  Dir cos: nan nan nan
+  Cords: -0.236676 -0.267437 0.1
+  Weight: 1.42611e-026
+  Step size 0.0913252
+  Dir cos: -0.923966 0.163664 0.34569
 Cycle 69 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.52466e-021
-  Step size 0.000603629
-  Dir cos: nan nan nan
+  Cords: -0.321057 -0.252491 0.13157
+  Weight: 5.70443e-027
+  Step size 0.092895
+  Dir cos: -0.924572 0.147888 0.351134
 Cycle 70 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.6233e-022
-  Step size 0.0548307
-  Dir cos: nan nan nan
+  Cords: -0.406945 -0.238752 0.164189
+  Weight: 2.28177e-027
+  Step size 0.0180485
+  Dir cos: -0.561448 0.269301 0.782466
 Cycle 71 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.81165e-022
-  Step size 0.0497126
-  Dir cos: nan nan nan
+  Cords: -0.417079 -0.233892 0.178311
+  Weight: 9.12708e-028
+  Step size 0.0023022
+  Dir cos: 0.208549 0.169832 0.963153
 Cycle 72 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.90582e-022
-  Step size 0.00605192
-  Dir cos: nan nan nan
+  Cords: -0.416598 -0.233501 0.180528
+  Weight: 3.65083e-028
+  Step size 0.0389353
+    Cross maybe
 Cycle 73 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 9.52912e-023
-  Step size 0.00725129
-  Dir cos: nan nan nan
+  Cords: -0.435294 -0.235961 0.2
+  Weight: 1.46033e-028
+  Step size 0.0118296
+  Dir cos: -0.68973 -0.0907549 -0.718356
 Cycle 74 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.76456e-023
-  Step size 0.00141997
-  Dir cos: nan nan nan
+  Cords: -0.443453 -0.237035 0.191502
+  Weight: 5.84133e-029
+  Step size 0.0376449
+  Dir cos: -0.384665 0.227523 -0.894576
 Cycle 75 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.38228e-023
-  Step size 0.153956
-  Dir cos: nan nan nan
+  Cords: -0.457934 -0.22847 0.157826
+  Weight: 2.33653e-029
+  Step size 0.0520644
+  Dir cos: -0.344274 -0.25884 -0.902484
 Cycle 76 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.19114e-023
-  Step size 0.0951904
-  Dir cos: nan nan nan
+  Cords: -0.475858 -0.241946 0.110839
+  Weight: 9.34613e-030
+  Step size 0.0717742
+    Cross maybe
 Cycle 77 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.9557e-024
-  Step size 0.0354638
-  Dir cos: nan nan nan
+  Cords: -0.480632 -0.246899 0.1
+  Weight: 3.73845e-030
+  Step size 0.0589369
+  Dir cos: -0.37187 -0.385814 0.84431
 Cycle 78 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.97785e-024
-  Step size 0.119298
-  Dir cos: nan nan nan
+  Cords: -0.502549 -0.269637 0.149761
+  Weight: 1.49538e-030
+  Step size 0.00341394
+  Dir cos: -0.356936 -0.140774 0.92346
 Cycle 79 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.48893e-024
-  Step size 0.0139857
-  Dir cos: nan nan nan
+  Cords: -0.503768 -0.270118 0.152914
+  Weight: 5.98153e-031
+  Step size 0.0865803
+    Cross maybe
 Cycle 80 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.44463e-025
-  Step size 0.00471553
-  Dir cos: nan nan nan
+  Cords: -0.556206 -0.257597 0.2
+  Weight: 2.39261e-031
+  Step size 0.0150007
+  Dir cos: -0.732583 0.174923 -0.657818
 Cycle 81 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.72231e-025
-  Step size 0.111746
-  Dir cos: nan nan nan
+  Cords: -0.567195 -0.254973 0.190132
+  Weight: 9.57044e-032
+  Step size 0.0311811
+  Dir cos: -0.346055 0.0795902 -0.934832
 Cycle 82 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.86116e-025
-  Step size 0.103178
-  Dir cos: nan nan nan
+  Cords: -0.577985 -0.252491 0.160983
+  Weight: 3.82818e-032
+  Step size 0.0862986
+  Dir cos: 0.0487037 -0.979098 -0.197472
 Cycle 83 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 9.30578e-026
-  Step size 0.137444
-  Dir cos: nan nan nan
+  Cords: -0.573782 -0.336986 0.143942
+  Weight: 1.53127e-032
+  Step size 0.00907609
+  Dir cos: 0.278065 -0.95742 -0.0776334
 Cycle 84 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.65289e-026
-  Step size 0.0357696
-  Dir cos: nan nan nan
+  Cords: -0.571258 -0.345676 0.143237
+  Weight: 6.12508e-033
+  Step size 0.0174779
+  Dir cos: 0.110405 -0.956823 0.268889
 Cycle 85 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.32645e-026
-  Step size 0.0282817
-  Dir cos: nan nan nan
+  Cords: -0.569329 -0.362399 0.147937
+  Weight: 2.45003e-033
+  Step size 0.00261732
+  Dir cos: 0.346026 -0.937771 -0.0291754
 Cycle 86 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.16322e-026
-  Step size 0.101248
-  Dir cos: nan nan nan
+  Cords: -0.568423 -0.364853 0.14786
+  Weight: 9.80013e-034
+  Step size 0.076163
+  Dir cos: 0.808984 -0.449571 0.378722
 Cycle 87 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.81611e-027
-  Step size 0.0502561
-  Dir cos: nan nan nan
+  Cords: -0.506808 -0.399094 0.176705
+  Weight: 3.92005e-034
+  Step size 0.000553047
+  Dir cos: 0.955241 -0.14085 0.260145
 Cycle 88 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.90806e-027
-  Step size 0.0231018
-  Dir cos: nan nan nan
+  Cords: -0.50628 -0.399172 0.176849
+  Weight: 1.56802e-034
+  Step size 0.00919614
+  Dir cos: 0.784522 0.395784 0.477368
 Cycle 89 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.45403e-027
-  Step size 0.0622397
-  Dir cos: nan nan nan
+  Cords: -0.499066 -0.395532 0.181239
+  Weight: 6.27208e-035
+  Step size 0.0631154
+    Cross maybe
 Cycle 90 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.27014e-028
-  Step size 0.00853942
-  Dir cos: nan nan nan
+  Cords: -0.464913 -0.39475 0.2
+  Weight: 2.50883e-035
+  Step size 0.0241411
+  Dir cos: 0.876285 0.0200804 -0.481375
 Cycle 91 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.63507e-028
-  Step size 0.153956
-  Dir cos: nan nan nan
+  Cords: -0.443759 -0.394265 0.188379
+  Weight: 1.00353e-035
+  Step size 0.0349583
+    Cross maybe
 Cycle 92 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.81754e-028
-  Step size 0.0862986
-  Dir cos: nan nan nan
+  Cords: -0.421732 -0.408554 0.2
+  Weight: 4.01413e-036
+  Step size 0.00624611
+  Dir cos: 0.767139 -0.497679 -0.404738
 Cycle 93 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 9.08768e-029
-  Step size 0.0754796
-  Dir cos: nan nan nan
+  Cords: -0.416941 -0.411663 0.197472
+  Weight: 1.60565e-036
+  Step size 0.0416205
+  Dir cos: 0.204645 -0.96759 -0.147952
 Cycle 94 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.54384e-029
-  Step size 0.049175
-  Dir cos: nan nan nan
+  Cords: -0.408423 -0.451934 0.191314
+  Weight: 6.42261e-037
+  Step size 0.0276693
+  Dir cos: 0.583992 -0.809029 -0.0665249
 Cycle 95 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.27192e-029
-  Step size 0.0231018
-  Dir cos: nan nan nan
+  Cords: -0.392265 -0.47432 0.189473
+  Weight: 2.56905e-037
+  Step size 0.0650977
+  Dir cos: 0.547763 -0.83429 -0.0625735
 Cycle 96 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.13596e-029
-  Step size 0.0252919
-  Dir cos: nan nan nan
+  Cords: -0.356607 -0.52863 0.1854
+  Weight: 1.02762e-037
+  Step size 0.103574
+  Dir cos: 0.477885 -0.874594 -0.0819219
 Cycle 97 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.6798e-030
-  Step size 0.0126801
-  Dir cos: nan nan nan
+  Cords: -0.30711 -0.619215 0.176915
+  Weight: 4.11047e-038
+  Step size 0.11717
+    Cross maybe
 Cycle 98 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.8399e-030
-  Step size 0.0258757
-  Dir cos: nan nan nan
+  Cords: -0.237442 -0.697872 0.2
+  Weight: 1.64419e-038
+  Step size 0.00959019
+  Dir cos: 0.647591 -0.731149 -0.214583
 Cycle 99 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.41995e-030
-  Step size 0.0198748
-  Dir cos: nan nan nan
+  Cords: -0.231232 -0.704884 0.197942
+  Weight: 6.57676e-039
+  Step size 0.0268927
+  Dir cos: 0.43137 -0.438607 -0.78838
 Cycle 100 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.09975e-031
-  Step size 0.0115336
-  Dir cos: nan nan nan
+  Cords: -0.219631 -0.716679 0.17674
+  Weight: 2.6307e-039
+  Step size 0.0426658
+  Dir cos: -0.869148 -0.44861 -0.208162
 Cycle 101 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.54987e-031
-  Step size 0.0355656
-  Dir cos: nan nan nan
+  Cords: -0.256714 -0.73582 0.167859
+  Weight: 1.05228e-039
+  Step size 0.0138536
+  Dir cos: -0.935579 -0.291792 -0.198869
 Cycle 102 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.77494e-031
-  Step size 0.0020411
-  Dir cos: nan nan nan
+  Cords: -0.269675 -0.739862 0.165104
+  Weight: 4.20912e-040
+  Step size 0.0603656
+  Dir cos: -0.551801 0.746001 0.372824
 Cycle 103 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.87469e-032
-  Step size 0.0854629
-  Dir cos: nan nan nan
+  Cords: -0.302985 -0.694829 0.18761
+  Weight: 1.68365e-040
+  Step size 0.0632924
+  Dir cos: -0.59148 0.785133 0.183626
 Cycle 104 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.43734e-032
-  Step size 0.026128
-  Dir cos: nan nan nan
+  Cords: -0.340421 -0.645136 0.199232
+  Weight: 6.7346e-041
+  Step size 0.0318383
+  Dir cos: 0.422661 0.76551 -0.485132
 Cycle 105 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.21867e-032
-  Step size 0.0979498
-  Dir cos: nan nan nan
+  Cords: -0.326964 -0.620764 0.183786
+  Weight: 2.69384e-041
+  Step size 0.126915
+    Cross maybe
 Cycle 106 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.10934e-032
-  Step size 0.0910079
-  Dir cos: nan nan nan
+  Cords: -0.298108 -0.585364 0.1
+  Weight: 1.07754e-041
+  Step size 0.0314905
+  Dir cos: 0.302398 0.370967 0.878031
 Cycle 107 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.54668e-033
-  Step size 0.0399254
-  Dir cos: nan nan nan
+  Cords: -0.288585 -0.573682 0.12765
+  Weight: 4.31014e-042
+  Step size 0.00141997
+  Dir cos: 0.499686 0.742047 -0.446855
 Cycle 108 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.77334e-033
-  Step size 0.094856
-  Dir cos: nan nan nan
+  Cords: -0.287876 -0.572629 0.127015
+  Weight: 1.72406e-042
+  Step size 0.0168436
+  Dir cos: 0.734364 0.554036 -0.392115
 Cycle 109 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.38667e-033
-  Step size 0.0612088
-  Dir cos: nan nan nan
+  Cords: -0.275506 -0.563297 0.12041
+  Weight: 6.89623e-043
+  Step size 0.0438535
+  Dir cos: 0.615945 0.714641 -0.33151
 Cycle 110 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.93335e-034
-  Step size 0.0244695
-  Dir cos: nan nan nan
+  Cords: -0.248495 -0.531957 0.105873
+  Weight: 2.75849e-043
+  Step size 0.148796
+    Cross maybe
 Cycle 111 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.46667e-034
-  Step size 0.00240702
-  Dir cos: nan nan nan
+  Cords: -0.23965 -0.522902 0.1
+  Weight: 1.1034e-043
+  Step size 0.134842
+  Dir cos: 0.633875 0.648917 0.420843
 Cycle 112 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.73334e-034
-  Step size 0.0640067
-  Dir cos: nan nan nan
+  Cords: -0.154177 -0.435401 0.156747
+  Weight: 4.41359e-044
+  Step size 0.0049358
+  Dir cos: 0.902227 0.219779 -0.371058
 Cycle 113 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.66668e-035
-  Step size 0.000150225
-  Dir cos: nan nan nan
+  Cords: -0.149723 -0.434316 0.154916
+  Weight: 1.76543e-044
+  Step size 0.0145845
+  Dir cos: 0.805772 0.373639 -0.459484
 Cycle 114 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.33334e-035
-  Step size 0.0580776
-  Dir cos: nan nan nan
+  Cords: -0.137972 -0.428866 0.148215
+  Weight: 7.06174e-045
+  Step size 0.00859876
+  Dir cos: -0.398643 0.837645 0.373409
 Cycle 115 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.16667e-035
-  Step size 0.0819949
-  Dir cos: nan nan nan
+  Cords: -0.141399 -0.421664 0.151425
+  Weight: 2.8247e-045
+  Step size 0.0475959
+  Dir cos: -0.618513 0.629609 0.470143
 Cycle 116 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.08334e-035
-  Step size 0.0413911
-  Dir cos: nan nan nan
+  Cords: -0.170838 -0.391697 0.173802
+  Weight: 1.12988e-045
+  Step size 0.0537936
+  Dir cos: -0.657326 0.641096 -0.396129
 Cycle 117 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.41668e-036
-  Step size 0.0430192
-  Dir cos: nan nan nan
+  Cords: -0.206198 -0.35721 0.152493
+  Weight: 4.51951e-046
+  Step size 0.151828
+  Dir cos: -0.728134 0.673639 -0.126611
 Cycle 118 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.70834e-036
-  Step size 0.0179768
-  Dir cos: nan nan nan
+  Cords: -0.316749 -0.254933 0.13327
+  Weight: 1.80781e-046
+  Step size 0.0184085
+  Dir cos: -0.481169 0.47285 -0.738166
 Cycle 119 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.35417e-036
-  Step size 0.0202483
-  Dir cos: nan nan nan
+  Cords: -0.325607 -0.246228 0.119681
+  Weight: 7.23122e-047
+  Step size 0.0517819
+    Cross maybe
 Cycle 120 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.77085e-037
-  Step size 0.0640067
-  Dir cos: nan nan nan
+  Cords: -0.336939 -0.25439 0.1
+  Weight: 2.89249e-047
+  Step size 0.0276489
+  Dir cos: -0.469602 -0.338184 0.81554
 Cycle 121 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.38542e-037
-  Step size 0.112216
-  Dir cos: nan nan nan
+  Cords: -0.349923 -0.26374 0.122549
+  Weight: 1.157e-047
+  Step size 0.00178136
+  Dir cos: -0.308287 0.0186893 0.95111
 Cycle 122 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.69271e-037
-  Step size 0.0121036
-  Dir cos: nan nan nan
+  Cords: -0.350473 -0.263707 0.124243
+  Weight: 4.62798e-048
+  Step size 0.000959141
+  Dir cos: 0.0246397 -0.476529 0.878813
 Cycle 123 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.46356e-038
-  Step size 0.0244695
-  Dir cos: nan nan nan
+  Cords: -0.350449 -0.264164 0.125086
+  Weight: 1.85119e-048
+  Step size 0.0486431
+    Cross maybe
 Cycle 124 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.23178e-038
-  Step size 0.094856
-  Dir cos: nan nan nan
+  Cords: -0.359139 -0.242865 0.1
+  Weight: 7.40477e-049
+  Step size 0.014607
+  Dir cos: -0.255317 0.625767 0.737041
 Cycle 125 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.11589e-038
-  Step size 0.00152296
-  Dir cos: nan nan nan
+  Cords: -0.362868 -0.233725 0.110766
+  Weight: 2.96191e-049
+  Step size 0.00690567
+  Dir cos: -0.794639 0.351697 0.494831
 Cycle 126 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.05794e-038
-  Step size 0.0186257
-  Dir cos: nan nan nan
+  Cords: -0.368356 -0.231296 0.114183
+  Weight: 1.18476e-049
+  Step size 0.0107836
+  Dir cos: -0.477419 0.838228 0.263524
 Cycle 127 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.28972e-039
-  Step size 0.0429011
-  Dir cos: nan nan nan
+  Cords: -0.373504 -0.222257 0.117025
+  Weight: 4.73905e-050
+  Step size 0.0339622
+    Cross maybe
 Cycle 128 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.64486e-039
-  Step size 0.0263816
-  Dir cos: nan nan nan
+  Cords: -0.365285 -0.220128 0.1
+  Weight: 1.89562e-050
+  Step size 0.0149375
+  Dir cos: 0.432049 0.111892 0.894882
 Cycle 129 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.32243e-039
-  Step size 0.0167736
-  Dir cos: nan nan nan
+  Cords: -0.358831 -0.218457 0.113367
+  Weight: 7.58249e-051
+  Step size 0.0239825
+  Dir cos: -0.967323 0.224791 -0.117286
 Cycle 130 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.61216e-040
-  Step size 0.0292595
-  Dir cos: nan nan nan
+  Cords: -0.38203 -0.213066 0.110555
+  Weight: 3.03299e-051
+  Step size 0.0430192
+  Dir cos: -0.989419 0.125823 -0.0722338
 Cycle 131 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.30608e-040
-  Step size 0.00499102
-  Dir cos: nan nan nan
+  Cords: -0.424594 -0.207653 0.107447
+  Weight: 1.2132e-051
+  Step size 0.032889
+  Dir cos: -0.85517 -0.504651 -0.118369
 Cycle 132 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.65304e-040
-  Step size 0.0356675
-  Dir cos: nan nan nan
+  Cords: -0.452719 -0.22425 0.103554
+  Weight: 4.85279e-052
+  Step size 0.0752539
+    Cross maybe
 Cycle 133 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.26519e-041
-  Step size 0.0327926
-  Dir cos: nan nan nan
+  Cords: -0.49085 -0.245021 0.1
+  Weight: 1.94112e-052
+  Step size 0.0316881
+  Dir cos: -0.875239 -0.476762 0.0815781
 Cycle 134 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.1326e-041
-  Step size 0.0268927
-  Dir cos: nan nan nan
+  Cords: -0.518584 -0.260129 0.102585
+  Weight: 7.76446e-053
+  Step size 0.0271502
+  Dir cos: -0.574703 -0.815569 -0.067553
 Cycle 135 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.0663e-041
-  Step size 0.017407
-  Dir cos: nan nan nan
+  Cords: -0.534188 -0.282272 0.100751
+  Weight: 3.10579e-053
+  Step size 0.00593918
+  Dir cos: -0.370516 -0.926288 -0.0686231
 Cycle 136 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.03315e-041
-  Step size 0.0104744
-  Dir cos: nan nan nan
+  Cords: -0.536388 -0.287773 0.100343
+  Weight: 1.24231e-053
+  Step size 0.0403718
+    Cross maybe
 Cycle 137 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.16575e-042
-  Step size 0.125052
-  Dir cos: nan nan nan
+  Cords: -0.536245 -0.289284 0.1
+  Weight: 4.96926e-054
+  Step size 0.0388157
+  Dir cos: 0.0922289 -0.970973 0.220693
 Cycle 138 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.58287e-042
-  Step size 0.0572852
-  Dir cos: nan nan nan
+  Cords: -0.532665 -0.326973 0.108566
+  Weight: 1.9877e-054
+  Step size 0.0741403
+  Dir cos: 0.487163 -0.61952 0.615522
 Cycle 139 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.29144e-042
-  Step size 0.00859876
-  Dir cos: nan nan nan
+  Cords: -0.496546 -0.372904 0.154201
+  Weight: 7.95081e-055
+  Step size 0.0213855
+  Dir cos: 0.794865 -0.507079 0.333256
 Cycle 140 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.45718e-043
-  Step size 0.0226278
-  Dir cos: nan nan nan
+  Cords: -0.479548 -0.383748 0.161328
+  Weight: 3.18032e-055
+  Step size 0.0797275
+  Dir cos: 0.760422 -0.373946 -0.530964
 Cycle 141 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.22859e-043
-  Step size 0.0494431
-  Dir cos: nan nan nan
+  Cords: -0.418921 -0.413562 0.118996
+  Weight: 1.27213e-055
+  Step size 0.0126801
+  Dir cos: 0.528208 -0.328508 -0.782993
 Cycle 142 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.6143e-043
-  Step size 0.00725129
-  Dir cos: nan nan nan
+  Cords: -0.412224 -0.417728 0.109067
+  Weight: 5.08852e-056
+  Step size 0.0257082
+    Cross maybe
 Cycle 143 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 8.07148e-044
-  Step size 0.132963
-  Dir cos: nan nan nan
+  Cords: -0.431452 -0.420539 0.1
+  Weight: 2.03541e-056
+  Step size 0.00426387
+  Dir cos: -0.896679 -0.131084 0.422829
 Cycle 144 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 4.03574e-044
-  Step size 0.0184808
-  Dir cos: nan nan nan
+  Cords: -0.435276 -0.421098 0.101803
+  Weight: 8.14163e-057
+  Step size 0.00599551
+  Dir cos: -0.693667 -0.719663 0.0301866
 Cycle 145 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.01787e-044
-  Step size 0.0717742
-  Dir cos: nan nan nan
+  Cords: -0.439434 -0.425412 0.101984
+  Weight: 3.25665e-057
+  Step size 0.00438695
+  Dir cos: -0.839853 -0.539651 -0.0585079
 Cycle 146 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.00893e-044
-  Step size 0.0176199
-  Dir cos: nan nan nan
+  Cords: -0.443119 -0.42778 0.101727
+  Weight: 1.30266e-057
+  Step size 0.0233404
+    Cross maybe
 Cycle 147 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 5.04467e-045
-  Step size 0.188613
-  Dir cos: nan nan nan
+  Cords: -0.442848 -0.433321 0.1
+  Weight: 5.21064e-058
+  Step size 0.01753
+  Dir cos: 0.0466633 -0.953657 0.297256
 Cycle 148 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 2.52234e-045
-  Step size 0.00214538
-  Dir cos: nan nan nan
+  Cords: -0.44203 -0.450039 0.105211
+  Weight: 2.08426e-058
+  Step size 0.135153
+    Cross maybe
 Cycle 149 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.26117e-045
-  Step size 0.0697163
-  Dir cos: nan nan nan
+  Cords: -0.411067 -0.532836 0.2
+  Weight: 8.33703e-059
+  Step size 0.0055417
+  Dir cos: 0.238885 -0.638816 -0.731333
 Cycle 150 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 6.30584e-046
-  Step size 0.0662129
-  Dir cos: nan nan nan
+  Cords: -0.409744 -0.536377 0.195947
+  Weight: 3.33481e-059
+  Step size 0.0230225
+  Dir cos: 0.172889 -0.423209 -0.889384
 Cycle 151 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 3.15292e-046
-  Step size 0.00178136
-  Dir cos: nan nan nan
+  Cords: -0.405763 -0.54612 0.175471
+  Weight: 1.33392e-059
+  Step size 0.0451934
+  Dir cos: 0.144677 -0.287246 -0.946868
 Cycle 152 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 1.57646e-046
-  Step size 0.0477256
-  Dir cos: nan nan nan
+  Cords: -0.399225 -0.559102 0.132679
+  Weight: 5.3357e-060
+  Step size 0.0269784
+  Dir cos: 0.138283 -0.322604 -0.936378
 Cycle 153 done
 
 Cycle started
-  Cords: nan nan nan
-  Weight: 7.8823e-047
-  Step size 0.0711479
-  Dir cos: nan nan nan
+  Cords: -0.395494 -0.567805 0.107417
+  Weight: 2.13428e-060
+  Step size 0.00152296
+  Dir cos: 0.652471 -0.225013 -0.723637
 Cycle 154 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.94115e-047
-  Step size 0.084641
-  Dir cos: nan nan nan
-Cycle 155 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.97058e-047
-  Step size 0.00433239
-  Dir cos: nan nan nan
-Cycle 156 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 9.85288e-048
-  Step size 0.0225493
-  Dir cos: nan nan nan
-Cycle 157 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 4.92644e-048
-  Step size 0.0305323
-  Dir cos: nan nan nan
-Cycle 158 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.46322e-048
-  Step size 0.0388264
-  Dir cos: nan nan nan
-Cycle 159 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.23161e-048
-  Step size 0.0182642
-  Dir cos: nan nan nan
-Cycle 160 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 6.15805e-049
-  Step size 0.101628
-  Dir cos: nan nan nan
-Cycle 161 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.07902e-049
-  Step size 0.143235
-  Dir cos: nan nan nan
-Cycle 162 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.53951e-049
-  Step size 0.0345575
-  Dir cos: nan nan nan
-Cycle 163 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 7.69756e-050
-  Step size 0.0131332
-  Dir cos: nan nan nan
-Cycle 164 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.84878e-050
-  Step size 0.0318383
-  Dir cos: nan nan nan
-Cycle 165 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.92439e-050
-  Step size 0.0316497
-  Dir cos: nan nan nan
-Cycle 166 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 9.62195e-051
-  Step size 0.0560429
-  Dir cos: nan nan nan
-Cycle 167 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 4.81098e-051
-  Step size 0.0438535
-  Dir cos: nan nan nan
-Cycle 168 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.40549e-051
-  Step size 0.0925755
-  Dir cos: nan nan nan
-Cycle 169 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.20274e-051
-  Step size 0.125665
-  Dir cos: nan nan nan
-Cycle 170 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 6.01372e-052
-  Step size 0.0412768
-  Dir cos: nan nan nan
-Cycle 171 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.00686e-052
-  Step size 0.0490415
-  Dir cos: nan nan nan
-Cycle 172 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.50343e-052
-  Step size 0.0262124
-  Dir cos: nan nan nan
-Cycle 173 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 7.51715e-053
-  Step size 0.0809744
-  Dir cos: nan nan nan
-Cycle 174 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.75858e-053
-  Step size 0.0763929
-  Dir cos: nan nan nan
-Cycle 175 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.87929e-053
-  Step size 0.0179052
-  Dir cos: nan nan nan
-Cycle 176 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 9.39644e-054
-  Step size 0.0387179
-  Dir cos: nan nan nan
-Cycle 177 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 4.69822e-054
-  Step size 0.0501197
-  Dir cos: nan nan nan
-Cycle 178 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.34911e-054
-  Step size 0.0403718
-  Dir cos: nan nan nan
-Cycle 179 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.17455e-054
-  Step size 0.0217704
-  Dir cos: nan nan nan
-Cycle 180 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 5.87277e-055
-  Step size 0.116139
-  Dir cos: nan nan nan
-Cycle 181 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.93639e-055
-  Step size 0.00272281
-  Dir cos: nan nan nan
-Cycle 182 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.46819e-055
-  Step size 0.178778
-  Dir cos: nan nan nan
-Cycle 183 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 7.34097e-056
-  Step size 0.0078912
-  Dir cos: nan nan nan
-Cycle 184 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.67048e-056
-  Step size 0.0385014
-  Dir cos: nan nan nan
-Cycle 185 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.83524e-056
-  Step size 0.0219252
-  Dir cos: nan nan nan
-Cycle 186 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 9.17621e-057
-  Step size 0.000452037
-  Dir cos: nan nan nan
-Cycle 187 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 4.5881e-057
-  Step size 0.164842
-  Dir cos: nan nan nan
-Cycle 188 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.29405e-057
-  Step size 0.0118494
-  Dir cos: nan nan nan
-Cycle 189 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.14703e-057
-  Step size 0.0574427
-  Dir cos: nan nan nan
-Cycle 190 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 5.73513e-058
-  Step size 0.15288
-  Dir cos: nan nan nan
-Cycle 191 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.86757e-058
-  Step size 0.00877723
-  Dir cos: nan nan nan
-Cycle 192 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.43378e-058
-  Step size 0.0334715
-  Dir cos: nan nan nan
-Cycle 193 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 7.16891e-059
-  Step size 0.0632924
-  Dir cos: nan nan nan
-Cycle 194 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 3.58446e-059
-  Step size 0.019063
-  Dir cos: nan nan nan
-Cycle 195 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.79223e-059
-  Step size 0.0411628
-  Dir cos: nan nan nan
-Cycle 196 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 8.96114e-060
-  Step size 0.06347
-  Dir cos: nan nan nan
-Cycle 197 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 4.48057e-060
-  Step size 0.0220028
-  Dir cos: nan nan nan
-Cycle 198 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 2.24029e-060
-  Step size 0.076163
-  Dir cos: nan nan nan
-Cycle 199 done
-
-Cycle started
-  Cords: nan nan nan
-  Weight: 1.12014e-060
-  Step size 0.184444
-  Dir cos: nan nan nan
-Cycle 200 done
 
 Photon simulated..
 
@@ -1411,1402 +1092,1193 @@ Specular reflectance: 0.1
 Cycle started
   Cords: 0 0 0
   Weight: 0.9
-  Step size 0.115129
-    Cross maybe
+  Step size 0.0533557
+  Dir cos: 0 0 1
 Cycle 1 done
 
 Cycle started
-  Cords: 0 0 0.1
+  Cords: 0 0 0.0533557
   Weight: 0.45
-  Step size 0.0151293
-  Dir cos: 0 0 -1
+  Step size 0.104779
+    Cross maybe
 Cycle 2 done
 
 Cycle started
-  Cords: 0 0 0.0848707
+  Cords: 0.0252134 0.0414362 0.1
   Weight: 0.225
-  Step size 0.0244695
-    Cross maybe
+  Step size 0.0374854
+  Dir cos: 0.374681 0.615757 -0.693151
 Cycle 3 done
 
 Cycle started
-  Cords: 0.00507607 0.00404058 0.1
+  Cords: 0.0392585 0.0645181 0.074017
   Weight: 0.1125
-  Step size 0.00800783
-  Dir cos: 0.308356 0.245454 -0.919059
+  Step size 0.0894881
+  Dir cos: 0.53154 0.51498 -0.672503
 Cycle 4 done
 
 Cycle started
-  Cords: 0.00754533 0.00600613 0.0926403
+  Cords: 0.086825 0.110603 0.013836
   Weight: 0.05625
-  Step size 0.026128
-  Dir cos: 0.282459 0.00452719 -0.959269
+  Step size 0.116652
+  Dir cos: 0.972204 0.225309 0.0636758
 Cycle 5 done
 
 Cycle started
-  Cords: 0.0149254 0.00612442 0.0675765
+  Cords: 0.200235 0.136885 0.0212639
   Weight: 0.028125
-  Step size 0.0281059
-  Dir cos: 0.462915 -0.350491 -0.814165
+  Step size 0.147826
+  Dir cos: 0.999 0.0248664 -0.0371579
 Cycle 6 done
 
 Cycle started
-  Cords: 0.0279361 -0.00372647 0.0446936
+  Cords: 0.347913 0.140561 0.015771
   Weight: 0.0140625
-  Step size 0.146873
-    Cross maybe
+  Step size 0.0587207
+  Dir cos: 0.9272 -0.303633 0.219335
 Cycle 7 done
 
 Cycle started
-  Cords: 0.0678522 0.018686 -1.86347e-018
+  Cords: 0.402358 0.122732 0.0286505
   Weight: 0.00703125
-  Step size 0.0828956
-  Dir cos: 0.623907 0.350317 0.698583
+  Step size 0.106432
+  Dir cos: 0.837164 0.059831 0.543669
 Cycle 8 done
 
 Cycle started
-  Cords: 0.119571 0.0477257 0.0579094
+  Cords: 0.491459 0.1291 0.0865141
   Weight: 0.00351563
-  Step size 0.0962074
+  Step size 0.0316497
     Cross maybe
 Cycle 9 done
 
 Cycle started
-  Cords: 0.152179 0.0640261 0.1
+  Cords: 0.519488 0.132911 0.1
   Weight: 0.00175781
-  Step size 0.0405244
-  Dir cos: 0.5856 0.292735 -0.755896
+  Step size 0.00031253
+  Dir cos: 0.89443 0.121632 -0.430349
 Cycle 10 done
 
 Cycle started
-  Cords: 0.17591 0.075889 0.0693678
+  Cords: 0.519767 0.132949 0.0998655
   Weight: 0.000878906
-  Step size 0.0385014
-  Dir cos: 0.277493 0.721715 -0.634134
+  Step size 0.0235002
+    Cross maybe
 Cycle 11 done
 
 Cycle started
-  Cords: 0.186594 0.103676 0.0449527
+  Cords: 0.519838 0.133386 0.1
   Weight: 0.000439453
-  Step size 0.0207001
-  Dir cos: 0.233446 0.914845 -0.329486
+  Step size 0.0230379
+  Dir cos: 0.152725 0.944479 -0.29092
 Cycle 12 done
 
 Cycle started
-  Cords: 0.191427 0.122613 0.0381323
+  Cords: 0.523357 0.155145 0.0932978
   Weight: 0.000219727
-  Step size 0.264916
-    Cross maybe
+  Step size 0.0775585
+  Dir cos: 0.0149479 0.999545 0.0261838
 Cycle 13 done
 
 Cycle started
-  Cords: 0.197125 0.152854 -9.14796e-019
+  Cords: 0.524516 0.232668 0.0953286
   Weight: 0.000109863
-  Step size 0.215916
+  Step size 0.101628
     Cross maybe
 Cycle 14 done
 
 Cycle started
-  Cords: 0.21207 0.232158 0.1
+  Cords: 0.531756 0.279756 0.1
   Weight: 5.49316e-005
-  Step size 0.0874147
-  Dir cos: 0.116297 0.617148 -0.778205
+  Step size 0.0537583
+  Dir cos: 0.151254 0.983666 -0.0975858
 Cycle 15 done
 
 Cycle started
-  Cords: 0.222236 0.286106 0.0319735
+  Cords: 0.539888 0.332636 0.094754
   Weight: 2.74658e-005
-  Step size 0.00907609
-  Dir cos: 0.252836 0.789845 -0.558766
+  Step size 0.000401609
+  Dir cos: 0.271391 0.888506 -0.370005
 Cycle 16 done
 
 Cycle started
-  Cords: 0.22453 0.293274 0.026902
+  Cords: 0.539997 0.332993 0.0946054
   Weight: 1.37329e-005
-  Step size 0.0257919
-  Dir cos: -0.591621 0.712562 -0.377146
+  Step size 0.100496
+    Cross maybe
 Cycle 17 done
 
 Cycle started
-  Cords: 0.209271 0.311653 0.0171747
+  Cords: 0.546432 0.345063 0.1
   Weight: 6.86646e-006
-  Step size 0.0363869
-  Dir cos: 0.568873 0.780159 0.26026
+  Step size 0.0857917
+  Dir cos: 0.437682 0.820873 -0.366882
 Cycle 18 done
 
 Cycle started
-  Cords: 0.229971 0.34004 0.0266448
+  Cords: 0.583982 0.415487 0.0685246
   Weight: 3.43323e-006
-  Step size 0.00980074
-  Dir cos: 0.74415 0.574247 0.341293
+  Step size 0.0883046
+    Cross maybe
 Cycle 19 done
 
 Cycle started
-  Cords: 0.237264 0.345668 0.0299897
+  Cords: 0.539369 0.405343 -1.15874e-018
   Weight: 1.71661e-006
-  Step size 0.0561965
-  Dir cos: 0.667614 0.667999 0.328738
+  Step size 0.00591
+  Dir cos: -0.541458 -0.123121 0.831664
 Cycle 20 done
 
 Cycle started
-  Cords: 0.274782 0.383208 0.0484637
+  Cords: 0.536169 0.404615 0.00491514
   Weight: 8.58307e-007
-  Step size 0.0513611
-  Dir cos: 0.196792 0.793039 0.576508
+  Step size 0.010167
+  Dir cos: -0.501754 0.0666214 0.862441
 Cycle 21 done
 
 Cycle started
-  Cords: 0.284889 0.423939 0.0780738
+  Cords: 0.531067 0.405292 0.0136836
   Weight: 4.29153e-007
-  Step size 0.0417355
-    Cross maybe
+  Step size 0.0448244
+  Dir cos: -0.424627 0.129951 0.895994
 Cycle 22 done
 
 Cycle started
-  Cords: 0.283504 0.443206 0.1
+  Cords: 0.512033 0.411117 0.053846
   Weight: 2.14577e-007
-  Step size 0.0125139
-  Dir cos: -0.0473911 0.659349 -0.750342
+  Step size 0.149787
+    Cross maybe
 Cycle 23 done
 
 Cycle started
-  Cords: 0.282911 0.451457 0.0906103
+  Cords: 0.38529 0.383469 0.1
   Weight: 1.07288e-007
-  Step size 0.10087
-    Cross maybe
+  Step size 0.012097
+  Dir cos: -0.920499 -0.200798 -0.335203
 Cycle 24 done
 
 Cycle started
-  Cords: 0.292348 0.487616 -6.26127e-018
+  Cords: 0.374155 0.38104 0.095945
   Weight: 5.36442e-008
-  Step size 0.00285634
-  Dir cos: 0.0962776 0.368915 0.924463
+  Step size 0.0212324
+  Dir cos: 0.397178 -0.241783 -0.88532
 Cycle 25 done
 
 Cycle started
-  Cords: 0.292623 0.48867 0.00264058
+  Cords: 0.382588 0.375907 0.0771476
   Weight: 2.68221e-008
-  Step size 0.0459397
-  Dir cos: 0.911464 0.0468204 0.408707
+  Step size 0.00998356
+  Dir cos: 0.890577 -0.0225493 -0.454274
 Cycle 26 done
 
 Cycle started
-  Cords: 0.334495 0.490821 0.0214164
+  Cords: 0.391479 0.375682 0.0726123
   Weight: 1.3411e-008
-  Step size 0.0883046
-  Dir cos: 0.965525 0.0609941 0.253062
+  Step size 0.209985
+  Dir cos: 0.928759 -0.172899 -0.327892
 Cycle 27 done
 
 Cycle started
-  Cords: 0.419755 0.496207 0.043763
+  Cords: 0.586505 0.339375 0.00375972
   Weight: 6.70552e-009
-  Step size 0.0115966
-  Dir cos: 0.122779 0.894816 0.42922
+  Step size 0.0137877
+  Dir cos: 0.512424 -0.839891 0.1789
 Cycle 28 done
 
 Cycle started
-  Cords: 0.421179 0.506584 0.0487405
+  Cords: 0.59357 0.327795 0.00622634
   Weight: 3.35276e-009
-  Step size 0.0108457
-  Dir cos: -0.219383 0.810227 0.54351
+  Step size 0.0572852
+    Cross maybe
 Cycle 29 done
 
 Cycle started
-  Cords: 0.4188 0.515371 0.0546352
+  Cords: 0.623547 0.300529 7.7927e-020
   Weight: 1.67638e-009
-  Step size 0.00599551
-  Dir cos: -0.698695 0.595491 0.396505
+  Step size 0.0162875
+  Dir cos: 0.731179 -0.665066 0.151871
 Cycle 30 done
 
 Cycle started
-  Cords: 0.414611 0.518941 0.0570125
+  Cords: 0.635456 0.289697 0.0024736
   Weight: 8.3819e-010
-  Step size 0.018771
-  Dir cos: -0.121892 0.721159 0.681962
+  Step size 0.0138536
+  Dir cos: 0.454847 -0.685221 0.568847
 Cycle 31 done
 
 Cycle started
-  Cords: 0.412323 0.532478 0.0698136
+  Cords: 0.641757 0.280204 0.0103542
   Weight: 4.19095e-010
-  Step size 0.021156
-  Dir cos: 0.257711 -0.443452 -0.858449
+  Step size 0.139031
+  Dir cos: -0.93981 -0.220964 0.260638
 Cycle 32 done
 
 Cycle started
-  Cords: 0.417775 0.523097 0.0516522
+  Cords: 0.511094 0.249483 0.0465909
   Weight: 2.09548e-010
-  Step size 0.0689163
-  Dir cos: -0.571338 0.750656 -0.331796
+  Step size 0.0239825
+  Dir cos: -0.481092 -0.363278 0.797859
 Cycle 33 done
 
 Cycle started
-  Cords: 0.3784 0.574829 0.0287861
+  Cords: 0.499556 0.240771 0.0657256
   Weight: 1.04774e-010
-  Step size 0.0401481
-  Dir cos: -0.0989199 0.989754 0.10297
+  Step size 0.000300904
+  Dir cos: -0.706957 -0.353413 -0.612626
 Cycle 34 done
 
 Cycle started
-  Cords: 0.374429 0.614566 0.0329201
+  Cords: 0.499344 0.240664 0.0655412
   Weight: 5.23869e-011
-  Step size 0.0119129
-  Dir cos: -0.879778 0.335842 0.336453
+  Step size 0.0308093
+  Dir cos: 0.0816078 -0.898987 -0.430305
 Cycle 35 done
 
 Cycle started
-  Cords: 0.363948 0.618567 0.0369282
+  Cords: 0.501858 0.212967 0.0522838
   Weight: 2.61934e-011
-  Step size 0.0274091
-  Dir cos: -0.929474 0.0989387 -0.355372
+  Step size 0.0481167
+  Dir cos: -0.516513 -0.682003 -0.51777
 Cycle 36 done
 
 Cycle started
-  Cords: 0.338472 0.621278 0.0271878
+  Cords: 0.477005 0.180152 0.0273704
   Weight: 1.30967e-011
-  Step size 0.0565051
-  Dir cos: -0.987765 0.145439 -0.0562864
+  Step size 0.0378576
+  Dir cos: 0.613842 -0.657573 -0.436801
 Cycle 37 done
 
 Cycle started
-  Cords: 0.282659 0.629496 0.0240074
+  Cords: 0.500244 0.155257 0.0108341
   Weight: 6.54836e-012
-  Step size 0.0285465
-  Dir cos: -0.317859 0.789628 0.524836
+  Step size 0.0131983
+  Dir cos: 0.625934 -0.6025 -0.495176
 Cycle 38 done
 
 Cycle started
-  Cords: 0.273585 0.652038 0.0389896
+  Cords: 0.508505 0.147305 0.00429868
   Weight: 3.27418e-012
-  Step size 0.0215391
-  Dir cos: 0.751555 0.65865 -0.0366793
+  Step size 0.0278435
+    Cross maybe
 Cycle 39 done
 
 Cycle started
-  Cords: 0.289773 0.666224 0.0381995
+  Cords: 0.508057 0.142399 9.82558e-020
   Weight: 1.63709e-012
-  Step size 0.111746
-  Dir cos: 0.957166 -0.252491 0.141713
+  Step size 0.0213049
+  Dir cos: -0.0684794 -0.750398 0.65743
 Cycle 40 done
 
 Cycle started
-  Cords: 0.396732 0.638009 0.0540355
+  Cords: 0.506598 0.126412 0.0140065
   Weight: 8.18545e-013
-  Step size 0.0650977
-  Dir cos: 0.96476 -0.139235 -0.223276
+  Step size 0.00949753
+  Dir cos: 0.508647 -0.423716 0.749495
 Cycle 41 done
 
 Cycle started
-  Cords: 0.459536 0.628946 0.0395007
+  Cords: 0.511429 0.122387 0.0211248
   Weight: 4.09273e-013
-  Step size 0.00901618
-  Dir cos: 0.962068 -0.0438758 0.26926
+  Step size 0.0083618
+  Dir cos: 0.831877 -0.519016 0.196478
 Cycle 42 done
 
 Cycle started
-  Cords: 0.46821 0.62855 0.0419284
+  Cords: 0.518385 0.118048 0.0227677
   Weight: 2.04636e-013
-  Step size 0.084641
-  Dir cos: 0.936457 0.104584 -0.33483
+  Step size 0.0154623
+  Dir cos: 0.698009 -0.714729 -0.0441203
 Cycle 43 done
 
 Cycle started
-  Cords: 0.547473 0.637402 0.0135881
+  Cords: 0.529178 0.106996 0.0220855
   Weight: 1.02318e-013
-  Step size 0.0483792
-    Cross maybe
+  Step size 0.0691151
+  Dir cos: 0.77546 -0.489605 0.398683
 Cycle 44 done
 
 Cycle started
-  Cords: 0.548253 0.620397 8.36022e-019
+  Cords: 0.582774 0.0731571 0.0496406
   Weight: 5.11591e-014
-  Step size 0.0265982
-  Dir cos: 0.0358264 -0.780722 0.62385
+  Step size 0.345388
+    Cross maybe
 Cycle 45 done
 
 Cycle started
-  Cords: 0.549206 0.599631 0.0165933
+  Cords: 0.548647 0.256286 0.1
   Weight: 2.55795e-014
-  Step size 0.047986
-  Dir cos: 0.0388687 -0.668659 0.742553
+  Step size 0.152419
+  Dir cos: -0.176852 0.949008 -0.260972
 Cycle 46 done
 
 Cycle started
-  Cords: 0.551071 0.567545 0.0522255
+  Cords: 0.521691 0.400933 0.0602228
   Weight: 1.27898e-014
-  Step size 0.159709
-    Cross maybe
+  Step size 0.035872
+  Dir cos: -0.176949 0.975793 0.128519
 Cycle 47 done
 
 Cycle started
-  Cords: 0.571914 0.519033 0.1
+  Cords: 0.515344 0.435937 0.064833
   Weight: 6.39488e-015
-  Step size 0.0885035
-  Dir cos: 0.29271 -0.681295 -0.670938
+  Step size 0.0649142
+  Dir cos: -0.849687 0.0547079 -0.524441
 Cycle 48 done
 
 Cycle started
-  Cords: 0.59782 0.458736 0.0406196
+  Cords: 0.460187 0.439488 0.0307893
   Weight: 3.19744e-015
-  Step size 0.00136856
-  Dir cos: 0.469589 -0.629337 -0.61921
+  Step size 0.017195
+  Dir cos: -0.95263 -0.212767 -0.217315
 Cycle 49 done
 
 Cycle started
-  Cords: 0.598462 0.457875 0.0397722
+  Cords: 0.443807 0.435829 0.0270526
   Weight: 1.59872e-015
-  Step size 0.029801
-  Dir cos: -0.626587 -0.509215 0.589991
+  Step size 0.00157453
+  Dir cos: -0.985328 0.0362479 -0.166777
 Cycle 50 done
 
 Cycle started
-  Cords: 0.579789 0.4427 0.0573545
+  Cords: 0.442255 0.435886 0.02679
   Weight: 7.99361e-016
-  Step size 0.157328
-    Cross maybe
+  Step size 0.0119764
+  Dir cos: -0.698179 0.0736347 -0.712127
 Cycle 51 done
 
 Cycle started
-  Cords: 0.57385 0.423072 0.1
+  Cords: 0.433894 0.436768 0.0182613
   Weight: 3.9968e-016
-  Step size 0.110008
-  Dir cos: -0.125511 -0.41479 -0.901219
+  Step size 0.0807225
+  Dir cos: -0.859777 0.362466 0.359725
 Cycle 52 done
 
 Cycle started
-  Cords: 0.560043 0.377442 0.000858641
+  Cords: 0.36449 0.466028 0.0472992
   Weight: 1.9984e-016
-  Step size 0.0223144
-    Cross maybe
+  Step size 0.0193567
+  Dir cos: -0.713446 0.203285 -0.670575
 Cycle 53 done
 
 Cycle started
-  Cords: 0.559185 0.377141 -4.76456e-021
+  Cords: 0.35068 0.469962 0.0343191
   Weight: 9.99201e-017
-  Step size 0.0210635
-  Dir cos: -0.686214 -0.240645 0.686441
+  Step size 0.0364906
+  Dir cos: -0.517806 0.822473 -0.235403
 Cycle 54 done
 
 Cycle started
-  Cords: 0.544731 0.372072 0.0144588
+  Cords: 0.331785 0.499975 0.0257291
   Weight: 4.996e-017
-  Step size 0.0535012
-  Dir cos: 0.307988 -0.646943 0.697573
+  Step size 0.0216161
+  Dir cos: -0.438134 0.880416 -0.181399
 Cycle 55 done
 
 Cycle started
-  Cords: 0.561208 0.33746 0.0517799
+  Cords: 0.322314 0.519006 0.021808
   Weight: 2.498e-017
-  Step size 0.0133287
-  Dir cos: -0.77858 -0.608121 -0.154925
+  Step size 0.106854
+    Cross maybe
 Cycle 56 done
 
 Cycle started
-  Cords: 0.550831 0.329354 0.0497149
+  Cords: 0.288777 0.567142 2.06676e-019
   Weight: 1.249e-017
-  Step size 0.0195042
-  Dir cos: -0.91056 -0.380474 0.161621
+  Step size 0.0442639
+  Dir cos: -0.535837 0.769075 0.348427
 Cycle 57 done
 
 Cycle started
-  Cords: 0.533071 0.321933 0.0528672
+  Cords: 0.265058 0.601185 0.0154227
   Weight: 6.245e-018
-  Step size 0.106432
-    Cross maybe
+  Step size 0.00277564
+  Dir cos: -0.700386 0.513488 0.495772
 Cycle 58 done
 
 Cycle started
-  Cords: 0.509992 0.353955 -5.3092e-018
+  Cords: 0.263114 0.60261 0.0167988
   Weight: 3.1225e-018
-  Step size 0.0404546
-  Dir cos: -0.34981 0.48534 0.801298
+  Step size 0.0354638
+  Dir cos: -0.316356 0.662288 0.679186
 Cycle 59 done
 
 Cycle started
-  Cords: 0.49584 0.373589 0.0324162
+  Cords: 0.251895 0.626097 0.0408853
   Weight: 1.56125e-018
   Step size 0.0273226
-  Dir cos: -0.335984 -0.152042 0.929515
+  Dir cos: -0.581293 0.668748 -0.463545
 Cycle 60 done
 
 Cycle started
-  Cords: 0.48666 0.369435 0.057813
+  Cords: 0.236013 0.644369 0.0282201
   Weight: 7.80626e-019
-  Step size 0.00765756
-  Dir cos: -0.679039 0.407627 0.61053
+  Step size 0.0638272
+  Dir cos: -0.838426 0.335946 -0.429165
 Cycle 61 done
 
 Cycle started
-  Cords: 0.481461 0.372556 0.0624881
+  Cords: 0.182498 0.665812 0.000827661
   Weight: 3.90313e-019
-  Step size 0.175328
+  Step size 0.0383935
     Cross maybe
 Cycle 62 done
 
 Cycle started
-  Cords: 0.401325 0.376313 -1.55854e-019
+  Cords: 0.180152 0.66601 4.60574e-020
   Weight: 1.95156e-019
-  Step size 0.0736394
-  Dir cos: -0.788047 0.0369467 0.614506
+  Step size 0.0358971
+  Dir cos: -0.94009 0.0794484 0.33154
 Cycle 63 done
 
 Cycle started
-  Cords: 0.343294 0.379034 0.0452518
+  Cords: 0.146405 0.668862 0.0119013
   Weight: 9.75782e-020
-  Step size 0.0023022
-  Dir cos: -0.350123 0.527311 0.774181
+  Step size 0.0221583
+  Dir cos: -0.64424 0.136068 0.752623
 Cycle 64 done
 
 Cycle started
-  Cords: 0.342488 0.380248 0.0470341
+  Cords: 0.13213 0.671877 0.0285782
   Weight: 4.87891e-020
-  Step size 0.127552
-    Cross maybe
+  Step size 0.0332766
+  Dir cos: -0.336991 -0.639722 0.690792
 Cycle 65 done
 
 Cycle started
-  Cords: 0.305514 0.418526 0.1
+  Cords: 0.120916 0.650589 0.0515654
   Weight: 2.43945e-020
-  Step size 0.052468
-  Dir cos: -0.492432 0.5098 -0.705418
+  Step size 0.0197263
+  Dir cos: -0.185228 -0.722534 0.666059
 Cycle 66 done
 
 Cycle started
-  Cords: 0.279677 0.445274 0.0629882
+  Cords: 0.117262 0.636336 0.0647043
   Weight: 1.21973e-020
-  Step size 0.137444
-    Cross maybe
+  Step size 0.0117229
+  Dir cos: 0.418664 0.00196661 0.908139
 Cycle 67 done
 
 Cycle started
-  Cords: 0.306109 0.501964 -3.08998e-018
+  Cords: 0.12217 0.636359 0.0753503
   Weight: 6.09864e-021
-  Step size 0.0486746
-  Dir cos: 0.297757 0.638629 0.709573
+  Step size 0.0430192
+  Dir cos: 0.901754 -0.250125 -0.35253
 Cycle 68 done
 
 Cycle started
-  Cords: 0.320602 0.533049 0.0345382
+  Cords: 0.160963 0.625599 0.0601847
   Weight: 3.04932e-021
-  Step size 0.121521
-    Cross maybe
+  Step size 0.014853
+  Dir cos: 0.191331 -0.776224 -0.600723
 Cycle 69 done
 
 Cycle started
-  Cords: 0.316083 0.514513 0.1
+  Cords: 0.163804 0.61407 0.0512622
   Weight: 1.52466e-021
-  Step size 0.0533354
-  Dir cos: -0.066274 -0.271852 -0.960054
+  Step size 0.00599551
+  Dir cos: 0.29175 -0.777637 -0.556922
 Cycle 70 done
 
 Cycle started
-  Cords: 0.312548 0.500014 0.0487951
+  Cords: 0.165554 0.609408 0.0479232
   Weight: 7.6233e-022
-  Step size 0.0126801
-  Dir cos: -0.273633 0.147278 -0.950492
+  Step size 0.0151906
+  Dir cos: 0.0760823 0.716941 0.69297
 Cycle 71 done
 
 Cycle started
-  Cords: 0.309078 0.501881 0.0367428
+  Cords: 0.166709 0.620298 0.0584498
   Weight: 3.81165e-022
-  Step size 0.0192831
-  Dir cos: 0.301458 0.729709 -0.613716
+  Step size 0.159709
+    Cross maybe
 Cycle 72 done
 
 Cycle started
-  Cords: 0.314892 0.515952 0.0249084
+  Cords: 0.181111 0.664815 0.1
   Weight: 1.90582e-022
-  Step size 0.00765756
-  Dir cos: 0.520601 0.690839 -0.501712
+  Step size 0.0971348
+  Dir cos: 0.230153 0.711418 -0.664014
 Cycle 73 done
 
 Cycle started
-  Cords: 0.318878 0.521242 0.0210665
+  Cords: 0.203467 0.733918 0.0355011
   Weight: 9.52912e-023
-  Step size 0.0222363
-  Dir cos: 0.724573 0.540262 -0.427914
+  Step size 0.0369072
+  Dir cos: 0.340982 0.338033 -0.877191
 Cycle 74 done
 
 Cycle started
-  Cords: 0.33499 0.533256 0.0115513
+  Cords: 0.216052 0.746394 0.00312641
   Weight: 4.76456e-023
-  Step size 0.0439738
+  Step size 0.055131
     Cross maybe
 Cycle 75 done
 
 Cycle started
-  Cords: 0.344177 0.555612 -2.17687e-019
+  Cords: 0.21465 0.744246 3.3479e-019
   Weight: 2.38228e-023
-  Step size 0.0171856
-  Dir cos: 0.342944 0.834536 0.431206
+  Step size 0.0510873
+  Dir cos: -0.346597 -0.531131 0.773156
 Cycle 76 done
 
 Cycle started
-  Cords: 0.35007 0.569954 0.00741052
+  Cords: 0.196943 0.717112 0.0394985
   Weight: 1.19114e-023
-  Step size 0.0216932
-  Dir cos: 0.32615 0.749067 0.57665
+  Step size 0.0777949
+    Cross maybe
+Crossing
 Cycle 77 done
 
 Cycle started
-  Cords: 0.357146 0.586203 0.0199199
+  Cords: 0.197689 0.689887 0.1
   Weight: 5.9557e-024
-  Step size 0.00998356
-  Dir cos: 0.447798 0.425631 0.78633
+  Step size 0.0114459
+  Dir cos: 0.0154562 -0.564202 0.825492
 Cycle 78 done
 
 Cycle started
-  Cords: 0.361616 0.590453 0.0277703
-  Weight: 2.97785e-024
-  Step size 0.0536472
-  Dir cos: 0.932794 0.27141 0.237131
+  Cords: 0.197866 0.68343 0.109448
+  Weight: 2.38228e-024
+  Step size 0.0671617
+  Dir cos: -0.210757 -0.975342 0.0654996
 Cycle 79 done
 
 Cycle started
-  Cords: 0.411658 0.605013 0.0404917
-  Weight: 1.48893e-024
-  Step size 0.0312744
-  Dir cos: -0.103796 -0.525805 0.844248
+  Cords: 0.183711 0.617924 0.113848
+  Weight: 9.52912e-025
+  Step size 0.0176911
+  Dir cos: 0.633312 -0.489988 0.599022
 Cycle 80 done
 
 Cycle started
-  Cords: 0.408412 0.588569 0.0668951
-  Weight: 7.44463e-025
-  Step size 0.00395216
-  Dir cos: -0.398542 -0.446609 0.801065
+  Cords: 0.194915 0.609256 0.124445
+  Weight: 3.81165e-025
+  Step size 0.0597011
+  Dir cos: -0.393759 0.165181 0.904251
 Cycle 81 done
 
 Cycle started
-  Cords: 0.406837 0.586804 0.070061
-  Weight: 3.72231e-025
-  Step size 0.155055
+  Cords: 0.171407 0.619117 0.17843
+  Weight: 1.52466e-025
+  Step size 0.0227853
     Cross maybe
 Cycle 82 done
 
 Cycle started
-  Cords: 0.388076 0.641952 -3.17129e-018
-  Weight: 1.86116e-025
-  Step size 0.0639405
-  Dir cos: -0.205904 0.60526 0.768937
+  Cords: 0.168695 0.616945 0.2
+  Weight: 6.09864e-026
+  Step size 0.000936924
+  Dir cos: -0.124146 -0.0994057 -0.987272
 Cycle 83 done
 
 Cycle started
-  Cords: 0.37491 0.680652 0.0491662
-  Weight: 9.30578e-026
-  Step size 0.0379643
-  Dir cos: 0.271098 -0.862919 -0.42647
+  Cords: 0.168579 0.616852 0.199075
+  Weight: 2.43945e-026
+  Step size 0.0220028
+  Dir cos: -0.160027 0.310411 -0.937036
 Cycle 84 done
 
 Cycle started
-  Cords: 0.385203 0.647892 0.0329755
-  Weight: 4.65289e-026
-  Step size 0.0266365
-  Dir cos: 0.252827 -0.967263 -0.0219138
+  Cords: 0.165058 0.623682 0.178458
+  Weight: 9.75782e-027
+  Step size 0.0799744
+  Dir cos: -0.717312 0.0650426 -0.69371
 Cycle 85 done
 
 Cycle started
-  Cords: 0.391937 0.622127 0.0323918
-  Weight: 2.32645e-026
-  Step size 0.0565051
-    Cross maybe
+  Cords: 0.107691 0.628884 0.122979
+  Weight: 3.90313e-027
+  Step size 0.0174779
+  Dir cos: -0.765264 -0.245246 -0.595168
 Cycle 86 done
 
 Cycle started
-  Cords: 0.404311 0.615238 -2.77488e-018
-  Weight: 1.16322e-026
-  Step size 0.0211525
-  Dir cos: 0.350014 -0.19488 0.916249
+  Cords: 0.0943158 0.624597 0.112576
+  Weight: 1.56125e-027
+  Step size 0.0593722
+    Cross maybe
 Cycle 87 done
 
 Cycle started
-  Cords: 0.411715 0.611116 0.019381
-  Weight: 5.81611e-027
-  Step size 0.000553047
-  Dir cos: 0.365554 -0.434857 0.822964
+  Cords: 0.0733352 0.620727 0.1
+  Weight: 6.245e-028
+  Step size 0.0346067
+  Dir cos: -0.84717 -0.156288 0.507815
 Cycle 88 done
 
 Cycle started
-  Cords: 0.411917 0.610875 0.0198361
-  Weight: 2.90806e-027
-  Step size 0.0681289
-  Dir cos: -0.00864383 -0.533619 0.845681
+  Cords: 0.0440174 0.615318 0.117574
+  Weight: 2.498e-028
+  Step size 0.0768559
+  Dir cos: -0.93766 -0.217334 0.27122
 Cycle 89 done
 
 Cycle started
-  Cords: 0.411328 0.57452 0.0774514
-  Weight: 1.45403e-027
-  Step size 0.0020411
-  Dir cos: 0.176364 -0.617163 0.766815
+  Cords: -0.0280472 0.598615 0.138419
+  Weight: 9.99201e-029
+  Step size 0.150797
+    Cross maybe
 Cycle 90 done
 
 Cycle started
-  Cords: 0.411688 0.573261 0.0790166
-  Weight: 7.27014e-028
-  Step size 0.0209275
-  Dir cos: 0.475919 -0.422698 0.771251
+  Cords: -0.0640862 0.561495 0.1
+  Weight: 3.9968e-029
+  Step size 0.0863555
+  Dir cos: -0.559253 -0.576025 0.596181
 Cycle 91 done
 
 Cycle started
-  Cords: 0.421648 0.564415 0.0951569
-  Weight: 3.63507e-028
-  Step size 0.0935401
-    Cross maybe
+  Cords: -0.112381 0.511752 0.151483
+  Weight: 1.59872e-029
+  Step size 0.0643677
+  Dir cos: -0.135229 -0.822266 0.552803
 Cycle 92 done
 
 Cycle started
-  Cords: 0.42237 0.55824 0.1
-  Weight: 1.81754e-028
-  Step size 0.0856593
-  Dir cos: 0.0916416 -0.783546 -0.614539
+  Cords: -0.121085 0.458825 0.187066
+  Weight: 6.39488e-030
+  Step size 0.0498479
+    Cross maybe
 Cycle 93 done
 
 Cycle started
-  Cords: 0.43022 0.491122 0.047359
-  Weight: 9.08768e-029
-  Step size 0.0830366
-  Dir cos: 0.817796 0.374585 0.436917
+  Cords: -0.136229 0.443721 0.2
+  Weight: 2.55795e-030
+  Step size 0.0248533
+  Dir cos: -0.605888 -0.604261 -0.517463
 Cycle 94 done
 
 Cycle started
-  Cords: 0.498127 0.522226 0.0836391
-  Weight: 4.54384e-029
-  Step size 0.0517819
-    Cross maybe
+  Cords: -0.151287 0.428704 0.187139
+  Weight: 1.02318e-030
+  Step size 0.0164947
+  Dir cos: -0.46523 -0.011537 -0.885115
 Cycle 95 done
 
 Cycle started
-  Cords: 0.513262 0.536885 0.1
-  Weight: 2.27192e-029
-  Step size 0.0251057
-  Dir cos: 0.567358 0.549498 -0.613316
+  Cords: -0.158961 0.428513 0.17254
+  Weight: 4.09273e-031
+  Step size 0.182483
+    Cross maybe
 Cycle 96 done
 
 Cycle started
-  Cords: 0.527506 0.55068 0.0846023
-  Weight: 1.13596e-029
-  Step size 0.0112197
-  Dir cos: 0.656987 0.00847108 -0.753854
+  Cords: -0.175633 0.415877 0.1
+  Weight: 1.63709e-031
+  Step size 0.106987
+    Cross maybe
 Cycle 97 done
 
 Cycle started
-  Cords: 0.534877 0.550775 0.0761442
-  Weight: 5.6798e-030
-  Step size 0.0685211
-  Dir cos: 0.86605 -0.181307 -0.465923
+  Cords: -0.198615 0.398458 0.2
+  Weight: 6.54836e-032
+  Step size 0.00291217
+  Dir cos: -0.220824 -0.167373 -0.960845
 Cycle 98 done
 
 Cycle started
-  Cords: 0.594219 0.538352 0.0442187
-  Weight: 2.8399e-030
-  Step size 0.135153
-    Cross maybe
+  Cords: -0.199258 0.39797 0.197202
+  Weight: 2.61934e-032
+  Step size 0.0665903
+  Dir cos: -0.0963387 -0.360654 -0.927711
 Cycle 99 done
 
 Cycle started
-  Cords: 0.688871 0.501952 1.64324e-018
-  Weight: 1.41995e-030
-  Step size 0.0245222
-  Dir cos: 0.855565 -0.329016 0.399696
+  Cords: -0.205673 0.373954 0.135425
+  Weight: 1.04774e-032
+  Step size 0.00157453
+  Dir cos: -0.155325 -0.247823 -0.956273
 Cycle 100 done
 
 Cycle started
-  Cords: 0.709852 0.493884 0.00980142
-  Weight: 7.09975e-031
-  Step size 0.122092
-  Dir cos: 0.950002 -0.246581 0.191557
+  Cords: -0.205918 0.373564 0.13392
+  Weight: 4.19095e-033
+  Step size 0.290457
+    Cross maybe
 Cycle 101 done
 
 Cycle started
-  Cords: 0.82584 0.463779 0.033189
-  Weight: 3.54987e-031
-  Step size 0.0587207
-  Dir cos: 0.9021 -0.413986 0.121782
+  Cords: -0.217901 0.357773 0.1
+  Weight: 1.67638e-033
+  Step size 0.25117
+    Cross maybe
 Cycle 102 done
 
 Cycle started
-  Cords: 0.878812 0.439469 0.0403402
-  Weight: 1.77494e-031
-  Step size 0.0388264
-  Dir cos: 0.491998 -0.845128 -0.209039
+  Cords: -0.253229 0.311219 0.2
+  Weight: 6.70552e-034
+  Step size 0.135345
+    Cross maybe
 Cycle 103 done
 
 Cycle started
-  Cords: 0.897914 0.406656 0.0322239
-  Weight: 8.87469e-032
-  Step size 0.0143175
-  Dir cos: -0.118008 -0.887277 -0.445885
+  Cords: -0.288558 0.264665 0.1
+  Weight: 2.68221e-034
+  Step size 0.0195205
+  Dir cos: -0.305015 -0.401934 0.863374
 Cycle 104 done
 
 Cycle started
-  Cords: 0.896225 0.393952 0.02584
-  Weight: 4.43734e-032
-  Step size 0.0426658
-  Dir cos: -0.0604574 -0.99512 -0.0779828
+  Cords: -0.294512 0.25682 0.116854
+  Weight: 1.07288e-034
+  Step size 0.125665
+    Cross maybe
 Cycle 105 done
 
 Cycle started
-  Cords: 0.893645 0.351495 0.0225128
-  Weight: 2.21867e-032
-  Step size 0.195601
-    Cross maybe
+  Cords: -0.328192 0.24901 0.2
+  Weight: 4.29153e-035
+  Step size 0.035617
+  Dir cos: -0.374027 -0.0867256 -0.923354
 Cycle 106 done
 
 Cycle started
-  Cords: 0.86419 0.281764 -8.43645e-019
-  Weight: 1.10934e-032
-  Step size 0.116628
-  Dir cos: -0.372981 -0.882962 0.285068
+  Cords: -0.341514 0.245921 0.167113
+  Weight: 1.71661e-035
+  Step size 0.0202483
+  Dir cos: -0.253482 -0.381553 -0.888912
 Cycle 107 done
 
 Cycle started
-  Cords: 0.82069 0.178786 0.0332468
-  Weight: 5.54668e-033
-  Step size 0.0482478
-  Dir cos: -0.390728 -0.893604 0.220918
+  Cords: -0.346646 0.238195 0.149114
+  Weight: 6.86646e-036
+  Step size 0.00549074
+  Dir cos: 0.118011 0.0686152 -0.990639
 Cycle 108 done
 
 Cycle started
-  Cords: 0.801838 0.135672 0.0439056
-  Weight: 2.77334e-033
-  Step size 0.141511
-  Dir cos: -0.371126 -0.85761 0.356049
+  Cords: -0.345998 0.238572 0.143675
+  Weight: 2.74658e-036
+  Step size 0.0337654
+  Dir cos: 0.189976 -0.496566 -0.846954
 Cycle 109 done
 
 Cycle started
-  Cords: 0.74932 0.0143107 0.0942905
-  Weight: 1.38667e-033
-  Step size 0.00719352
+  Cords: -0.339584 0.221805 0.115077
+  Weight: 1.09863e-036
+  Step size 0.0597011
     Cross maybe
 Cycle 110 done
 
 Cycle started
-  Cords: 0.750478 0.0156669 0.1
-  Weight: 6.93335e-034
-  Step size 0.00121195
-  Dir cos: 0.193585 0.226739 -0.954523
+  Cords: -0.340007 0.21557 0.1
+  Weight: 4.39453e-037
+  Step size 0.0433803
+  Dir cos: -0.0259224 -0.382037 0.923784
 Cycle 111 done
 
 Cycle started
-  Cords: 0.750712 0.0159417 0.0988432
-  Weight: 3.46667e-034
-  Step size 0.0482478
-  Dir cos: 0.203728 0.611016 -0.764954
+  Cords: -0.341131 0.198997 0.140074
+  Weight: 1.75781e-037
+  Step size 0.0833004
+    Cross maybe
 Cycle 112 done
 
 Cycle started
-  Cords: 0.760542 0.0454219 0.0619358
-  Weight: 1.73334e-034
-  Step size 0.00777425
-  Dir cos: -0.347865 0.689412 -0.635375
+  Cords: -0.385702 0.214446 0.2
+  Weight: 7.03125e-038
+  Step size 0.00703534
+  Dir cos: -0.584423 0.202562 -0.78576
 Cycle 113 done
 
 Cycle started
-  Cords: 0.757837 0.0507816 0.0569963
-  Weight: 8.66668e-035
-  Step size 0.0572852
-  Dir cos: 0.337383 0.933911 0.118247
+  Cords: -0.389814 0.215871 0.194472
+  Weight: 2.8125e-038
+  Step size 0.0601986
+  Dir cos: -0.561891 0.18157 -0.807038
 Cycle 114 done
 
 Cycle started
-  Cords: 0.777164 0.104281 0.0637701
-  Weight: 4.33334e-035
-  Step size 0.0189168
-  Dir cos: 0.300179 0.901307 -0.312311
+  Cords: -0.423639 0.226801 0.145889
+  Weight: 1.125e-038
+  Step size 0.114139
+    Cross maybe
 Cycle 115 done
 
 Cycle started
-  Cords: 0.782843 0.121331 0.0578621
-  Weight: 2.16667e-035
-  Step size 0.00314699
-  Dir cos: -0.414751 -0.173312 -0.893277
+  Cords: -0.454828 0.233525 0.1
+  Weight: 4.5e-039
+  Step size 0.0582482
+  Dir cos: -0.558035 0.120295 0.821052
 Cycle 116 done
 
 Cycle started
-  Cords: 0.781538 0.120785 0.055051
-  Weight: 1.08334e-035
-  Step size 0.128197
-  Dir cos: -0.915476 -0.0710368 -0.396053
+  Cords: -0.487333 0.240532 0.147825
+  Weight: 1.8e-039
+  Step size 0.00304061
+  Dir cos: -0.453981 0.182907 0.872036
 Cycle 117 done
 
 Cycle started
-  Cords: 0.664176 0.111679 0.004278
-  Weight: 5.41668e-036
-  Step size 0.0543836
-    Cross maybe
+  Cords: -0.488713 0.241088 0.150476
+  Weight: 7.2e-040
+  Step size 0.0310879
+  Dir cos: -0.459976 0.245132 0.853424
 Cycle 118 done
 
 Cycle started
-  Cords: 0.658108 0.111342 -1.19432e-019
-  Weight: 2.70834e-036
-  Step size 0.0469517
-  Dir cos: -0.816462 -0.0452399 0.575624
+  Cords: -0.503013 0.248708 0.177007
+  Weight: 2.88e-040
+  Step size 0.0434942
+  Dir cos: -0.862901 -0.375734 -0.337974
 Cycle 119 done
 
 Cycle started
-  Cords: 0.619774 0.109218 0.0270265
-  Weight: 1.35417e-036
-  Step size 0.10087
-  Dir cos: -0.681675 0.277669 0.676919
+  Cords: -0.540544 0.232366 0.162308
+  Weight: 1.152e-040
+  Step size 0.0180485
+  Dir cos: -0.938341 -0.0194264 -0.345165
 Cycle 120 done
 
 Cycle started
-  Cords: 0.551013 0.137227 0.0953075
-  Weight: 6.77085e-037
-  Step size 0.276073
-    Cross maybe
+  Cords: -0.55748 0.232015 0.156078
+  Weight: 4.608e-041
+  Step size 0.0768559
+  Dir cos: -0.865947 0.363283 -0.343745
 Cycle 121 done
 
 Cycle started
-  Cords: 0.548206 0.135962 0.1
-  Weight: 3.38542e-037
-  Step size 0.27046
-    Cross maybe
+  Cords: -0.624033 0.259936 0.129659
+  Weight: 1.8432e-041
+  Step size 0.0312744
+  Dir cos: -0.934673 -0.0704444 -0.34846
 Cycle 122 done
 
 Cycle started
-  Cords: 0.488377 0.109001 4.24194e-018
-  Weight: 1.69271e-037
-  Step size 0.150852
-    Cross maybe
+  Cords: -0.653264 0.257733 0.118761
+  Weight: 7.3728e-042
+  Step size 0.0035748
+  Dir cos: 0.480179 0.621973 -0.618529
 Cycle 123 done
 
 Cycle started
-  Cords: 0.428549 0.0820412 0.1
-  Weight: 8.46356e-038
-  Step size 0.031243
-  Dir cos: -0.500198 -0.225404 -0.836059
+  Cords: -0.651548 0.259956 0.11655
+  Weight: 2.94912e-042
+  Step size 0.00582669
+  Dir cos: 0.313208 0.607926 -0.729608
 Cycle 124 done
 
 Cycle started
-  Cords: 0.412922 0.0749989 0.073879
-  Weight: 4.23178e-038
-  Step size 0.0288127
-  Dir cos: 0.110246 -0.635986 -0.763785
+  Cords: -0.649723 0.263498 0.112299
+  Weight: 1.17965e-042
+  Step size 0.0759342
+  Dir cos: -0.757051 -0.648835 -0.0767253
 Cycle 125 done
 
 Cycle started
-  Cords: 0.416098 0.0566744 0.0518723
-  Weight: 2.11589e-038
-  Step size 0.00209321
-  Dir cos: -0.653771 0.252716 -0.713245
+  Cords: -0.707209 0.21423 0.106473
+  Weight: 4.71859e-043
+  Step size 0.00309377
+  Dir cos: -0.389047 -0.899487 -0.198908
 Cycle 126 done
 
 Cycle started
-  Cords: 0.41473 0.0572034 0.0503794
-  Weight: 1.05794e-038
-  Step size 0.0338637
-  Dir cos: 0.14266 0.42705 -0.892903
+  Cords: -0.708412 0.211447 0.105857
+  Weight: 1.88744e-043
+  Step size 0.0935401
+  Dir cos: -0.554575 -0.76861 0.318881
 Cycle 127 done
 
 Cycle started
-  Cords: 0.419561 0.0716649 0.0201424
-  Weight: 5.28972e-039
-  Step size 0.0278435
-    Cross maybe
+  Cords: -0.760287 0.139551 0.135685
+  Weight: 7.54975e-044
+  Step size 0.0149877
+  Dir cos: -0.577198 -0.544505 0.608569
 Cycle 128 done
 
 Cycle started
-  Cords: 0.417596 0.0761684 -2.5411e-020
-  Weight: 2.64486e-039
-  Step size 0.0071105
-  Dir cos: -0.094757 0.217216 0.971513
+  Cords: -0.768938 0.13139 0.144807
+  Weight: 3.0199e-044
+  Step size 0.0965511
+  Dir cos: -0.679668 -0.674937 0.287248
 Cycle 129 done
 
 Cycle started
-  Cords: 0.416922 0.077713 0.00690795
-  Weight: 1.32243e-039
-  Step size 0.0104127
-  Dir cos: 0.0742079 0.820317 0.567074
+  Cords: -0.834561 0.0662242 0.172541
+  Weight: 1.20796e-044
+  Step size 0.00433239
+  Dir cos: -0.53255 -0.794323 0.292303
 Cycle 130 done
 
 Cycle started
-  Cords: 0.417695 0.0862547 0.0128128
-  Weight: 6.61216e-040
-  Step size 0.0371169
-  Dir cos: -0.49508 0.8682 0.0335376
+  Cords: -0.836868 0.0627829 0.173807
+  Weight: 4.83184e-045
+  Step size 0.0600323
+    Cross maybe
 Cycle 131 done
 
 Cycle started
-  Cords: 0.399319 0.11848 0.0140576
-  Weight: 3.30608e-040
-  Step size 0.0354638
-  Dir cos: -0.488975 0.813481 -0.314886
+  Cords: -0.86281 0.0439145 0.2
+  Weight: 1.93274e-045
+  Step size 0.0186187
+  Dir cos: -0.626417 -0.455608 -0.632474
 Cycle 132 done
 
 Cycle started
-  Cords: 0.381978 0.147329 0.00289051
-  Weight: 1.65304e-040
-  Step size 0.0595364
-    Cross maybe
+  Cords: -0.874473 0.0354317 0.188224
+  Weight: 7.73094e-046
+  Step size 0.2558
+  Dir cos: -0.955146 -0.130734 -0.265714
 Cycle 133 done
 
 Cycle started
-  Cords: 0.38142 0.148784 -6.16216e-020
-  Weight: 8.26519e-041
-  Step size 0.0562521
-  Dir cos: -0.17012 0.443236 0.880114
+  Cords: -1.1188 0.00198984 0.120255
+  Weight: 3.09238e-046
+  Step size 0.105598
+    Cross maybe
 Cycle 134 done
 
 Cycle started
-  Cords: 0.37185 0.173717 0.0495083
-  Weight: 4.1326e-041
-  Step size 0.0389353
-  Dir cos: 0.276695 0.329122 0.902839
+  Cords: -1.18825 -0.00838207 0.1
+  Weight: 1.23695e-046
+  Step size 0.032512
+  Dir cos: -0.950294 -0.141913 0.277132
 Cycle 135 done
 
 Cycle started
-  Cords: 0.382623 0.186532 0.0846606
-  Weight: 2.0663e-041
-  Step size 0.00931648
-  Dir cos: 0.886781 0.306602 -0.345854
+  Cords: -1.21915 -0.012996 0.10901
+  Weight: 4.9478e-047
+  Step size 0.00783269
+  Dir cos: -0.550753 -0.595641 -0.584708
 Cycle 136 done
 
 Cycle started
-  Cords: 0.390885 0.189388 0.0814384
-  Weight: 1.03315e-041
-  Step size 0.0425486
-    Cross maybe
+  Cords: -1.22346 -0.0176614 0.10443
+  Weight: 1.97912e-047
+  Step size 0.0419665
+  Dir cos: 0.0930594 -0.995628 0.00809868
 Cycle 137 done
 
 Cycle started
-  Cords: 0.414043 0.203118 0.1
-  Weight: 5.16575e-042
-  Step size 0.00984766
-  Dir cos: 0.708186 0.419862 -0.567617
+  Cords: -1.21956 -0.0594444 0.10477
+  Weight: 7.91648e-048
+  Step size 0.0153263
+  Dir cos: 0.0495946 -0.99599 0.0744577
 Cycle 138 done
 
 Cycle started
-  Cords: 0.421017 0.207253 0.0944103
-  Weight: 2.58287e-042
-  Step size 0.0513611
-  Dir cos: 0.863633 0.310505 -0.397145
+  Cords: -1.2188 -0.0747092 0.105911
+  Weight: 3.16659e-048
+  Step size 0.0421985
+  Dir cos: 0.107632 -0.921773 0.372491
 Cycle 139 done
 
 Cycle started
-  Cords: 0.465374 0.223201 0.0740125
-  Weight: 1.29144e-042
-  Step size 0.0585591
-  Dir cos: 0.950296 0.228177 -0.211832
+  Cords: -1.21426 -0.113607 0.12163
+  Weight: 1.26664e-048
+  Step size 0.00748304
+  Dir cos: 0.0175664 -0.905187 -0.424651
 Cycle 140 done
 
 Cycle started
-  Cords: 0.521023 0.236563 0.0616078
-  Weight: 6.45718e-043
-  Step size 0.139844
-    Cross maybe
+  Cords: -1.21412 -0.12038 0.118452
+  Weight: 5.06655e-049
+  Step size 0.00806716
+  Dir cos: -0.414051 -0.847006 -0.333381
 Cycle 141 done
 
 Cycle started
-  Cords: 0.600738 0.189557 2.50722e-019
-  Weight: 3.22859e-043
-  Step size 0.0286707
-  Dir cos: 0.717033 -0.422812 0.55416
+  Cords: -1.21746 -0.127213 0.115763
+  Weight: 2.02662e-049
+  Step size 0.00748304
+  Dir cos: 0.0770185 -0.615779 -0.784146
 Cycle 142 done
 
 Cycle started
-  Cords: 0.621296 0.177435 0.0158882
-  Weight: 1.6143e-043
-  Step size 0.0652818
-    Cross maybe
+  Cords: -1.21689 -0.131821 0.109895
+  Weight: 8.10648e-050
+  Step size 0.00106118
+  Dir cos: 0.266163 -0.509529 -0.818253
 Cycle 143 done
 
 Cycle started
-  Cords: 0.67513 0.164219 -8.30092e-019
-  Weight: 8.07148e-044
-  Step size 0.00761701
-  Dir cos: 0.933575 -0.22918 0.275526
+  Cords: -1.21661 -0.132362 0.109027
+  Weight: 3.24259e-050
+  Step size 0.033374
+  Dir cos: 0.979194 0.202878 -0.00431373
 Cycle 144 done
 
 Cycle started
-  Cords: 0.682241 0.162474 0.00209869
-  Weight: 4.03574e-044
-  Step size 0.0083618
-  Dir cos: 0.808464 -0.540161 0.233692
+  Cords: -1.18393 -0.125591 0.108883
+  Weight: 1.29704e-050
+  Step size 0.0180485
+  Dir cos: 0.895651 0.423439 -0.136044
 Cycle 145 done
 
 Cycle started
-  Cords: 0.689001 0.157957 0.00405277
-  Weight: 2.01787e-044
-  Step size 0.094856
-  Dir cos: 0.763131 -0.595393 0.251275
+  Cords: -1.16776 -0.117948 0.106427
+  Weight: 5.18815e-051
+  Step size 0.0925755
+  Dir cos: 0.933337 0.35748 -0.0330067
 Cycle 146 done
 
 Cycle started
-  Cords: 0.761389 0.10148 0.0278877
-  Weight: 1.00893e-044
-  Step size 0.0527776
-  Dir cos: 0.344756 -0.715341 0.607808
+  Cords: -1.08136 -0.0848546 0.103372
+  Weight: 2.07526e-051
+  Step size 0.0891896
+  Dir cos: 0.214794 0.633307 0.743496
 Cycle 147 done
 
 Cycle started
-  Cords: 0.779584 0.0637263 0.0599664
-  Weight: 5.04467e-045
-  Step size 0.102011
-    Cross maybe
+  Cords: -1.0622 -0.0283702 0.169684
+  Weight: 8.30103e-052
+  Step size 0.0213855
+  Dir cos: 0.582328 0.643854 0.496332
 Cycle 148 done
 
 Cycle started
-  Cords: 0.800195 0.0479245 0.1
-  Weight: 2.52234e-045
-  Step size 0.0542914
-  Dir cos: 0.431902 -0.331138 -0.838933
+  Cords: -1.04975 -0.014601 0.180298
+  Weight: 3.32041e-052
+  Step size 0.345388
+    Cross maybe
 Cycle 149 done
 
 Cycle started
-  Cords: 0.823643 0.0299465 0.0544532
-  Weight: 1.26117e-045
-  Step size 0.0439738
-  Dir cos: 0.463885 -0.609665 -0.642743
+  Cords: -1.02685 0.0168912 0.2
+  Weight: 1.32817e-052
+  Step size 0.301751
+    Cross maybe
 Cycle 150 done
 
 Cycle started
-  Cords: 0.844042 0.00313723 0.0261893
-  Weight: 6.30584e-046
-  Step size 0.00219759
-  Dir cos: 0.251989 -0.690812 -0.677702
+  Cords: -0.910639 0.176735 0.1
+  Weight: 5.31266e-053
+  Step size 0.080268
+  Dir cos: 0.524693 0.721695 0.451501
 Cycle 151 done
 
 Cycle started
-  Cords: 0.844596 0.0016191 0.0247
-  Weight: 3.15292e-046
-  Step size 0.094856
-    Cross maybe
+  Cords: -0.868523 0.234664 0.136241
+  Weight: 2.12506e-053
+  Step size 0.0127446
+  Dir cos: 0.899817 0.427892 0.0850727
 Cycle 152 done
 
 Cycle started
-  Cords: 0.861825 -0.0232369 -1.7686e-018
-  Weight: 1.57646e-046
-  Step size 0.0558079
-  Dir cos: 0.441231 -0.636548 0.632552
+  Cords: -0.857055 0.240117 0.137325
+  Weight: 8.50026e-054
+  Step size 0.0109078
+  Dir cos: 0.772294 0.404755 0.489627
 Cycle 153 done
 
 Cycle started
-  Cords: 0.886449 -0.0587613 0.0353014
-  Weight: 7.8823e-047
-  Step size 0.0161482
-  Dir cos: 0.195055 -0.979528 -0.0497855
+  Cords: -0.848631 0.244532 0.142666
+  Weight: 3.4001e-054
+  Step size 0.0145176
+  Dir cos: -0.100722 -0.442106 0.89129
 Cycle 154 done
 
 Cycle started
-  Cords: 0.889599 -0.0745789 0.0344974
-  Weight: 3.94115e-047
-  Step size 0.0135904
-  Dir cos: -0.378978 -0.882633 0.278091
+  Cords: -0.850093 0.238114 0.155606
+  Weight: 1.36004e-054
+  Step size 0.00198904
+  Dir cos: 0.383955 -0.658194 0.64758
 Cycle 155 done
 
 Cycle started
-  Cords: 0.884448 -0.0865743 0.0382768
-  Weight: 1.97058e-047
-  Step size 0.0235002
-  Dir cos: -0.784174 -0.468344 0.407093
+  Cords: -0.84933 0.236804 0.156894
+  Weight: 5.44017e-055
+  Step size 0.0291698
+  Dir cos: 0.562118 -0.28573 0.776133
 Cycle 156 done
 
 Cycle started
-  Cords: 0.86602 -0.0975805 0.0478436
-  Weight: 9.85288e-048
-  Step size 0.0833004
-    Cross maybe
+  Cords: -0.832933 0.22847 0.179533
+  Weight: 2.17607e-055
+  Step size 0.0162173
+  Dir cos: 0.741427 -0.0229252 0.670642
 Cycle 157 done
 
 Cycle started
-  Cords: 0.849563 -0.147449 0.1
-  Weight: 4.92644e-048
-  Step size 0.00928652
-  Dir cos: -0.222354 -0.673779 -0.704685
+  Cords: -0.820909 0.228098 0.190409
+  Weight: 8.70427e-056
+  Step size 0.0388264
+    Cross maybe
 Cycle 158 done
 
 Cycle started
-  Cords: 0.847498 -0.153707 0.0934559
-  Weight: 2.46322e-048
-  Step size 0.087435
-  Dir cos: -0.950096 -0.0802758 -0.301452
+  Cords: -0.810927 0.223959 0.2
+  Weight: 3.48171e-056
+  Step size 0.0243785
+  Dir cos: 0.690868 -0.28644 -0.663817
 Cycle 159 done
 
 Cycle started
-  Cords: 0.764426 -0.160725 0.0670985
-  Weight: 1.23161e-048
-  Step size 0.08437
-    Cross maybe
+  Cords: -0.794085 0.216976 0.183817
+  Weight: 1.39268e-056
+  Step size 0.00162616
+  Dir cos: 0.805995 0.269469 -0.527029
 Cycle 160 done
 
 Cycle started
-  Cords: 0.731724 -0.184198 0.1
-  Weight: 6.15805e-049
-  Step size 0.0323807
-  Dir cos: -0.629016 -0.451483 -0.632852
+  Cords: -0.792774 0.217415 0.18296
+  Weight: 5.57073e-057
+  Step size 0.0667801
+    Cross maybe
 Cycle 161 done
 
 Cycle started
-  Cords: 0.711356 -0.198817 0.0795078
-  Weight: 3.07902e-049
-  Step size 0.0660253
-    Cross maybe
+  Cords: -0.738866 0.189718 0.2
+  Weight: 2.22829e-057
+  Step size 0.00382313
+  Dir cos: 0.856277 -0.439924 -0.27066
 Cycle 162 done
 
 Cycle started
-  Cords: 0.711201 -0.192222 0.1
-  Weight: 1.53951e-049
-  Step size 0.0444974
-  Dir cos: -0.00719715 0.306362 -0.951888
+  Cords: -0.735592 0.188036 0.198965
+  Weight: 8.91317e-058
+  Step size 0.180596
+  Dir cos: 0.125093 -0.988669 -0.0829833
 Cycle 163 done
 
 Cycle started
-  Cords: 0.710881 -0.178589 0.0576435
-  Weight: 7.69756e-050
-  Step size 0.026297
-  Dir cos: 0.106096 0.0568097 -0.992732
+  Cords: -0.713001 0.00948696 0.183979
+  Weight: 3.56527e-058
+  Step size 0.0482478
+  Dir cos: 0.131606 0.906844 -0.400392
 Cycle 164 done
 
 Cycle started
-  Cords: 0.713671 -0.177095 0.0315377
-  Weight: 3.84878e-050
-  Step size 0.0124231
-  Dir cos: 0.71803 0.0346484 -0.695149
+  Cords: -0.706651 0.0532402 0.164661
+  Weight: 1.42611e-058
+  Step size 0.0389353
+  Dir cos: -0.82439 -0.566018 0.00218885
 Cycle 165 done
 
 Cycle started
-  Cords: 0.722591 -0.176665 0.0229018
-  Weight: 1.92439e-050
-  Step size 0.0426658
-  Dir cos: 0.820289 0.491197 0.293004
+  Cords: -0.738749 0.0312021 0.164746
+  Weight: 5.70443e-059
+  Step size 0.0130682
+  Dir cos: -0.806705 -0.218788 -0.548961
 Cycle 166 done
 
 Cycle started
-  Cords: 0.757589 -0.155708 0.035403
-  Weight: 9.62195e-051
-  Step size 0.0913175
-  Dir cos: 0.791872 0.334289 0.511067
+  Cords: -0.749291 0.028343 0.157572
+  Weight: 2.28177e-059
+  Step size 0.00209321
+  Dir cos: -0.559892 0.659907 -0.501042
 Cycle 167 done
 
 Cycle started
-  Cords: 0.829901 -0.125181 0.0820724
-  Weight: 4.81098e-051
-  Step size 0.0711479
-    Cross maybe
+  Cords: -0.750463 0.0297243 0.156523
+  Weight: 9.12708e-060
+  Step size 0.0391536
+  Dir cos: -0.458684 0.761853 0.457372
 Cycle 168 done
 
 Cycle started
-  Cords: 0.833108 -0.123274 0.1
-  Weight: 2.40549e-051
-  Step size 0.0528363
-  Dir cos: 0.175114 0.104153 -0.979024
+  Cords: -0.768422 0.0595536 0.174431
+  Weight: 3.65083e-060
+  Step size 0.00713582
+  Dir cos: -0.411381 0.726947 0.549831
 Cycle 169 done
 
 Cycle started
-  Cords: 0.84236 -0.117771 0.0482721
-  Weight: 1.20274e-051
-  Step size 0.0459397
-  Dir cos: -0.67436 -0.737671 0.0328738
+  Cords: -0.771358 0.0647409 0.178355
+  Weight: 1.46033e-060
+  Step size 0.0792373
+    Cross maybe
 Cycle 170 done
-
-Cycle started
-  Cords: 0.81138 -0.151659 0.0497823
-  Weight: 6.01372e-052
-  Step size 0.0750292
-  Dir cos: -0.840846 -0.430935 0.327526
-Cycle 171 done
-
-Cycle started
-  Cords: 0.748292 -0.183992 0.0743563
-  Weight: 3.00686e-052
-  Step size 0.0554331
-  Dir cos: -0.794016 -0.578579 0.186505
-Cycle 172 done
-
-Cycle started
-  Cords: 0.704278 -0.216065 0.0846949
-  Weight: 1.50343e-052
-  Step size 0.0512216
-  Dir cos: -0.773532 -0.576557 0.263115
-Cycle 173 done
-
-Cycle started
-  Cords: 0.664656 -0.245597 0.0981721
-  Weight: 7.51715e-053
-  Step size 0.0724085
-    Cross maybe
-Cycle 174 done
-
-Cycle started
-  Cords: 0.661712 -0.245654 0.1
-  Weight: 3.75858e-053
-  Step size 0.0689424
-  Dir cos: -0.849471 -0.0165315 -0.527377
-Cycle 175 done
-
-Cycle started
-  Cords: 0.603147 -0.246794 0.0636414
-  Weight: 1.87929e-053
-  Step size 0.163508
-  Dir cos: -0.873654 -0.307347 -0.377183
-Cycle 176 done
-
-Cycle started
-  Cords: 0.460297 -0.297048 0.00196878
-  Weight: 9.39644e-054
-  Step size 0.103972
-  Dir cos: -0.925168 -0.314163 0.212992
-Cycle 177 done
-
-Cycle started
-  Cords: 0.364106 -0.329712 0.024114
-  Weight: 4.69822e-054
-  Step size 0.118223
-  Dir cos: -0.945905 -0.124556 0.299584
-Cycle 178 done
-
-Cycle started
-  Cords: 0.252278 -0.344437 0.0595317
-  Weight: 2.34911e-054
-  Step size 0.345388
-    Cross maybe
-Cycle 179 done
-
-Cycle started
-  Cords: 0.19733 -0.386389 0.1
-  Weight: 1.17455e-054
-  Step size 0.265282
-    Cross maybe
-Cycle 180 done
-
-Cycle started
-  Cords: 0.0615491 -0.490053 5.45489e-018
-  Weight: 5.87277e-055
-  Step size 0.0673359
-  Dir cos: -0.685947 -0.523701 0.505187
-Cycle 181 done
-
-Cycle started
-  Cords: 0.0153602 -0.525317 0.0340172
-  Weight: 2.93639e-055
-  Step size 0.0513611
-  Dir cos: 0.276294 -0.470861 0.837826
-Cycle 182 done
-
-Cycle started
-  Cords: 0.029551 -0.549501 0.0770489
-  Weight: 1.46819e-055
-  Step size 0.132963
-    Cross maybe
-Cycle 183 done
-
-Cycle started
-  Cords: 0.0405744 -0.568983 0.1
-  Weight: 7.34097e-056
-  Step size 0.100903
-  Dir cos: 0.34384 -0.607681 -0.715889
-Cycle 184 done
-
-Cycle started
-  Cords: 0.075269 -0.6303 0.0277644
-  Weight: 3.67048e-056
-  Step size 0.0472088
-    Cross maybe
-Cycle 185 done
-
-Cycle started
-  Cords: 0.0895273 -0.661233 2.13791e-018
-  Weight: 1.83524e-056
-  Step size 0.00326547
-  Dir cos: 0.32447 -0.703932 0.631822
-Cycle 186 done
-
-Cycle started
-  Cords: 0.0905869 -0.663532 0.0020632
-  Weight: 9.17621e-057
-  Step size 0.0151906
-  Dir cos: -0.37968 -0.83908 0.389599
-Cycle 187 done
-
-Cycle started
-  Cords: 0.0848193 -0.676278 0.00798143
-  Weight: 4.5881e-057
-  Step size 0.0301653
-  Dir cos: -0.598195 -0.79643 -0.0886703
-Cycle 188 done
-
-Cycle started
-  Cords: 0.0667746 -0.700302 0.00530666
-  Weight: 2.29405e-057
-  Step size 0.138231
-    Cross maybe
-Cycle 189 done
-
-Cycle started
-  Cords: 0.057861 -0.707067 -2.88838e-019
-  Weight: 1.14703e-057
-  Step size 0.125847
-  Dir cos: -0.719747 -0.546217 0.428499
-Cycle 190 done
-
-Cycle started
-  Cords: -0.0327168 -0.775807 0.0539252
-  Weight: 5.73513e-058
-  Step size 0.00245951
-  Dir cos: 0.330972 -0.825186 -0.457739
-Cycle 191 done
-
-Cycle started
-  Cords: -0.0319028 -0.777836 0.0527994
-  Weight: 2.86757e-058
-  Step size 0.0445799
-  Dir cos: 0.042977 -0.68745 -0.724959
-Cycle 192 done
-
-Cycle started
-  Cords: -0.0299869 -0.808483 0.0204808
-  Weight: 1.43378e-058
-  Step size 0.0301653
-  Dir cos: 0.234187 -0.897959 -0.372594
-Cycle 193 done
-
-Cycle started
-  Cords: -0.0229225 -0.83557 0.00924135
-  Weight: 7.16891e-059
-  Step size 0.0434942
-    Cross maybe
-Cycle 194 done
-
-Cycle started
-  Cords: -0.028624 -0.834443 -6.43745e-020
-  Weight: 3.58446e-059
-  Step size 0.0325774
-  Dir cos: -0.522259 0.103183 0.846521
-Cycle 195 done
-
-Cycle started
-  Cords: -0.0456378 -0.831082 0.0275774
-  Weight: 1.79223e-059
-  Step size 0.130865
-    Cross maybe
-Cycle 196 done
-
-Cycle started
-  Cords: -0.118912 -0.771638 0.1
-  Weight: 8.96114e-060
-  Step size 0.0119205
-  Dir cos: -0.61604 0.499762 -0.608878
-Cycle 197 done
-
-Cycle started
-  Cords: -0.126256 -0.765681 0.0927418
-  Weight: 4.48057e-060
-  Step size 0.0267218
-  Dir cos: -0.185015 0.327215 -0.926661
-Cycle 198 done
-
-Cycle started
-  Cords: -0.1312 -0.756937 0.0679798
-  Weight: 2.24029e-060
-  Step size 0.0883046
-    Cross maybe
-Cycle 199 done
-
-Cycle started
-  Cords: -0.165341 -0.729004 -4.74338e-018
-  Weight: 1.12014e-060
-  Step size 0.00726664
-  Dir cos: -0.421304 0.344688 0.838864
-Cycle 200 done
 
 Photon simulated..
 
@@ -2816,3 +2288,3232 @@ Photon packet nr. 2
 
 Specular reflectance: 0.1
 Cycle started
+  Cords: 0 0 0
+  Weight: 0.9
+  Step size 0.0108457
+  Dir cos: 0 0 1
+Cycle 1 done
+
+Cycle started
+  Cords: 0 0 0.0108457
+  Weight: 0.45
+  Step size 0.0799744
+  Dir cos: 0.0983245 0.515435 0.851269
+Cycle 2 done
+
+Cycle started
+  Cords: 0.00786344 0.0412216 0.0789254
+  Weight: 0.225
+  Step size 0.0897884
+    Cross maybe
+Crossing
+Cycle 3 done
+
+Cycle started
+  Cords: 0.00795365 0.0544652 0.1
+  Weight: 0.1125
+  Step size 0.0648978
+  Dir cos: 0.00498336 0.731599 0.681717
+Cycle 4 done
+
+Cycle started
+  Cords: 0.00827706 0.101944 0.144242
+  Weight: 0.045
+  Step size 0.092258
+    Cross maybe
+Cycle 5 done
+
+Cycle started
+  Cords: 0.0017597 0.149999 0.2
+  Weight: 0.018
+  Step size 0.0183617
+  Dir cos: -0.088196 0.650295 -0.754545
+Cycle 6 done
+
+Cycle started
+  Cords: 0.000140272 0.161939 0.186145
+  Weight: 0.0072
+  Step size 0.0965511
+    Cross maybe
+Cycle 7 done
+
+Cycle started
+  Cords: -0.0349596 0.184655 0.1
+  Weight: 0.00288
+  Step size 0.00079625
+  Dir cos: -0.36656 0.237224 0.899644
+Cycle 8 done
+
+Cycle started
+  Cords: -0.0352514 0.184843 0.100716
+  Weight: 0.001152
+  Step size 0.055131
+  Dir cos: -0.331007 0.701515 0.631119
+Cycle 9 done
+
+Cycle started
+  Cords: -0.0535002 0.223519 0.135511
+  Weight: 0.0004608
+  Step size 0.00679099
+  Dir cos: 0.136745 0.66685 0.732538
+Cycle 10 done
+
+Cycle started
+  Cords: -0.0525715 0.228047 0.140485
+  Weight: 0.00018432
+  Step size 0.0013172
+  Dir cos: -0.476969 -0.866881 -0.144976
+Cycle 11 done
+
+Cycle started
+  Cords: -0.0531998 0.226905 0.140294
+  Weight: 7.3728e-005
+  Step size 0.155055
+    Cross maybe
+Cycle 12 done
+
+Cycle started
+  Cords: -0.0869247 0.11872 0.1
+  Weight: 2.94912e-005
+  Step size 0.0347841
+  Dir cos: -0.280408 -0.899514 0.33503
+Cycle 13 done
+
+Cycle started
+  Cords: -0.0966784 0.0874316 0.111654
+  Weight: 1.17965e-005
+  Step size 0.113651
+  Dir cos: 0.335028 -0.675361 0.656996
+Cycle 14 done
+
+Cycle started
+  Cords: -0.0586021 0.0106758 0.186322
+  Weight: 4.71859e-006
+  Step size 0.0490415
+    Cross maybe
+Cycle 15 done
+
+Cycle started
+  Cords: -0.0560436 0.00372575 0.2
+  Weight: 1.88744e-006
+  Step size 0.0334873
+  Dir cos: 0.164487 -0.44683 -0.879367
+Cycle 16 done
+
+Cycle started
+  Cords: -0.0505354 -0.0112374 0.170552
+  Weight: 7.54975e-007
+  Step size 0.0122311
+  Dir cos: -0.604613 -0.732746 -0.312293
+Cycle 17 done
+
+Cycle started
+  Cords: -0.0579305 -0.0201997 0.166733
+  Weight: 3.0199e-007
+  Step size 0.0331794
+  Dir cos: -0.0346799 -0.939477 0.340852
+Cycle 18 done
+
+Cycle started
+  Cords: -0.0590812 -0.051371 0.178042
+  Weight: 1.20796e-007
+  Step size 0.0592085
+  Dir cos: 0.900074 0.150537 -0.408907
+Cycle 19 done
+
+Cycle started
+  Cords: -0.00578911 -0.0424579 0.153831
+  Weight: 4.83184e-008
+  Step size 0.017195
+  Dir cos: 0.618509 -0.732348 0.284805
+Cycle 20 done
+
+Cycle started
+  Cords: 0.00484614 -0.0550506 0.158728
+  Weight: 1.93274e-008
+  Step size 0.0281059
+  Dir cos: -0.0805043 0.915211 -0.394853
+Cycle 21 done
+
+Cycle started
+  Cords: 0.00258349 -0.0293278 0.147631
+  Weight: 7.73094e-009
+  Step size 0.160944
+    Cross maybe
+Cycle 22 done
+
+Cycle started
+  Cords: -0.00371976 -0.050615 0.2
+  Weight: 3.09238e-009
+  Step size 0.104063
+  Dir cos: -0.110815 -0.374244 -0.920685
+Cycle 23 done
+
+Cycle started
+  Cords: -0.0152515 -0.08956 0.104191
+  Weight: 1.23695e-009
+  Step size 0.00610838
+    Cross maybe
+Cycle 24 done
+
+Cycle started
+  Cords: -0.0160399 -0.089936 0.1
+  Weight: 4.9478e-010
+  Step size 0.00182767
+  Dir cos: -0.184155 -0.0878551 0.978963
+Cycle 25 done
+
+Cycle started
+  Cords: -0.0163764 -0.0900966 0.101789
+  Weight: 1.97912e-010
+  Step size 0.0150553
+  Dir cos: 0.363429 -0.45221 0.814509
+Cycle 26 done
+
+Cycle started
+  Cords: -0.0109049 -0.0969047 0.114052
+  Weight: 7.91648e-011
+  Step size 0.110364
+    Cross maybe
+Cycle 27 done
+
+Cycle started
+  Cords: -0.00151429 -0.102768 0.2
+  Weight: 3.16659e-011
+  Step size 0.0237055
+  Dir cos: 0.108364 -0.0676612 -0.991806
+Cycle 28 done
+
+Cycle started
+  Cords: 0.00105454 -0.104372 0.176489
+  Weight: 1.26664e-011
+  Step size 0.0217704
+  Dir cos: 0.0675273 -0.0662553 -0.995515
+Cycle 29 done
+
+Cycle started
+  Cords: 0.00252464 -0.105814 0.154816
+  Weight: 5.06655e-012
+  Step size 0.157328
+    Cross maybe
+Cycle 30 done
+
+Cycle started
+  Cords: 0.0035838 -0.0871315 0.1
+  Weight: 2.02662e-012
+  Step size 0.0994058
+  Dir cos: 0.018286 0.322554 0.946374
+Cycle 31 done
+
+Cycle started
+  Cords: 0.00540153 -0.0550678 0.194075
+  Weight: 8.10648e-013
+  Step size 0.135153
+    Cross maybe
+Cycle 32 done
+
+Cycle started
+  Cords: 0.00586611 -0.0479473 0.2
+  Weight: 3.24259e-013
+  Step size 0.125878
+  Dir cos: 0.0500899 0.767725 -0.638819
+Cycle 33 done
+
+Cycle started
+  Cords: 0.0121713 0.0486927 0.119587
+  Weight: 1.29704e-013
+  Step size 0.00853942
+  Dir cos: 0.793777 0.335634 0.507216
+Cycle 34 done
+
+Cycle started
+  Cords: 0.0189497 0.0515588 0.123918
+  Weight: 5.18815e-014
+  Step size 0.101248
+  Dir cos: 0.43174 0.863819 0.259648
+Cycle 35 done
+
+Cycle started
+  Cords: 0.0626624 0.139018 0.150207
+  Weight: 2.07526e-014
+  Step size 0.0469524
+  Dir cos: 0.452541 0.165589 -0.876235
+Cycle 36 done
+
+Cycle started
+  Cords: 0.0839103 0.146793 0.109065
+  Weight: 8.30103e-015
+  Step size 0.0189168
+    Cross maybe
+Cycle 37 done
+
+Cycle started
+  Cords: 0.0887645 0.152915 0.1
+  Weight: 3.32041e-015
+  Step size 0.00694944
+  Dir cos: 0.405621 0.511524 0.757506
+Cycle 38 done
+
+Cycle started
+  Cords: 0.0915834 0.15647 0.105264
+  Weight: 1.32817e-015
+  Step size 0.00172957
+  Dir cos: 0.258688 -0.0686909 0.963516
+Cycle 39 done
+
+Cycle started
+  Cords: 0.0920308 0.156351 0.106931
+  Weight: 5.31266e-016
+  Step size 0.0537936
+  Dir cos: -0.258067 0.560355 0.787022
+Cycle 40 done
+
+Cycle started
+  Cords: 0.0781484 0.186494 0.149267
+  Weight: 2.12506e-016
+  Step size 0.0265514
+  Dir cos: 0.884714 0.203396 0.419417
+Cycle 41 done
+
+Cycle started
+  Cords: 0.101639 0.191895 0.160404
+  Weight: 8.50026e-017
+  Step size 0.180596
+    Cross maybe
+Cycle 42 done
+
+Cycle started
+  Cords: 0.108694 0.239708 0.2
+  Weight: 3.4001e-017
+  Step size 0.118116
+  Dir cos: 0.112918 0.765255 -0.633747
+Cycle 43 done
+
+Cycle started
+  Cords: 0.122031 0.330097 0.125144
+  Weight: 1.36004e-017
+  Step size 0.0131983
+  Dir cos: 0.0188258 0.555594 0.83124
+Cycle 44 done
+
+Cycle started
+  Cords: 0.12228 0.33743 0.136115
+  Weight: 5.44017e-018
+  Step size 0.00235458
+  Dir cos: -0.0335492 -0.27903 0.959696
+Cycle 45 done
+
+Cycle started
+  Cords: 0.122201 0.336773 0.138375
+  Weight: 2.17607e-018
+  Step size 0.118758
+    Cross maybe
+Cycle 46 done
+
+Cycle started
+  Cords: 0.101794 0.348953 0.2
+  Weight: 8.70427e-019
+  Step size 0.052709
+  Dir cos: -0.308965 0.184417 -0.933023
+Cycle 47 done
+
+Cycle started
+  Cords: 0.0855088 0.358673 0.150821
+  Weight: 3.48171e-019
+  Step size 0.0393729
+  Dir cos: 0.0845365 0.795056 -0.600616
+Cycle 48 done
+
+Cycle started
+  Cords: 0.0888373 0.389977 0.127173
+  Weight: 1.39268e-019
+  Step size 0.130865
+    Cross maybe
+Cycle 49 done
+
+Cycle started
+  Cords: 0.0797875 0.414638 0.1
+  Weight: 5.57073e-020
+  Step size 0.0930698
+  Dir cos: -0.239443 0.652498 0.718967
+Cycle 50 done
+
+Cycle started
+  Cords: 0.0575026 0.475366 0.166914
+  Weight: 2.22829e-020
+  Step size 0.0605331
+    Cross maybe
+Cycle 51 done
+
+Cycle started
+  Cords: 0.065325 0.493911 0.2
+  Weight: 8.91317e-021
+  Step size 0.0218062
+  Dir cos: 0.20199 0.478859 -0.854339
+Cycle 52 done
+
+Cycle started
+  Cords: 0.0697297 0.504353 0.18137
+  Weight: 3.56527e-021
+  Step size 0.00549074
+  Dir cos: 0.486635 -0.342896 -0.803497
+Cycle 53 done
+
+Cycle started
+  Cords: 0.0724017 0.50247 0.176958
+  Weight: 1.42611e-021
+  Step size 0.0888928
+  Dir cos: -0.308258 -0.4459 -0.840328
+Cycle 54 done
+
+Cycle started
+  Cords: 0.0449997 0.462833 0.102259
+  Weight: 5.70443e-022
+  Step size 0.0277563
+    Cross maybe
+Cycle 55 done
+
+Cycle started
+  Cords: 0.0441677 0.461562 0.1
+  Weight: 2.28177e-022
+  Step size 0.0250338
+  Dir cos: -0.305601 -0.466902 0.829826
+Cycle 56 done
+
+Cycle started
+  Cords: 0.0365174 0.449873 0.120774
+  Weight: 9.12708e-023
+  Step size 0.0171245
+  Dir cos: -0.0737609 0.875332 0.477863
+Cycle 57 done
+
+Cycle started
+  Cords: 0.0352543 0.464863 0.128957
+  Weight: 3.65083e-023
+  Step size 0.0299828
+  Dir cos: -0.953533 0.282821 0.103856
+Cycle 58 done
+
+Cycle started
+  Cords: 0.00666462 0.473343 0.132071
+  Weight: 1.46033e-023
+  Step size 0.0593722
+  Dir cos: 0.960494 0.270048 0.0672713
+Cycle 59 done
+
+Cycle started
+  Cords: 0.0636912 0.489376 0.136065
+  Weight: 5.84133e-024
+  Step size 0.00256466
+  Dir cos: 0.70041 0.665932 0.256826
+Cycle 60 done
+
+Cycle started
+  Cords: 0.0654875 0.491084 0.136723
+  Weight: 2.33653e-024
+  Step size 0.0181922
+  Dir cos: 0.774145 0.291933 0.561671
+Cycle 61 done
+
+Cycle started
+  Cords: 0.0795709 0.496395 0.146941
+  Weight: 9.34613e-025
+  Step size 0.0569717
+  Dir cos: 0.786957 -0.3084 0.534404
+Cycle 62 done
+
+Cycle started
+  Cords: 0.124405 0.478825 0.177387
+  Weight: 3.73845e-025
+  Step size 0.114139
+    Cross maybe
+Cycle 63 done
+
+Cycle started
+  Cords: 0.152862 0.482518 0.2
+  Weight: 1.49538e-025
+  Step size 0.0776051
+  Dir cos: 0.778901 0.101081 -0.618947
+Cycle 64 done
+
+Cycle started
+  Cords: 0.213308 0.490362 0.151967
+  Weight: 5.98153e-026
+  Step size 0.0819949
+  Dir cos: 0.808697 0.392263 -0.438336
+Cycle 65 done
+
+Cycle started
+  Cords: 0.279617 0.522526 0.116025
+  Weight: 2.39261e-026
+  Step size 0.0629391
+    Cross maybe
+Cycle 66 done
+
+Cycle started
+  Cords: 0.292926 0.531177 0.1
+  Weight: 9.57044e-027
+  Step size 0.0403831
+  Dir cos: 0.590017 0.383556 0.710468
+Cycle 67 done
+
+Cycle started
+  Cords: 0.316752 0.546666 0.128691
+  Weight: 3.82818e-027
+  Step size 0.0151229
+  Dir cos: 0.386662 0.917171 0.0963866
+Cycle 68 done
+
+Cycle started
+  Cords: 0.3226 0.560537 0.130149
+  Weight: 1.53127e-027
+  Step size 0.195601
+    Cross maybe
+Cycle 69 done
+
+Cycle started
+  Cords: 0.345146 0.578833 0.2
+  Weight: 6.12508e-028
+  Step size 0.119955
+    Cross maybe
+Cycle 70 done
+
+Cycle started
+  Cords: 0.377422 0.605027 0.1
+  Weight: 2.45003e-028
+  Step size 0.0116601
+  Dir cos: 0.298042 0.24187 0.923401
+Cycle 71 done
+
+Cycle started
+  Cords: 0.380897 0.607847 0.110767
+  Weight: 9.80013e-029
+  Step size 5.0025e-005
+  Dir cos: 0.264838 0.382223 0.885306
+Cycle 72 done
+
+Cycle started
+  Cords: 0.38091 0.607866 0.110811
+  Weight: 3.92005e-029
+  Step size 0.0636483
+  Dir cos: 0.871855 0.0582001 0.486294
+Cycle 73 done
+
+Cycle started
+  Cords: 0.436403 0.61157 0.141763
+  Weight: 1.56802e-029
+  Step size 0.00937676
+  Dir cos: 0.738915 -0.63863 -0.214841
+Cycle 74 done
+
+Cycle started
+  Cords: 0.443331 0.605582 0.139748
+  Weight: 6.27208e-030
+  Step size 0.108578
+  Dir cos: 0.988738 -0.147877 0.0229989
+Cycle 75 done
+
+Cycle started
+  Cords: 0.550686 0.589526 0.142246
+  Weight: 2.50883e-030
+  Step size 0.0546812
+  Dir cos: 0.772943 -0.476437 0.419007
+Cycle 76 done
+
+Cycle started
+  Cords: 0.592952 0.563474 0.165157
+  Weight: 1.00353e-030
+  Step size 0.106432
+  Dir cos: -0.0420896 -0.994752 -0.0932549
+Cycle 77 done
+
+Cycle started
+  Cords: 0.588472 0.4576 0.155232
+  Weight: 4.01413e-031
+  Step size 0.0129385
+  Dir cos: 0.346191 -0.909139 0.231554
+Cycle 78 done
+
+Cycle started
+  Cords: 0.592951 0.445838 0.158228
+  Weight: 1.60565e-031
+  Step size 0.0198748
+  Dir cos: 0.558993 -0.775699 -0.292947
+Cycle 79 done
+
+Cycle started
+  Cords: 0.604061 0.430421 0.152406
+  Weight: 6.42261e-032
+  Step size 0.184444
+    Cross maybe
+Cycle 80 done
+
+Cycle started
+  Cords: 0.625087 0.378526 0.1
+  Weight: 2.56905e-032
+  Step size 0.107753
+  Dir cos: 0.274161 -0.676673 0.683337
+Cycle 81 done
+
+Cycle started
+  Cords: 0.654629 0.305612 0.173632
+  Weight: 1.02762e-032
+  Step size 0.00510164
+  Dir cos: 0.699407 -0.177609 0.692304
+Cycle 82 done
+
+Cycle started
+  Cords: 0.658197 0.304706 0.177163
+  Weight: 4.11047e-033
+  Step size 0.0194304
+  Dir cos: 0.591062 -0.594966 0.544666
+Cycle 83 done
+
+Cycle started
+  Cords: 0.669681 0.293146 0.187747
+  Weight: 1.64419e-033
+  Step size 0.0502561
+    Cross maybe
+Cycle 84 done
+
+Cycle started
+  Cords: 0.675363 0.30318 0.2
+  Weight: 6.57676e-034
+  Step size 0.0334301
+  Dir cos: 0.337657 0.596357 -0.728249
+Cycle 85 done
+
+Cycle started
+  Cords: 0.686651 0.323116 0.175655
+  Weight: 2.6307e-034
+  Step size 0.000150225
+  Dir cos: 0.611371 -0.165202 0.773908
+Cycle 86 done
+
+Cycle started
+  Cords: 0.686742 0.323092 0.175771
+  Weight: 1.05228e-034
+  Step size 0.00599551
+  Dir cos: 0.526501 0.458087 0.716207
+Cycle 87 done
+
+Cycle started
+  Cords: 0.689899 0.325838 0.180065
+  Weight: 4.20912e-035
+  Step size 0.00967924
+  Dir cos: 0.348694 0.277897 0.89509
+Cycle 88 done
+
+Cycle started
+  Cords: 0.693274 0.328528 0.188729
+  Weight: 1.68365e-035
+  Step size 0.051501
+    Cross maybe
+Cycle 89 done
+
+Cycle started
+  Cords: 0.696197 0.330871 0.2
+  Weight: 6.7346e-036
+  Step size 0.0396235
+  Dir cos: 0.24607 0.197241 -0.948971
+Cycle 90 done
+
+Cycle started
+  Cords: 0.705947 0.338686 0.162398
+  Weight: 2.69384e-036
+  Step size 0.0620664
+  Dir cos: 0.158898 0.631457 -0.758955
+Cycle 91 done
+
+Cycle started
+  Cords: 0.715809 0.377878 0.115293
+  Weight: 1.07754e-036
+  Step size 0.0247969
+  Dir cos: 0.0300314 0.924645 -0.379644
+Cycle 92 done
+
+Cycle started
+  Cords: 0.716554 0.400807 0.105879
+  Weight: 4.31014e-037
+  Step size 0.0226278
+  Dir cos: -0.0807455 0.996238 -0.0314674
+Cycle 93 done
+
+Cycle started
+  Cords: 0.714727 0.423349 0.105167
+  Weight: 1.72406e-037
+  Step size 0.019063
+  Dir cos: 0.148642 0.988222 -0.0363665
+Cycle 94 done
+
+Cycle started
+  Cords: 0.71756 0.442188 0.104474
+  Weight: 6.89623e-038
+  Step size 0.0728358
+  Dir cos: 0.127457 0.99126 0.0340386
+Cycle 95 done
+
+Cycle started
+  Cords: 0.726844 0.514387 0.106953
+  Weight: 2.75849e-038
+  Step size 0.0382859
+  Dir cos: -0.16629 0.847873 0.503448
+Cycle 96 done
+
+Cycle started
+  Cords: 0.720477 0.546849 0.126228
+  Weight: 1.1034e-038
+  Step size 0.00499102
+  Dir cos: -0.204867 0.830936 0.517277
+Cycle 97 done
+
+Cycle started
+  Cords: 0.719455 0.550996 0.128809
+  Weight: 4.41359e-039
+  Step size 0.105598
+  Dir cos: -0.100689 0.853384 0.511466
+Cycle 98 done
+
+Cycle started
+  Cords: 0.708822 0.641112 0.182819
+  Weight: 1.76543e-039
+  Step size 0.0399254
+  Dir cos: -0.0310584 0.96203 0.27117
+Cycle 99 done
+
+Cycle started
+  Cords: 0.707582 0.679521 0.193646
+  Weight: 7.06174e-040
+  Step size 0.0443366
+  Dir cos: 0.149265 0.911449 -0.383379
+Cycle 100 done
+
+Cycle started
+  Cords: 0.7142 0.719932 0.176648
+  Weight: 2.8247e-040
+  Step size 0.0032536
+  Dir cos: 0.222537 0.871398 -0.437198
+Cycle 101 done
+
+Cycle started
+  Cords: 0.714924 0.722767 0.175226
+  Weight: 1.12988e-040
+  Step size 0.0172656
+  Dir cos: 0.432166 0.811135 -0.394071
+Cycle 102 done
+
+Cycle started
+  Cords: 0.722386 0.736772 0.168422
+  Weight: 4.51951e-041
+  Step size 0.195601
+  Dir cos: 0.954035 0.299405 0.013187
+Cycle 103 done
+
+Cycle started
+  Cords: 0.908996 0.795336 0.171001
+  Weight: 1.80781e-041
+  Step size 0.0865803
+  Dir cos: 0.582708 0.249928 -0.773297
+Cycle 104 done
+
+Cycle started
+  Cords: 0.959447 0.816974 0.104049
+  Weight: 7.23122e-042
+  Step size 0.00309377
+  Dir cos: 0.973374 0.133281 -0.18649
+Cycle 105 done
+
+Cycle started
+  Cords: 0.962458 0.817387 0.103472
+  Weight: 2.89249e-042
+  Step size 0.0721962
+    Cross maybe
+Cycle 106 done
+
+Cycle started
+  Cords: 0.968265 0.817855 0.1
+  Weight: 1.157e-042
+  Step size 0.0654149
+  Dir cos: 0.856206 0.0690648 0.511998
+Cycle 107 done
+
+Cycle started
+  Cords: 1.02427 0.822373 0.133492
+  Weight: 4.62798e-043
+  Step size 0.0240633
+  Dir cos: 0.932106 0.00245311 0.362177
+Cycle 108 done
+
+Cycle started
+  Cords: 1.0467 0.822432 0.142207
+  Weight: 1.85119e-043
+  Step size 0.130185
+  Dir cos: 0.453011 0.861551 0.229152
+Cycle 109 done
+
+Cycle started
+  Cords: 1.10568 0.934593 0.172039
+  Weight: 7.40477e-044
+  Step size 0.0660253
+  Dir cos: 0.919912 0.379884 0.097216
+Cycle 110 done
+
+Cycle started
+  Cords: 1.16642 0.959674 0.178458
+  Weight: 2.96191e-044
+  Step size 0.0052125
+  Dir cos: 0.857252 0.512054 -0.0540251
+Cycle 111 done
+
+Cycle started
+  Cords: 1.17088 0.962344 0.178177
+  Weight: 1.18476e-044
+  Step size 0.00599551
+  Dir cos: 0.806166 0.54993 0.218341
+Cycle 112 done
+
+Cycle started
+  Cords: 1.17572 0.965641 0.179486
+  Weight: 4.73905e-045
+  Step size 0.118758
+    Cross maybe
+Cycle 113 done
+
+Cycle started
+  Cords: 1.26265 1.00698 0.2
+  Weight: 1.89562e-045
+  Step size 0.0203379
+  Dir cos: 0.883259 0.420009 -0.208437
+Cycle 114 done
+
+Cycle started
+  Cords: 1.28061 1.01552 0.195761
+  Weight: 7.58249e-046
+  Step size 0.0135904
+  Dir cos: 0.803613 0.58961 0.0810313
+Cycle 115 done
+
+Cycle started
+  Cords: 1.29153 1.02353 0.196862
+  Weight: 3.03299e-046
+  Step size 0.0459397
+  Dir cos: 0.832971 0.550202 -0.0586291
+Cycle 116 done
+
+Cycle started
+  Cords: 1.3298 1.04881 0.194169
+  Weight: 1.2132e-046
+  Step size 0.0233404
+  Dir cos: 0.689782 0.678777 -0.251917
+Cycle 117 done
+
+Cycle started
+  Cords: 1.3459 1.06465 0.188289
+  Weight: 4.85279e-047
+  Step size 0.0782711
+  Dir cos: 0.643016 0.675241 -0.361358
+Cycle 118 done
+
+Cycle started
+  Cords: 1.39623 1.1175 0.160005
+  Weight: 1.94112e-047
+  Step size 0.0176911
+  Dir cos: 0.743187 0.584774 0.325134
+Cycle 119 done
+
+Cycle started
+  Cords: 1.40938 1.12785 0.165757
+  Weight: 7.76446e-048
+  Step size 0.0267218
+  Dir cos: -0.466296 0.879359 -0.09641
+Cycle 120 done
+
+Cycle started
+  Cords: 1.39692 1.15135 0.163181
+  Weight: 3.10579e-048
+  Step size 0.00455097
+  Dir cos: -0.883087 0.446325 0.144743
+Cycle 121 done
+
+Cycle started
+  Cords: 1.3929 1.15338 0.163839
+  Weight: 1.24231e-048
+  Step size 0.12267
+  Dir cos: -0.78949 0.606557 0.0937769
+Cycle 122 done
+
+Cycle started
+  Cords: 1.29605 1.22779 0.175343
+  Weight: 4.96926e-049
+  Step size 0.00973995
+  Dir cos: -0.989673 0.0190073 0.14208
+Cycle 123 done
+
+Cycle started
+  Cords: 1.28641 1.22797 0.176727
+  Weight: 1.9877e-049
+  Step size 0.0102284
+  Dir cos: 0.961361 0.27209 -0.0418583
+Cycle 124 done
+
+Cycle started
+  Cords: 1.29624 1.23075 0.176299
+  Weight: 7.95081e-050
+  Step size 0.00684829
+  Dir cos: 0.991157 -0.00363067 -0.132647
+Cycle 125 done
+
+Cycle started
+  Cords: 1.30303 1.23073 0.17539
+  Weight: 3.18032e-050
+  Step size 0.0213089
+  Dir cos: 0.911064 0.00389642 -0.412247
+Cycle 126 done
+
+Cycle started
+  Cords: 1.32245 1.23081 0.166606
+  Weight: 1.27213e-050
+  Step size 0.0750292
+  Dir cos: -0.443827 -0.207547 -0.871746
+Cycle 127 done
+
+Cycle started
+  Cords: 1.28915 1.21524 0.101199
+  Weight: 5.08852e-051
+  Step size 0.00907609
+    Cross maybe
+Cycle 128 done
+
+Cycle started
+  Cords: 1.28884 1.2145 0.1
+  Weight: 2.03541e-051
+  Step size 0.00763361
+  Dir cos: -0.213071 -0.513029 0.831506
+Cycle 129 done
+
+Cycle started
+  Cords: 1.28721 1.21058 0.106347
+  Weight: 8.14163e-052
+  Step size 0.0117861
+  Dir cos: -0.0259303 -0.800445 0.598845
+Cycle 130 done
+
+Cycle started
+  Cords: 1.28691 1.20115 0.113405
+  Weight: 3.25665e-052
+  Step size 0.0181203
+  Dir cos: 0.272747 0.948991 -0.158191
+Cycle 131 done
+
+Cycle started
+  Cords: 1.29185 1.21834 0.110539
+  Weight: 1.30266e-052
+  Step size 0.0184808
+    Cross maybe
+Cycle 132 done
+
+Cycle started
+  Cords: 1.28605 1.23101 0.1
+  Weight: 5.21064e-053
+  Step size 0.00101292
+  Dir cos: -0.331785 0.725193 0.603335
+Cycle 133 done
+
+Cycle started
+  Cords: 1.28572 1.23175 0.100611
+  Weight: 2.08426e-053
+  Step size 0.00582669
+  Dir cos: 0.0552562 0.613513 0.787749
+Cycle 134 done
+
+Cycle started
+  Cords: 1.28604 1.23532 0.105201
+  Weight: 8.33703e-054
+  Step size 0.000502517
+  Dir cos: 0.140433 0.77699 0.61365
+Cycle 135 done
+
+Cycle started
+  Cords: 1.28611 1.23571 0.105509
+  Weight: 3.33481e-054
+  Step size 0.0555849
+  Dir cos: -0.0882086 0.74981 0.655747
+Cycle 136 done
+
+Cycle started
+  Cords: 1.28121 1.27739 0.141959
+  Weight: 1.33392e-054
+  Step size 0.188613
+    Cross maybe
+Cycle 137 done
+
+Cycle started
+  Cords: 1.12662 1.35591 0.2
+  Weight: 5.3357e-055
+  Step size 0.00577238
+  Dir cos: -0.845472 0.429428 -0.31744
+Cycle 138 done
+
+Cycle started
+  Cords: 1.12174 1.35839 0.198168
+  Weight: 2.13428e-055
+  Step size 0.00106118
+  Dir cos: -0.967631 0.187264 -0.169182
+Cycle 139 done
+
+Cycle started
+  Cords: 1.12071 1.35858 0.197988
+  Weight: 8.53712e-056
+  Step size 0.0294394
+  Dir cos: -0.163372 0.383366 -0.909033
+Cycle 140 done
+
+Cycle started
+  Cords: 1.1159 1.36987 0.171227
+  Weight: 3.41485e-056
+  Step size 0.0862986
+  Dir cos: -0.615795 0.519102 -0.592731
+Cycle 141 done
+
+Cycle started
+  Cords: 1.06276 1.41467 0.120075
+  Weight: 1.36594e-056
+  Step size 0.0234202
+  Dir cos: -0.634484 0.0690859 -0.769842
+Cycle 142 done
+
+Cycle started
+  Cords: 1.0479 1.41629 0.102045
+  Weight: 5.46376e-057
+  Step size 0.0126157
+    Cross maybe
+Cycle 143 done
+
+Cycle started
+  Cords: 1.04557 1.41695 0.1
+  Weight: 2.1855e-057
+  Step size 0.00944784
+  Dir cos: -0.734553 0.209048 0.645547
+Cycle 144 done
+
+Cycle started
+  Cords: 1.03863 1.41892 0.106099
+  Weight: 8.74201e-058
+  Step size 0.00684829
+  Dir cos: 0.0287006 0.952339 0.303689
+Cycle 145 done
+
+Cycle started
+  Cords: 1.03883 1.42545 0.108179
+  Weight: 3.4968e-058
+  Step size 0.0546812
+  Dir cos: 0.0381028 -0.995644 0.0850986
+Cycle 146 done
+
+Cycle started
+  Cords: 1.04091 1.371 0.112832
+  Weight: 1.39872e-058
+  Step size 0.0256247
+  Dir cos: 0.111626 -0.984473 0.135472
+Cycle 147 done
+
+Cycle started
+  Cords: 1.04377 1.34578 0.116304
+  Weight: 5.59489e-059
+  Step size 0.0398144
+  Dir cos: -0.22573 -0.895789 0.382895
+Cycle 148 done
+
+Cycle started
+  Cords: 1.03479 1.31011 0.131548
+  Weight: 2.23795e-059
+  Step size 0.0207001
+  Dir cos: -0.266419 -0.434303 0.860466
+Cycle 149 done
+
+Cycle started
+  Cords: 1.02927 1.30112 0.14936
+  Weight: 8.95182e-060
+  Step size 0.0179768
+  Dir cos: 0.778718 -0.625974 0.0418985
+Cycle 150 done
+
+Cycle started
+  Cords: 1.04327 1.28987 0.150113
+  Weight: 3.58073e-060
+  Step size 0.00973995
+  Dir cos: 0.0841108 -0.920393 0.38184
+Cycle 151 done
+
+Cycle started
+  Cords: 1.04409 1.2809 0.153832
+  Weight: 1.43229e-060
+  Step size 0.00725129
+  Dir cos: -0.708932 -0.344368 -0.615489
+Cycle 152 done
+
+Photon simulated..
+
+--------------------------------------
+
+Photon packet nr. 3
+
+Specular reflectance: 0.1
+Cycle started
+  Cords: 0 0 0
+  Weight: 0.9
+  Step size 0.0577591
+  Dir cos: 0 0 1
+Cycle 1 done
+
+Cycle started
+  Cords: 0 0 0.0577591
+  Weight: 0.45
+  Step size 0.0230225
+  Dir cos: 0.386527 0.107048 0.916045
+Cycle 2 done
+
+Cycle started
+  Cords: 0.0088988 0.00246451 0.0788487
+  Weight: 0.225
+  Step size 0.000502517
+  Dir cos: -0.125983 0.850789 0.510182
+Cycle 3 done
+
+Cycle started
+  Cords: 0.00883549 0.00289205 0.0791051
+  Weight: 0.1125
+  Step size 0.0549806
+    Cross maybe
+Cycle 4 done
+
+Cycle started
+  Cords: -0.0065115 0.0419321 0.1
+  Weight: 0.05625
+  Step size 0.00811644
+  Dir cos: -0.327478 0.833047 -0.44586
+Cycle 5 done
+
+Cycle started
+  Cords: -0.00916946 0.0486935 0.0963812
+  Weight: 0.028125
+  Step size 0.0348578
+  Dir cos: -0.0781919 0.981872 -0.172665
+Cycle 6 done
+
+Cycle started
+  Cords: -0.0118951 0.0829194 0.0903625
+  Weight: 0.0140625
+  Step size 0.0278435
+    Cross maybe
+Cycle 7 done
+
+Cycle started
+  Cords: -0.030621 0.0959089 0.1
+  Weight: 0.00703125
+  Step size 0.0030994
+  Dir cos: -0.756784 0.524954 -0.389488
+Cycle 8 done
+
+Cycle started
+  Cords: -0.0329666 0.0975359 0.0987928
+  Weight: 0.00351563
+  Step size 0.149787
+  Dir cos: -0.480192 0.688972 -0.542894
+Cycle 9 done
+
+Cycle started
+  Cords: -0.104893 0.200735 0.0174746
+  Weight: 0.00175781
+  Step size 0.0423149
+  Dir cos: 0.384313 0.805952 0.450272
+Cycle 10 done
+
+Cycle started
+  Cords: -0.0886308 0.234838 0.0365279
+  Weight: 0.000878906
+  Step size 0.0255413
+  Dir cos: 0.48511 0.459098 0.744243
+Cycle 11 done
+
+Cycle started
+  Cords: -0.0762404 0.246564 0.0555368
+  Weight: 0.000439453
+  Step size 0.0130682
+  Dir cos: 0.0912241 0.430197 0.898114
+Cycle 12 done
+
+Cycle started
+  Cords: -0.0750483 0.252186 0.0672736
+  Weight: 0.000219727
+  Step size 0.0782711
+    Cross maybe
+Crossing
+Cycle 13 done
+
+Cycle started
+  Cords: -0.0784374 0.260405 0.1
+  Weight: 0.000109863
+  Step size 0.0443585
+  Dir cos: -0.137413 0.333252 0.93277
+Cycle 14 done
+
+Cycle started
+  Cords: -0.0845328 0.275188 0.141376
+  Weight: 4.39453e-005
+  Step size 0.0279308
+  Dir cos: 0.658692 0.158619 0.735503
+Cycle 15 done
+
+Cycle started
+  Cords: -0.066135 0.279618 0.161919
+  Weight: 1.75781e-005
+  Step size 0.0131332
+  Dir cos: 0.896644 -0.0927345 0.432931
+Cycle 16 done
+
+Cycle started
+  Cords: -0.0543592 0.278401 0.167605
+  Weight: 7.03125e-006
+  Step size 0.00320027
+  Dir cos: 0.448204 -0.518062 0.728509
+Cycle 17 done
+
+Cycle started
+  Cords: -0.0529248 0.276743 0.169937
+  Weight: 2.8125e-006
+  Step size 0.0326963
+  Dir cos: 0.0489964 -0.65876 0.750756
+Cycle 18 done
+
+Cycle started
+  Cords: -0.0513228 0.255204 0.194484
+  Weight: 1.125e-006
+  Step size 0.0175488
+    Cross maybe
+Cycle 19 done
+
+Cycle started
+  Cords: -0.0446319 0.259613 0.2
+  Weight: 4.5e-007
+  Step size 0.00782021
+  Dir cos: 0.687758 0.453293 -0.567023
+Cycle 20 done
+
+Cycle started
+  Cords: -0.0392535 0.263158 0.195566
+  Weight: 1.8e-007
+  Step size 0.0235802
+  Dir cos: 0.0913929 0.542948 -0.834778
+Cycle 21 done
+
+Cycle started
+  Cords: -0.0370984 0.275961 0.175881
+  Weight: 7.2e-008
+  Step size 0.120956
+  Dir cos: -0.159992 0.802387 -0.574959
+Cycle 22 done
+
+Cycle started
+  Cords: -0.0564504 0.373015 0.106337
+  Weight: 2.88e-008
+  Step size 0.0251263
+    Cross maybe
+Cycle 23 done
+
+Cycle started
+  Cords: -0.057404 0.376621 0.1
+  Weight: 1.152e-008
+  Step size 0.0177731
+  Dir cos: -0.129682 0.49047 0.861755
+Cycle 24 done
+
+Cycle started
+  Cords: -0.0597088 0.385338 0.115316
+  Weight: 4.608e-009
+  Step size 0.0294394
+  Dir cos: 0.389312 0.837674 0.383064
+Cycle 25 done
+
+Cycle started
+  Cords: -0.0482477 0.409999 0.126593
+  Weight: 1.8432e-009
+  Step size 0.0561965
+  Dir cos: 0.63035 0.564372 0.533051
+Cycle 26 done
+
+Cycle started
+  Cords: -0.0128243 0.441715 0.156549
+  Weight: 7.3728e-010
+  Step size 0.0218478
+  Dir cos: -0.356781 0.665806 0.655293
+Cycle 27 done
+
+Cycle started
+  Cords: -0.0206191 0.456261 0.170865
+  Weight: 2.94912e-010
+  Step size 0.0208516
+  Dir cos: -0.40435 -0.663367 -0.629639
+Cycle 28 done
+
+Cycle started
+  Cords: -0.0290505 0.442429 0.157737
+  Weight: 1.17965e-010
+  Step size 0.0192096
+  Dir cos: -0.423524 -0.248025 -0.87127
+Cycle 29 done
+
+Cycle started
+  Cords: -0.0371862 0.437664 0.141
+  Weight: 4.71859e-011
+  Step size 0.00293445
+  Dir cos: -0.870427 -0.110707 -0.479688
+Cycle 30 done
+
+Cycle started
+  Cords: -0.0397404 0.437339 0.139592
+  Weight: 1.88744e-011
+  Step size 0.0234202
+  Dir cos: -0.213462 0.691476 -0.690141
+Cycle 31 done
+
+Cycle started
+  Cords: -0.0447398 0.453534 0.123429
+  Weight: 7.54975e-012
+  Step size 0.0278435
+  Dir cos: -0.0454414 0.810249 -0.584321
+Cycle 32 done
+
+Cycle started
+  Cords: -0.046005 0.476094 0.107159
+  Weight: 3.0199e-012
+  Step size 0.173688
+    Cross maybe
+Cycle 33 done
+
+Cycle started
+  Cords: -0.0466056 0.481747 0.1
+  Weight: 1.20796e-012
+  Step size 0.164547
+    Cross maybe
+Cycle 34 done
+
+Cycle started
+  Cords: -0.0549942 0.5607 0.2
+  Weight: 4.83184e-013
+  Step size 0.0368597
+  Dir cos: -0.0656969 0.618335 -0.783164
+Cycle 35 done
+
+Cycle started
+  Cords: -0.0574158 0.583492 0.171133
+  Weight: 1.93274e-013
+  Step size 0.0838323
+  Dir cos: -0.523258 0.850546 0.0526597
+Cycle 36 done
+
+Cycle started
+  Cords: -0.101282 0.654795 0.175547
+  Weight: 7.73094e-014
+  Step size 0.0331794
+  Dir cos: -0.441444 0.887707 0.130778
+Cycle 37 done
+
+Cycle started
+  Cords: -0.115929 0.684249 0.179887
+  Weight: 3.09238e-014
+  Step size 0.00466062
+  Dir cos: -0.575073 0.817945 -0.0160063
+Cycle 38 done
+
+Cycle started
+  Cords: -0.118609 0.688061 0.179812
+  Weight: 1.23695e-014
+  Step size 0.0687183
+  Dir cos: -0.741945 0.394863 -0.541849
+Cycle 39 done
+
+Cycle started
+  Cords: -0.169594 0.715195 0.142577
+  Weight: 4.9478e-015
+  Step size 0.0703249
+    Cross maybe
+Cycle 40 done
+
+Cycle started
+  Cords: -0.211258 0.749319 0.1
+  Weight: 1.97912e-015
+  Step size 0.00167288
+  Dir cos: -0.606883 0.497053 0.620186
+Cycle 41 done
+
+Cycle started
+  Cords: -0.212273 0.75015 0.101037
+  Weight: 7.91648e-016
+  Step size 0.0164947
+  Dir cos: 0.219607 0.95293 0.209039
+Cycle 42 done
+
+Cycle started
+  Cords: -0.208651 0.765868 0.104486
+  Weight: 3.16659e-016
+  Step size 0.0907003
+  Dir cos: -0.59299 0.778305 0.206408
+Cycle 43 done
+
+Cycle started
+  Cords: -0.262435 0.836461 0.123207
+  Weight: 1.26664e-016
+  Step size 0.0412768
+  Dir cos: -0.159666 0.890419 -0.426217
+Cycle 44 done
+
+Cycle started
+  Cords: -0.269026 0.873215 0.105614
+  Weight: 5.06655e-017
+  Step size 0.00549074
+  Dir cos: -0.208165 0.764688 -0.609853
+Cycle 45 done
+
+Cycle started
+  Cords: -0.270169 0.877413 0.102265
+  Weight: 2.02662e-017
+  Step size 0.00330699
+  Dir cos: -0.549016 0.661643 -0.510695
+Cycle 46 done
+
+Cycle started
+  Cords: -0.271984 0.879601 0.100577
+  Weight: 8.10648e-018
+  Step size 0.00925627
+  Dir cos: 0.179721 -0.390816 0.902753
+Cycle 47 done
+
+Cycle started
+  Cords: -0.270321 0.875984 0.108933
+  Weight: 3.24259e-018
+  Step size 0.0378576
+  Dir cos: 0.0902306 -0.897079 0.43256
+Cycle 48 done
+
+Cycle started
+  Cords: -0.266905 0.842023 0.125308
+  Weight: 1.29704e-018
+  Step size 0.108141
+  Dir cos: -0.399786 -0.828141 0.392878
+Cycle 49 done
+
+Cycle started
+  Cords: -0.310138 0.752466 0.167795
+  Weight: 5.18815e-019
+  Step size 0.00126589
+  Dir cos: -0.637589 -0.755866 0.148819
+Cycle 50 done
+
+Cycle started
+  Cords: -0.310945 0.75151 0.167983
+  Weight: 2.07526e-019
+  Step size 0.0247969
+  Dir cos: -0.558713 -0.596654 0.576059
+Cycle 51 done
+
+Cycle started
+  Cords: -0.324799 0.736714 0.182268
+  Weight: 8.30103e-020
+  Step size 0.00411476
+  Dir cos: -0.554769 -0.25498 0.79197
+Cycle 52 done
+
+Cycle started
+  Cords: -0.327082 0.735665 0.185526
+  Weight: 3.32041e-020
+  Step size 0.0159414
+  Dir cos: -0.619854 0.0470722 0.783304
+Cycle 53 done
+
+Cycle started
+  Cords: -0.336963 0.736416 0.198013
+  Weight: 1.32817e-020
+  Step size 0.21714
+    Cross maybe
+Cycle 54 done
+
+Cycle started
+  Cords: -0.339191 0.737694 0.2
+  Weight: 5.31266e-021
+  Step size 0.213893
+    Cross maybe
+Cycle 55 done
+
+Cycle started
+  Cords: -0.451334 0.802019 0.1
+  Weight: 2.12506e-021
+  Step size 0.0504498
+  Dir cos: -0.686126 0.393563 0.611833
+Cycle 56 done
+
+Cycle started
+  Cords: -0.485949 0.821874 0.130867
+  Weight: 8.50026e-022
+  Step size 0.0332766
+  Dir cos: -0.694609 0.718061 0.0436572
+Cycle 57 done
+
+Cycle started
+  Cords: -0.509063 0.845769 0.13232
+  Weight: 3.4001e-022
+  Step size 0.0508056
+  Dir cos: -0.563345 0.823014 0.0727372
+Cycle 58 done
+
+Cycle started
+  Cords: -0.537684 0.887582 0.136015
+  Weight: 1.36004e-022
+  Step size 0.00806716
+  Dir cos: -0.874156 0.453507 0.173734
+Cycle 59 done
+
+Cycle started
+  Cords: -0.544736 0.891241 0.137417
+  Weight: 5.44017e-023
+  Step size 0.0201734
+  Dir cos: 0.72775 -0.616419 -0.30068
+Cycle 60 done
+
+Cycle started
+  Cords: -0.530055 0.878806 0.131351
+  Weight: 2.17607e-023
+  Step size 0.0477256
+  Dir cos: -0.209892 -0.976917 0.0397267
+Cycle 61 done
+
+Cycle started
+  Cords: -0.540072 0.832182 0.133247
+  Weight: 8.70427e-024
+  Step size 0.0029875
+  Dir cos: 0.0442905 -0.99649 -0.0710412
+Cycle 62 done
+
+Cycle started
+  Cords: -0.53994 0.829205 0.133035
+  Weight: 3.48171e-024
+  Step size 0.0224708
+  Dir cos: -0.590903 -0.697853 0.404765
+Cycle 63 done
+
+Cycle started
+  Cords: -0.553218 0.813523 0.14213
+  Weight: 1.39268e-024
+  Step size 0.190836
+  Dir cos: -0.699719 -0.714409 -0.00357388
+Cycle 64 done
+
+Cycle started
+  Cords: -0.686749 0.677189 0.141448
+  Weight: 5.57073e-025
+  Step size 0.074361
+    Cross maybe
+Cycle 65 done
+
+Cycle started
+  Cords: -0.674147 0.644167 0.1
+  Weight: 2.22829e-025
+  Step size 0.0198893
+  Dir cos: 0.231361 -0.606209 0.760909
+Cycle 66 done
+
+Cycle started
+  Cords: -0.669545 0.63211 0.115134
+  Weight: 8.91317e-026
+  Step size 0.0139196
+  Dir cos: 0.201493 -0.73111 0.651827
+Cycle 67 done
+
+Cycle started
+  Cords: -0.66674 0.621934 0.124207
+  Weight: 3.56527e-026
+  Step size 0.0486431
+  Dir cos: 0.409256 -0.547146 0.730165
+Cycle 68 done
+
+Cycle started
+  Cords: -0.646833 0.595319 0.159725
+  Weight: 1.42611e-026
+  Step size 0.00986161
+  Dir cos: 0.19128 -0.586945 0.786707
+Cycle 69 done
+
+Cycle started
+  Cords: -0.644947 0.58953 0.167483
+  Weight: 5.70443e-027
+  Step size 0.0287238
+  Dir cos: -0.580793 -0.122053 0.80485
+Cycle 70 done
+
+Cycle started
+  Cords: -0.661629 0.586025 0.190601
+  Weight: 2.28177e-027
+  Step size 0.0854629
+    Cross maybe
+Cycle 71 done
+
+Cycle started
+  Cords: -0.664783 0.589446 0.2
+  Weight: 9.12708e-028
+  Step size 0.074975
+  Dir cos: -0.300739 0.326241 -0.896171
+Cycle 72 done
+
+Cycle started
+  Cords: -0.687331 0.613906 0.13281
+  Weight: 3.65083e-028
+  Step size 0.123847
+  Dir cos: -0.412625 0.86361 0.289686
+Cycle 73 done
+
+Cycle started
+  Cords: -0.738434 0.720862 0.168686
+  Weight: 1.46033e-028
+  Step size 0.0595364
+    Cross maybe
+Cycle 74 done
+
+Cycle started
+  Cords: -0.758224 0.728184 0.2
+  Weight: 5.84133e-029
+  Step size 0.021776
+  Dir cos: -0.524116 0.193923 -0.829274
+Cycle 75 done
+
+Cycle started
+  Cords: -0.769638 0.732407 0.181942
+  Weight: 2.33653e-029
+  Step size 0.0270642
+  Dir cos: 0.125412 0.743709 0.656635
+Cycle 76 done
+
+Cycle started
+  Cords: -0.766243 0.752535 0.199713
+  Weight: 9.34613e-030
+  Step size 0.0734838
+    Cross maybe
+Cycle 77 done
+
+Cycle started
+  Cords: -0.766192 0.753658 0.2
+  Weight: 3.73845e-030
+  Step size 0.0723232
+  Dir cos: 0.0443016 0.967939 -0.247246
+Cycle 78 done
+
+Cycle started
+  Cords: -0.762988 0.823663 0.182118
+  Weight: 1.49538e-030
+  Step size 0.0375388
+  Dir cos: 0.275021 0.887283 -0.370259
+Cycle 79 done
+
+Cycle started
+  Cords: -0.752664 0.85697 0.168219
+  Weight: 5.98153e-031
+  Step size 0.0115336
+  Dir cos: 0.0281996 0.357989 -0.9333
+Cycle 80 done
+
+Cycle started
+  Cords: -0.752339 0.861099 0.157455
+  Weight: 2.39261e-031
+  Step size 0.120397
+    Cross maybe
+Cycle 81 done
+
+Cycle started
+  Cords: -0.75992 0.865518 0.1
+  Weight: 9.57044e-032
+  Step size 0.0622761
+  Dir cos: -0.130436 0.0760316 0.988537
+Cycle 82 done
+
+Cycle started
+  Cords: -0.768043 0.870253 0.161562
+  Weight: 3.82818e-032
+  Step size 0.0155305
+  Dir cos: 0.102776 -0.540271 0.835192
+Cycle 83 done
+
+Cycle started
+  Cords: -0.766447 0.861863 0.174533
+  Weight: 1.53127e-032
+  Step size 0.0768559
+    Cross maybe
+Cycle 84 done
+
+Cycle started
+  Cords: -0.756381 0.833832 0.2
+  Weight: 6.12508e-033
+  Step size 0.0376693
+  Dir cos: 0.256872 -0.715306 -0.649887
+Cycle 85 done
+
+Cycle started
+  Cords: -0.746705 0.806887 0.175519
+  Weight: 2.45003e-033
+  Step size 0.0231812
+  Dir cos: -0.352141 -0.686542 -0.636127
+Cycle 86 done
+
+Cycle started
+  Cords: -0.754868 0.790972 0.160773
+  Weight: 9.80013e-034
+  Step size 0.00783269
+  Dir cos: -0.282564 -0.841702 -0.460104
+Cycle 87 done
+
+Cycle started
+  Cords: -0.757081 0.78438 0.157169
+  Weight: 3.92005e-034
+  Step size 0.109018
+    Cross maybe
+Cycle 88 done
+
+Cycle started
+  Cords: -0.749771 0.754952 0.1
+  Weight: 1.56802e-034
+  Step size 0.0443059
+  Dir cos: 0.112963 -0.454736 0.883433
+Cycle 89 done
+
+Cycle started
+  Cords: -0.744766 0.734805 0.139141
+  Weight: 6.27208e-035
+  Step size 0.0456897
+  Dir cos: -0.134086 -0.863354 -0.486457
+Cycle 90 done
+
+Cycle started
+  Cords: -0.750892 0.695359 0.116915
+  Weight: 2.50883e-035
+  Step size 0.0424316
+  Dir cos: -0.269056 -0.941563 -0.202651
+Cycle 91 done
+
+Cycle started
+  Cords: -0.762309 0.655406 0.108316
+  Weight: 1.00353e-035
+  Step size 0.0262124
+  Dir cos: -0.500647 -0.857164 -0.12092
+Cycle 92 done
+
+Cycle started
+  Cords: -0.775432 0.632938 0.105147
+  Weight: 4.01413e-036
+  Step size 0.06347
+    Cross maybe
+Cycle 93 done
+
+Cycle started
+  Cords: -0.789031 0.618053 0.1
+  Weight: 1.60565e-036
+  Step size 0.0426612
+  Dir cos: -0.653532 -0.715347 0.247336
+Cycle 94 done
+
+Cycle started
+  Cords: -0.816911 0.587535 0.110552
+  Weight: 6.42261e-037
+  Step size 0.109911
+  Dir cos: 0.772633 -0.240605 0.587492
+Cycle 95 done
+
+Cycle started
+  Cords: -0.73199 0.56109 0.175124
+  Weight: 2.56905e-037
+  Step size 0.00141997
+  Dir cos: 0.817583 -0.399137 0.415027
+Cycle 96 done
+
+Cycle started
+  Cords: -0.730829 0.560523 0.175713
+  Weight: 1.02762e-037
+  Step size 0.0121036
+  Dir cos: 0.435076 -0.628811 0.644442
+Cycle 97 done
+
+Cycle started
+  Cords: -0.725563 0.552912 0.183513
+  Weight: 4.11047e-038
+  Step size 0.127552
+    Cross maybe
+Cycle 98 done
+
+Cycle started
+  Cords: -0.711511 0.54566 0.2
+  Weight: 1.64419e-038
+  Step size 0.104707
+  Dir cos: 0.615115 -0.317477 -0.721694
+Cycle 99 done
+
+Cycle started
+  Cords: -0.647104 0.512417 0.124433
+  Weight: 6.57676e-039
+  Step size 0.0697163
+    Cross maybe
+Cycle 100 done
+
+Cycle started
+  Cords: -0.620638 0.497927 0.1
+  Weight: 2.6307e-039
+  Step size 0.0308914
+  Dir cos: 0.681668 -0.373214 0.629317
+Cycle 101 done
+
+Cycle started
+  Cords: -0.599581 0.486398 0.11944
+  Weight: 1.05228e-039
+  Step size 0.00919614
+  Dir cos: 0.194788 -0.556305 0.807826
+Cycle 102 done
+
+Cycle started
+  Cords: -0.597789 0.481282 0.126869
+  Weight: 4.20912e-040
+  Step size 0.0877232
+  Dir cos: -0.327459 -0.832508 0.446879
+Cycle 103 done
+
+Cycle started
+  Cords: -0.626515 0.408252 0.166071
+  Weight: 1.68365e-040
+  Step size 0.173688
+    Cross maybe
+Cycle 104 done
+
+Cycle started
+  Cords: -0.599491 0.270635 0.2
+  Weight: 6.7346e-041
+  Step size 0.0293973
+  Dir cos: 0.18729 -0.953745 -0.235143
+Cycle 105 done
+
+Cycle started
+  Cords: -0.593985 0.242598 0.193087
+  Weight: 2.69384e-041
+  Step size 0.0622397
+  Dir cos: -0.145964 -0.949362 -0.278221
+Cycle 106 done
+
+Cycle started
+  Cords: -0.60307 0.18351 0.175771
+  Weight: 1.07754e-041
+  Step size 0.0304403
+    Cross maybe
+Cycle 107 done
+
+Cycle started
+  Cords: -0.601972 0.170646 0.2
+  Weight: 4.31014e-042
+  Step size 0.00298628
+  Dir cos: 0.0399849 -0.468557 -0.882528
+Cycle 108 done
+
+Cycle started
+  Cords: -0.601853 0.169247 0.197365
+  Weight: 1.72406e-042
+  Step size 0.0359746
+  Dir cos: -0.23594 -0.0511088 -0.970423
+Cycle 109 done
+
+Cycle started
+  Cords: -0.610341 0.167408 0.162454
+  Weight: 6.89623e-043
+  Step size 0.00577054
+  Dir cos: 0.346581 0.496566 -0.795804
+Cycle 110 done
+
+Cycle started
+  Cords: -0.608341 0.170273 0.157862
+  Weight: 2.75849e-043
+  Step size 0.0792373
+  Dir cos: 0.140915 0.817389 -0.558586
+Cycle 111 done
+
+Cycle started
+  Cords: -0.597175 0.235041 0.113601
+  Weight: 1.1034e-043
+  Step size 0.0312744
+    Cross maybe
+Cycle 112 done
+
+Cycle started
+  Cords: -0.589884 0.225744 0.1
+  Weight: 4.41359e-044
+  Step size 0.0132583
+  Dir cos: 0.404669 -0.516063 0.754931
+Cycle 113 done
+
+Cycle started
+  Cords: -0.584519 0.218901 0.110009
+  Weight: 1.76543e-044
+  Step size 0.00871767
+  Dir cos: 0.245622 -0.344136 0.906223
+Cycle 114 done
+
+Cycle started
+  Cords: -0.582378 0.215901 0.117909
+  Weight: 7.06174e-045
+  Step size 0.0583981
+  Dir cos: -0.0238597 0.72317 0.690258
+Cycle 115 done
+
+Cycle started
+  Cords: -0.583771 0.258133 0.158219
+  Weight: 2.8247e-045
+  Step size 0.0365944
+  Dir cos: 0.0318124 0.560854 0.827304
+Cycle 116 done
+
+Cycle started
+  Cords: -0.582607 0.278657 0.188494
+  Weight: 1.12988e-045
+  Step size 0.175328
+    Cross maybe
+Cycle 117 done
+
+Cycle started
+  Cords: -0.582119 0.285033 0.2
+  Weight: 4.51951e-046
+  Step size 0.162164
+    Cross maybe
+Cycle 118 done
+
+Cycle started
+  Cords: -0.57788 0.340446 0.1
+  Weight: 1.80781e-046
+  Step size 0.0477588
+  Dir cos: 0.0370551 0.484356 0.874086
+Cycle 119 done
+
+Cycle started
+  Cords: -0.57611 0.363578 0.141745
+  Weight: 7.23122e-047
+  Step size 0.043375
+  Dir cos: 0.116654 0.689693 0.714643
+Cycle 120 done
+
+Cycle started
+  Cords: -0.57105 0.393494 0.172743
+  Weight: 2.89249e-047
+  Step size 0.0532105
+    Cross maybe
+Cycle 121 done
+
+Cycle started
+  Cords: -0.579674 0.428787 0.2
+  Weight: 1.157e-047
+  Step size 0.00779079
+  Dir cos: -0.189866 0.777055 -0.600114
+Cycle 122 done
+
+Cycle started
+  Cords: -0.581153 0.434841 0.195325
+  Weight: 4.62798e-048
+  Step size 0.0204737
+  Dir cos: -0.115553 0.991281 0.0633162
+Cycle 123 done
+
+Cycle started
+  Cords: -0.583519 0.455136 0.196621
+  Weight: 1.85119e-048
+  Step size 0.00842093
+  Dir cos: -0.106003 0.965989 0.235858
+Cycle 124 done
+
+Cycle started
+  Cords: -0.584412 0.463271 0.198607
+  Weight: 7.40477e-049
+  Step size 0.0259597
+    Cross maybe
+Cycle 125 done
+
+Cycle started
+  Cords: -0.584101 0.465085 0.2
+  Weight: 2.96191e-049
+  Step size 0.0236512
+  Dir cos: 0.134714 0.785991 -0.603383
+Cycle 126 done
+
+Cycle started
+  Cords: -0.580915 0.483675 0.185729
+  Weight: 1.18476e-049
+  Step size 0.0129385
+  Dir cos: -0.190419 0.907806 -0.373669
+Cycle 127 done
+
+Cycle started
+  Cords: -0.583378 0.495421 0.180895
+  Weight: 4.73905e-050
+  Step size 0.048511
+    Cross maybe
+Cycle 128 done
+
+Cycle started
+  Cords: -0.597284 0.513574 0.2
+  Weight: 1.89562e-050
+  Step size 0.0187125
+  Dir cos: -0.466666 0.609214 -0.641156
+Cycle 129 done
+
+Cycle started
+  Cords: -0.606017 0.524974 0.188002
+  Weight: 7.58249e-051
+  Step size 0.0136561
+  Dir cos: -0.772873 0.458444 -0.438743
+Cycle 130 done
+
+Cycle started
+  Cords: -0.616571 0.531235 0.182011
+  Weight: 3.03299e-051
+  Step size 0.11717
+    Cross maybe
+Cycle 131 done
+
+Cycle started
+  Cords: -0.610216 0.542134 0.1
+  Weight: 1.2132e-051
+  Step size 0.0341947
+  Dir cos: 0.0765859 0.131358 0.988372
+Cycle 132 done
+
+Cycle started
+  Cords: -0.607598 0.546626 0.133797
+  Weight: 4.85279e-052
+  Step size 0.0236604
+  Dir cos: 0.314481 -0.919517 0.235777
+Cycle 133 done
+
+Cycle started
+  Cords: -0.600157 0.52487 0.139376
+  Weight: 1.94112e-052
+  Step size 0.000908199
+  Dir cos: 0.288215 -0.957053 -0.0313386
+Cycle 134 done
+
+Cycle started
+  Cords: -0.599895 0.524001 0.139347
+  Weight: 7.76446e-053
+  Step size 0.0274091
+  Dir cos: -0.948448 0.0692957 -0.309266
+Cycle 135 done
+
+Cycle started
+  Cords: -0.625891 0.5259 0.130871
+  Weight: 3.10579e-053
+  Step size 0.0877232
+  Dir cos: -0.961855 -0.0383447 -0.270858
+Cycle 136 done
+
+Cycle started
+  Cords: -0.710268 0.522536 0.10711
+  Weight: 1.24231e-053
+  Step size 0.0244695
+    Cross maybe
+Cycle 137 done
+
+Cycle started
+  Cords: -0.711918 0.524785 0.1
+  Weight: 4.96926e-054
+  Step size 0.0168323
+  Dir cos: -0.215985 0.294368 0.930966
+Cycle 138 done
+
+Cycle started
+  Cords: -0.715553 0.529739 0.11567
+  Weight: 1.9877e-054
+  Step size 0.00667657
+  Dir cos: 0.637896 0.0918468 0.764626
+Cycle 139 done
+
+Cycle started
+  Cords: -0.711294 0.530353 0.120775
+  Weight: 7.95081e-055
+  Step size 0.0583981
+  Dir cos: 0.208083 -0.975837 -0.0666604
+Cycle 140 done
+
+Cycle started
+  Cords: -0.699143 0.473366 0.116883
+  Weight: 3.18032e-055
+  Step size 0.0717742
+  Dir cos: -0.26748 -0.716995 0.643718
+Cycle 141 done
+
+Cycle started
+  Cords: -0.718341 0.421904 0.163085
+  Weight: 1.27213e-055
+  Step size 0.0069631
+  Dir cos: -0.183948 -0.487368 0.853601
+Cycle 142 done
+
+Cycle started
+  Cords: -0.719622 0.41851 0.169029
+  Weight: 5.08852e-056
+  Step size 0.000150225
+  Dir cos: -0.124045 -0.679847 0.722787
+Cycle 143 done
+
+Cycle started
+  Cords: -0.71964 0.418408 0.169137
+  Weight: 2.03541e-056
+  Step size 0.0207001
+  Dir cos: -0.064843 -0.934343 -0.350425
+Cycle 144 done
+
+Cycle started
+  Cords: -0.720983 0.399067 0.161883
+  Weight: 8.14163e-057
+  Step size 0.0472088
+  Dir cos: -0.510521 0.489193 0.707148
+Cycle 145 done
+
+Cycle started
+  Cords: -0.745084 0.422161 0.195267
+  Weight: 3.25665e-057
+  Step size 0.0849135
+    Cross maybe
+Cycle 146 done
+
+Cycle started
+  Cords: -0.749333 0.417933 0.2
+  Weight: 1.30266e-057
+  Step size 0.0772753
+  Dir cos: -0.556318 -0.553658 -0.619655
+Cycle 147 done
+
+Cycle started
+  Cords: -0.792323 0.375148 0.152116
+  Weight: 5.21064e-058
+  Step size 0.000603629
+  Dir cos: 0.249338 -0.957763 -0.143247
+Cycle 148 done
+
+Cycle started
+  Cords: -0.792172 0.37457 0.152029
+  Weight: 2.08426e-058
+  Step size 0.0180485
+  Dir cos: 0.277402 -0.952651 0.124515
+Cycle 149 done
+
+Cycle started
+  Cords: -0.787165 0.357376 0.154277
+  Weight: 8.33703e-059
+  Step size 0.121521
+    Cross maybe
+Cycle 150 done
+
+Cycle started
+  Cords: -0.725122 0.274281 0.2
+  Weight: 3.33481e-059
+  Step size 0.00818608
+  Dir cos: 0.54743 -0.733185 -0.403435
+Cycle 151 done
+
+Cycle started
+  Cords: -0.720641 0.268279 0.196697
+  Weight: 1.33392e-059
+  Step size 0.0376449
+  Dir cos: 0.365589 -0.90855 -0.202192
+Cycle 152 done
+
+Cycle started
+  Cords: -0.706879 0.234077 0.189086
+  Weight: 5.3357e-060
+  Step size 0.145021
+    Cross maybe
+Cycle 153 done
+
+Cycle started
+  Cords: -0.69153 0.233908 0.2
+  Weight: 2.13428e-060
+  Step size 0.126187
+  Dir cos: 0.814944 -0.00894288 -0.579471
+Cycle 154 done
+
+Photon simulated..
+
+--------------------------------------
+
+Photon packet nr. 4
+
+Specular reflectance: 0.1
+Cycle started
+  Cords: 0 0 0
+  Weight: 0.9
+  Step size 0.0741403
+  Dir cos: 0 0 1
+Cycle 1 done
+
+Cycle started
+  Cords: 0 0 0.0741403
+  Weight: 0.45
+  Step size 0.0275824
+    Cross maybe
+Crossing
+Cycle 2 done
+
+Cycle started
+  Cords: -0.00766299 -0.00360593 0.1
+  Weight: 0.225
+  Step size 0.000371167
+  Dir cos: -0.387216 -0.18221 0.903805
+Cycle 3 done
+
+Cycle started
+  Cords: -0.00780671 -0.00367356 0.100335
+  Weight: 0.09
+  Step size 0.0436137
+  Dir cos: 0.447812 0.188146 0.874108
+Cycle 4 done
+
+Cycle started
+  Cords: 0.011724 0.0045322 0.138459
+  Weight: 0.036
+  Step size 0.0641869
+  Dir cos: 0.78738 0.167231 0.593352
+Cycle 5 done
+
+Cycle started
+  Cords: 0.0622635 0.0152662 0.176544
+  Weight: 0.0144
+  Step size 0.0281937
+  Dir cos: 0.660991 0.0562502 0.748282
+Cycle 6 done
+
+Cycle started
+  Cords: 0.0808993 0.0168521 0.197641
+  Weight: 0.00576
+  Step size 0.00532361
+    Cross maybe
+Cycle 7 done
+
+Cycle started
+  Cords: 0.08346 0.0175967 0.2
+  Weight: 0.002304
+  Step size 0.00176316
+  Dir cos: 0.719187 0.209104 -0.662604
+Cycle 8 done
+
+Cycle started
+  Cords: 0.084728 0.0179653 0.198832
+  Weight: 0.0009216
+  Step size 0.0326003
+  Dir cos: 0.665559 0.728221 -0.163476
+Cycle 9 done
+
+Cycle started
+  Cords: 0.106425 0.0417055 0.193502
+  Weight: 0.00036864
+  Step size 0.0681289
+  Dir cos: 0.152132 0.937176 -0.313938
+Cycle 10 done
+
+Cycle started
+  Cords: 0.11679 0.105554 0.172114
+  Weight: 0.000147456
+  Step size 0.106013
+  Dir cos: -0.0166401 0.983563 -0.179797
+Cycle 11 done
+
+Cycle started
+  Cords: 0.115026 0.209825 0.153053
+  Weight: 5.89824e-005
+  Step size 0.0213855
+  Dir cos: 0.671196 0.685192 -0.282856
+Cycle 12 done
+
+Cycle started
+  Cords: 0.12938 0.224478 0.147004
+  Weight: 2.3593e-005
+  Step size 0.0147186
+  Dir cos: 0.755404 0.54144 -0.369064
+Cycle 13 done
+
+Cycle started
+  Cords: 0.140498 0.232447 0.141572
+  Weight: 9.43718e-006
+  Step size 0.087435
+  Dir cos: -0.997626 0.067087 0.0155638
+Cycle 14 done
+
+Cycle started
+  Cords: 0.0532708 0.238313 0.142933
+  Weight: 3.77487e-006
+  Step size 0.000401609
+  Dir cos: -0.686498 0.7189 0.109105
+Cycle 15 done
+
+Cycle started
+  Cords: 0.0529951 0.238602 0.142977
+  Weight: 1.50995e-006
+  Step size 0.184444
+  Dir cos: -0.712227 0.697906 0.0752359
+Cycle 16 done
+
+Cycle started
+  Cords: -0.0783708 0.367326 0.156854
+  Weight: 6.0398e-007
+  Step size 0.0540878
+  Dir cos: -0.896803 0.166979 -0.409711
+Cycle 17 done
+
+Cycle started
+  Cords: -0.126877 0.376358 0.134693
+  Weight: 2.41592e-007
+  Step size 0.0794818
+  Dir cos: -0.664618 0.743357 -0.0755205
+Cycle 18 done
+
+Cycle started
+  Cords: -0.179702 0.435441 0.128691
+  Weight: 9.66368e-008
+  Step size 0.123255
+    Cross maybe
+Cycle 19 done
+
+Cycle started
+  Cords: -0.249775 0.480406 0.1
+  Weight: 3.86547e-008
+  Step size 0.0351914
+  Dir cos: -0.795708 0.510594 0.325794
+Cycle 20 done
+
+Cycle started
+  Cords: -0.277777 0.498374 0.111465
+  Weight: 1.54619e-008
+  Step size 0.0794818
+    Cross maybe
+Cycle 21 done
+
+Cycle started
+  Cords: -0.32937 0.517182 0.1
+  Weight: 6.18475e-009
+  Step size 0.0233836
+  Dir cos: -0.919688 0.335266 0.204376
+Cycle 22 done
+
+Cycle started
+  Cords: -0.350876 0.525022 0.104779
+  Weight: 2.4739e-009
+  Step size 0.0745827
+  Dir cos: -0.751521 -0.16524 0.63868
+Cycle 23 done
+
+Cycle started
+  Cords: -0.406926 0.512698 0.152414
+  Weight: 9.8956e-010
+  Step size 0.177023
+    Cross maybe
+Cycle 24 done
+
+Cycle started
+  Cords: -0.407275 0.491735 0.2
+  Weight: 3.95824e-010
+  Step size 0.125023
+    Cross maybe
+Cycle 25 done
+
+Cycle started
+  Cords: -0.408007 0.447683 0.1
+  Weight: 1.5833e-010
+  Step size 0.0157473
+  Dir cos: -0.0067048 -0.403128 0.915119
+Cycle 26 done
+
+Cycle started
+  Cords: -0.408113 0.441335 0.114411
+  Weight: 6.33319e-011
+  Step size 0.0388264
+  Dir cos: 0.0706603 -0.379709 0.922404
+Cycle 27 done
+
+Cycle started
+  Cords: -0.405369 0.426592 0.150224
+  Weight: 2.53327e-011
+  Step size 0.0327926
+  Dir cos: 0.561203 -0.468633 0.682228
+Cycle 28 done
+
+Cycle started
+  Cords: -0.386966 0.411225 0.172596
+  Weight: 1.01331e-011
+  Step size 0.0247148
+  Dir cos: 0.590809 -0.515585 0.620578
+Cycle 29 done
+
+Cycle started
+  Cords: -0.372364 0.398482 0.187934
+  Weight: 4.05324e-012
+  Step size 0.00998356
+  Dir cos: 0.477993 -0.824682 0.302362
+Cycle 30 done
+
+Cycle started
+  Cords: -0.367592 0.390249 0.190952
+  Weight: 1.6213e-012
+  Step size 0.0817378
+  Dir cos: 0.742111 -0.662064 0.104606
+Cycle 31 done
+
+Cycle started
+  Cords: -0.306934 0.336133 0.199503
+  Weight: 6.48518e-013
+  Step size 0.0147186
+    Cross maybe
+Cycle 32 done
+
+Cycle started
+  Cords: -0.305547 0.334911 0.2
+  Weight: 2.59407e-013
+  Step size 0.012804
+  Dir cos: 0.724524 -0.638421 -0.259777
+Cycle 33 done
+
+Cycle started
+  Cords: -0.29627 0.326737 0.196674
+  Weight: 1.03763e-013
+  Step size 0.0451934
+  Dir cos: 0.86326 -0.500419 -0.0660512
+Cycle 34 done
+
+Cycle started
+  Cords: -0.257256 0.304121 0.193689
+  Weight: 4.15052e-014
+  Step size 0.00251206
+  Dir cos: 0.873269 -0.136606 -0.467697
+Cycle 35 done
+
+Cycle started
+  Cords: -0.255063 0.303778 0.192514
+  Weight: 1.66021e-014
+  Step size 0.0520644
+    Cross maybe
+Cycle 36 done
+
+Cycle started
+  Cords: -0.236468 0.306767 0.2
+  Weight: 6.64083e-015
+  Step size 0.0317975
+  Dir cos: 0.917497 0.147509 -0.369378
+Cycle 37 done
+
+Cycle started
+  Cords: -0.207294 0.311458 0.188255
+  Weight: 2.65633e-015
+  Step size 0.0838323
+  Dir cos: 0.759348 -0.517128 -0.394929
+Cycle 38 done
+
+Cycle started
+  Cords: -0.143636 0.268106 0.155147
+  Weight: 1.06253e-015
+  Step size 0.0185532
+  Dir cos: -0.250509 -0.966187 -0.0610552
+Cycle 39 done
+
+Cycle started
+  Cords: -0.148283 0.25018 0.154014
+  Weight: 4.25013e-016
+  Step size 0.0355656
+  Dir cos: 0.459011 -0.795881 -0.394819
+Cycle 40 done
+
+Cycle started
+  Cords: -0.131958 0.221874 0.139972
+  Weight: 1.70005e-016
+  Step size 0.0773232
+  Dir cos: 0.893071 -0.420967 0.158777
+Cycle 41 done
+
+Cycle started
+  Cords: -0.0629034 0.189323 0.152249
+  Weight: 6.80021e-017
+  Step size 0.049175
+  Dir cos: -0.70223 0.675863 0.22379
+Cycle 42 done
+
+Cycle started
+  Cords: -0.0974355 0.222559 0.163254
+  Weight: 2.72008e-017
+  Step size 0.0282817
+  Dir cos: 0.475586 0.690129 -0.545473
+Cycle 43 done
+
+Cycle started
+  Cords: -0.0839852 0.242077 0.147827
+  Weight: 1.08803e-017
+  Step size 0.0413911
+  Dir cos: 0.924847 0.26854 -0.26934
+Cycle 44 done
+
+Cycle started
+  Cords: -0.0457047 0.253192 0.136679
+  Weight: 4.35213e-018
+  Step size 0.00293445
+  Dir cos: -0.228468 0.96386 -0.137031
+Cycle 45 done
+
+Cycle started
+  Cords: -0.0463751 0.25602 0.136277
+  Weight: 1.74085e-018
+  Step size 0.0979498
+    Cross maybe
+Cycle 46 done
+
+Cycle started
+  Cords: -0.046884 0.342387 0.1
+  Weight: 6.96341e-019
+  Step size 0.00427244
+  Dir cos: -0.00543191 0.921958 0.387253
+Cycle 47 done
+
+Cycle started
+  Cords: -0.0469072 0.346326 0.101655
+  Weight: 2.78537e-019
+  Step size 0.0140519
+  Dir cos: 0.378493 0.925156 -0.0287833
+Cycle 48 done
+
+Cycle started
+  Cords: -0.0415887 0.359326 0.10125
+  Weight: 1.11415e-019
+  Step size 0.0574427
+    Cross maybe
+Cycle 49 done
+
+Cycle started
+  Cords: -0.0391297 0.363552 0.1
+  Weight: 4.45658e-020
+  Step size 0.0523958
+  Dir cos: 0.487214 0.83742 0.247689
+Cycle 50 done
+
+Cycle started
+  Cords: -0.0136018 0.40743 0.112978
+  Weight: 1.78263e-020
+  Step size 0.0532105
+  Dir cos: 0.0164002 0.945941 0.323923
+Cycle 51 done
+
+Cycle started
+  Cords: -0.0127291 0.457764 0.130214
+  Weight: 7.13053e-021
+  Step size 0.0748055
+  Dir cos: -0.772479 0.537912 -0.337532
+Cycle 52 done
+
+Cycle started
+  Cords: -0.0705147 0.498003 0.104965
+  Weight: 2.85221e-021
+  Step size 0.0757064
+    Cross maybe
+Cycle 53 done
+
+Cycle started
+  Cords: -0.0752963 0.503843 0.1
+  Weight: 1.14089e-021
+  Step size 0.0666716
+  Dir cos: -0.529235 0.646484 0.549518
+Cycle 54 done
+
+Cycle started
+  Cords: -0.110581 0.546946 0.136637
+  Weight: 4.56354e-022
+  Step size 0.0405965
+  Dir cos: -0.681599 0.259417 0.684197
+Cycle 55 done
+
+Cycle started
+  Cords: -0.138252 0.557477 0.164413
+  Weight: 1.82542e-022
+  Step size 0.0460652
+  Dir cos: -0.897691 0.00151403 0.440623
+Cycle 56 done
+
+Cycle started
+  Cords: -0.179604 0.557547 0.184711
+  Weight: 7.30167e-023
+  Step size 0.0250438
+  Dir cos: -0.911048 -0.39079 -0.131434
+Cycle 57 done
+
+Cycle started
+  Cords: -0.20242 0.54776 0.181419
+  Weight: 2.92067e-023
+  Step size 0.0156671
+  Dir cos: -0.833215 -0.393678 -0.388293
+Cycle 58 done
+
+Cycle started
+  Cords: -0.215474 0.541592 0.175336
+  Weight: 1.16827e-023
+  Step size 0.00379009
+  Dir cos: -0.882214 -0.405894 -0.238639
+Cycle 59 done
+
+Cycle started
+  Cords: -0.218818 0.540054 0.174431
+  Weight: 4.67307e-024
+  Step size 0.0286351
+  Dir cos: -0.235031 -0.641952 -0.729834
+Cycle 60 done
+
+Cycle started
+  Cords: -0.225548 0.521671 0.153532
+  Weight: 1.86923e-024
+  Step size 0.0178337
+  Dir cos: -0.709833 -0.302314 -0.636195
+Cycle 61 done
+
+Cycle started
+  Cords: -0.238207 0.51628 0.142187
+  Weight: 7.47691e-025
+  Step size 0.0548307
+  Dir cos: -0.90718 -0.188059 -0.376374
+Cycle 62 done
+
+Cycle started
+  Cords: -0.287948 0.505969 0.12155
+  Weight: 2.99076e-025
+  Step size 5.0025e-005
+  Dir cos: -0.768312 -0.425974 -0.477747
+Cycle 63 done
+
+Cycle started
+  Cords: -0.287987 0.505947 0.121526
+  Weight: 1.19631e-025
+  Step size 0.088013
+    Cross maybe
+Cycle 64 done
+
+Cycle started
+  Cords: -0.307062 0.490953 0.1
+  Weight: 4.78522e-026
+  Step size 0.0555776
+  Dir cos: -0.588113 -0.46227 0.663649
+Cycle 65 done
+
+Cycle started
+  Cords: -0.339748 0.465261 0.136884
+  Weight: 1.91409e-026
+  Step size 0.0110947
+  Dir cos: -0.132351 -0.991087 -0.0151898
+Cycle 66 done
+
+Cycle started
+  Cords: -0.341217 0.454266 0.136715
+  Weight: 7.65635e-027
+  Step size 0.106013
+    Cross maybe
+Cycle 67 done
+
+Cycle started
+  Cords: -0.355282 0.454674 0.1
+  Weight: 3.06254e-027
+  Step size 0.0666937
+  Dir cos: -0.357718 0.0103733 0.933772
+Cycle 68 done
+
+Cycle started
+  Cords: -0.37914 0.455365 0.162277
+  Weight: 1.22502e-027
+  Step size 0.00777425
+  Dir cos: 0.339049 0.130445 0.931681
+Cycle 69 done
+
+Cycle started
+  Cords: -0.376504 0.456379 0.16952
+  Weight: 4.90007e-028
+  Step size 0.104374
+    Cross maybe
+Cycle 70 done
+
+Cycle started
+  Cords: -0.429455 0.505164 0.1
+  Weight: 1.96003e-028
+  Step size 0.0042898
+  Dir cos: -0.529072 0.487435 0.694615
+Cycle 71 done
+
+Cycle started
+  Cords: -0.431725 0.507255 0.10298
+  Weight: 7.84011e-029
+  Step size 0.110364
+  Dir cos: -0.403803 0.536972 0.740678
+Cycle 72 done
+
+Cycle started
+  Cords: -0.47629 0.566517 0.184724
+  Weight: 3.13604e-029
+  Step size 0.00136856
+  Dir cos: -0.202185 0.978678 0.0362034
+Cycle 73 done
+
+Cycle started
+  Cords: -0.476567 0.567856 0.184773
+  Weight: 1.25442e-029
+  Step size 0.0032536
+  Dir cos: -0.0228227 0.919467 0.392505
+Cycle 74 done
+
+Cycle started
+  Cords: -0.476641 0.570848 0.18605
+  Weight: 5.01767e-030
+  Step size 0.0357696
+  Dir cos: 0.772665 0.500624 -0.390339
+Cycle 75 done
+
+Cycle started
+  Cords: -0.449003 0.588755 0.172088
+  Weight: 2.00707e-030
+  Step size 0.133682
+    Cross maybe
+Cycle 76 done
+
+Cycle started
+  Cords: -0.463427 0.660023 0.1
+  Weight: 8.02827e-031
+  Step size 0.031292
+  Dir cos: -0.140875 0.696036 0.704051
+Cycle 77 done
+
+Cycle started
+  Cords: -0.467836 0.681803 0.122031
+  Weight: 3.21131e-031
+  Step size 0.0239018
+  Dir cos: -0.381523 0.578381 0.721052
+Cycle 78 done
+
+Cycle started
+  Cords: -0.476955 0.695627 0.139266
+  Weight: 1.28452e-031
+  Step size 0.0238212
+  Dir cos: -0.423057 0.329646 0.844012
+Cycle 79 done
+
+Cycle started
+  Cords: -0.487032 0.70348 0.159371
+  Weight: 5.13809e-032
+  Step size 0.0577591
+    Cross maybe
+Cycle 80 done
+
+Cycle started
+  Cords: -0.489928 0.722855 0.2
+  Weight: 2.05524e-032
+  Step size 0.0126536
+  Dir cos: -0.0641874 0.429563 -0.900753
+Cycle 81 done
+
+Cycle started
+  Cords: -0.49074 0.728291 0.188602
+  Weight: 8.22095e-033
+  Step size 0.0380713
+  Dir cos: 0.486574 0.0548934 -0.871913
+Cycle 82 done
+
+Cycle started
+  Cords: -0.472215 0.730381 0.155407
+  Weight: 3.28838e-033
+  Step size 0.0244695
+  Dir cos: -0.322171 -0.784671 -0.52962
+Cycle 83 done
+
+Cycle started
+  Cords: -0.480099 0.71118 0.142448
+  Weight: 1.31535e-033
+  Step size 0.00121463
+  Dir cos: 0.11238 -0.890174 -0.441543
+Cycle 84 done
+
+Cycle started
+  Cords: -0.479962 0.710099 0.141912
+  Weight: 5.26141e-034
+  Step size 0.00198904
+  Dir cos: 0.817974 -0.418816 -0.394349
+Cycle 85 done
+
+Cycle started
+  Cords: -0.478335 0.709266 0.141127
+  Weight: 2.10456e-034
+  Step size 0.0240633
+  Dir cos: 0.564251 -0.544197 -0.620862
+Cycle 86 done
+
+Cycle started
+  Cords: -0.464757 0.696171 0.126187
+  Weight: 8.41825e-035
+  Step size 0.0429011
+  Dir cos: -0.302863 -0.937523 0.171245
+Cycle 87 done
+
+Cycle started
+  Cords: -0.477751 0.65595 0.133534
+  Weight: 3.3673e-035
+  Step size 0.0552818
+  Dir cos: -0.731742 -0.336823 0.592541
+Cycle 88 done
+
+Cycle started
+  Cords: -0.518203 0.63733 0.16629
+  Weight: 1.34692e-035
+  Step size 0.0593722
+  Dir cos: -0.398994 -0.737681 0.544638
+Cycle 89 done
+
+Cycle started
+  Cords: -0.541892 0.593532 0.198627
+  Weight: 5.38768e-036
+  Step size 0.0257082
+    Cross maybe
+Cycle 90 done
+
+Cycle started
+  Cords: -0.552741 0.581036 0.2
+  Weight: 2.15507e-036
+  Step size 0.00910281
+  Dir cos: -0.65335 -0.752526 -0.0826941
+Cycle 91 done
+
+Cycle started
+  Cords: -0.558688 0.574186 0.199247
+  Weight: 8.62029e-037
+  Step size 0.0830366
+  Dir cos: 0.992734 -0.00520497 -0.120216
+Cycle 92 done
+
+Cycle started
+  Cords: -0.476255 0.573754 0.189265
+  Weight: 3.44811e-037
+  Step size 0.0888928
+  Dir cos: 0.308073 -0.0130179 -0.951274
+Cycle 93 done
+
+Cycle started
+  Cords: -0.448869 0.572597 0.104704
+  Weight: 1.37925e-037
+  Step size 0.00713582
+    Cross maybe
+Cycle 94 done
+
+Cycle started
+  Cords: -0.447746 0.571029 0.1
+  Weight: 5.51698e-038
+  Step size 0.00205206
+  Dir cos: 0.220986 -0.308456 0.925214
+Cycle 95 done
+
+Cycle started
+  Cords: -0.447293 0.570396 0.101899
+  Weight: 2.20679e-038
+  Step size 0.0309948
+  Dir cos: 0.138199 0.20403 0.969161
+Cycle 96 done
+
+Cycle started
+  Cords: -0.443009 0.576719 0.131938
+  Weight: 8.82717e-039
+  Step size 0.0777949
+    Cross maybe
+Cycle 97 done
+
+Cycle started
+  Cords: -0.442804 0.604182 0.2
+  Weight: 3.53087e-039
+  Step size 0.00440044
+  Dir cos: 0.00280044 0.374181 -0.927351
+Cycle 98 done
+
+Cycle started
+  Cords: -0.442791 0.605829 0.195919
+  Weight: 1.41235e-039
+  Step size 0.00650543
+  Dir cos: 0.17591 0.302545 -0.936761
+Cycle 99 done
+
+Cycle started
+  Cords: -0.441647 0.607797 0.189825
+  Weight: 5.64939e-040
+  Step size 0.0907003
+  Dir cos: 0.393595 -0.192391 -0.898927
+Cycle 100 done
+
+Cycle started
+  Cords: -0.405948 0.590347 0.108292
+  Weight: 2.25976e-040
+  Step size 0.10087
+    Cross maybe
+Cycle 101 done
+
+Cycle started
+  Cords: -0.401948 0.586285 0.1
+  Weight: 9.03903e-041
+  Step size 0.0908074
+  Dir cos: 0.397506 -0.403639 0.824054
+Cycle 102 done
+
+Cycle started
+  Cords: -0.365851 0.549632 0.17483
+  Weight: 3.61561e-041
+  Step size 0.00707818
+  Dir cos: 0.928729 -0.115621 0.352269
+Cycle 103 done
+
+Cycle started
+  Cords: -0.359277 0.548814 0.177324
+  Weight: 1.44624e-041
+  Step size 0.0495777
+  Dir cos: 0.514231 0.468057 -0.718672
+Cycle 104 done
+
+Cycle started
+  Cords: -0.333783 0.572019 0.141694
+  Weight: 5.78498e-042
+  Step size 0.0403718
+  Dir cos: -0.119213 -0.8435 0.523732
+Cycle 105 done
+
+Cycle started
+  Cords: -0.338596 0.537965 0.162838
+  Weight: 2.31399e-042
+  Step size 0.0117861
+  Dir cos: -0.624607 -0.760731 0.176507
+Cycle 106 done
+
+Cycle started
+  Cords: -0.345958 0.528999 0.164918
+  Weight: 9.25596e-043
+  Step size 0.0032536
+  Dir cos: 0.805145 -0.306962 0.50746
+Cycle 107 done
+
+Cycle started
+  Cords: -0.343338 0.528 0.166569
+  Weight: 3.70239e-043
+  Step size 0.0565051
+    Cross maybe
+Cycle 108 done
+
+Cycle started
+  Cords: -0.325442 0.518659 0.2
+  Weight: 1.48095e-043
+  Step size 0.0174519
+  Dir cos: 0.458236 -0.239206 -0.856037
+Cycle 109 done
+
+Cycle started
+  Cords: -0.317445 0.514484 0.185061
+  Weight: 5.92382e-044
+  Step size 0.0409355
+  Dir cos: 0.596803 -0.123136 -0.792883
+Cycle 110 done
+
+Cycle started
+  Cords: -0.293015 0.509443 0.152603
+  Weight: 2.36953e-044
+  Step size 0.0505301
+  Dir cos: 0.28394 -0.863339 -0.417162
+Cycle 111 done
+
+Cycle started
+  Cords: -0.278667 0.465819 0.131524
+  Weight: 9.47811e-045
+  Step size 0.0463171
+  Dir cos: 0.19257 -0.897101 -0.39765
+Cycle 112 done
+
+Cycle started
+  Cords: -0.269748 0.424268 0.113106
+  Weight: 3.79124e-045
+  Step size 0.0209275
+    Cross maybe
+Cycle 113 done
+
+Cycle started
+  Cords: -0.262799 0.415309 0.1
+  Weight: 1.5165e-045
+  Step size 0.00359767
+  Dir cos: 0.400973 -0.516976 0.756278
+Cycle 114 done
+
+Cycle started
+  Cords: -0.261357 0.413449 0.102721
+  Weight: 6.06599e-046
+  Step size 0.0252091
+  Dir cos: -0.110701 -0.956331 0.27051
+Cycle 115 done
+
+Cycle started
+  Cords: -0.264147 0.38934 0.10954
+  Weight: 2.4264e-046
+  Step size 0.0498479
+  Dir cos: 0.6432 -0.727454 0.238965
+Cycle 116 done
+
+Cycle started
+  Cords: -0.232085 0.353078 0.121452
+  Weight: 9.70558e-047
+  Step size 0.0128738
+  Dir cos: 0.230985 -0.959132 0.163438
+Cycle 117 done
+
+Cycle started
+  Cords: -0.229112 0.340731 0.123556
+  Weight: 3.88223e-047
+  Step size 0.0284581
+  Dir cos: 0.921091 -0.385005 -0.0579859
+Cycle 118 done
+
+Cycle started
+  Cords: -0.202899 0.329774 0.121906
+  Weight: 1.55289e-047
+  Step size 0.0539405
+  Dir cos: 0.924413 -0.308355 0.224452
+Cycle 119 done
+
+Cycle started
+  Cords: -0.153036 0.313141 0.134013
+  Weight: 6.21157e-048
+  Step size 0.0775585
+  Dir cos: 0.35183 -0.819228 0.452859
+Cycle 120 done
+
+Cycle started
+  Cords: -0.125748 0.249603 0.169136
+  Weight: 2.48463e-048
+  Step size 0.0754796
+    Cross maybe
+Cycle 121 done
+
+Cycle started
+  Cords: -0.0994239 0.230521 0.2
+  Weight: 9.93851e-049
+  Step size 0.0306499
+  Dir cos: 0.587211 -0.425665 -0.688471
+Cycle 122 done
+
+Cycle started
+  Cords: -0.081426 0.217474 0.178898
+  Weight: 3.97541e-049
+  Step size 0.10087
+  Dir cos: 0.754536 -0.654118 0.0529674
+Cycle 123 done
+
+Cycle started
+  Cords: -0.0053157 0.151493 0.184241
+  Weight: 1.59016e-049
+  Step size 0.00656241
+  Dir cos: -0.245802 -0.85176 0.462695
+Cycle 124 done
+
+Cycle started
+  Cords: -0.00692876 0.145904 0.187278
+  Weight: 6.36065e-050
+  Step size 0.00427789
+  Dir cos: -0.762524 -0.30695 0.569507
+Cycle 125 done
+
+Cycle started
+  Cords: -0.0101908 0.14459 0.189714
+  Weight: 2.54426e-050
+  Step size 0.0144508
+  Dir cos: -0.622225 -0.573969 0.53235
+Cycle 126 done
+
+Cycle started
+  Cords: -0.0191824 0.136296 0.197407
+  Weight: 1.0177e-050
+  Step size 0.0443366
+    Cross maybe
+Cycle 127 done
+
+Cycle started
+  Cords: -0.0208839 0.135135 0.2
+  Weight: 4.07082e-051
+  Step size 0.0410247
+  Dir cos: -0.51376 -0.350699 -0.782982
+Cycle 128 done
+
+Cycle started
+  Cords: -0.0419608 0.120747 0.167878
+  Weight: 1.62833e-051
+  Step size 0.0302568
+  Dir cos: -0.598344 -0.201597 -0.775464
+Cycle 129 done
+
+Cycle started
+  Cords: -0.0600647 0.114648 0.144415
+  Weight: 6.51331e-052
+  Step size 0.0240633
+  Dir cos: -0.701453 -0.351613 -0.619945
+Cycle 130 done
+
+Cycle started
+  Cords: -0.0769441 0.106187 0.129497
+  Weight: 2.60532e-052
+  Step size 0.0474665
+    Cross maybe
+Cycle 131 done
+
+Cycle started
+  Cords: -0.0681885 0.0868182 0.1
+  Weight: 1.04213e-052
+  Step size 0.0111086
+  Dir cos: 0.240817 -0.532719 0.811306
+Cycle 132 done
+
+Cycle started
+  Cords: -0.0655133 0.0809004 0.109013
+  Weight: 4.16852e-053
+  Step size 0.0226278
+  Dir cos: 0.990389 -0.00681339 0.138144
+Cycle 133 done
+
+Cycle started
+  Cords: -0.043103 0.0807462 0.112138
+  Weight: 1.66741e-053
+  Step size 0.08437
+  Dir cos: 0.985131 -0.13058 -0.111652
+Cycle 134 done
+
+Cycle started
+  Cords: 0.0400125 0.0697292 0.102718
+  Weight: 6.66962e-054
+  Step size 0.0235802
+  Dir cos: 0.172581 0.984892 0.0142704
+Cycle 135 done
+
+Cycle started
+  Cords: 0.044082 0.0929532 0.103055
+  Weight: 2.66785e-054
+  Step size 0.175328
+    Cross maybe
+Cycle 136 done
+
+Cycle started
+  Cords: 0.00409282 0.187961 0.2
+  Weight: 1.06714e-054
+  Step size 0.0338218
+  Dir cos: -0.282597 0.671404 -0.685095
+Cycle 137 done
+
+Cycle started
+  Cords: -0.00546512 0.210669 0.176829
+  Weight: 4.26856e-055
+  Step size 0.00853942
+  Dir cos: 0.259805 0.766131 -0.587831
+Cycle 138 done
+
+Cycle started
+  Cords: -0.00324653 0.217211 0.171809
+  Weight: 1.70742e-055
+  Step size 0.0400366
+  Dir cos: 0.567945 0.65515 -0.498215
+Cycle 139 done
+
+Cycle started
+  Cords: 0.0194921 0.243441 0.151862
+  Weight: 6.8297e-056
+  Step size 0.00759932
+  Dir cos: 0.518913 0.845276 0.127427
+Cycle 140 done
+
+Cycle started
+  Cords: 0.0234354 0.249865 0.152831
+  Weight: 2.73188e-056
+  Step size 0.0104127
+  Dir cos: 0.451007 0.886431 -0.104078
+Cycle 141 done
+
+Cycle started
+  Cords: 0.0281317 0.259095 0.151747
+  Weight: 1.09275e-056
+  Step size 0.182483
+    Cross maybe
+Cycle 142 done
+
+Cycle started
+  Cords: -0.000133709 0.282529 0.1
+  Weight: 4.37101e-057
+  Step size 0.119034
+  Dir cos: -0.445479 0.369334 0.815562
+Cycle 143 done
+
+Cycle started
+  Cords: -0.0531607 0.326492 0.197079
+  Weight: 1.7484e-057
+  Step size 0.118758
+  Dir cos: -0.896539 0.442314 0.0240207
+Cycle 144 done
+
+Cycle started
+  Cords: -0.159632 0.37902 0.199932
+  Weight: 6.99361e-058
+  Step size 0.017407
+    Cross maybe
+Cycle 145 done
+
+Cycle started
+  Cords: -0.15978 0.379196 0.2
+  Weight: 2.79744e-058
+  Step size 0.0171678
+  Dir cos: -0.618666 0.732166 -0.284928
+Cycle 146 done
+
+Cycle started
+  Cords: -0.170401 0.391765 0.195108
+  Weight: 1.11898e-058
+  Step size 0.0236604
+  Dir cos: -0.372599 0.84959 -0.373319
+Cycle 147 done
+
+Cycle started
+  Cords: -0.179217 0.411867 0.186276
+  Weight: 4.47591e-059
+  Step size 0.0442154
+  Dir cos: -0.370528 0.781992 -0.501196
+Cycle 148 done
+
+Cycle started
+  Cords: -0.1956 0.446443 0.164115
+  Weight: 1.79036e-059
+  Step size 0.094856
+  Dir cos: -0.825882 0.563586 -0.0170047
+Cycle 149 done
+
+Cycle started
+  Cords: -0.27394 0.499902 0.162502
+  Weight: 7.16145e-060
+  Step size 0.00379009
+  Dir cos: -0.798844 0.529012 0.286346
+Cycle 150 done
+
+Cycle started
+  Cords: -0.276967 0.501907 0.163587
+  Weight: 2.86458e-060
+  Step size 0.000502517
+  Dir cos: -0.839773 0.479187 0.255266
+Cycle 151 done
+
+Cycle started
+  Cords: -0.277389 0.502148 0.163716
+  Weight: 1.14583e-060
+  Step size 0.0535012
+  Dir cos: -0.383003 0.825046 0.41546
+Cycle 152 done
+
+Photon simulated..
+
+--------------------------------------
+
+Photon packet nr. 5
+
+Specular reflectance: 0.1

@@ -1,5 +1,6 @@
 #ifndef STRUCTS_H_INCLUDED
 #define STRUCTS_H_INCLUDED
+#include <fstream>
 namespace MC
 {
     class PhotonClass
@@ -41,7 +42,7 @@ namespace MC
             double wtolerance;
             LayerClass* layers;
             InputStruct(int count);
-            void CalculateCosC();
+            void CalculateCosC(int count, std::ofstream* debuglog);
 
     };
 
