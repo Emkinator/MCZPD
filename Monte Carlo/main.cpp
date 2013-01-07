@@ -20,14 +20,18 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MC::InputStruct in = MC::InputStruct(5);
+    MC::InputStruct in = MC::InputStruct(7);
     in.wtolerance = 1e-60;
-    in.count = 5;
+    in.count = 7;
     ofstream filestr("simlog.txt");
-    cout << filestr.fail() << endl;
+    if(filestr.fail() == 1)
+    {
+        cout << "Logfile could not be created." << endl;
+    }
+
     in.CalculateCosC(in.count, &filestr);
 
-    for(int i = 0; i<=1000; i++)
+    for(int i = 0; i<=10; i++)
     {
         filestr << "Photon packet nr. " << i << endl << endl;
         MC::OutputStruct ret;

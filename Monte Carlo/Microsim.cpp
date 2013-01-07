@@ -28,6 +28,7 @@ namespace MC
                 Spin(in->layers[photon->layer].g, photon, debuglog);
             Roulette(in, photon, debuglog);
             i++;
+            *debuglog << "Photon in layer " << photon->layer << std::endl;
             *debuglog << "Cycle " << i << " done" << std::endl << std::endl;
             if(photon->uz!=photon->uz)
             {

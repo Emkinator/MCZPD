@@ -116,7 +116,6 @@ bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* files
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 { //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
 	double r;
-    std::cout << "Fresnel alert" << std::endl;
 	if(n1 == n2)
 	{ //bounds match
 		*uzt = ca1;
@@ -140,13 +139,11 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 		sa2 = sa1*n1/n2;
 		if(sa2>=1.0)
 		{ //double check for total internal reflection, todo: check for better solution
-		    std::cout << "test" << std::endl;
 			*uzt = 0.0;
 			r = 1.0;
 		}
 		else
 		{
-            std::cout << "calculations" << std::endl;
 			double cap, cam, sap, sam; // cosines and sines of the sum or difference of the two angles. p = plus, m = minus
 			ca2 = sqrt(1-sa2*sa2);
 			cap = ca1*ca2 - sa1*sa2; // c+ = cc - ss.
@@ -164,7 +161,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
-    *filestr << "    Cross maybe" << std::endl;
+    *filestr << "    Intersected boundary" << std::endl;
 
     double uz = photon->uz; // z directional cosine.
     int dir = sign(uz);
@@ -178,7 +175,6 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
         r = 1.0;
     else
         r = FresnelReflect(n1, n2, uz, &uzt);
-    std::cout << r << std::endl;
     if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r < 1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo
@@ -186,13 +182,16 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
         photon->uz = -uz;
     }
     else if(random() > r) { //let trough at an angle
-        *filestr << "Crossing" << std::endl;
+        *filestr << "    Crossed" << std::endl;
         photon->layer += dir; //layer id change
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;
         photon->uz = dir * uzt; //retain original direction
     } else
         photon->uz = -uz; //reflect
+        *filestr << "    Reflected" << std::endl;
+
+    *filestr << "  Dir cos: " << photon->ux << " " << photon->uy << " " << photon->uz << std::endl;
 }
 
 void MC::Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)

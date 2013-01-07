@@ -29,14 +29,21 @@ MC::InputStruct::InputStruct(int count)
     ConfigClass lp = ConfigClass("config.txt"); //layer parameters
     for(int i = 0; i<count; i++)
     {
-        layers[i].z[0] = atof(lp.GetValue(i,"z1").c_str());
-        layers[i].z[1] = atof(lp.GetValue(i,"z2").c_str());
+        double z = atof(lp.GetValue(i,"z").c_str());
+        if(i>0)
+        {
+            layers[i].z[0] = layers[i-1].z[1];
+            layers[i].z[1] = layers[i-1].z[1] + z * 0.001; //conversion from micrometers to mm
+        }
+        else
+        {
+            layers[i].z[0] = 0;
+            layers[i].z[1] = z *0.001;
+        }
         layers[i].n = atof(lp.GetValue(i,"n").c_str());
         layers[i].mua = atof(lp.GetValue(i,"mua").c_str());
         layers[i].mus = atof(lp.GetValue(i,"mus").c_str());
         layers[i].g = atof(lp.GetValue(i,"g").c_str());
-
-        std::cout << atof(lp.GetValue(i,"mua").c_str()) << std::endl;
         std::cout << "Layer read" << std::endl;
     }//label functionality in readconfig required for this, so that it can be replaced by lp.GetValue(layer,"z1").. etc. and automated
     std::cout << "Done" << std::endl;
