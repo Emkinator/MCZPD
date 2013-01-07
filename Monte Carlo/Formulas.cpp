@@ -22,14 +22,15 @@ void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) 
 	{
 	    double rnd;
 	    do rnd = random();
-	    while(rnd == 0.0);
-	    Photon->s = -(log(random()) / (mua+mus));
+	    while(rnd <= 0.0);
+	    Photon->s = -(log(rnd) / (mua+mus));
 	    *filestr << Photon->s << std::endl;
 	}
 	else
 	{
 	    Photon->s = Photon->sLeft/(mua+mus);
 	    Photon->sLeft = 0.0;
+	    *filestr << Photon->s << std::endl;
 	}
 
 }
@@ -86,6 +87,8 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
 
 bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
 {//gets step size, does some checks, moves and returns if bounds
+    *filestr << "  Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
+    *filestr << "  Weight: " << photon->w << std::endl;
     bool ret = false;
     short layer = photon->layer;
 	double uz = photon->uz;
@@ -160,7 +163,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
-    *filestr << "  Cross maybe" << std::endl;
+    *filestr << "    Cross maybe" << std::endl;
 
     double uz = photon->uz; // z directional cosine.
     int dir;
@@ -180,7 +183,7 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
     else
         r = FresnelReflect(n1, n2, uz, &uzt);
 
-    if(((layer == 1) || (layer == in->count)) && r<1.0)
+    if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r<1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo
         photon->w *= r; //decrease weight
@@ -197,8 +200,6 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
 
 void MC::Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)
 {
-    *filestr << "  Weight: " << photon->w << std::endl;
-    *filestr << "  Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
     if(photon->w < in->wtolerance)
     {
         int tmp = rand() % 10;

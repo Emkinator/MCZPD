@@ -22,7 +22,8 @@ namespace MC
             *debuglog << "Cycle started" << std::endl;
             if(MoveAndBound(in, photon, debuglog))
                 CrossMaybe(in, photon, debuglog);
-            Spin(in->layers[photon->layer].g, photon, debuglog);
+            else
+                Spin(in->layers[photon->layer].g, photon, debuglog);
             Roulette(in, photon, debuglog);
             i++;
             *debuglog << "Cycle " << i << " done" << std::endl << std::endl;

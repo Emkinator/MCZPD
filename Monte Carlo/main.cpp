@@ -22,12 +22,13 @@ int main()
     ofstream filestr("simlog.txt");
     cout << filestr.fail() << endl;
 
-    for(int i = 0; i<=0; i++)
+    for(int i = 0; i<=10; i++)
     {
-        system("pause");
+        filestr << "Photon packet nr. " << i << endl << endl;
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
         MC::simulatePhoton(&in, &photon, &ret, &filestr);
+        filestr << endl << "--------------------------------------" << endl << endl;
        //MC::Output(photon, ret);
     }
     filestr.close();
