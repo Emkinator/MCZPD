@@ -1,15 +1,16 @@
 [this_label_should_be_ignored]
-z1 = 2
-z2 = 1.1
+[0]
+z1 = 0
+z2 = 0.1
 n = 5.5
 mua = 10
 mus = 10
 g = 0.66
-/layer1
+
 [1]
-z1 = 0
-z2 = 0.1
+z1 = 0.1
+z2 = 0.2
 n = 1.5
-mua = 100
-mus = 100
-g = 0.86
+mua = 80
+mus = 90
+g = 0.76

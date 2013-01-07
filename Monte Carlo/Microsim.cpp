@@ -1,5 +1,5 @@
 //Simulates a single photon packet
-#include <iostream>
+#include <fstream>
 #include "structs.h"
 #include "formulas.h"
 #include "microsim.h"
@@ -10,24 +10,24 @@ template <typename T> int sign(T val) {
 
 namespace MC
 {
-    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out)
+    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog)
     {
         int i = 0;
-        double uzt;
         double spec = SpecularReflect(1,in->layers[0].n);
-        std::cout << "Specular reflectance: " << spec << std::endl;
+
+        *debuglog << "Specular reflectance: " << spec << std::endl;
         photon->w -= spec;
         while(photon->alive)
         {
-            std::cout << "Cycle started" << std::endl;
-            if(MoveAndBound(in, photon))
-                CrossMaybe(in, photon);
-            Spin(in->layers[photon->layer].g, photon);
-            Roulette(in, photon);
+            *debuglog << "Cycle started" << std::endl;
+            if(MoveAndBound(in, photon, debuglog))
+                CrossMaybe(in, photon, debuglog);
+            Spin(in->layers[photon->layer].g, photon, debuglog);
+            Roulette(in, photon, debuglog);
             i++;
-            std::cout << "Cycle " << i << " done" << std::endl << std::endl;
+            *debuglog << "Cycle " << i << " done" << std::endl << std::endl;
         }
-        std::cout << "Photon simulated.." << std::endl;
+        *debuglog << "Photon simulated.." << std::endl;
 
     }
 }

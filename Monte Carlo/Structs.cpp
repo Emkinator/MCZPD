@@ -9,7 +9,7 @@ MC::PhotonClass::PhotonClass()
     using namespace MC;
     x = 0;
     y = 0;
-    z = 0.05;
+    z = 0;
     ux = 0;
     uy = 0;
     uz = 1;
@@ -38,11 +38,6 @@ MC::InputStruct::InputStruct(int count)
         std::cout << atof(lp.GetValue(i,"mua").c_str()) << std::endl;
         std::cout << "Layer read" << std::endl;
     }//label functionality in readconfig required for this, so that it can be replaced by lp.GetValue(layer,"z1").. etc. and automated
-
-    layers[1].z[0] = 0.1;  //temporary hack
-    layers[1].z[1] = 0.2;  //temporary hack
-
-
     std::cout << "Done" << std::endl;
 }
 

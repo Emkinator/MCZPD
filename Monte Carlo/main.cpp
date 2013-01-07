@@ -19,14 +19,18 @@ int main()
     //in.CalculateCosC();  //doesn't work
     in.wtolerance = 1e-60;
     in.count = 2;
-    for(int i = 0; i<=1000; i++)
+    ofstream filestr("simlog.txt");
+    cout << filestr.fail() << endl;
+
+    for(int i = 0; i<=0; i++)
     {
         system("pause");
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
-        MC::simulatePhoton(&in, &photon, &ret);
+        MC::simulatePhoton(&in, &photon, &ret, &filestr);
        //MC::Output(photon, ret);
     }
+    filestr.close();
     return 0;
 }
 

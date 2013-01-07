@@ -1,18 +1,18 @@
 #include "Formulas.h"
 #include <cmath>
 #include <stdlib.h> //for rand()
-#include <iostream>
+
+#include <fstream>
 #define COS0 (1.0-1.0E-12)
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (num < 0)
 #define random() ((rand() % 1000)/1000.0)
 
-int debugtmp = 0;
 
-void MC::StepSize(PhotonClass* Photon, InputStruct* In) //Internal function
+void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) //Internal function
 {
-    std::cout << "Step size ";
+    *filestr << "  Step size ";
 
     short layer = Photon->layer;
 	double mua = In->layers[layer].mua;
@@ -24,7 +24,7 @@ void MC::StepSize(PhotonClass* Photon, InputStruct* In) //Internal function
 	    do rnd = random();
 	    while(rnd == 0.0);
 	    Photon->s = -(log(random()) / (mua+mus));
-	    std::cout << Photon->s << std::endl;
+	    *filestr << Photon->s << std::endl;
 	}
 	else
 	{
@@ -48,7 +48,7 @@ double MC::SpinTheta(double g)  //Internal function
     return(cost);
 }
 
-void MC::Spin(double g, PhotonClass* Photon)
+void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
 {
     double cosp, sinp;
     double cost, sint;
@@ -56,7 +56,7 @@ void MC::Spin(double g, PhotonClass* Photon)
     double ux = Photon->ux;
     double uy = Photon->uy;
     double uz = Photon->uz;
-    std::cout << "Dir cos: " << ux << " " << uy << " " << uz << std::endl;
+    *filestr << "  Dir cos: " << ux << " " << uy << " " << uz << std::endl;
     double psi;
 
     cost = SpinTheta(g);
@@ -84,7 +84,7 @@ void MC::Spin(double g, PhotonClass* Photon)
     }
 }
 
-bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
+bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
 {//gets step size, does some checks, moves and returns if bounds
     bool ret = false;
     short layer = photon->layer;
@@ -92,7 +92,7 @@ bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon)   // !! bounding doe
 	double mua = in->layers[layer].mua;
 	double mus = in->layers[layer].mus;
 
-    MC::StepSize(photon, in);
+    MC::StepSize(photon, in, filestr);
 
     if(uz != 0.0) { //cross check
         double s = (in->layers[layer].z[int(uz>0.0)] - photon->z)/uz; //step size till bound
@@ -157,14 +157,10 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 }
 
 
-void MC::CrossMaybe(InputStruct* in, PhotonClass* photon) //went bit haxish to not double up such a big func,
+void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
-    std::cout << "Cross maybe" << std::endl;
-    if(debugtmp == 0)
-        debugtmp = 2;
-
-    system("pause");
+    *filestr << "  Cross maybe" << std::endl;
 
     double uz = photon->uz; // z directional cosine.
     int dir;
@@ -199,10 +195,10 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon) //went bit haxish to n
         photon->uz = -uz; //reflect
 }
 
-void MC::Roulette(InputStruct* in, PhotonClass* photon)
+void MC::Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)
 {
-    std::cout << "Weight: " << photon->w << std::endl;
-    std::cout << "Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
+    *filestr << "  Weight: " << photon->w << std::endl;
+    *filestr << "  Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
     if(photon->w < in->wtolerance)
     {
         int tmp = rand() % 10;
@@ -214,12 +210,6 @@ void MC::Roulette(InputStruct* in, PhotonClass* photon)
         {
             photon->alive = false;
         }
-    }
-
-    if(debugtmp>0)   //debugging stuff, pauses multiple times when CrossMaybe runs
-    {
-        system("pause");
-        debugtmp--;
     }
 }
 

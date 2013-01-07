@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1357385836 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
+1357576761 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	<time.h>
 	<stdlib.h>
@@ -12,26 +12,27 @@
 1353939515 c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 
-1357304150 c:\users\em\documents\github\mczpd\monte carlo\formulas.h
+1357576507 c:\users\em\documents\github\mczpd\monte carlo\formulas.h
 	"structs.h"
+	<fstream>
 
-1357393574 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
+1357576881 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 	<cmath>
 	<stdlib.h>
-	<iostream>
+	<fstream>
 
-1357393629 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
+1357574372 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
 	"ReadConfig.h"
 	<stdlib.h>
 	<math.h>
 	<iostream>
 
-1357344856 c:\users\em\documents\github\mczpd\monte carlo\structs.h
+1357573908 c:\users\em\documents\github\mczpd\monte carlo\structs.h
 
-1357304119 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
-	<iostream>
+1357576829 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
+	<fstream>
 	"structs.h"
 	"formulas.h"
 	"microsim.h"
@@ -41,8 +42,9 @@
 	"structs.h"
 	"formulas.h"
 
-1355338987 c:\users\em\documents\github\mczpd\monte carlo\microsim.h
+1357576833 c:\users\em\documents\github\mczpd\monte carlo\microsim.h
 	"Structs.h"
+	<fstream>
 
 1357572106 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
@@ -81,17 +83,19 @@
 1356525838 c:\users\karlis\documents\github\mczpd\monte carlo\microsim.h
 	"Structs.h"
 
-1354106478 c:\users\em\documents\github\mczpd\monte carlo\writetocvs.h
+1357573908 c:\users\em\documents\github\mczpd\monte carlo\writetocvs.h
 	<fstream>
 	<string>
 
-1354129551 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
+1357573908 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
 	<fstream>
 	<string>
 
-1356885995 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
+1357573908 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
 	<fstream>
+	<string.h>
+	<sstream>
 
 1357572453 source:c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
