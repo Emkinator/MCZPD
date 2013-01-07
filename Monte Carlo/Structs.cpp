@@ -28,14 +28,14 @@ MC::InputStruct::InputStruct(int count)
     ConfigClass lp = ConfigClass("config.txt"); //layer parameters
     for(int i = 0; i<count; i++)
     {
-        layers[i].z[0] = atof(lp.GetValue("l1_z1").c_str());
-        layers[i].z[1] = atof(lp.GetValue("l1_z2").c_str());
-        layers[i].n = atof(lp.GetValue("l1_n").c_str());
-        layers[i].mua = atof(lp.GetValue("l1_mua").c_str());
-        layers[i].mus = atof(lp.GetValue("l1_mus").c_str());
-        layers[i].g = atof(lp.GetValue("l1_g").c_str());
+        layers[i].z[0] = atof(lp.GetValue(i,"z1").c_str());
+        layers[i].z[1] = atof(lp.GetValue(i,"z2").c_str());
+        layers[i].n = atof(lp.GetValue(i,"n").c_str());
+        layers[i].mua = atof(lp.GetValue(i,"mua").c_str());
+        layers[i].mus = atof(lp.GetValue(i,"mus").c_str());
+        layers[i].g = atof(lp.GetValue(i,"g").c_str());
 
-        std::cout << atof(lp.GetValue("l1_mua").c_str()) << std::endl;
+        std::cout << atof(lp.GetValue(i,"mua").c_str()) << std::endl;
         std::cout << "Layer read" << std::endl;
     }//label functionality in readconfig required for this, so that it can be replaced by lp.GetValue(layer,"z1").. etc. and automated
 
