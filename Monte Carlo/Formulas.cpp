@@ -1,7 +1,7 @@
 #include "Formulas.h"
 #include <cmath>
 #include <stdlib.h> //for rand()
-
+#include <iostream>
 #include <fstream>
 #define COS0 (1.0-1.0E-12)
 #define COS90 1.0E-6
@@ -117,7 +117,7 @@ bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* files
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 { //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
 	double r;
-
+    std::cout << "Fresnel alert" << std::endl;
 	if(n1 == n2)
 	{ //bounds match
 		*uzt = ca1;
@@ -141,11 +141,13 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 		sa2 = sa1*n1/n2;
 		if(sa2>=1.0)
 		{ //double check for total internal reflection, todo: check for better solution
+		    std::cout << "test" << std::endl;
 			*uzt = 0.0;
 			r = 1.0;
 		}
 		else
 		{
+            std::cout << "calculations" << std::endl;
 			double cap, cam, sap, sam; // cosines and sines of the sum or difference of the two angles. p = plus, m = minus
 			ca2 = sqrt(1-sa2*sa2);
 			cap = ca1*ca2 - sa1*sa2; // c+ = cc - ss.
@@ -182,7 +184,7 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
         r = 1.0;
     else
         r = FresnelReflect(n1, n2, uz, &uzt);
-
+    std::cout << r << std::endl;
     if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r<1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo

@@ -15,15 +15,16 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MC::InputStruct in = MC::InputStruct(2);
-    //in.CalculateCosC();  //doesn't work
+    MC::InputStruct in = MC::InputStruct(3);
     in.wtolerance = 1e-60;
-    in.count = 2;
+    in.count = 3;
+    in.CalculateCosC();
     ofstream filestr("simlog.txt");
     cout << filestr.fail() << endl;
 
     for(int i = 0; i<=10; i++)
     {
+        system("Pause");
         filestr << "Photon packet nr. " << i << endl << endl;
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();

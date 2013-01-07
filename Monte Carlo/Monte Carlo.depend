@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1357578308 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
+1357586742 source:c:\users\em\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	<time.h>
 	<stdlib.h>
@@ -16,10 +16,11 @@
 	"structs.h"
 	<fstream>
 
-1357579234 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
+1357586857 source:c:\users\em\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 	<cmath>
 	<stdlib.h>
+	<iostream>
 	<fstream>
 
 1357574372 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
@@ -31,7 +32,7 @@
 
 1357573908 c:\users\em\documents\github\mczpd\monte carlo\structs.h
 
-1357576829 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
+1357579544 source:c:\users\em\documents\github\mczpd\monte carlo\microsim.cpp
 	<fstream>
 	"structs.h"
 	"formulas.h"
