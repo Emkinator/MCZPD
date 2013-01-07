@@ -19,6 +19,8 @@ namespace MC
         photon->w -= spec;
         while(photon->alive)
         {
+
+
             *debuglog << "Cycle started" << std::endl;
             if(MoveAndBound(in, photon, debuglog))
                 CrossMaybe(in, photon, debuglog);
@@ -27,6 +29,11 @@ namespace MC
             Roulette(in, photon, debuglog);
             i++;
             *debuglog << "Cycle " << i << " done" << std::endl << std::endl;
+            if(photon->uz!=photon->uz)
+            {
+                photon->alive = false;
+                *debuglog << "Not a number, photon killed." << std::endl;
+            }
         }
         *debuglog << "Photon simulated.." << std::endl;
 

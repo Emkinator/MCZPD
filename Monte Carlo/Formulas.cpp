@@ -7,8 +7,7 @@
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (-(num < 0) | 1)
-#define random() ((rand() % 1000)/1000.0)
-
+#define random() ((rand() % 65536)/65536.0)
 
 void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) //Internal function
 {
