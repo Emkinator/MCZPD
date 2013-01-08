@@ -11,7 +11,7 @@
 
 void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) //Internal function
 {
-    *filestr << "  Step size ";
+
 
     short layer = Photon->layer;
 	double mua = In->layers[layer].mua;
@@ -23,13 +23,11 @@ void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) 
 	    do rnd = random();
 	    while(rnd <= 0.0);
 	    Photon->s = -(log(rnd) / (mua+mus));
-	    *filestr << Photon->s << std::endl;
 	}
 	else
 	{
 	    Photon->s = Photon->sLeft/(mua+mus);
 	    Photon->sLeft = 0.0;
-	    *filestr << Photon->s << std::endl;
 	}
 
 }
@@ -56,7 +54,6 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
     double ux = Photon->ux;
     double uy = Photon->uy;
     double uz = Photon->uz;
-    *filestr << "  Dir cos: " << ux << " " << uy << " " << uz << std::endl;
     double psi;
 
     cost = SpinTheta(g);
@@ -86,8 +83,6 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
 
 bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
 {//gets step size, does some checks, moves and returns if bounds
-    *filestr << "  Cords: " << photon->x << " " << photon->y << " " << photon->z << std::endl;
-    *filestr << "  Weight: " << photon->w << std::endl;
     bool ret = false;
     short layer = photon->layer;
 	double uz = photon->uz;
@@ -161,8 +156,6 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
-    *filestr << "    Intersected boundary" << std::endl;
-
     double uz = photon->uz; // z directional cosine.
     int dir = sign(uz);
     short layer = photon->layer;
@@ -182,16 +175,14 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
         photon->uz = -uz;
     }
     else if(random() > r) { //let trough at an angle
-        *filestr << "    Crossed" << std::endl;
         photon->layer += dir; //layer id change
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;
         photon->uz = dir * uzt; //retain original direction
     } else
         photon->uz = -uz; //reflect
-        *filestr << "    Reflected" << std::endl;
 
-    *filestr << "  Dir cos: " << photon->ux << " " << photon->uy << " " << photon->uz << std::endl;
+
 }
 
 void MC::Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)

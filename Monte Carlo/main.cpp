@@ -31,13 +31,13 @@ int main()
 
     in.CalculateCosC(in.count, &filestr);
 
-    for(int i = 0; i<=10; i++)
+    for(int i = 0; i<=0; i++)
     {
-        filestr << "Photon packet nr. " << i << endl << endl;
+        //filestr << "Photon packet nr. " << i << endl << endl;
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
         MC::simulatePhoton(&in, &photon, &ret, &filestr);
-        filestr << endl << "--------------------------------------" << endl << endl;
+        //filestr << endl << "--------------------------------------" << endl << endl;
        //MC::Output(photon, ret);
     }
 
