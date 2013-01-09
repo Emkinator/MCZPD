@@ -12,6 +12,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "Structs.h"
 #include "SDL_gfxPrimitives.h"
 
 struct pcords {
@@ -35,42 +36,6 @@ int GetStepCount(char* filename)
     return count-1;
 }
 
-pcords* ReadCords(char* filename)
-{
-    using namespace std;
-
-    int c = GetStepCount(filename);
-    string line;
-    double x;
-    double y;
-    double z;
-    size_t pos;
-    size_t pos2;
-    pcords cords[c];
-
-    ifstream file(filename);
-
-    for(int i=0;i<c;i++)
-    {
-        getline (file,line);
-        pos = line.find(",");
-        x = atof(line.substr(0, pos).c_str());
-        pos2 = line.find(",",pos+1);
-
-        y = atof(line.substr(pos+1,pos2-pos-1).c_str());
-
-        pos = line.find(",",pos+1);
-        pos2 = line.find(",",pos+1);
-
-        z = atof(line.substr(pos+1,pos2-pos).c_str());
-
-        cords[i].xorig = x;   //change this to "..= y" for other viewpoint
-        cords[i].yorig = z;
-        cout << i << ": " << cords[i].xorig << " " << cords[i].yorig << endl;
-    }
-    file.close();
-    return cords;
-}
 
 int main ( int argc, char** argv )
 {
@@ -86,24 +51,61 @@ int main ( int argc, char** argv )
     atexit(SDL_Quit);
 
     // create a new window
-    SDL_Surface* screen = SDL_SetVideoMode(1280, 720, 16,
-                                           SDL_HWSURFACE|SDL_DOUBLEBUF);
+    SDL_Surface* screen = SDL_SetVideoMode(1280, 720, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
     if ( !screen )
     {
         printf("Unable to set 1280x720 video: %s\n", SDL_GetError());
         return 1;
     }
 
-    std::cout << "Steps: " << GetStepCount("simlog.txt") << std::endl;
+    MC::InputStruct in = MC::InputStruct(7);
+    in.count = 7;
 
-
-    pcords* cords = ReadCords("simlog.txt");
-
-    for(int i=0;i<268;i++)
+    // read cords from file, assign to array "cords"
+    int c = GetStepCount("simlog.txt");
+    pcords cords[c];
     {
-        std::cout << i << ": " << cords[i].xorig << "  " << cords[i].yorig << std::endl;
+        using namespace std;
+
+        string line;
+        double x;
+        double y;
+        double z;
+        size_t pos;
+        size_t pos2;
+
+
+        ifstream file("simlog.txt");
+
+        for(int i=0;i<c;i++)
+        {
+            getline (file,line);
+            pos = line.find(",");
+            x = atof(line.substr(0, pos).c_str());
+            pos2 = line.find(",",pos+1);
+
+            y = atof(line.substr(pos+1,pos2-pos-1).c_str());
+
+            pos = line.find(",",pos+1);
+            pos2 = line.find(",",pos+1);
+
+            z = atof(line.substr(pos+1,pos2-pos).c_str());
+
+            cords[i].xorig = x;   //change this to "..= y" for other viewpoint
+            cords[i].yorig = z;
+        }
+        file.close();
+    }
+    double scale = 1000;
+
+
+    for(int i=0;i<c;i++)
+    {
+        cords[i].x = (cords[i].xorig * scale) + 640;
+        cords[i].y = (cords[i].yorig * scale) + 50;
     }
 
+    int n = 1;
     // program main loop
     bool done = false;
     while (!done)
@@ -126,6 +128,13 @@ int main ( int argc, char** argv )
                     // exit if ESCAPE is pressed
                     if (event.key.keysym.sym == SDLK_ESCAPE)
                         done = true;
+                    else if(event.key.keysym.sym == SDLK_SPACE)
+                        if(n<c-1)
+                        {
+                            n+=1;
+                            std::cout << n << std::endl;
+                        }
+
                     break;
                 }
             } // end switch
@@ -134,9 +143,20 @@ int main ( int argc, char** argv )
         // DRAWING STARTS HERE
 
         // clear screen
-        SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
 
-        // draw bitmap
+
+        // draw stuff
+        SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
+        lineRGBA(screen, 0, 50, 1279, 50, 255,255,255,255); // air/tissue boundary
+        for(int i = 0; i < in.count;i++)
+        {
+            lineRGBA(screen, 0, 50+(in.layers[i].z[1]*scale), 1279, 50+(in.layers[i].z[1]*scale), 255,255,255,255);
+        }
+        for(int i = 0; i<n; i++)
+            lineRGBA(screen, round(cords[i].x), round(cords[i].y), round(cords[i+1].x), round(cords[i+1].y), 255,255,255,255);
+
+
+
 
         // DRAWING ENDS HERE
 

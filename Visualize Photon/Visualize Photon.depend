@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1357674876 source:c:\users\em\documents\github\mczpd\visualize photon\main.cpp
+1357769241 source:c:\users\em\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -7,6 +7,7 @@
 	<fstream>
 	<string>
 	<iostream>
+	"Structs.h"
 	"SDL_gfxPrimitives.h"
 
 1325738639 c:\sdl-1.2.15\include\sdl\sdl.h
@@ -388,4 +389,28 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1357666327 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
+	"Structs.h"
+	"ReadConfig.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
+
+1357591290 c:\users\em\documents\github\mczpd\monte carlo\structs.h
+	<fstream>
+
+1357573908 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
+	<fstream>
+	<string>
+
+1357673395 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
+	"ReadConfig.h"
+	<fstream>
+	<string.h>
+	<sstream>
+
+1357591290 c:\users\em\documents\github\mczpd\visualize photon\structs.h
+	<fstream>
 
