@@ -42,7 +42,10 @@
 			<Add library="dxguid" />
 			<Add directory="C:\SDL-1.2.15\lib" />
 		</Linker>
-		<Unit filename="cb.bmp" />
+		<Unit filename="..\Monte Carlo\ReadConfig.cpp" />
+		<Unit filename="..\Monte Carlo\ReadConfig.h" />
+		<Unit filename="..\Monte Carlo\Structs.cpp" />
+		<Unit filename="..\Monte Carlo\Structs.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
