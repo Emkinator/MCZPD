@@ -40,7 +40,7 @@ namespace MC
             if(photon->uz!=photon->uz)
             {
                 photon->alive = false;
-                //*debuglog << "Not a number, photon killed." << std::endl;
+                *debuglog << "Not a number, photon killed." << std::endl;
             }
         }
         //*debuglog << "Photon simulated.." << std::endl;

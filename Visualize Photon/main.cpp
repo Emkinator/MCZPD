@@ -16,8 +16,6 @@
 #include "SDL_gfxPrimitives.h"
 
 struct pcords {
-    double xorig;
-    double yorig;
     double x;
     double y;
 };
@@ -91,22 +89,17 @@ int main ( int argc, char** argv )
 
             z = atof(line.substr(pos+1,pos2-pos).c_str());
 
-            cords[i].xorig = x;   //change this to "..= y" for other viewpoint
-            cords[i].yorig = z;
+            cords[i].x = x;   //change this to "..= y" for other viewpoint
+            cords[i].y = z;
         }
         file.close();
     }
-    double scale = 1000;
+    double scale = 10000;
 
 
-    for(int i=0;i<c;i++)
-    {
-        cords[i].x = (cords[i].xorig * scale) + 640;
-        cords[i].y = (cords[i].yorig * scale) + 50;
-    }
-
+    double x1, x2, y1, y2;
     int n = 1;
-    // program main loop
+    // program main loop ----------------------------------------------
     bool done = false;
     while (!done)
     {
@@ -114,26 +107,20 @@ int main ( int argc, char** argv )
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
-            // check for messages
             switch (event.type)
             {
-                // exit if the window is closed
             case SDL_QUIT:
                 done = true;
                 break;
 
-                // check for keypresses
             case SDL_KEYDOWN:
                 {
-                    // exit if ESCAPE is pressed
                     if (event.key.keysym.sym == SDLK_ESCAPE)
                         done = true;
                     else if(event.key.keysym.sym == SDLK_SPACE)
                         if(n<c-1)
-                        {
-                            n+=1;
-                            std::cout << n << std::endl;
-                        }
+                            n += 1;
+
 
                     break;
                 }
@@ -148,12 +135,28 @@ int main ( int argc, char** argv )
         // draw stuff
         SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
         lineRGBA(screen, 0, 50, 1279, 50, 255,255,255,255); // air/tissue boundary
+
         for(int i = 0; i < in.count;i++)
-        {
             lineRGBA(screen, 0, 50+(in.layers[i].z[1]*scale), 1279, 50+(in.layers[i].z[1]*scale), 255,255,255,255);
-        }
+
+
         for(int i = 0; i<n; i++)
-            lineRGBA(screen, round(cords[i].x), round(cords[i].y), round(cords[i+1].x), round(cords[i+1].y), 255,255,255,255);
+        {
+
+            x1 = (cords[i].x * scale) + 640;
+            x2 = (cords[i+1].x * scale) + 640;
+            y1 = (cords[i].y * scale) + 50;
+            y2 = (cords[i+1].y * scale) + 50;
+
+            lineRGBA(screen, round(x1), round(y1), round(x2), round(y2), 255,255,255,255);
+        }
+
+        if(x2>1200 || x2<80 || y2>640)
+        {
+            scale = scale * 0.9;
+            std::cout << scale << std::endl;
+        }
+
 
 
 
