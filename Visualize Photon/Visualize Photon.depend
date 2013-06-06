@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1358800477 source:c:\users\em\documents\github\mczpd\visualize photon\main.cpp
+1358804665 source:c:\users\em\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -10,7 +10,7 @@
 	"Structs.h"
 	"SDL_gfxPrimitives.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -29,14 +29,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_main.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_stdinc.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -62,7 +62,7 @@
 	<stdlib.h>
 	"close_code.h"
 
-1326110987 c:\sdl-1.2.15\include\sdl\sdl_config.h
+1326114587 c:\sdl-1.2.15\include\sdl\sdl_config.h
 	"SDL_platform.h"
 	"SDL_config_dreamcast.h"
 	"SDL_config_macos.h"
@@ -72,16 +72,16 @@
 	"SDL_config_os2.h"
 	"SDL_config_minimal.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_platform.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_platform.h
 
-1326110994 c:\sdl-1.2.15\include\sdl\sdl_config_win32.h
+1326114594 c:\sdl-1.2.15\include\sdl\sdl_config_win32.h
 	"SDL_platform.h"
 
-1326111000 c:\sdl-1.2.15\include\sdl\begin_code.h
+1326114600 c:\sdl-1.2.15\include\sdl\begin_code.h
 
-1325738639 c:\sdl-1.2.15\include\sdl\close_code.h
+1325742239 c:\sdl-1.2.15\include\sdl\close_code.h
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_audio.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -91,24 +91,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_error.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_endian.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_mutex.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_thread.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -116,24 +116,24 @@
 	<process.h>
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_rwops.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_cdrom.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_events.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -144,63 +144,63 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_active.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_keyboard.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_keysym.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_keysym.h
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_mouse.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_video.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_joystick.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_quit.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_timer.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl\sdl_version.h
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742239 c:\sdl-1.2.15\include\sdl\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl.h
+1325742239 c:\sdl-1.2.15\include\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -219,14 +219,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_main.h
+1325742239 c:\sdl-1.2.15\include\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_stdinc.h
+1325742239 c:\sdl-1.2.15\include\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -252,7 +252,7 @@
 	<stdlib.h>
 	"close_code.h"
 
-1326110987 c:\sdl-1.2.15\include\sdl_config.h
+1326114587 c:\sdl-1.2.15\include\sdl_config.h
 	"SDL_platform.h"
 	"SDL_config_dreamcast.h"
 	"SDL_config_macos.h"
@@ -262,16 +262,16 @@
 	"SDL_config_os2.h"
 	"SDL_config_minimal.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_platform.h
+1325742239 c:\sdl-1.2.15\include\sdl_platform.h
 
-1326110994 c:\sdl-1.2.15\include\sdl_config_win32.h
+1326114594 c:\sdl-1.2.15\include\sdl_config_win32.h
 	"SDL_platform.h"
 
-1326111000 c:\sdl-1.2.15\include\begin_code.h
+1326114600 c:\sdl-1.2.15\include\begin_code.h
 
-1325738639 c:\sdl-1.2.15\include\close_code.h
+1325742239 c:\sdl-1.2.15\include\close_code.h
 
-1325738639 c:\sdl-1.2.15\include\sdl_audio.h
+1325742239 c:\sdl-1.2.15\include\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -281,24 +281,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_error.h
+1325742239 c:\sdl-1.2.15\include\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_endian.h
+1325742239 c:\sdl-1.2.15\include\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_mutex.h
+1325742239 c:\sdl-1.2.15\include\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_thread.h
+1325742239 c:\sdl-1.2.15\include\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -306,24 +306,24 @@
 	<process.h>
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_rwops.h
+1325742239 c:\sdl-1.2.15\include\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_cdrom.h
+1325742239 c:\sdl-1.2.15\include\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_cpuinfo.h
+1325742239 c:\sdl-1.2.15\include\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_events.h
+1325742239 c:\sdl-1.2.15\include\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -334,63 +334,63 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_active.h
+1325742239 c:\sdl-1.2.15\include\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_keyboard.h
+1325742239 c:\sdl-1.2.15\include\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_keysym.h
+1325742239 c:\sdl-1.2.15\include\sdl_keysym.h
 
-1325738639 c:\sdl-1.2.15\include\sdl_mouse.h
+1325742239 c:\sdl-1.2.15\include\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_video.h
+1325742239 c:\sdl-1.2.15\include\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_joystick.h
+1325742239 c:\sdl-1.2.15\include\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_quit.h
+1325742239 c:\sdl-1.2.15\include\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325738639 c:\sdl-1.2.15\include\sdl_timer.h
+1325742239 c:\sdl-1.2.15\include\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738639 c:\sdl-1.2.15\include\sdl_version.h
+1325742239 c:\sdl-1.2.15\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742239 c:\sdl-1.2.15\include\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1358347821 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
+1358807822 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
 	"ReadConfig.h"
 	<stdlib.h>
@@ -398,19 +398,19 @@
 	<iostream>
 	<fstream>
 
-1357591290 c:\users\em\documents\github\mczpd\monte carlo\structs.h
+1357594890 c:\users\em\documents\github\mczpd\monte carlo\structs.h
 	<fstream>
 
-1357573908 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
+1357577508 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
 	<fstream>
 	<string>
 
-1357673395 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
+1357676995 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
 	<fstream>
 	<string.h>
 	<sstream>
 
-1357771843 c:\users\em\documents\github\mczpd\visualize photon\structs.h
+1357775443 c:\users\em\documents\github\mczpd\visualize photon\structs.h
 	<fstream>
 

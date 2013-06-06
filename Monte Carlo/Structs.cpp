@@ -52,7 +52,7 @@ MC::InputStruct::InputStruct(int count)
 void MC::InputStruct::CalculateCosC(int count, std::ofstream* debuglog) //doesn't work
 {
 	double n1, n2;
-    layers[0].cos_critical[0] = 1.0;
+    layers[0].cos_critical[0] = 0.0;
 
     for(short i=1; i<=count; i++)
     {
@@ -67,7 +67,7 @@ void MC::InputStruct::CalculateCosC(int count, std::ofstream* debuglog) //doesn'
             layers[i-1].cos_critical[1] = sqrt(1.0 - n1*n1/(n2*n2));
 		}
     }
-    layers[count].cos_critical[1] = 0.0;
+    layers[count].cos_critical[1] = 1.0;
 
     /*for(short i=1; i<=count; i++)
 	{

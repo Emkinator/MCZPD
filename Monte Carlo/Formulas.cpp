@@ -111,6 +111,10 @@ bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* files
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 { //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
 	double r;
+	if(n2 == 0)
+	{
+	    std::cout << "omg" << std::endl;
+	}
 	if(n1 == n2)
 	{ //bounds match
 		*uzt = ca1;
@@ -121,6 +125,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 		*uzt = ca1;
 		r = (n2-n1)/(n2+n1);
 		r *= r;
+
 	}
 	else if(ca1<COS90)
 	{ //vertical
@@ -163,14 +168,19 @@ void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr
 	double n2 = in->layers[layer+dir].n;
 	double uzt; // cosine of transmission alpha. uz1>0
 	double r = 0.0; // reflectance
-
-	if (dir * uz <= in->layers[layer+dir].cos_critical[int(dir>0)]) ////int(uz>0.0) makes array index 1 on positive and 0 on negative
+    if(n2 == 0)
+	{
+	    std::cout << layer+dir << std::endl;
+	}
+	if (dir * uz <= in->layers[layer-1].cos_critical[int(dir>0)]) ////int(uz>0.0) makes array index 1 on positive and 0 on negative
         r = 1.0;
     else
         r = FresnelReflect(n1, n2, uz, &uzt);
-    if( ((((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count)))) && r < 1.0)
+    *filestr << "Reflectance: " << r << std::endl;
+    if( (((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count - 1))) && r < 1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo
+        std::cout << "Test" << std::endl;
         photon->w *= r; //decrease weight
         photon->uz = -uz;
     }

@@ -27,7 +27,7 @@ namespace MC
             //*debuglog << "  Step size: " << photon->s << std::endl;;
             //*debuglog << "  Weight: " << photon->w << std::endl;
 
-            *debuglog << photon->x << "," << photon->y << "," << photon->z << std::endl;
+            //*debuglog << photon->x << "," << photon->y << "," << photon->z << std::endl;
 
             if(MoveAndBound(in, photon, debuglog))
                 CrossMaybe(in, photon, debuglog);
