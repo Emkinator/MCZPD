@@ -22,9 +22,9 @@ MC::PhotonClass::PhotonClass()
 }
 
 
-MC::InputStruct::InputStruct(int count)
+MC::InputClass::InputClass(int count)
 {
-    std::cout << "Creating InputStruct" << std::endl;
+    //std::cout << "Creating InputClass" << std::endl;
     layers = new LayerClass[count];
     ConfigClass lp = ConfigClass("config.txt"); //layer parameters
     for(int i = 0; i<count; i++)
@@ -44,12 +44,12 @@ MC::InputStruct::InputStruct(int count)
         layers[i].mua = atof(lp.GetValue(i,"mua").c_str());
         layers[i].mus = atof(lp.GetValue(i,"mus").c_str());
         layers[i].g = atof(lp.GetValue(i,"g").c_str());
-        std::cout << "Layer read" << std::endl;
+        //std::cout << "Layer read" << std::endl;
     }//label functionality in readconfig required for this, so that it can be replaced by lp.GetValue(layer,"z1").. etc. and automated
-    std::cout << "Done" << std::endl;
+    //std::cout << "Done" << std::endl;
 }
 
-void MC::InputStruct::CalculateCosC(int count, std::ofstream* debuglog) //doesn't work
+void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog) //doesn't work
 {
 	double n1, n2;
     layers[0].cos_critical[0] = 0.0;
@@ -67,7 +67,7 @@ void MC::InputStruct::CalculateCosC(int count, std::ofstream* debuglog) //doesn'
             layers[i-1].cos_critical[1] = sqrt(1.0 - n1*n1/(n2*n2));
 		}
     }
-    layers[count].cos_critical[1] = 0.0;
+    layers[count].cos_critical[1] = 1.0;
 
     /*for(short i=1; i<=count; i++)
 	{

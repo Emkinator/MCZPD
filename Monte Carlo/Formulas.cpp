@@ -9,10 +9,8 @@
 #define sign(num) (-(num < 0) | 1)
 #define random() ((rand() % 65536)/65536.0)
 
-void MC::StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr) //Internal function
+void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) //Internal function
 {
-
-
     short layer = Photon->layer;
 	double mua = In->layers[layer].mua;
 	double mus = In->layers[layer].mus;
@@ -81,7 +79,7 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
     }
 }
 
-bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)   // !! bounding doesn't work correctly, often the photon packet seems to move outside of bounds.
+bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
 {//gets step size, does some checks, moves and returns if bounds
     bool ret = false;
     short layer = photon->layer;
@@ -109,12 +107,8 @@ bool MC::MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* files
 }
 
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
-{ //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil
+{ //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil. The elsifs make the code much more readable, and the performance cost is negligable.
 	double r;
-	if(n2 == 0)
-	{
-	    std::cout << "omg" << std::endl;
-	}
 	if(n1 == n2)
 	{ //bounds match
 		*uzt = ca1;
@@ -125,7 +119,6 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 		*uzt = ca1;
 		r = (n2-n1)/(n2+n1);
 		r *= r;
-
 	}
 	else if(ca1<COS90)
 	{ //vertical
@@ -158,44 +151,45 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 }
 
 
-void MC::CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
+void MC::CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
     double uz = photon->uz; // z directional cosine.
     int dir = sign(uz);
     short layer = photon->layer;
     double n1 = in->layers[layer].n;
-	double n2 = in->layers[layer+dir].n;
+    double n2;
+    if(layer == 0 && dir == -1)
+        n2 = 1; //air
+    else
+        n2 = in->layers[layer+dir].n;
 	double uzt; // cosine of transmission alpha. uz1>0
 	double r = 0.0; // reflectance
-    if(n2 == 0)
-	{
-	    std::cout << layer+dir << std::endl;
-	}
-	if (dir * uz <= in->layers[layer-1].cos_critical[int(dir>0)]) ////int(uz>0.0) makes array index 1 on positive and 0 on negative
+	if (dir * uz <= in->layers[layer].cos_critical[int(dir>0)])//int(uz>0.0) makes array index 1 on positive and 0 on negative
         r = 1.0;
     else
-        r = FresnelReflect(n1, n2, uz, &uzt);
-    *filestr << "Reflectance: " << r << std::endl;
-    if( (((layer == 0) && (dir == -1)) || ((dir == 1) && (layer == in->count - 1))) && r < 1.0)
+        r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
+
+    if( ((layer == 0) && (dir == -1)) && r < 1.0)
     {//reflect and die/drop mass
         //LogPartialDying(r, in, photon, out); //todo
-        std::cout << "Test" << std::endl;
         photon->w *= r; //decrease weight
         photon->uz = -uz;
+        //std::cout << "Dropped mass: " <<  << std::endl;
     }
     else if(random() > r) { //let trough at an angle
         photon->layer += dir; //layer id change
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;
         photon->uz = dir * uzt; //retain original direction
+        //*filestr << "Layer: " << photon->layer << std::endl; //logs layer change
     } else
         photon->uz = -uz; //reflect
 
 
 }
 
-void MC::Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr)
+void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
 {
     if(photon->w < in->wtolerance)
     {

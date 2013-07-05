@@ -10,7 +10,7 @@ template <typename T> int sign(T val) {
 
 namespace MC
 {
-    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog)
+    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog)
     {
         int i = 0;
         double spec = SpecularReflect(1,in->layers[0].n);
@@ -27,7 +27,7 @@ namespace MC
             //*debuglog << "  Step size: " << photon->s << std::endl;;
             //*debuglog << "  Weight: " << photon->w << std::endl;
 
-            //*debuglog << photon->x << "," << photon->y << "," << photon->z << std::endl;
+            *debuglog << photon->x << "," << photon->y << "," << photon->z << std::endl;
 
             if(MoveAndBound(in, photon, debuglog))
                 CrossMaybe(in, photon, debuglog);

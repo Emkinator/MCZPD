@@ -33,7 +33,7 @@ namespace MC
 
     };
 
-    class InputStruct //todo: change name to InputClass everywhere
+    class InputClass
     {
         private:
 
@@ -41,7 +41,7 @@ namespace MC
             int count;
             double wtolerance;
             LayerClass* layers;
-            InputStruct(int count);
+            InputClass(int count);
             void CalculateCosC(int count, std::ofstream* debuglog);
 
     };

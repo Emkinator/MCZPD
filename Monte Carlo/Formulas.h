@@ -8,21 +8,21 @@
 
 namespace MC
 {
-    void StepSize(PhotonClass* Photon, InputStruct* In, std::ofstream* filestr); //internal
+    void StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr); //internal
 
     double SpinTheta(double g); //internal
 
-    void Spin(double g, PhotonClass* Photon, std::ofstream* filestr);
+    void Spin(double g, PhotonClass* Photon, std::ofstream* filestr); //calculates spin
 
-    bool MoveAndBound(InputStruct* in, PhotonClass* photon, std::ofstream* filestr); //gets step size, does some checks, moves and returns if bounds
+    bool MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //gets step size, does some checks, moves and returns if bounds
 
     double FresnelReflect(double n1, double n2, double ca1, double* uzt); //internal
 
-    void CrossMaybe(InputStruct* in, PhotonClass* photon, std::ofstream* filestr);
+    void CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //checks if photon should cross layer boundary
 
-    void Roulette(InputStruct* in, PhotonClass* photon, std::ofstream* filestr);
+    void Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //gives photon a 1/10 chance to not be completely absorbed
 
-    double SpecularReflect(double n1, double n2);
+    double SpecularReflect(double n1, double n2); //calculates ammount of reflection at photon entrance in tissue
 
 }
 

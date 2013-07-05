@@ -4,7 +4,7 @@
 #include <fstream>
 namespace MC
 {
-    void simulatePhoton(InputStruct * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog); // returns pointer to OutputStruct with all the neccesary info
+    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog); // returns pointer to OutputStruct with all the neccesary info
 }
 
 
