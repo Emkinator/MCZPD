@@ -7,7 +7,7 @@
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (-(num < 0) | 1)
-#define random() ((rand() % 65536)/65536.0)
+#define random() (rand() / float(RAND_MAX))
 
 void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) //Internal function
 {
@@ -194,12 +194,10 @@ void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
     if(photon->w < in->wtolerance)
     {
         int tmp = rand() % 10;
-        if(tmp == 0)
-        {
+        if(tmp == 0) {
             photon->w *= 10.0;
         }
-        else
-        {
+        else {
             photon->alive = false;
         }
     }
@@ -210,8 +208,8 @@ double MC::SpecularReflect(double n1, double n2) //doesn't work, since n1 would 
 	double r1;
 	double temp;
 
-	temp = n1-n2 / n1+n2;
+	temp = (n1-n2) / (n1+n2);
 	r1 = temp*temp;
 
-	return (0.1); //temporary, should output r1
+	return r1; //temporary, should output r1
 }
