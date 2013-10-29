@@ -30,13 +30,11 @@ MC::InputClass::InputClass(int count)
     for(int i = 0; i<count; i++)
     {
         double z = atof(lp.GetValue(i,"z").c_str());
-        if(i>0)
-        {
+        if(i > 0) {
             layers[i].z[0] = layers[i-1].z[1];
             layers[i].z[1] = layers[i-1].z[1] + z * 0.001; //conversion from micrometers to mm
         }
-        else
-        {
+        else {
             layers[i].z[0] = 0;
             layers[i].z[1] = z *0.001;
         }
@@ -54,8 +52,7 @@ void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog) //doesn't
 	double n1, n2;
     layers[0].cos_critical[0] = 0.0;
 
-    for(short i=1; i<=count; i++)
-    {
+    for(short i=1; i<count; i++) {
         n1 = layers[i].n;
 		n2 = layers[i-1].n;
 		if(n1>n2) { //precision loss shouldnt matter cause that case would be discarded anyway
@@ -67,7 +64,7 @@ void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog) //doesn't
             layers[i-1].cos_critical[1] = sqrt(1.0 - n1*n1/(n2*n2));
 		}
     }
-    layers[count].cos_critical[1] = 1.0;
+    layers[count - 1].cos_critical[1] = 1.0;
 
     /*for(short i=1; i<=count; i++)
 	{

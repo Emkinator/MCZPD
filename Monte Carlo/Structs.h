@@ -39,6 +39,7 @@ namespace MC
 
         public:
             int count;
+            int passes;
             double wtolerance;
             LayerClass* layers;
             InputClass(int count);

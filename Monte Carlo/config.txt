@@ -1,4 +1,6 @@
+passes = 100
 /Layer parameters
+count = 7
 [0]
 z = 25
 n = 1.5

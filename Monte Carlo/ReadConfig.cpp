@@ -21,13 +21,18 @@ std::string ConfigClass::GetValue(int layer, std::string fieldName)
     std::string output;
     std::string label = SSTR(layer);
     std::size_t pos;
+    std::size_t comment;
     bool found = false;
     bool labels_matter = false;
-    while(file.good())
-    {
+    while(file.good()) {
         getline(file, line);
-        if(line[0] == '/')
+
+        comment = line.find("/");
+        if(comment > 0)
+            line = line.substr(0, comment - 1);
+        else if(comment == 0)
             continue;
+
         if(line[0] == '[') {
             pos = line.find(']');
             if(pos > 1) {
@@ -38,7 +43,6 @@ std::string ConfigClass::GetValue(int layer, std::string fieldName)
                 if(strcmp(label.c_str(), output.c_str()) == 0) //found label
                     found = true;
             }
-
         }
         if(found || !labels_matter) {
             pos = line.find(fieldName.c_str());

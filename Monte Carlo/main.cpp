@@ -20,19 +20,21 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MC::InputClass in = MC::InputClass(7);
+    MC::ConfigClass ip = MC::ConfigClass("config.txt");
+    int count = atof(ip.GetValue(0,"count").c_str());;
+    MC::InputClass in = MC::InputClass(count);
+    in.count = count;
     in.wtolerance = 1e-60;
-    in.count = 7;
+
     ofstream filestr("simlog.txt");
-    if(filestr.fail() == 1)
-    {
+    if(filestr.fail() == 1) {
         cout << "Logfile could not be created." << endl;
     }
 
     in.CalculateCosC(in.count, &filestr);
 
-    for(int i = 0; i<=0; i++)
-    {
+    in.passes = atof(ip.GetValue(0,"passes").c_str());;
+    for(int i = 0; i<=in.passes; i++) {
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
         MC::simulatePhoton(&in, &photon, &ret, &filestr);
