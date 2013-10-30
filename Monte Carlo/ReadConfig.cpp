@@ -1,5 +1,6 @@
 #include "ReadConfig.h"
 #include <fstream>
+#include <iostream>
 #include <string.h>
 #include <sstream>
 
@@ -13,7 +14,7 @@ ConfigClass::ConfigClass(const char* fileName)
     fName = fileName;
 }
 
-std::string ConfigClass::GetValue(int layer, std::string fieldName)
+std::string ConfigClass::GetValue(int layer, std::string fieldName, int index)
 {
     std::ifstream file;
     file.open(fName.c_str());
@@ -24,6 +25,9 @@ std::string ConfigClass::GetValue(int layer, std::string fieldName)
     std::size_t comment;
     bool found = false;
     bool labels_matter = false;
+    bool in_array = false;
+    bool right_array = false;
+    int array_index = 0;
     while(file.good()) {
         getline(file, line);
 
@@ -44,15 +48,35 @@ std::string ConfigClass::GetValue(int layer, std::string fieldName)
                     found = true;
             }
         }
-        if(found || !labels_matter) {
-            pos = line.find(fieldName.c_str());
-            if(pos == 0) {
-                pos = line.find("=");
-                output = line.substr(pos+2, line.size()-(pos+1));
-                break;
-            }
+        else if(line[0] == '{') {
+            in_array = true;
+        }
+        else if(line[0] == '}') {
+            if(right_array) break;
+            in_array = false;
         }
 
+        if(in_array) {
+            if(right_array) {
+                if(index == array_index) {
+                    output = line.substr(1, line.size()-1);
+                    break;
+                }
+                array_index++;
+            }
+        }
+        else if(found || !labels_matter) {
+            pos = line.find(fieldName.c_str());
+            if(pos == 0) {
+                if(index > -1)
+                    right_array = true;
+                else {
+                    pos = line.find("=");
+                    output = line.substr(pos+2, line.size()-(pos+1));
+                    break;
+                }
+            }
+        }
     }
     file.close();
     return output;

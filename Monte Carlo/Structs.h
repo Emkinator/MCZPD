@@ -30,6 +30,7 @@ namespace MC
             double mus;         //scattering coefficient
             double g;           //anisotropy
             double cos_critical[2]; //cosines of the critical angles, calculated later
+            double* volume;
 
     };
 
@@ -40,9 +41,14 @@ namespace MC
         public:
             int count;
             int passes;
+            int chromophores;
+            int wavelength; //in nm
             double wtolerance;
+            double* absorbance;
+            double base_absorbance;
             LayerClass* layers;
             InputClass(int count);
+            double CalculateAbsorbance(int layer);
             void CalculateCosC(int count, std::ofstream* debuglog);
 
     };

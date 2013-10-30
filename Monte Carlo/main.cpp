@@ -5,10 +5,10 @@
 #include <fstream>
 #include <math.h>
 #include "Formulas.h"
+#include "ReadConfig.h"
 #include "Structs.h"
 #include "Microsim.h"
 #include "WriteToCVS.h"
-#include "ReadConfig.h"
 
 #define random() ((rand() % 65536)/65536.0)
 // Main.cpp
@@ -21,10 +21,9 @@ int main()
 {
     srand(time(NULL));
     MC::ConfigClass ip = MC::ConfigClass("config.txt");
-    int count = atof(ip.GetValue(0,"count").c_str());;
+    int count = atof(ip.GetValue(0,"count").c_str());
     MC::InputClass in = MC::InputClass(count);
-    in.count = count;
-    in.wtolerance = 1e-60;
+
 
     ofstream filestr("simlog.txt");
     if(filestr.fail() == 1) {
@@ -33,8 +32,8 @@ int main()
 
     in.CalculateCosC(in.count, &filestr);
 
-    in.passes = atof(ip.GetValue(0,"passes").c_str());;
-    for(int i = 0; i<=in.passes; i++) {
+    in.passes = atof(ip.GetValue(0,"passes").c_str());
+    for(int i = 0; i<in.passes; i++) {
         MC::OutputStruct ret;
         MC::PhotonClass photon = MC::PhotonClass();
         MC::simulatePhoton(&in, &photon, &ret, &filestr);

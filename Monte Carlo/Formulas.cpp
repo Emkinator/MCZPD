@@ -205,11 +205,7 @@ void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
 
 double MC::SpecularReflect(double n1, double n2) //doesn't work, since n1 would always be 0. The other formula that's in the wong_thesis has 3 n variables, not sure how to use it.
 {//Called once on the start of the simulation
-	double r1;
-	double temp;
+	double temp = (n1-n2) / (n1+n2);
 
-	temp = (n1-n2) / (n1+n2);
-	r1 = temp*temp;
-
-	return r1; //temporary, should output r1
+	return temp*temp; //temporary, should output r1
 }
