@@ -7,17 +7,23 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\Visualize Photon" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/Visualize Photon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="C:/SDL-1.2.15/include/SDL" />
+					<Add directory="C:/SDL_gfxPrimitives-1.5" />
 				</Compiler>
+				<Linker>
+					<Add directory="C:/SDL-1.2.15/lib" />
+					<Add directory="C:/SDL_gfxPrimitives-1.5" />
+				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\Visualize Photon" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/Visualize Photon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -30,7 +36,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="C:\SDL-1.2.15\include" />
+			<Add directory="C:/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>
 			<Add library="mingw32" />
@@ -40,16 +46,21 @@
 			<Add library="gdi32" />
 			<Add library="winmm" />
 			<Add library="dxguid" />
-			<Add directory="C:\SDL-1.2.15\lib" />
+			<Add directory="C:/SDL-1.2.15/lib" />
 		</Linker>
-		<Unit filename="..\Monte Carlo\ReadConfig.cpp" />
-		<Unit filename="..\Monte Carlo\ReadConfig.h" />
-		<Unit filename="..\Monte Carlo\Structs.cpp" />
-		<Unit filename="..\Monte Carlo\Structs.h" />
+		<Unit filename="../Monte Carlo/ReadConfig.cpp" />
+		<Unit filename="../Monte Carlo/ReadConfig.h" />
+		<Unit filename="../Monte Carlo/Structs.cpp" />
+		<Unit filename="../Monte Carlo/Structs.h" />
+		<Unit filename="SDL_gfxPrimitives.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_gfxPrimitives.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -15,12 +15,13 @@
 #include "Structs.h"
 #include "SDL_gfxPrimitives.h"
 
+
 struct pcords {
     double x;
     double y;
     double z;
 };
-
+/*
 void GradientLine(SDL_Surface* dst, int x_1, int y_1, int x_2, int y_2, int startColour, int endColour) //color ranges from 0 to 255, black to white
 {
     int x1;
@@ -80,7 +81,7 @@ void GradientLine(SDL_Surface* dst, int x_1, int y_1, int x_2, int y_2, int star
         pixelRGBA(dst,x,y,c3,c3,c3,255);
     }
 }
-
+*/
 int GetStepCount(char* filename)
 {
     using namespace std;
@@ -163,7 +164,7 @@ int main ( int argc, char** argv )
 
     double x1, x2, y1, y2, c1, c2;
     int n = 1;
-    int view = 3;
+    int view = 1;
     bool recalcScale = false;
     // program main loop ----------------------------------------------
     bool done = false;
@@ -171,7 +172,7 @@ int main ( int argc, char** argv )
     {
         // message processing loop
         SDL_Event event;
-        while (SDL_PollEvent(&event))
+        while(SDL_PollEvent(&event))
         {
             switch (event.type)
             {
@@ -181,12 +182,12 @@ int main ( int argc, char** argv )
 
             case SDL_KEYDOWN:
                 {
-                    if (event.key.keysym.sym == SDLK_ESCAPE)
+                    if(event.key.keysym.sym == SDLK_ESCAPE)
                         done = true;
                     else if(event.key.keysym.sym == SDLK_SPACE)
                     {
-                        if(n<c-5)
-                            n += 5;
+                        if(n<c-1)
+                            n += 1;
                         else n = c;
                     }
                     else if(event.key.keysym.sym == SDLK_BACKSPACE)
@@ -260,8 +261,8 @@ int main ( int argc, char** argv )
                 c2 = (cords[i+1].z * (scale/100) * 255) + 127;
             }
 
-            //lineRGBA(screen, round(x1), round(y1), round(x2), round(y2), 255,255,255,255);
-            GradientLine(screen, round(x1), round(y1), round(x2), round(y2),c1,c2);
+            lineRGBA(screen, round(x1), round(y1), round(x2), round(y2), 255,255,255,255);
+            //GradientLine(screen, round(x1), round(y1), round(x2), round(y2),c1,c2);
         }
 
         if(x2>1200 || x2<80 || y2>640 || y2<50)
