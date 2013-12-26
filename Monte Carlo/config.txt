@@ -1,6 +1,8 @@
-passes = 1
+passes = 1 /simulation cycle count
+wavelength = 400 /units in nm, used for base absorbance calculation
 /Layer parameters
 count = 7
+chromophores = 6 /total number of chromofores
 absorbance = /at wavelength of 400 nm
 {
 	100 /melanin
