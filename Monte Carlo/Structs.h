@@ -39,7 +39,7 @@ namespace MC
         private:
 
         public:
-            int count;
+            int layerCount;
             int passes;
             int chromophores;
             int wavelength; //in nm

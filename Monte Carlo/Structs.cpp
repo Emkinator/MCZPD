@@ -25,9 +25,9 @@ MC::PhotonClass::PhotonClass()
 MC::InputClass::InputClass(int count)
 {
     //std::cout << "Creating InputClass" << std::endl;
-    count = count;
+    layerCount = count;
     wtolerance = 1e-60;
-    layers = new LayerClass[count];
+    layers = new LayerClass[layerCount];
     ConfigClass lp = ConfigClass("config.txt"); //layer parameters
 
     chromophores = atof(lp.GetValue(0,"chromophores").c_str());
@@ -39,7 +39,7 @@ MC::InputClass::InputClass(int count)
     wavelength = atof(lp.GetValue(0,"wavelength").c_str());
     base_absorbance = 0.0244 + 8.53 * exp(-(wavelength - 154) / 66.2);
 
-    for(int i = 0; i < count; i++) {
+    for(int i = 0; i < layerCount; i++) {
         double z = atof(lp.GetValue(i,"z").c_str());
         if(i > 0) {
             layers[i].z[0] = layers[i-1].z[1];

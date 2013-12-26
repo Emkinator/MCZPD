@@ -30,7 +30,7 @@ int main()
         cout << "Logfile could not be created." << endl;
     }
 
-    in.CalculateCosC(in.count, &filestr);
+    in.CalculateCosC(in.layerCount, &filestr);
 
     in.passes = atof(ip.GetValue(0,"passes").c_str());
     for(int i = 0; i<in.passes; i++) {

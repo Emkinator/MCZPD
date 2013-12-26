@@ -121,7 +121,7 @@ int main ( int argc, char** argv )
     }
 
     MC::InputClass in = MC::InputClass(7);
-    in.count = 7;
+    in.layerCount = 7;
 
     // read cords from file, assign to array "cords"
     int c = GetStepCount("simlog.txt");
@@ -224,7 +224,7 @@ int main ( int argc, char** argv )
         if(view!=3)
         {
             lineRGBA(screen, 0, 50, 1279, 50, 255,255,255,255); // air/tissue boundary
-            for(int i = 0; i < in.count;i++)
+            for(int i = 0; i < in.layerCount;i++)
                 lineRGBA(screen, 0, 50+(in.layers[i].z[1]*scale), 1279, 50+(in.layers[i].z[1]*scale), 255,255,255,255);
         }
         else
