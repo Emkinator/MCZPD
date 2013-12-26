@@ -31,7 +31,6 @@ struct pcords {
 void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int sc1, int sc2, int sc3, int ec1, int ec2, int ec3) //color ranges from 0 to 255, black to white
 {
     int c1, c2, c3;
-
     float dx = x2-x1;
     float dy = y2-y1;
 
@@ -78,8 +77,8 @@ int main (int argc, char** argv)
     atexit(SDL_Quit);
 
     // create a new window
-    int bounds[] = {1280, 720, 100}; //100 is just dummy for middle Z point
-    SDL_Surface* screen = SDL_SetVideoMode(bounds[0], bounds[1], 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
+    int bounds[] = {1366, 768, 100}; //100 is just dummy for middle Z point
+    SDL_Surface* screen = SDL_SetVideoMode(bounds[0], bounds[1], 16, SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN);
     if (!screen) {
         printf("Unable to set %ix%i video: %s\n", bounds[0], bounds[1], SDL_GetError());
         return 1;
@@ -94,11 +93,8 @@ int main (int argc, char** argv)
     pcords cords[c];
     {
         string line;
-        double x;
-        double y;
-        double z;
-        size_t pos;
-        size_t pos2;
+        double x, y, z;
+        size_t pos, pos2;
         ifstream file("simlog.txt");
 
         for(int i = 0; i < c; i++) {
@@ -174,18 +170,19 @@ int main (int argc, char** argv)
             scale = newscale;
         }
 
-        lineRGBA(screen, 0, 50, 1279, 50, 255,255,255,255); // air/tissue boundary
+        lineRGBA(screen, 0, 50, bounds[0], 50, 255,255,255,255); // air/tissue boundary
         for(int i = 0; i < in.layerCount;i++) {
-            lineRGBA(screen, 0, 50+(in.layers[i].z[1]*scale), 1279, 50+(in.layers[i].z[1]*scale), 255,255,255,255);
+            int z = 50 + in.layers[i].z[1]*scale;
+            lineRGBA(screen, 0, z, bounds[0], z, 255,255,255,255);
         }
 
         for(int i = 0; i<n; i++) {
-            p1.x = (cords[i].x * scale);
-            p2.x = (cords[i+1].x * scale);
-            p1.z = (cords[i].z * scale);
-            p2.z = (cords[i+1].z * scale);
-            p1.y = (cords[i].y * (scale/300) * 255);
-            p2.y = (cords[i+1].y * (scale/300) * 255);
+            p1.x = cords[i].x * scale;
+            p2.x = cords[i+1].x * scale;
+            p1.z = cords[i].z * scale;
+            p2.z = cords[i+1].z * scale;
+            p1.y = cords[i].y * (scale/300) * 255;
+            p2.y = cords[i+1].y * (scale/300) * 255;
 
             float x1 = xaxis.dotProduct(p1) + bounds[0] / 2;
             float x2 = xaxis.dotProduct(p2) + bounds[0] / 2;
@@ -193,13 +190,18 @@ int main (int argc, char** argv)
             float y2 = zaxis.dotProduct(p2) + 50;
             int c1 = min(255, max(80, (int)yaxis.dotProduct(p1) + 188));
             int c2 = min(255, max(80, (int)yaxis.dotProduct(p2) + 188));
-            GradientLine(screen, round(x1), round(y1), round(x2), round(y2), c1, c1, c1, c2, c2,c2);
 
-            if(x2 > 1200 || x2 < 80) {
-                newscale = min(newscale, scale * (1200 / x2));
+            x1 = min(bounds[0], max(0, (int)x1));
+            x2 = min(bounds[0], max(0, (int)x2));
+            y1 = min(bounds[1], max(0, (int)y1));
+            y2 = min(bounds[1], max(0, (int)y2));
+            GradientLine(screen, x1, y1, x2, y2, c1, c1, c1, c2, c2, c2);
+
+            if(x2 > (bounds[0] - 40) || x2 < 40) {
+                newscale = min(newscale, scale * ((bounds[0] - 40) / x2));
             }
-            if(y2 > 640 || y2 < 50){
-                newscale = min(newscale, scale * (640 / y2));
+            if(y2 > (bounds[1] - 40) || y2 < 40){
+                newscale = min(newscale, scale * ((bounds[1] - 40) / y2));
             }
         }
 
@@ -211,7 +213,7 @@ int main (int argc, char** argv)
         zaxis.rotate(0, 0, degrees);
         lasttick = tick;
         SDL_Flip(screen);
-    } // end main loop\
+    } // end main loop
 
     printf("Exited cleanly\n");
     return 0;
