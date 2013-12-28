@@ -42,6 +42,7 @@
 			<Add directory="C:/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-lmingw32 -lSDLmain -lSDL -Wswitch" />
 			<Add library="mingw32" />
 			<Add library="SDLmain" />
 			<Add library="SDL.dll" />

@@ -44,7 +44,6 @@ void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int 
 
     float ax = dx / steps;
     float ay = dy / steps;
-
     float ac1 = (ec1 - sc1) / steps;
     float ac2 = (ec2 - sc2) / steps;
     float ac3 = (ec3 - sc3) / steps;
