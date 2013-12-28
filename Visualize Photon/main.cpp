@@ -93,7 +93,6 @@ int main (int argc, char** argv)
     pcords cords[c];
     {
         string line;
-        double x, y, z;
         size_t pos, pos2;
         ifstream file("simlog.txt");
 
@@ -117,6 +116,7 @@ int main (int argc, char** argv)
     double newscale = scale;
     int lasttick = SDL_GetTicks();
     int tick = lasttick;
+    float degrees_per_second = 90.0;
     Vector3f xaxis(1, 0, 0);
     Vector3f yaxis(0, 1, 0);
     Vector3f zaxis(0, 0, 1);
@@ -142,17 +142,24 @@ int main (int argc, char** argv)
                             done = true;
                             break;
                         case SDLK_SPACE:
-                            if(n<c-1)
-                                n++;
-                            else n = c;
+                            n = min(n + 1, c - 1);
+                            break;
+                        case SDLK_RETURN:
+                            n = min(n + 5, c - 1);
                             break;
                         case SDLK_BACKSPACE:
-                            if(n>5)
-                                n -= 5;
-                            else n = 0;
+                            n = max(n - 5, 0);
                             break;
                         case SDLK_p:
                             paused = !paused;
+                            break;
+                        case SDLK_RIGHT:
+                            if(!paused)
+                                degrees_per_second += 60.0;
+                            break;
+                        case SDLK_LEFT:
+                            if(!paused)
+                                degrees_per_second -= 60.0;
                             break;
                     }
                     break;
@@ -191,26 +198,38 @@ int main (int argc, char** argv)
             int c1 = min(255, max(80, (int)yaxis.dotProduct(p1) + 188));
             int c2 = min(255, max(80, (int)yaxis.dotProduct(p2) + 188));
 
-            x1 = min(bounds[0], max(0, (int)x1));
-            x2 = min(bounds[0], max(0, (int)x2));
-            y1 = min(bounds[1], max(0, (int)y1));
-            y2 = min(bounds[1], max(0, (int)y2));
-            GradientLine(screen, x1, y1, x2, y2, c1, c1, c1, c2, c2, c2);
-
             if(x2 > (bounds[0] - 40) || x2 < 40) {
                 newscale = min(newscale, scale * ((bounds[0] - 40) / x2));
             }
             if(y2 > (bounds[1] - 40) || y2 < 40){
                 newscale = min(newscale, scale * ((bounds[1] - 40) / y2));
             }
+
+            x1 = min(bounds[0], max(0, (int)x1));
+            x2 = min(bounds[0], max(0, (int)x2));
+            y1 = min(bounds[1], max(0, (int)y1));
+            y2 = min(bounds[1], max(0, (int)y2));
+            GradientLine(screen, x1, y1, x2, y2, c1, c1, c1, c2, c2, c2);
         }
 
         tick = SDL_GetTicks();
-        if(paused) lasttick = tick;
-        float degrees = 90.0 * (tick - lasttick) / 1000.0;
+        float degrees = 0;
+        if(paused) {
+            //lasttick = tick;
+            Uint8 *keystate = SDL_GetKeyState(NULL);
+            if(keystate[SDLK_RIGHT])
+                degrees = 60.0;
+            else if(keystate[SDLK_LEFT])
+                degrees = -60.0;
+        }
+        else {
+            degrees = degrees_per_second;
+        }
+        degrees *= (tick - lasttick) / 1000.0;
+
         xaxis.rotate(0, 0, degrees);
         yaxis.rotate(0, 0, degrees);
-        zaxis.rotate(0, 0, degrees);
+        //zaxis.rotate(0, 0, degrees);
         lasttick = tick;
         SDL_Flip(screen);
     } // end main loop
