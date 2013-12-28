@@ -23,28 +23,38 @@ struct pcords {
     double x;
     double y;
     double z;
+
 };
 
 //#define abs(x) ((x ^ (x >> 31)) - (x >> 31))
-#define interpolate(start, finish, progress) (start + progress * (finish - start))
+//#define interpolate(start, finish, progress) (start + progress * (finish - start))
 
 void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int sc1, int sc2, int sc3, int ec1, int ec2, int ec3) //color ranges from 0 to 255, black to white
 {
-    int c1, c2, c3;
     float dx = x2-x1;
     float dy = y2-y1;
-
     int steps = (abs(dx) > abs(dy)) ? abs(dx) : abs(dy);
+    if(!steps) steps = 1;
 
-    float x, y;
-    float progress = 0;
-    for(int i = 0; i <= steps; i++) {
-        progress = i / (float)steps;
-        x = interpolate(x1, x2, progress);
-        y = interpolate(y1, y2, progress);
-        c1 = interpolate(sc1, ec1, progress);
-        c2 = interpolate(sc2, ec2, progress);
-        c3 = interpolate(sc3, ec3, progress);
+    float x = x1;
+    float y = y1;
+    float c1 = sc1;
+    float c2 = sc2;
+    float c3 = sc3;
+
+    float ax = dx / steps;
+    float ay = dy / steps;
+
+    float ac1 = (ec1 - sc1) / steps;
+    float ac2 = (ec2 - sc2) / steps;
+    float ac3 = (ec3 - sc3) / steps;
+
+    for(int i = 0; i < steps; i++) {
+        x += ax;
+        y += ay;
+        c1 += ac1;
+        c2 += ac2;
+        c3 += ac3;
         pixelRGBA(dst,x,y,c1,c2,c3,255);
     }
 }
@@ -123,8 +133,6 @@ int main (int argc, char** argv)
     Vector3f p1(0, 0, 0);
     Vector3f p2(0, 0, 0);
     int n = 1;
-    int view = 1;
-    bool recalcScale = false;
     bool paused = false;
     // program main loop ----------------------------------------------
     bool done = false;
@@ -169,17 +177,11 @@ int main (int argc, char** argv)
 
         SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
 
-        if(recalcScale) {
-            scale = 10000;
-            recalcScale = false;
-        }
-        else {
-            scale = newscale;
-        }
+        scale = newscale;
 
         lineRGBA(screen, 0, 50, bounds[0], 50, 255,255,255,255); // air/tissue boundary
         for(int i = 0; i < in.layerCount;i++) {
-            int z = 50 + in.layers[i].z[1]*scale;
+            int z = 50 + in.layers[i].z[1] * scale;
             lineRGBA(screen, 0, z, bounds[0], z, 255,255,255,255);
         }
 
@@ -188,8 +190,8 @@ int main (int argc, char** argv)
             p2.x = cords[i+1].x * scale;
             p1.z = cords[i].z * scale;
             p2.z = cords[i+1].z * scale;
-            p1.y = cords[i].y * (scale/300) * 255;
-            p2.y = cords[i+1].y * (scale/300) * 255;
+            p1.y = cords[i].y * (scale/500) * 255;
+            p2.y = cords[i+1].y * (scale/500) * 255;
 
             float x1 = xaxis.dotProduct(p1) + bounds[0] / 2;
             float x2 = xaxis.dotProduct(p2) + bounds[0] / 2;
@@ -199,10 +201,11 @@ int main (int argc, char** argv)
             int c2 = min(255, max(80, (int)yaxis.dotProduct(p2) + 188));
 
             if(x2 > (bounds[0] - 40) || x2 < 40) {
-                newscale = min(newscale, scale * ((bounds[0] - 40) / x2));
+                newscale = min(newscale, abs(scale * ((bounds[0] - 40) / x2)));
             }
+
             if(y2 > (bounds[1] - 40) || y2 < 40){
-                newscale = min(newscale, scale * ((bounds[1] - 40) / y2));
+                newscale = min(newscale, abs(scale * ((bounds[1] - 40) / y2)));
             }
 
             x1 = min(bounds[0], max(0, (int)x1));
