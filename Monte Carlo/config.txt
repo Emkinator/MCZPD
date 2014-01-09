@@ -1,4 +1,4 @@
-passes = 1 /simulation cycle count
+passes = 100000 /simulation cycle count
 wavelength = 400 /units in nm, used for base absorbance calculation
 /Layer parameters
 count = 7

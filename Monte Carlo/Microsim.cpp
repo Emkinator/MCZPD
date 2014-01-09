@@ -10,7 +10,7 @@ template <typename T> int sign(T val) {
 
 namespace MC
 {
-    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputStruct * out, std::ofstream* debuglog)
+    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputClass * out, std::ofstream* debuglog)
     {
         int i = 0;
         double spec = SpecularReflect(1,in->layers[0].n);
@@ -24,10 +24,10 @@ namespace MC
             //*debuglog << "  Step size: " << photon->s << std::endl;;
             //*debuglog << "  Weight: " << photon->w << std::endl;
 
-            *debuglog << photon->x << "," << photon->y << "," << photon->z << "," << photon->w << std::endl;
+            //*debuglog << photon->x << "," << photon->y << "," << photon->z << "," << photon->w << std::endl;
 
             if(MoveAndBound(in, photon, debuglog))
-                CrossMaybe(in, photon, debuglog);
+                CrossMaybe(in, photon, out, debuglog);
             else
                 Spin(in->layers[photon->layer].g, photon, debuglog);
             Roulette(in, photon, debuglog);
@@ -35,10 +35,7 @@ namespace MC
             //*debuglog << "Photon in layer " << photon->layer << std::endl;
             //*debuglog << "Cycle " << i << " done" << std::endl << std::endl;
             if(photon->uz!=photon->uz)
-            {
                 photon->alive = false;
-                //*debuglog << "Not a number, photon killed." << std::endl;
-            }
         }
         //*debuglog << "Photon simulated.." << std::endl;
 

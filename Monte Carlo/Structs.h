@@ -1,6 +1,7 @@
 #ifndef STRUCTS_H_INCLUDED
 #define STRUCTS_H_INCLUDED
 #include <fstream>
+#include <vector>
 namespace MC
 {
     class PhotonClass
@@ -53,10 +54,14 @@ namespace MC
 
     };
 
-    struct OutputStruct
+    class OutputClass
     {
-        double x, y, z; //die position
-        double w; //die weight
+        private:
+
+        public:
+            int gridSize;
+            std::vector<std::vector<double> > photonDispersion;
+            OutputClass(int size);
     };
 
 

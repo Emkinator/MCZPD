@@ -15,15 +15,13 @@ void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) /
 	double mua = In->layers[layer].mua;
 	double mus = In->layers[layer].mus;
 
-	if(Photon->sLeft < 0.0000000000001) //can't compare double with zero, though not sure if this is correct
-	{
+	if(Photon->sLeft < 0.0000000000001){
 	    double rnd;
 	    do rnd = random();
 	    while(rnd <= 0.0);
 	    Photon->s = -(log(rnd) / (mua+mus));
 	}
-	else
-	{
+	else{
 	    Photon->s = Photon->sLeft/(mua+mus);
 	    Photon->sLeft = 0.0;
 	}
@@ -36,8 +34,7 @@ double MC::SpinTheta(double g)  //Internal function
 
     if(g == 0.0)
         cost = 2*random() - 1;
-    else
-    {
+    else{
         double tmp = (1-g*g) / (1-g+2*g*random());
         cost = (1+g*g - tmp*tmp) / (2*g);
     }
@@ -64,14 +61,12 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
     else
         sinp = -sqrt(1.0-cosp*cosp);
 
-    if(abs(uz) > COS0)
-    {
+    if(abs(uz) > COS0){
         Photon->ux = sint*cosp;
         Photon->uy = sint*sinp;
         Photon->uz = cost*sign(uz);
     }
-    else
-    {
+    else{
         double tmp = sqrt(1.0 - uz*uz);
         Photon->ux = sint * (ux*uz*cosp - uy*sinp) / tmp + ux*cost;
         Photon->uy = sint * (uy*uz*cosp + ux*sinp) / tmp + uy*cost;
@@ -109,34 +104,28 @@ bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filest
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 { //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil. The elsifs make the code much more readable, and the performance cost is negligable.
 	double r;
-	if(n1 == n2)
-	{ //bounds match
+	if(n1 == n2){ //bounds match
 		*uzt = ca1;
 		r = 0.0;
 	}
-	else if(ca1>COS0)
-	{ //horizontal
+	else if(ca1>COS0){ //horizontal
 		*uzt = ca1;
 		r = (n2-n1)/(n2+n1);
 		r *= r;
 	}
-	else if(ca1<COS90)
-	{ //vertical
+	else if(ca1<COS90){ //vertical
 		*uzt = 0.0;
 		r = 1.0;
 	}
-	else
-	{
+	else{
 		double sa1, sa2, ca2; // sine of the incident and transmission angles & cos of transmisson angle
 		sa1 = sqrt(1-ca1*ca1); //simpler than looks, just pythagoras from r^2 = x^2 + x^2
 		sa2 = sa1*n1/n2;
-		if(sa2>=1.0)
-		{ //double check for total internal reflection, todo: check for better solution
+		if(sa2>=1.0){ //double check for total internal reflection, todo: check for better solution
 			*uzt = 0.0;
 			r = 1.0;
 		}
-		else
-		{
+		else{
 			double cap, cam, sap, sam; // cosines and sines of the sum or difference of the two angles. p = plus, m = minus
 			ca2 = sqrt(1-sa2*sa2);
 			cap = ca1*ca2 - sa1*sa2; // c+ = cc - ss.
@@ -151,7 +140,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 }
 
 
-void MC::CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr) //went bit haxish to not double up such a big func,
+void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr) //went bit haxish to not double up such a big func,
 //which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
 {
     double uz = photon->uz; // z directional cosine.
@@ -163,19 +152,20 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
         n2 = 1; //air
     else
         n2 = in->layers[layer+dir].n;
-	double uzt; // cosine of transmission alpha. uz1>0
-	double r = 0.0; // reflectance
+	double uzt; //cosine of transmission alpha. uz1>0
+	double r = 0.0; //reflectance
 	if (dir * uz <= in->layers[layer].cos_critical[int(dir>0)])//int(uz>0.0) makes array index 1 on positive and 0 on negative
         r = 1.0;
     else
         r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
 
-    if( ((layer == 0) && (dir == -1)) && r < 1.0)
-    {//reflect and die/drop mass
-        //LogPartialDying(r, in, photon, out); //todo
-        photon->w *= r; //decrease weight
+    if( ((layer == 0) && (dir == -1)) && r < 1.0){ //reflect and die/drop mass
+        //*filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
+        double tmp = photon->w * r;
+        int tmp2 = out->gridSize / 2;
+        out->photonDispersion[rint(photon->x*tmp2)+tmp2][rint(photon->y*tmp2)+tmp2] = photon->w - tmp;
+        photon->w = tmp;
         photon->uz = -uz;
-        //std::cout << "Dropped mass: " <<  << std::endl;
     }
     else if(random() > r) { //let trough at an angle
         photon->layer += dir; //layer id change
@@ -183,7 +173,8 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
         photon->uy *= n1/n2;
         photon->uz = dir * uzt; //retain original direction
         //*filestr << "Layer: " << photon->layer << std::endl; //logs layer change
-    } else
+    }
+    else
         photon->uz = -uz; //reflect
 
 
@@ -191,8 +182,7 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
 
 void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
 {
-    if(photon->w < in->wtolerance)
-    {
+    if(photon->w < in->wtolerance){
         int tmp = rand() % 10;
         if(tmp == 0) {
             photon->w *= 10.0;

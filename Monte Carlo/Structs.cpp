@@ -116,3 +116,15 @@ void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog)
 		sqrt(1.0 - n2*n2/(n1*n1)) : 0.0;
 	}*/
 }
+
+MC::OutputClass::OutputClass(int size)
+{
+    gridSize = size;
+    photonDispersion.resize(size);
+    for (int i = 0; i < size; ++i)
+        photonDispersion[i].resize(size);
+
+    for (int x = 0; x < size; x++)
+        for (int y = 0; y<size; y++)
+            photonDispersion[x][y] = 0;
+}

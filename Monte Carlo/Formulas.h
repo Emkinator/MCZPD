@@ -18,7 +18,7 @@ namespace MC
 
     double FresnelReflect(double n1, double n2, double ca1, double* uzt); //internal
 
-    void CrossMaybe(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //checks if photon should cross layer boundary
+    void CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr); //checks if photon should cross layer boundary
 
     void Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //gives photon a 1/10 chance to not be completely absorbed
 
