@@ -82,7 +82,7 @@
 	"formulas.h"
 	"microsim.h"
 
-1389467196 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
+1389467318 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>

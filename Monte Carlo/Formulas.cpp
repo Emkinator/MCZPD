@@ -160,7 +160,7 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
         r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
 
     if((layer == 0) && (dir == -1) && r < 1.0) { //reflect and die/drop mass
-        *filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
+        //*filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
         double tmp = photon->w * r;
         int tmp2 = out->gridSize / 2;
         int px = clamp(0, int(photon->x * tmp2) + tmp2, out->gridSize - 1);
