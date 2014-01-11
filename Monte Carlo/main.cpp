@@ -21,9 +21,8 @@ int main()
 {
     srand(time(NULL));
 
-    MC::ConfigClass ip = MC::ConfigClass("config.txt");
-    int count = atof(ip.GetValue(0,"count").c_str());
-    MC::InputClass in = MC::InputClass(count);
+    MC::InputClass in;
+    MC::OutputClass ret(256, in.range);
 
     ofstream filestr("simlog.txt");
     if(filestr.fail() == 1) {
@@ -31,15 +30,18 @@ int main()
     }
 
     in.CalculateCosC(in.layerCount, &filestr);
-    MC::OutputClass ret(200);
-    in.passes = atof(ip.GetValue(0,"passes").c_str());
-    for(int i = 0; i<in.passes; i++) {
-        MC::PhotonClass photon = MC::PhotonClass();
-        MC::simulatePhoton(&in, &photon, &ret, &filestr);
-        //filestr << endl << "-------------------------" << endl << endl;
-        //MC::Output(photon, ret);
+
+    for(int i = 0; i < in.range; i++) {
+        for(int n = 0; n < in.passes; n++) {
+            MC::PhotonClass photon = MC::PhotonClass();
+            MC::simulatePhoton(&in, &photon, &ret, &filestr);
+            //filestr << endl << "-------------------------" << endl << endl;
+            //MC::Output(photon, ret);
+        }
+        in.ChangeWavelength(in.wavelength + 10);
     }
-    MC::WriteCSV(&ret,"grid",ret.gridSize,ret.gridSize);
+
+    MC::WriteCSV(&ret, "grid", ret.gridSize * ret.gridSize, in.range);
     filestr.close();
     return 0;
 }

@@ -32,6 +32,7 @@ namespace MC
             double g;           //anisotropy
             double cos_critical[2]; //cosines of the critical angles, calculated later
             double* volume;
+            //LayerClass();
 
     };
 
@@ -44,13 +45,18 @@ namespace MC
             int passes;
             int chromophores;
             int wavelength; //in nm
+            int waveindex;
             double wtolerance;
-            double* absorbance;
+            int range;
+            double **absorbance;
             double base_absorbance;
             LayerClass* layers;
-            InputClass(int count);
+            InputClass();
+            //~InputClass();
             double CalculateAbsorbance(int layer);
             void CalculateCosC(int count, std::ofstream* debuglog);
+            void ChangeWavelength(int wl);
+            void ReadAbsorbance();
 
     };
 
@@ -61,7 +67,7 @@ namespace MC
         public:
             int gridSize;
             std::vector<std::vector<double> > photonDispersion;
-            OutputClass(int size);
+            OutputClass(int size, int range);
     };
 
 

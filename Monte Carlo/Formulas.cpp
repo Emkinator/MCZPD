@@ -8,6 +8,7 @@
 #define PI 3.14159265359
 #define sign(num) (-(num < 0) | 1)
 #define random() (rand() / float(RAND_MAX))
+#define clamp(minv,x,maxv) std::max(minv, std::min(maxv, x))
 
 void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) //Internal function
 {
@@ -19,7 +20,7 @@ void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) /
 	    double rnd;
 	    do rnd = random();
 	    while(rnd <= 0.0);
-	    Photon->s = -(log(rnd) / (mua+mus));
+        Photon->s = -(log(rnd) / (mua+mus));
 	}
 	else{
 	    Photon->s = Photon->sLeft/(mua+mus);
@@ -102,7 +103,7 @@ bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filest
 }
 
 double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
-{ //todo: try to reduce the elseifs   EMK: Premature optimization is the root of all evil. The elsifs make the code much more readable, and the performance cost is negligable.
+{
 	double r;
 	if(n1 == n2){ //bounds match
 		*uzt = ca1;
@@ -159,11 +160,13 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
     else
         r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
 
-    if( ((layer == 0) && (dir == -1)) && r < 1.0){ //reflect and die/drop mass
-        //*filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
+    if((layer == 0) && (dir == -1)){ //reflect and die/drop mass
+        *filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
         double tmp = photon->w * r;
         int tmp2 = out->gridSize / 2;
-        out->photonDispersion[rint(photon->x*tmp2)+tmp2][rint(photon->y*tmp2)+tmp2] = photon->w - tmp;
+        int px = clamp(-tmp2, int(photon->x * tmp2) + tmp2, tmp2 - 1);
+        int py = clamp(-tmp2, int(photon->y * tmp2) + tmp2, tmp2 - 1);
+        out->photonDispersion[px * out->gridSize + py][in->waveindex] += photon->w - tmp;
         photon->w = tmp;
         photon->uz = -uz;
     }
@@ -176,8 +179,6 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
     }
     else
         photon->uz = -uz; //reflect
-
-
 }
 
 void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
@@ -197,5 +198,5 @@ double MC::SpecularReflect(double n1, double n2) //doesn't work, since n1 would 
 {//Called once on the start of the simulation
 	double temp = (n1-n2) / (n1+n2);
 
-	return temp*temp; //temporary, should output r1
+	return temp*temp;
 }

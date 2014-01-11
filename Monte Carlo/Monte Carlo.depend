@@ -52,7 +52,7 @@
 	"Structs.h"
 	<fstream>
 
-1388084126 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
+1389450950 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
 	"ReadConfig.h"
 	<stdlib.h>
@@ -60,27 +60,28 @@
 	<iostream>
 	<fstream>
 
-1388084126 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
+1389450950 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
 	<fstream>
+	<vector>
 
-1383152019 source:c:\users\karlis\documents\github\mczpd\monte carlo\formulas.cpp
+1389450452 source:c:\users\karlis\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 	<cmath>
 	<stdlib.h>
 	<iostream>
 	<fstream>
 
-1378060059 c:\users\karlis\documents\github\mczpd\monte carlo\formulas.h
+1389295617 c:\users\karlis\documents\github\mczpd\monte carlo\formulas.h
 	"structs.h"
 	<fstream>
 
-1388269573 source:c:\users\karlis\documents\github\mczpd\monte carlo\microsim.cpp
+1389295617 source:c:\users\karlis\documents\github\mczpd\monte carlo\microsim.cpp
 	<fstream>
 	"structs.h"
 	"formulas.h"
 	"microsim.h"
 
-1388084126 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
+1389450541 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -93,7 +94,7 @@
 	"Microsim.h"
 	"WriteToCVS.h"
 
-1378060060 c:\users\karlis\documents\github\mczpd\monte carlo\microsim.h
+1389295617 c:\users\karlis\documents\github\mczpd\monte carlo\microsim.h
 	"Structs.h"
 	<fstream>
 
@@ -122,9 +123,11 @@
 	<fstream>
 	<string>
 
-1373044310 c:\users\karlis\documents\github\mczpd\monte carlo\writetocvs.h
+1389449985 c:\users\karlis\documents\github\mczpd\monte carlo\writetocvs.h
 	<fstream>
 	<string>
+	<vector>
+	"Structs.h"
 
 1389284981 source:c:\users\emk\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
