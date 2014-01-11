@@ -141,8 +141,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 }
 
 
-void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr) //went bit haxish to not double up such a big func,
-//which eats both instruction cache and makes scroll wheel explode, dir is just 1 or -1 and that makes everything work
+void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr)
 {
     double uz = photon->uz; // z directional cosine.
     int dir = sign(uz);
@@ -160,13 +159,13 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
     else
         r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
 
-    if((layer == 0) && (dir == -1)){ //reflect and die/drop mass
+    if((layer == 0) && (dir == -1) && r < 1.0) { //reflect and die/drop mass
         *filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
         double tmp = photon->w * r;
         int tmp2 = out->gridSize / 2;
-        int px = clamp(-tmp2, int(photon->x * tmp2) + tmp2, tmp2 - 1);
-        int py = clamp(-tmp2, int(photon->y * tmp2) + tmp2, tmp2 - 1);
-        out->photonDispersion[px * out->gridSize + py][in->waveindex] += photon->w - tmp;
+        int px = clamp(0, int(photon->x * tmp2) + tmp2, out->gridSize - 1);
+        int py = clamp(0, int(photon->y * tmp2) + tmp2, out->gridSize - 1);
+        out->photonDispersion[px][py][in->waveindex] += photon->w - tmp;
         photon->w = tmp;
         photon->uz = -uz;
     }

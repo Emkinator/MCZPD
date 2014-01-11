@@ -31,17 +31,21 @@ int main()
 
     in.CalculateCosC(in.layerCount, &filestr);
 
+    ret.PrintStatus("Simulating", in.range);
     for(int i = 0; i < in.range; i++) {
+        in.ChangeWavelength(in.wavelength + 10);
         for(int n = 0; n < in.passes; n++) {
             MC::PhotonClass photon = MC::PhotonClass();
             MC::simulatePhoton(&in, &photon, &ret, &filestr);
             //filestr << endl << "-------------------------" << endl << endl;
             //MC::Output(photon, ret);
         }
-        in.ChangeWavelength(in.wavelength + 10);
+        cout << "|";
     }
+    cout << endl;
 
-    MC::WriteCSV(&ret, "grid", ret.gridSize * ret.gridSize, in.range);
+    ret.PrintStatus("Outputting", in.range);
+    MC::WriteCSV(&ret, "grid", ret.gridSize, ret.gridSize, in.range);
     filestr.close();
     return 0;
 }

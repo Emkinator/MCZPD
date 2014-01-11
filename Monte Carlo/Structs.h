@@ -48,7 +48,7 @@ namespace MC
             int waveindex;
             double wtolerance;
             int range;
-            double **absorbance;
+            double** absorbance;
             double base_absorbance;
             LayerClass* layers;
             InputClass();
@@ -66,8 +66,9 @@ namespace MC
 
         public:
             int gridSize;
-            std::vector<std::vector<double> > photonDispersion;
+            double*** photonDispersion;
             OutputClass(int size, int range);
+            void PrintStatus(const char * title, int width);
     };
 
 

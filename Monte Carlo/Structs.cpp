@@ -4,6 +4,7 @@
 #include <math.h>
 #include <iostream>
 #include <fstream>
+#include <string.h>
 
 #define read(name, layer, index) atof(ip.GetValue(layer,name,index).c_str())
 
@@ -27,20 +28,20 @@ MC::PhotonClass::PhotonClass()
 MC::InputClass::InputClass()
 {
     wtolerance = 1e-60;
-    wavelength = 400;
-    range = (750 - 400) / 10;
+    wavelength = 390; //10 will be added on the first setup
+    range = (750 - 390) / 10;
     ConfigClass ip = ConfigClass("config.txt"); //layer parameters
     //std::cout << "Creating InputClass" << std::endl;
-    layerCount = read("count", 0, 0);
+    layerCount = read("count", 0, -1);
     layers = new LayerClass[layerCount];
 
-    chromophores = read("chromophores", 0, 0);
-    passes = read("passes", 0, 0) / range;
+    chromophores = read("chromophores", 0,-1);
+    passes = read("passes", 0, -1);
 
     this->ReadAbsorbance();
 
     for(int i = 0; i < layerCount; i++) {
-        double z = read("z", i, 0);
+        double z = read("z", i, -1);
         if(i > 0) {
             layers[i].z[0] = layers[i-1].z[1];
             layers[i].z[1] = layers[i-1].z[1] + z * 0.001; //conversion from micrometers to mm
@@ -49,9 +50,9 @@ MC::InputClass::InputClass()
             layers[i].z[0] = 0;
             layers[i].z[1] = z *0.001;
         }
-        layers[i].n = read("n", i, 0);
-        layers[i].mus = read("mus", i, 0);
-        layers[i].g = read("g", i, 0);
+        layers[i].n = read("n", i, -1);
+        layers[i].mus = read("mus", i,-1);
+        layers[i].g = read("g", i, -1);
 
         layers[i].volume = new double[chromophores];
         for(int j = 0; j < chromophores; j++) {
@@ -59,8 +60,6 @@ MC::InputClass::InputClass()
         }
         //std::cout << "Layer read" << std::endl;
     }
-
-    this->ChangeWavelength(wavelength);
     //std::cout << "Done" << std::endl;
 }
 
@@ -79,13 +78,13 @@ void MC::InputClass::ReadAbsorbance()
     while(file.good() && i < range) {
         getline(file, line);
         std::size_t pos = 0;
-        std::size_t oldpos = 0;
+        std::size_t oldpos = -1;
         int n = 0;
         do {
             pos = line.find(",", pos);
             if(pos < 1)
                 pos = line.size();
-            absorbance[i][n] = atof(line.substr(oldpos + 1, pos - oldpos - 1).c_str());
+            absorbance[i][n] = atof(line.substr(oldpos + 1, (pos - 1) - (oldpos + 1)).c_str());
             n++;
             oldpos = pos;
         }
@@ -101,7 +100,7 @@ void MC::InputClass::ChangeWavelength(int wl)
     base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
     //change absorbance[i]
     waveindex = (wl - 400) / 10;
-    if(waveindex > range) waveindex = range;
+    if(waveindex >= range) waveindex = range;
 
     for(int i = 0; i < layerCount; i++) {
         layers[i].mua = this->CalculateAbsorbance(i);
@@ -165,11 +164,34 @@ MC::LayerClass::~LayerClass()
 MC::OutputClass::OutputClass(int size, int range)
 {
     gridSize = size;
-    photonDispersion.resize(size*size);
-    for (int i = 0; i < size*size; ++i) {
-        photonDispersion[i].resize(range);
-        for (int j = 0; j<range; j++)
-            photonDispersion[i][j] = 0;
+    photonDispersion = new double**[size];
+    for(int x = 0; x < size; x++) {
+        photonDispersion[x] = new double*[size];
+        for(int y = 0; y < size; y++) {
+            photonDispersion[x][y] = new double[range];
+            for(int z = 0; z < range; z++)
+                photonDispersion[x][y][z] = 0.0;
+        }
     }
 }
+
+void MC::OutputClass::PrintStatus(const char * title, int width)
+{
+    int len = strlen(title);
+    int chars = (width - 2 - len) / 2;
+    if(chars < 0) {
+        std::cout << std::endl << "Bad title for status bar - too long (\"" << title << "\")" << std:: endl;
+        return;
+    }
+    std::cout << "|";
+    if((width - len) & 1)
+        std::cout << "-";
+    for(int i = 0; i < chars; i++)
+        std::cout << "-";
+    std::cout << title;
+    for(int i = 0; i < chars; i++)
+        std::cout << "-";
+    std::cout << "|" << std::endl;
+}
+
 
