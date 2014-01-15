@@ -9,7 +9,7 @@ namespace MC
         private:
             std::string fName;
         public:
-            std::string GetValue(int layer, std::string fieldName);
+            std::string GetValue(int layer, std::string fieldName, int index = -1);
             ConfigClass(const char* fileName);
 
     };

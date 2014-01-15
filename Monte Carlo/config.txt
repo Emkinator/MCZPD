@@ -1,4 +1,4 @@
-passes = 1000 /simulation cycle count
+passes = 1000000 /simulation cycle count
 /Layer parameters
 count = 7
 chromophores = 6 /total number of chromofores
