@@ -1,7 +1,8 @@
 passes = 1000000 /simulation cycle count
+wtolerance = 1e-5
 /Layer parameters
 count = 7
-chromophores = 6 /total number of chromofores
+chromophores = 5 /total number of chromofores
 [0]
 z = 25
 n = 1.5
@@ -9,12 +10,11 @@ mus = 100
 g = 0.86
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0
+	0
+	0
+	0
+	0.02
 }
 [1]
 z = 90
@@ -23,12 +23,11 @@ mus = 45
 g = 0.8
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0
+	0
+	0.01
+	0.1
+	0.2
 }
 [2]
 z = 175
@@ -37,12 +36,11 @@ mus = 30
 g = 0.9
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0.02
+	0.02
+	0
+	0
+	0.5
 }
 [3]
 z = 90
@@ -51,12 +49,11 @@ mus = 35
 g = 0.95
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0.15
+	0.15
+	0
+	0
+	0.6
 }
 [4]
 z = 1500
@@ -65,12 +62,11 @@ mus = 25
 g = 0.8
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0.025
+	0.025
+	0
+	0
+	0.7
 }
 [5]
 z = 100
@@ -79,12 +75,11 @@ mus = 30
 g = 0.95
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0.07
+	0.07
+	0
+	0
+	0.7
 }
 [6]
 z = 5000
@@ -93,10 +88,9 @@ mus = 5
 g = 0.75
 volume = 
 {
-	1
-	2
-	3
-	4
-	5
-	6
+	0.03
+	0.03
+	0
+	0
+	0.65
 }

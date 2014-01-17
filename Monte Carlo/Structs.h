@@ -41,6 +41,7 @@ namespace MC
         private:
 
         public:
+            long long int stepcount;
             int layerCount;
             int passes;
             int chromophores;

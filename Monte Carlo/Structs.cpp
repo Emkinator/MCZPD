@@ -27,16 +27,17 @@ MC::PhotonClass::PhotonClass()
 
 MC::InputClass::InputClass()
 {
-    wtolerance = 1e-60;
-    wavelength = 390; //10 will be added on the first setup
+    stepcount = 0;
+    wavelength = 390; //10 will be added on the first run
     range = (750 - 390) / 10;
     ConfigClass ip = ConfigClass("config.txt"); //layer parameters
+    wtolerance = read("wtolerance", 0, -1);
     //std::cout << "Creating InputClass" << std::endl;
     layerCount = read("count", 0, -1);
     layers = new LayerClass[layerCount];
 
-    chromophores = read("chromophores", 0,-1);
-    passes = read("passes", 0, -1);
+    chromophores = read("chromophores", 0, -1);
+    passes = read("passes", 0, -1) / range;
 
     this->ReadAbsorbance();
 

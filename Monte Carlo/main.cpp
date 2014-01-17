@@ -43,6 +43,7 @@ int main()
         cout << "|";
     }
     cout << endl;
+    cout << "Average step count:" << in.stepcount / (in.passes * in.range) << endl;
 
     ret.PrintStatus("Outputting", in.range);
     MC::WriteCSV(&ret, "grid", ret.gridSize, ret.gridSize, in.range);

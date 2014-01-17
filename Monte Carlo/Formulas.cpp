@@ -15,7 +15,7 @@ void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) /
     short layer = Photon->layer;
 	double mua = In->layers[layer].mua;
 	double mus = In->layers[layer].mus;
-
+    In->stepcount++;
 	if(Photon->sLeft < 0.0000000000001){
 	    double rnd;
 	    do rnd = random();
@@ -86,7 +86,7 @@ bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filest
     MC::StepSize(photon, in, filestr);
 
     if(uz != 0.0) { //cross check
-        double s = (in->layers[layer].z[int(uz>0.0)] - photon->z)/uz; //step size till bound
+        double s = (in->layers[layer].z[int(uz > 0.0)] - photon->z) / uz; //step size till bound
         if(s < photon->s) { //if crosses, recalc some things
             photon->sLeft = (photon->s - s)*(mua+mus); //multiplied with mua+mus for cross-layer compability
             photon->s = s;
@@ -137,6 +137,7 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 			*uzt = ca2;
 		}
 	}
+	if(r > 1.0) std::cout << "Found r above 1";
 	return(r);
 }
 
