@@ -11,10 +11,16 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Weffc++" />
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
 				</Compiler>
+				<Linker>
+					<Add option="-Weffc++" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Monte Carlo" prefix_auto="1" extension_auto="1" />
@@ -23,16 +29,23 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-fexceptions -Weffc++" />
+					<Add option="-std=c++11" />
+					<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-Weffc++" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-fexceptions -Weffc++" />
+			<Add option="-std=c++11" />
+			<Add option="-std=c++0x" />
+			<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
 		</Compiler>
+		<Linker>
+			<Add option="-Weffc++" />
+		</Linker>
 		<Unit filename="Formulas.cpp" />
 		<Unit filename="Formulas.h" />
 		<Unit filename="Microsim.cpp" />

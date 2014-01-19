@@ -1,14 +1,52 @@
 # depslib dependency file v1.0
-1373038997 source:c:\users\em\documents\github\mczpd\visualize photon\main.cpp
-	<cstdlib>
-	<stdlib.h>
-	<SDL/SDL.h>
-	<SDL.h>
+1390157506 source:c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.cpp
+	"ReadConfig.h"
+	<fstream>
+	<iostream>
+	<string.h>
+	<sstream>
+
+1390157506 c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.h
 	<fstream>
 	<string>
-	<iostream>
+
+1390159887 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
-	"SDL_gfxPrimitives.h"
+	"ReadConfig.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<sstream>
+	<utility>
+	"formulas.h"
+
+1390158353 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
+	<fstream>
+	<string>
+	<vector>
+	<sstream>
+	<utility>
+	"ReadConfig.h"
+
+1390139191 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
+	<fstream>
+	<string>
+	<cmath>
+	<utility>
+	<sstream>
+	"utility.h"
+
+1390161358 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
+	<SDL/SDL.h>
+	<SDL.h>
+	<string>
+	<cmath>
+	<vector>
+	<sstream>
+	<utility>
 
 1325738639 c:\sdl-1.2.15\include\sdl\sdl.h
 	"SDL_main.h"
@@ -200,326 +238,33 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742239 c:\sdl-1.2.15\include\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_audio.h"
-	"SDL_cdrom.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_loadso.h"
-	"SDL_mutex.h"
-	"SDL_rwops.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_video.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1326114587 c:\sdl-1.2.15\include\sdl_config.h
-	"SDL_platform.h"
-	"SDL_config_dreamcast.h"
-	"SDL_config_macos.h"
-	"SDL_config_macosx.h"
-	"SDL_config_symbian.h"
-	"SDL_config_win32.h"
-	"SDL_config_os2.h"
-	"SDL_config_minimal.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_platform.h
-
-1326114594 c:\sdl-1.2.15\include\sdl_config_win32.h
-	"SDL_platform.h"
-
-1326114600 c:\sdl-1.2.15\include\begin_code.h
-
-1325742239 c:\sdl-1.2.15\include\close_code.h
-
-1325742239 c:\sdl-1.2.15\include\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_cdrom.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_active.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_quit.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_active.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keysym.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_keysym.h
-
-1325742239 c:\sdl-1.2.15\include\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742239 c:\sdl-1.2.15\include\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1372963232 source:c:\users\em\documents\github\mczpd\monte carlo\structs.cpp
-	"Structs.h"
-	"ReadConfig.h"
-	<stdlib.h>
-	<math.h>
-	<iostream>
-	<fstream>
-
-1372963534 c:\users\em\documents\github\mczpd\monte carlo\structs.h
-	<fstream>
-
-1357577508 c:\users\em\documents\github\mczpd\monte carlo\readconfig.h
-	<fstream>
-	<string>
-
-1357676995 source:c:\users\em\documents\github\mczpd\monte carlo\readconfig.cpp
-	"ReadConfig.h"
-	<fstream>
-	<string.h>
-	<sstream>
-
-1372963534 c:\users\em\documents\github\mczpd\visualize photon\structs.h
-	<fstream>
-
-1387934007 source:c:\users\emk\documents\github\mczpd\monte carlo\readconfig.cpp
-	"ReadConfig.h"
-	<fstream>
-	<iostream>
-	<string.h>
-	<sstream>
-
-1387934007 c:\users\emk\documents\github\mczpd\monte carlo\readconfig.h
-	<fstream>
-	<string>
-
-1388082650 source:c:\users\emk\documents\github\mczpd\monte carlo\structs.cpp
-	"Structs.h"
-	"ReadConfig.h"
-	<stdlib.h>
-	<math.h>
-	<iostream>
-	<fstream>
-
-1388082629 c:\users\emk\documents\github\mczpd\monte carlo\structs.h
-	<fstream>
-
-1389032233 source:c:\users\emk\documents\github\mczpd\visualize photon\main.cpp
+1390160565 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
 	<SDL.h>
 	<fstream>
-	<string>
 	<iostream>
 	<cmath>
-	"Structs.h"
+	<utility>
+	"utility.h"
+	"io.h"
 	"SDL_gfxPrimitives.h"
 	"vmath.h"
+	"ReadConfigs.h"
+	"Structure.h"
 
-1388082629 c:\users\emk\documents\github\mczpd\visualize photon\structs.h
+1390051938 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
 	<fstream>
-
-1344181306 c:\sdl_gfx-2.0.25\sdl_gfxprimitives.h
-	<math.h>
-	"SDL.h"
+	<string>
+	<cmath>
+	<utility>
+	<sstream>
+	"utility.h"
 
 994158235 c:\sdl_gfxprimitives-1.5\sdl_gfxprimitives.h
 	<math.h>
 	<SDL.h>
-
-994158235 c:\users\emk\documents\github\mczpd\visualize photon\sdl_gfxprimitives.h
-	<math.h>
-	<SDL.h>
-
-994082895 source:c:\users\emk\documents\github\mczpd\visualize photon\sdl_gfxprimitives.c
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	<string.h>
-	<SDL.h>
-	"SDL_gfxPrimitives.h"
-	"SDL_gfxPrimitives_font.h"
-
-1329452500 c:\sdl_gfx-2.0.25\sdl_gfxprimitives_font.h
-
-994070543 c:\sdl_gfxprimitives-1.5\sdl_gfxprimitives_font.h
-
-1383161056 source:c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.cpp
-	"ReadConfig.h"
-	<fstream>
-	<iostream>
-	<string.h>
-	<sstream>
-
-1383073574 c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.h
-	<fstream>
-	<string>
-
-1389975561 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
-	"Structs.h"
-	"ReadConfig.h"
-	<stdlib.h>
-	<math.h>
-	<iostream>
-	<fstream>
-	<string.h>
-
-1389895925 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
-	<fstream>
-	<vector>
-
-1389975663 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
-	<cstdlib>
-	<stdlib.h>
-	<SDL/SDL.h>
-	<SDL.h>
-	<fstream>
-	<string>
-	<iostream>
-	<cmath>
-	<vector>
-	<sstream>
-	<utility>
-	"ReadConfig.h"
-	"Structs.h"
-	"SDL_gfxPrimitives.h"
-	"vmath.h"
-
-1389737869 c:\users\karlis\documents\github\mczpd\visualize photon\structs.h
-	<fstream>
 
 1321815748 c:\users\karlis\documents\github\mczpd\visualize photon\vmath.h
 	<cmath>
@@ -529,15 +274,65 @@
 	<string>
 	<cassert>
 
-1388097942 c:\users\emk\documents\github\mczpd\visualize photon\vmath.h
-	<cmath>
-	<cstring>
-	<iostream>
-	<sstream>
-	<string>
-	<cassert>
-
-1383073574 c:\users\karlis\documents\github\mczpd\visualize photon\readconfig.h
+1390000559 c:\users\karlis\documents\github\mczpd\visualize photon\readconfig.h
 	<fstream>
 	<string>
+
+1390002358 c:\users\karlis\documents\github\mczpd\visualize photon\structs.h
+	<fstream>
+	"ReadConfig.h"
+
+1390003227 source:c:\users\karlis\documents\github\mczpd\visualize photon\readconfig.cpp
+	"ReadConfig.h"
+	<fstream>
+	<iostream>
+	<string.h>
+	<sstream>
+
+1390002225 source:c:\users\karlis\documents\github\mczpd\visualize photon\structs.cpp
+	"Structs.h"
+	"ReadConfig.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
+
+1390052244 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
+	<SDL/SDL.h>
+	<SDL.h>
+	<string>
+	<cmath>
+	<vector>
+	<sstream>
+	<utility>
+	"SDL_gfxPrimitives.h"
+
+1390157506 c:\users\karlis\documents\github\mczpd\monte carlo\formulas.h
+	"structs.h"
+	<fstream>
+	<thread>
+	<mutex>
+
+1390000559 c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.h
+	<fstream>
+	<string>
+
+1390160581 c:\users\karlis\documents\github\mczpd\visualize photon\structure.h
+	<fstream>
+	"ReadConfigs.h"
+
+1390161266 source:c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.cpp
+	"ReadConfigs.h"
+	<fstream>
+	<iostream>
+	<string.h>
+	<sstream>
+
+1390161206 source:c:\users\karlis\documents\github\mczpd\visualize photon\structure.cpp
+	"Structure.h"
+	"ReadConfigs.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
 

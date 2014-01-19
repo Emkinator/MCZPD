@@ -3,20 +3,24 @@
 #include <stdlib.h> //for rand()
 #include <iostream>
 #include <fstream>
+#include <thread>
+#include <mutex>
 #define COS0 (1.0-1.0E-12)
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (-(num < 0) | 1)
 #define random() (rand() / float(RAND_MAX))
-#define clamp(minv,x,maxv) std::max(minv, std::min(maxv, x))
+#define clamp(minv,x,maxv) max(minv, min(maxv, x))
 
-void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) //Internal function
+using namespace std;
+
+void StepSize(PhotonClass* Photon, InputClass* In, ofstream* filestr, int wl) //Internal function
 {
     short layer = Photon->layer;
-	double mua = In->layers[layer].mua;
+	double mua = In->layers[layer].mua[wl];
 	double mus = In->layers[layer].mus;
     In->stepcount++;
-	if(Photon->sLeft < 0.0000000000001){
+	if(Photon->sLeft < 0.0000000000001) {
 	    double rnd;
 	    do rnd = random();
 	    while(rnd <= 0.0);
@@ -29,7 +33,7 @@ void MC::StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr) /
 
 }
 
-double MC::SpinTheta(double g)  //Internal function
+double SpinTheta(double g)  //Internal function
 {
     double cost;
 
@@ -42,7 +46,7 @@ double MC::SpinTheta(double g)  //Internal function
     return(cost);
 }
 
-void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
+void Spin(double g, PhotonClass* Photon, ofstream* filestr)
 {
     double cosp, sinp;
     double cost, sint;
@@ -61,13 +65,12 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
         sinp = sqrt(1.0-cosp*cosp);
     else
         sinp = -sqrt(1.0-cosp*cosp);
-
-    if(abs(uz) > COS0){
+    if(sign(uz) * uz > COS90) {
         Photon->ux = sint*cosp;
         Photon->uy = sint*sinp;
         Photon->uz = cost*sign(uz);
     }
-    else{
+    else {
         double tmp = sqrt(1.0 - uz*uz);
         Photon->ux = sint * (ux*uz*cosp - uy*sinp) / tmp + ux*cost;
         Photon->uy = sint * (uy*uz*cosp + ux*sinp) / tmp + uy*cost;
@@ -75,15 +78,15 @@ void MC::Spin(double g, PhotonClass* Photon, std::ofstream* filestr)
     }
 }
 
-bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
+bool MoveAndBound(InputClass* in, PhotonClass* photon, ofstream* filestr, int wl)
 {//gets step size, does some checks, moves and returns if bounds
     bool ret = false;
     short layer = photon->layer;
 	double uz = photon->uz;
-	double mua = in->layers[layer].mua;
+	double mua = in->layers[layer].mua[wl];
 	double mus = in->layers[layer].mus;
 
-    MC::StepSize(photon, in, filestr);
+    StepSize(photon, in, filestr, wl);
 
     if(uz != 0.0) { //cross check
         double s = (in->layers[layer].z[int(uz > 0.0)] - photon->z) / uz; //step size till bound
@@ -97,12 +100,12 @@ bool MC::MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filest
 	photon->x += photon->s * photon->ux; //actually move
 	photon->y += photon->s * photon->uy;
 	photon->z += photon->s * uz;
-    photon->w *= mua/(mua+mus);
+    photon->w *= mus/(mua+mus);
 
 	return ret;
 }
 
-double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
+double FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal function
 {
 	double r;
 	if(n1 == n2){ //bounds match
@@ -137,12 +140,12 @@ double MC::FresnelReflect(double n1, double n2, double ca1, double* uzt) //Inter
 			*uzt = ca2;
 		}
 	}
-	if(r > 1.0) std::cout << "Found r above 1";
+	if(r > 1.0) cout << "Found r above 1";
 	return(r);
 }
 
 
-void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr)
+void CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, ofstream* filestr,  mutex* lock, int wl)
 {
     double uz = photon->uz; // z directional cosine.
     int dir = sign(uz);
@@ -158,15 +161,16 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
 	if (dir * uz <= in->layers[layer].cos_critical[int(dir>0)])//int(uz>0.0) makes array index 1 on positive and 0 on negative
         r = 1.0;
     else
-        r = FresnelReflect(n1, n2, std::abs(uz), &uzt);
+        r = FresnelReflect(n1, n2, abs(uz), &uzt);
 
     if((layer == 0) && (dir == -1) && r < 1.0) { //reflect and die/drop mass
-        //*filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << std::endl;
+        //*filestr << photon->x << "," << photon->y << "," << (photon->w - (photon->w * r)) << endl;
+        //lock_guard<mutex> lk(*lock);
         double tmp = photon->w * r;
         int tmp2 = out->gridSize / 2;
-        int px = clamp(0, int(photon->x * tmp2) + tmp2, out->gridSize - 1);
-        int py = clamp(0, int(photon->y * tmp2) + tmp2, out->gridSize - 1);
-        out->photonDispersion[px][py][in->waveindex] += photon->w - tmp;
+        int px = clamp(0, int(photon->x * in->zoom * tmp2) + tmp2, out->gridSize - 1);
+        int py = clamp(0, int(photon->y * in->zoom * tmp2) + tmp2, out->gridSize - 1);
+        out->photonDispersion[px][py][wl] += photon->w - tmp;
         photon->w = tmp;
         photon->uz = -uz;
     }
@@ -175,13 +179,13 @@ void MC::CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;
         photon->uz = dir * uzt; //retain original direction
-        //*filestr << "Layer: " << photon->layer << std::endl; //logs layer change
+        //*filestr << "Layer: " << photon->layer << endl; //logs layer change
     }
     else
         photon->uz = -uz; //reflect
 }
 
-void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
+void Roulette(InputClass* in, PhotonClass* photon, ofstream* filestr)
 {
     if(photon->w < in->wtolerance){
         int tmp = rand() % 10;
@@ -194,7 +198,7 @@ void MC::Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr)
     }
 }
 
-double MC::SpecularReflect(double n1, double n2) //doesn't work, since n1 would always be 0. The other formula that's in the wong_thesis has 3 n variables, not sure how to use it.
+double SpecularReflect(double n1, double n2)
 {//Called once on the start of the simulation
 	double temp = (n1-n2) / (n1+n2);
 

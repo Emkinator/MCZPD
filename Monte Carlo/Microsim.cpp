@@ -1,5 +1,7 @@
 //Simulates a single photon packet
 #include <fstream>
+#include <thread>
+#include <mutex>
 #include "structs.h"
 #include "formulas.h"
 #include "microsim.h"
@@ -8,37 +10,33 @@ template <typename T> int sign(T val) {
     return (T(0) < val) - (val < T(0));
 }
 
-namespace MC
+void simulatePhoton(InputClass * in, PhotonClass* photon, OutputClass * out, ofstream* debuglog, int wl, mutex* lock)
 {
-    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputClass * out, std::ofstream* debuglog)
-    {
-        int i = 0;
-        double spec = SpecularReflect(1,in->layers[0].n);
+    int i = 0;
+    photon->w -= in->specular;
+    while(photon->alive) {
+        //*debuglog << "Cycle started" << endl;
+        //*debuglog << "  Cords:     " << photon->x << " " << photon->y << " " << photon->z << endl;
+        //*debuglog << "  Dir cos:   " << photon->ux << " " << photon->uy << " " << photon->uz << endl;
+        //*debuglog << "  Step size: " << photon->s << endl;;
+        //*debuglog << "  Weight: " << photon->w << endl;
 
-        //*debuglog << "Specular reflectance: " << spec << std::endl << std::endl;
-        photon->w -= spec;
-        while(photon->alive) {
-            //*debuglog << "Cycle started" << std::endl;
-            //*debuglog << "  Cords:     " << photon->x << " " << photon->y << " " << photon->z << std::endl;
-            //*debuglog << "  Dir cos:   " << photon->ux << " " << photon->uy << " " << photon->uz << std::endl;
-            //*debuglog << "  Step size: " << photon->s << std::endl;;
-            //*debuglog << "  Weight: " << photon->w << std::endl;
+        //*debuglog << photon->x << "," << photon->y << "," << photon->z << "," << photon->w << endl;
 
-            //*debuglog << photon->x << "," << photon->y << "," << photon->z << "," << photon->w << std::endl;
-
-            if(MoveAndBound(in, photon, debuglog))
-                CrossMaybe(in, photon, out, debuglog);
-            else
-                Spin(in->layers[photon->layer].g, photon, debuglog);
-            Roulette(in, photon, debuglog);
-            i++;
-            //*debuglog << "Photon in layer " << photon->layer << std::endl;
-            //*debuglog << "Cycle " << i << " done" << std::endl << std::endl;
-            if(photon->uz!=photon->uz)
-                photon->alive = false;
+        if(MoveAndBound(in, photon, debuglog, wl)) {
+            CrossMaybe(in, photon, out, debuglog, lock, wl);
         }
-        //*debuglog << "Photon simulated.." << std::endl;
-
+        else {
+            Spin(in->layers[photon->layer].g, photon, debuglog);
+        }
+        Roulette(in, photon, debuglog);
+        i++;
+        //*debuglog << "Photon in layer " << photon->layer << endl;
+        //*debuglog << "Cycle " << i << " done" << endl << endl;
+        if(photon->uz!=photon->uz)
+            photon->alive = false;
     }
+    //*debuglog << "Photon simulated.. " << photon << endl;
+
 }
 

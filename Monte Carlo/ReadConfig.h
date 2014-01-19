@@ -2,18 +2,18 @@
 #define READCONFIG_H_INCLUDED
 #include <fstream>
 #include <string>
-namespace MC
-{
-    class ConfigClass
-    {
-        private:
-            std::string fName;
-        public:
-            std::string GetValue(int layer, std::string fieldName, int index = -1);
-            ConfigClass(const char* fileName);
 
-    };
-}
+using namespace std;
+
+class ConfigClass
+{
+    private:
+        string fName;
+    public:
+        string GetValue(int layer, string fieldName, int index = -1);
+        ConfigClass(const char* fileName);
+
+};
 
 
 #endif // READCONFIG_H_INCLUDED

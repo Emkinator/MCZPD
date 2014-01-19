@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-std=gnu++0x" />
 					<Add directory="C:/SDL-1.2.15/include/SDL" />
 					<Add directory="C:/SDL_gfxPrimitives-1.5" />
 				</Compiler>
@@ -28,6 +29,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=gnu++0x" />
 					<Add directory="C:/SDL-1.2.15/include/SDL" />
 					<Add directory="C:/SDL_gfxPrimitives-1.5" />
 				</Compiler>
@@ -39,6 +41,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add directory="C:/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>
@@ -52,15 +55,19 @@
 			<Add library="dxguid" />
 			<Add directory="C:/SDL-1.2.15/lib" />
 		</Linker>
-		<Unit filename="../Monte Carlo/ReadConfig.cpp" />
-		<Unit filename="../Monte Carlo/ReadConfig.h" />
-		<Unit filename="../Monte Carlo/Structs.cpp" />
-		<Unit filename="../Monte Carlo/Structs.h" />
+		<Unit filename="ReadConfigs.cpp" />
+		<Unit filename="ReadConfigs.h" />
 		<Unit filename="SDL_gfxPrimitives.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="SDL_gfxPrimitives.h" />
+		<Unit filename="Structure.cpp" />
+		<Unit filename="Structure.h" />
+		<Unit filename="io.cpp" />
+		<Unit filename="io.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="utility.cpp" />
+		<Unit filename="utility.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

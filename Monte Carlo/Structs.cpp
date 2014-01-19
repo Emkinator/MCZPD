@@ -4,42 +4,48 @@
 #include <math.h>
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <utility>
+#include "formulas.h"
+
+using namespace std;
 
 #define read(name, layer, index) atof(ip.GetValue(layer,name,index).c_str())
 
-MC::PhotonClass::PhotonClass()
-{
-    using namespace MC;
-    x = 0;
-    y = 0;
-    z = 0;
-    ux = 0;
-    uy = 0;
-    uz = 1;
-    w = 1.0;
-    alive = 1;
-    layer = 0;
-    s = 0;
-    sLeft = 0;
-}
+vector<string> explode(const string& str, const char& ch);
 
-
-MC::InputClass::InputClass()
+InputClass::InputClass()
+:
+    stepcount(0),
+    range((750 - 390) / 10),
+    gridsize(256),
+    zoom(8),
+    chromophores(1),
+    wtolerance(1e-5),
+    layerCount(1),
+    layers(NULL),
+    threads(1),
+    passes(1),
+    timelimit(0xffffffff),
+    chunk(1),
+    absorbance(NULL),
+    specular(0)
 {
-    stepcount = 0;
-    wavelength = 390; //10 will be added on the first run
-    range = (750 - 390) / 10;
     ConfigClass ip = ConfigClass("config.txt"); //layer parameters
+    gridsize = read("resolution", 0, -1);
+    zoom = read("zoom", 0, -1);
+    chromophores = read("chromophores", 0, -1);
     wtolerance = read("wtolerance", 0, -1);
-    //std::cout << "Creating InputClass" << std::endl;
+
     layerCount = read("count", 0, -1);
     layers = new LayerClass[layerCount];
 
-    chromophores = read("chromophores", 0, -1);
-    passes = read("passes", 0, -1) / range;
-
-    this->ReadAbsorbance();
+    threads = read("threads", 0, -1);
+    passes = max(read("passes", 0, -1) / threads / range, 1.0);
+    chunk = min(max(1, passes / 100), 600);
+    timelimit = read("timelimit", 0, -1);
 
     for(int i = 0; i < layerCount; i++) {
         double z = read("z", i, -1);
@@ -59,56 +65,53 @@ MC::InputClass::InputClass()
         for(int j = 0; j < chromophores; j++) {
             layers[i].volume[j] = read("volume", i, j);
         }
-        //std::cout << "Layer read" << std::endl;
     }
-    //std::cout << "Done" << std::endl;
+
+    this->ReadAbsorbance();
+
+    specular = SpecularReflect(1, layers[0].n);
 }
 
-void MC::InputClass::ReadAbsorbance()
+void InputClass::ReadAbsorbance()
 {
-    std::ifstream file;
+    ifstream file;
     file.open("mua.txt");
-    std::string line;
+    string line;
     int i = 0;
 
     absorbance = new double*[range];
     for(int i = 0; i < range; i++) {
         absorbance[i] = new double[chromophores];
+        for(int j = 0; j < chromophores; j++) {
+            absorbance[i][j] = 0;
+        }
     }
 
     while(file.good() && i < range) {
         getline(file, line);
-        std::size_t pos = 0;
-        std::size_t oldpos = -1;
         int n = 0;
-        do {
-            pos = line.find(",", pos);
-            if(pos < 1)
-                pos = line.size();
-            absorbance[i][n] = atof(line.substr(oldpos + 1, (pos - 1) - (oldpos + 1)).c_str());
+
+        vector<string> result = explode(line, ',');
+        for (size_t j = 0; j < result.size() && j < range; j++) {
+            absorbance[i][j] = atof(result[j].c_str());
             n++;
-            oldpos = pos;
         }
-        while(pos < line.size() && n < chromophores);
         i++;
     }
     file.close();
-}
 
-void MC::InputClass::ChangeWavelength(int wl)
-{
-    wavelength = wl;
-    base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
-    //change absorbance[i]
-    waveindex = (wl - 400) / 10;
-    if(waveindex >= range) waveindex = range;
-
-    for(int i = 0; i < layerCount; i++) {
-        layers[i].mua = this->CalculateAbsorbance(i);
+    for(i = 0; i < layerCount; i++) {
+        layers[i].mua = new double[range];
+        for(int n = 0; n < range; n++) {
+            int wl = 400 + n * 10;
+            double base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
+            layers[i].mua[n] = this->CalculateAbsorbance(base_absorbance, i, n);
+            //cout<<i<<" "<<n<<" "<<layers[i].mua[n] << endl;
+        }
     }
 }
 
-double MC::InputClass::CalculateAbsorbance(int layer)
+double InputClass::CalculateAbsorbance(double base_absorbance, int layer, int waveindex)
 {
     double x = 0.0;
     double temp;
@@ -117,6 +120,7 @@ double MC::InputClass::CalculateAbsorbance(int layer)
         for(int j = 0; j < i; j++) {
             temp *= (1.0 - layers[layer].volume[j]);
         }
+
         x += temp;
     }
 
@@ -128,7 +132,7 @@ double MC::InputClass::CalculateAbsorbance(int layer)
     return x;
 }
 
-void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog)
+void InputClass::CalculateCosC(int count, ofstream* debuglog)
 {
 	double n1, n2;
     layers[0].cos_critical[0] = 0.0;
@@ -147,8 +151,8 @@ void MC::InputClass::CalculateCosC(int count, std::ofstream* debuglog)
     }
     layers[count - 1].cos_critical[1] = 1.0;
 }
-/*
-MC::InputClass::~InputClass()
+
+InputClass::~InputClass()
 {
     delete[] layers;
     for(int i = 0; i < range; i++) {
@@ -157,14 +161,18 @@ MC::InputClass::~InputClass()
     delete[] absorbance;
 }
 
-MC::LayerClass::~LayerClass()
+LayerClass::~LayerClass()
 {
     delete[] volume;
+    delete[] mua;
 }
-*/
-MC::OutputClass::OutputClass(int size, int range)
+
+OutputClass::OutputClass(int size, int range)
+:
+    gridSize(size),
+    count(0),
+    photonDispersion(NULL)
 {
-    gridSize = size;
     photonDispersion = new double**[size];
     for(int x = 0; x < size; x++) {
         photonDispersion[x] = new double*[size];
@@ -176,23 +184,53 @@ MC::OutputClass::OutputClass(int size, int range)
     }
 }
 
-void MC::OutputClass::PrintStatus(const char * title, int width)
+OutputClass::~OutputClass()
+{
+    for(int x = 0; x < gridSize; x++) {
+        for(int y = 0; y < gridSize; y++) {
+            delete[] photonDispersion[x][y];
+        }
+        delete[] photonDispersion[x];
+    }
+    delete[] photonDispersion;
+}
+
+void OutputClass::PrintStatus(const char * title, int width)
 {
     int len = strlen(title);
     int chars = (width - 2 - len) / 2;
     if(chars < 0) {
-        std::cout << std::endl << "Bad title for status bar - too long (\"" << title << "\")" << std:: endl;
+        cout << endl << "Bad title for status bar - too long (\"" << title << "\")" <<  endl;
         return;
     }
-    std::cout << "|";
+    cout << "|";
     if((width - len) & 1)
-        std::cout << "-";
+        cout << "-";
     for(int i = 0; i < chars; i++)
-        std::cout << "-";
-    std::cout << title;
+        cout << "-";
+    cout << title;
     for(int i = 0; i < chars; i++)
-        std::cout << "-";
-    std::cout << "|" << std::endl;
+        cout << "-";
+    cout << "|";
+}
+
+vector<string> explode(const string& str, const char& ch) { //source: http://stackoverflow.com/questions/890164/how-can-i-split-a-string-by-a-delimiter-into-an-array
+    string next;
+    vector<string> result;
+
+    for (string::const_iterator it = str.begin(); it != str.end(); it++) {
+        if (*it == ch) {
+            if (!next.empty()) {
+                result.push_back(next);
+                next.clear();
+            }
+        } else {
+            next += *it;
+        }
+    }
+    if (!next.empty())
+         result.push_back(next);
+    return result;
 }
 
 

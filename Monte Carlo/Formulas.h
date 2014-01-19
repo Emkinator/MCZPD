@@ -5,26 +5,26 @@
 #include "structs.h"
 #include <fstream>
 #endif
+#include <thread>
+#include <mutex>
 
-namespace MC
-{
-    void StepSize(PhotonClass* Photon, InputClass* In, std::ofstream* filestr); //internal
+using namespace std;
 
-    double SpinTheta(double g); //internal
+void StepSize(PhotonClass* Photon, InputClass* In, ofstream* filestr, int wl); //internal
 
-    void Spin(double g, PhotonClass* Photon, std::ofstream* filestr); //calculates spin
+double SpinTheta(double g); //internal
 
-    bool MoveAndBound(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //gets step size, does some checks, moves and returns if bounds
+void Spin(double g, PhotonClass* Photon, ofstream* filestr); //calculates spin
 
-    double FresnelReflect(double n1, double n2, double ca1, double* uzt); //internal
+bool MoveAndBound(InputClass* in, PhotonClass* photon, ofstream* filestr, int wl); //gets step size, does some checks, moves and returns if bounds
 
-    void CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, std::ofstream* filestr); //checks if photon should cross layer boundary
+double FresnelReflect(double n1, double n2, double ca1, double* uzt); //internal
 
-    void Roulette(InputClass* in, PhotonClass* photon, std::ofstream* filestr); //gives photon a 1/10 chance to not be completely absorbed
+void CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, ofstream* filestr, mutex* lock, int wl); //checks if photon should cross layer boundary
 
-    double SpecularReflect(double n1, double n2); //calculates ammount of reflection at photon entrance in tissue
+void Roulette(InputClass* in, PhotonClass* photon, ofstream* filestr); //gives photon a 1/10 chance to not be completely absorbed
 
-}
+double SpecularReflect(double n1, double n2); //calculates ammount of reflection at photon entrance in tissue
 
 
 

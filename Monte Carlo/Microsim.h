@@ -2,10 +2,14 @@
 #define MICROSIM_H_INCLUDED
 #include "Structs.h"
 #include <fstream>
-namespace MC
-{
-    void simulatePhoton(InputClass * in, PhotonClass * photon, OutputClass * out, std::ofstream* debuglog); // returns pointer to OutputStruct with all the neccesary info
-}
+#include <mutex>
+#include <thread>
+
+
+using namespace std;
+
+void simulatePhoton(InputClass * in, PhotonClass * photon, OutputClass * out, ofstream* debuglog, int wl, mutex* lock); // returns pointer to OutputStruct with all the neccesary info
+
 
 
 #endif // MICROSIM_H_INCLUDED

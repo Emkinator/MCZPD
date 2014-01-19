@@ -4,25 +4,25 @@
 #include <string.h>
 #include <sstream>
 
-#define SSTR( x ) dynamic_cast< std::ostringstream & >( \
-        ( std::ostringstream() << std::dec << x ) ).str()
+#define SSTR( x ) dynamic_cast< ostringstream & >( \
+        ( ostringstream() << dec << x ) ).str()
 
-using namespace MC;
+using namespace std;
 
 ConfigClass::ConfigClass(const char* fileName)
 {
     fName = fileName;
 }
 
-std::string ConfigClass::GetValue(int layer, std::string fieldName, int index)
+string ConfigClass::GetValue(int layer, string fieldName, int index)
 {
-    std::ifstream file;
+    ifstream file;
     file.open(fName.c_str());
-    std::string line;
-    std::string output;
-    std::string label = SSTR(layer);
-    std::size_t pos;
-    std::size_t comment;
+    string line;
+    string output;
+    string label = SSTR(layer);
+    size_t pos;
+    size_t comment;
     bool found = false;
     bool labels_matter = false;
     bool in_array = false;
@@ -66,7 +66,7 @@ std::string ConfigClass::GetValue(int layer, std::string fieldName, int index)
             }
         }
         else if(found || !labels_matter) {
-            pos = line.find(fieldName.c_str());
+            pos = line.find((fieldName + " ").c_str());
             if(pos == 0) {
                 if(index > -1)
                     right_array = true;

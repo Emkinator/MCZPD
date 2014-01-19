@@ -52,52 +52,68 @@
 	"Structs.h"
 	<fstream>
 
-1389975561 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
+1390168399 source:c:\users\karlis\documents\github\mczpd\monte carlo\structs.cpp
 	"Structs.h"
 	"ReadConfig.h"
 	<stdlib.h>
 	<math.h>
 	<iostream>
 	<fstream>
-	<string.h>
-
-1389895925 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
-	<fstream>
+	<string>
 	<vector>
+	<sstream>
+	<utility>
+	"formulas.h"
 
-1389970469 source:c:\users\karlis\documents\github\mczpd\monte carlo\formulas.cpp
+1390168272 c:\users\karlis\documents\github\mczpd\monte carlo\structs.h
+	<fstream>
+	<string>
+	<vector>
+	<sstream>
+	<utility>
+	"ReadConfig.h"
+
+1390166886 source:c:\users\karlis\documents\github\mczpd\monte carlo\formulas.cpp
 	"Formulas.h"
 	<cmath>
 	<stdlib.h>
 	<iostream>
 	<fstream>
+	<thread>
+	<mutex>
 
-1389295617 c:\users\karlis\documents\github\mczpd\monte carlo\formulas.h
+1390165703 c:\users\karlis\documents\github\mczpd\monte carlo\formulas.h
 	"structs.h"
 	<fstream>
+	<thread>
+	<mutex>
 
-1389465833 source:c:\users\karlis\documents\github\mczpd\monte carlo\microsim.cpp
+1390166594 source:c:\users\karlis\documents\github\mczpd\monte carlo\microsim.cpp
 	<fstream>
+	<thread>
+	<mutex>
 	"structs.h"
 	"formulas.h"
 	"microsim.h"
 
-1389895904 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
+1390168928 source:c:\users\karlis\documents\github\mczpd\monte carlo\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
 	<stdlib.h>
-	<fstream>
 	<math.h>
-	"Formulas.h"
+	<thread>
 	"ReadConfig.h"
+	"Formulas.h"
 	"Structs.h"
 	"Microsim.h"
 	"WriteToCVS.h"
 
-1389295617 c:\users\karlis\documents\github\mczpd\monte carlo\microsim.h
+1390165703 c:\users\karlis\documents\github\mczpd\monte carlo\microsim.h
 	"Structs.h"
 	<fstream>
+	<mutex>
+	<thread>
 
 1357577508 c:\users\em\documents\github\mczpd\monte carlo\writetocvs.h
 	<fstream>
@@ -113,18 +129,18 @@
 	<string.h>
 	<sstream>
 
-1383161056 source:c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.cpp
+1390165739 source:c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.cpp
 	"ReadConfig.h"
 	<fstream>
 	<iostream>
 	<string.h>
 	<sstream>
 
-1383073574 c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.h
+1390165731 c:\users\karlis\documents\github\mczpd\monte carlo\readconfig.h
 	<fstream>
 	<string>
 
-1389467196 c:\users\karlis\documents\github\mczpd\monte carlo\writetocvs.h
+1390165703 c:\users\karlis\documents\github\mczpd\monte carlo\writetocvs.h
 	<fstream>
 	<string>
 	<vector>
@@ -192,4 +208,21 @@
 	<math.h>
 	<iostream>
 	<fstream>
+
+1390081005 c:\boost_1_55_0\include\thread
+
+1383511908 c:\boost_1_55_0\boost\thread
+
+1314140394 c:\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1314140392 c:\mingw\include\_mingw.h
+
+1314140394 c:\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1314140393 c:\mingw\include\math.h
+	<_mingw.h>
 

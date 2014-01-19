@@ -1,5 +1,9 @@
-passes = 1000000 /simulation cycle count
+passes = 1000 /simulation cycle count
+timelimit = 20
 wtolerance = 1e-5
+resolution = 256
+zoom = 8
+threads = 1
 /Layer parameters
 count = 7
 chromophores = 5 /total number of chromofores
