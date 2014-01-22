@@ -12,7 +12,6 @@
 #include <fstream>
 #include <iostream>
 #include <cmath>
-#include <ctime>
 #include <utility>
 #include "utility.h"
 #include "io.h"
@@ -27,45 +26,62 @@ using namespace std;
 
 //#define abs(x) ((x ^ (x >> 31)) - (x >> 31))
 
-double getintensity(double a, double b, int mode)
+double getintensity(double a, double b)
 {
     if(b < 1e-60) return 0;
-    switch(mode) {
-        case 0:
-            return a / b;
-        case 1:
-            return pow(a, b);//log2(0.05 + 0.95 * intensity/total_i) + 4.4));
-    }
+    return a / b;
 }
 
-void BuildMap(SDL_Surface* grid, double*** spectrum, int colormap[][3], double max_i, int curve, int mode)
+double getintensity2(double a, double exp)
 {
-    for(int x = 0; x < grid->w; x++) {
-        for(int y = 0; y < grid->h; y++) {
+    return pow(a, exp);//log2(0.05 + 0.95 * intensity/total_i) + 4.4));
+}
+
+void BuildMap(SDL_Surface* bitmap, double**** spectrum, int resolution, double* max_i, int colormap[][3],
+    int mode, int curve, int range_low, int range_high, int zoom, int res_zoom, int max_zoom)
+{
+    SDL_Rect pixel;
+    int factor = bitmap->w / (resolution >> (res_zoom + zoom));
+    int count = bitmap->w / factor * (1 << zoom);
+    int start = (count - (count >> zoom)) / 2;
+    int stop = start + bitmap->w / factor;
+    for(int x = start; x < stop; x++) {
+        for(int y = start; y < stop; y++) {
             float r = 255, g = 255, b = 255;
             double total_i = 0;
-            for(int n = 0; n < range; n++)
-                total_i += spectrum[x][y][n];
+            for(int n = range_low; n <= range_high; n++)
+                total_i += spectrum[res_zoom][x][y][n];
             if(mode < 2) {
                 r = 0, g = 0, b = 0;
-                for(int n = 0; n < range; n++) {
-                    double temp = getintensity(spectrum[x][y][n], total_i, 0);
+                for(int n = range_low; n <= range_high; n++) {
+                    double temp = getintensity(spectrum[res_zoom][x][y][n], total_i);
                     r += temp * colormap[n][0];
                     g += temp * colormap[n][1];
                     b += temp * colormap[n][2];
                 }
             }
             if(mode > 0) {
-                double temp = getintensity(total_i / max_i, 1.0 / curve, 1);
+                double temp = getintensity2(total_i / max_i[res_zoom], 1.0 / curve);
                 r *= temp;
                 g *= temp;
                 b *= temp;
             }
 
-            pixelRGBA(grid, x, y, r, g, b, 255);
+            int px = x - start;
+            int py = y - start;
+            if(factor == 1) {
+                pixelRGBA(bitmap, px, py, r, g, b, 255);
+            }
+            else {
+                pixel.x = px * factor;
+                pixel.y = py * factor;
+                pixel.w = pixel.h = factor;
+                SDL_FillRect(bitmap, &pixel, (static_cast<Uint32>(r) << 24)
+                    | (static_cast<Uint32>(g) << 16) | (static_cast<Uint32>(b) << 8) | 255);
+            }
         }
     }
-    SDL_Flip(grid);
+    SDL_Flip(bitmap);
 }
 
 int main (int argc, char** argv)
@@ -88,32 +104,41 @@ int main (int argc, char** argv)
         return 1;
     }
 
-    ConfigClass config((char*)"config.txt");
+    ConfigClass config("../Monte Carlo/config.txt");
     InputClass in(&config);
 
     // read cords from file, assign to array "cords"
-    int c = GetStepCount((char*)"simlog.txt");
+    int c = GetStepCount("simlog.txt");
     pcords *cords = new pcords[c];
     ReadCords(cords, c);
 
     int colormap[range][3];
     GenerateColorMap(colormap);
 
-    int resolution = atof(config.GetValue(0,"resolution", -1).c_str());
-    SDL_Surface *bitmap = SDL_CreateRGBSurface(SDL_HWSURFACE, resolution, resolution, 32, 0xff000000, 0xff0000, 0xff00, 0xff);
-    double*** spectrum = new double**[resolution];
-    for(int x = 0; x < resolution; x++) {
-        spectrum[x] = new double*[resolution];
-        for(int y = 0; y < resolution; y++) {
-            spectrum[x][y] = new double[range];
+    int resolution = GetResolution();
+    int res_levels = ceil(log2(resolution) + 1);
+    int res_zoom = 0;
+    int zoom = 0;
+
+    double**** spectrum = new double***[res_levels];
+
+    for(int n = 0; n < res_levels; n++) {
+        int res = resolution >> n;
+        spectrum[n] = new double**[res];
+        for(int x = 0; x < res; x++) {
+            spectrum[n][x] = new double*[res];
+            for(int y = 0; y < res; y++) {
+                spectrum[n][x][y] = new double[range];
+            }
         }
     }
-    double max_intensity = 0;
+
+    double* max_intensity = new double[res_levels];
     ReadMap(spectrum, max_intensity, resolution);
     SDL_ShowCursor(true);
     int curve = 10;
 
-    Uint32 background = SDL_MapRGB(screen->format, 255, 255, 255);
+    Uint32 background = 0xffffffff;
 
     double scale = 10000;
     double newscale = scale;
@@ -131,22 +156,33 @@ int main (int argc, char** argv)
     int rectsize = resolution;
     while(rectsize * 2 < bounds[1] - 30) rectsize *= 2;
 
-    SDL_Rect destination = {
+    SDL_Surface *bitmap = SDL_CreateRGBSurface(SDL_HWSURFACE, rectsize, rectsize, 32, 0xff000000, 0xff0000, 0xff00, 0xff);
+    SDL_Rect mapcords = {
         30,
-        (bounds[1] - rectsize) / 2 + 30,
+        (bounds[1] - rectsize) / 2,
         rectsize,
         rectsize
     };
+    SDL_Rect selectorcords = {
+        mapcords.x - 1,
+        bounds[1] - ((bounds[1] - (mapcords.y + mapcords.h + 30)) / 2) - 30,
+        mapcords.w,
+        30
+    };
     SDL_Rect graphcords = {
-        destination.x + destination.w + 30,
-        destination.y,
-        bounds[0] - (destination.x + destination.w + 30) - 30,
-        destination.h
+        mapcords.x + mapcords.w + 30,
+        mapcords.y,
+        bounds[0] - (mapcords.x + mapcords.w + 30) - 30,
+        mapcords.h - 1
     };
     int intensity_mode = 0; //0 - just colors, 1 - both, 2 - just intensity
     bool map_updated = false;
     bool graph_updated = false;
+    bool selector_updated = false;
+    bool selecting = false;
     int sx = -1, sy = -1;
+    int range_low = 0;
+    int range_high = range - 1;
 
     SDL_Event event;
 
@@ -169,6 +205,7 @@ int main (int argc, char** argv)
                                 mode = 1;
                                 graph_updated = false;
                                 map_updated = false;
+                                selector_updated = false;
                                 SDL_FillRect(screen, 0, background);
                                 continue;
                                 break;
@@ -211,11 +248,30 @@ int main (int argc, char** argv)
                                 curve = max(curve - 1, 1);
                                 map_updated = false;
                                 break;
+                            case SDLK_LEFTBRACKET:
+                                if(res_zoom > 0) res_zoom--;
+                                map_updated = false;
+                                break;
+                            case SDLK_RIGHTBRACKET:
+                                if(res_zoom < res_levels - 1) res_zoom++;
+                                if(res_zoom + zoom >= res_levels) zoom--;
+                                map_updated = false;
+                                break;
+                            case SDLK_MINUS:
+                                if(zoom > 0) zoom--;
+                                map_updated = false;
+                                break;
+                            case SDLK_EQUALS:
+                                if(zoom + res_zoom < res_levels - 1) zoom++;
+                                map_updated = false;
+                                break;
                             case SDLK_m:
                                 mode = 0;
                                 SDL_FillRect(screen, 0, background);
                                 graph_updated = true;
                                 map_updated = true;
+                                selector_updated = true;
+                                selecting = false;
                                 continue;
                                 break;
                         }
@@ -224,13 +280,45 @@ int main (int argc, char** argv)
                 }
                 case SDL_MOUSEBUTTONDOWN: {
                     if(mode == 1) {
-                        if(event.button.x >= destination.x && event.button.x < destination.x + destination.w &&
-                            event.button.y >= destination.y && event.button.y < destination.y + destination.h &&
-                            event.button.button == SDL_BUTTON_LEFT && event.button.state == SDL_PRESSED
-                        ) {
-                            sx = int((event.button.x - destination.x) / (float)destination.w * resolution);
-                            sy = int((event.button.y - destination.y) / (float)destination.h * resolution);
+                        if(ClickedIn(event, mapcords)) {
+                            sx = (event.button.x - mapcords.x) / (float)mapcords.w * resolution;
+                            sy = (event.button.y - mapcords.y) / (float)mapcords.h * resolution;
                             graph_updated = false;
+                        }
+                        else if(ClickedIn(event, selectorcords)) {
+                            int x = floor((event.button.x - selectorcords.x) / (float)selectorcords.w * (range - 1));
+                            selecting = true;
+                            range_low = range_high = x;
+                            selector_updated = false;
+                            map_updated = false;
+                            graph_updated = false;
+                        }
+                    }
+                    break;
+                }
+                case SDL_MOUSEBUTTONUP: {
+                    if(mode == 1) {
+                        if(ClickedIn(event, selectorcords)) {
+                            selecting = false;
+                        }
+                    }
+                    break;
+                }
+                case SDL_MOUSEMOTION: {
+                    if(mode == 1) {
+                        if(selecting && event.motion.y > selectorcords.y
+                           && event.motion.y < selectorcords.y + selectorcords.h
+                        ) {
+                            int x = floor((event.button.x - selectorcords.x) / (float)selectorcords.w * (range - 1));
+                            if(x >= 0 && x < range) {
+                                if(range_low > x)
+                                    range_low = x;
+                                if(range_high < x)
+                                    range_high = x;
+                                selector_updated = false;
+                                map_updated = false;
+                                graph_updated = false;
+                            }
                         }
                     }
                     break;
@@ -268,7 +356,7 @@ int main (int argc, char** argv)
                     newscale = min(newscale, abs(scale * ((bounds[0] - 40) / x2)));
                 }
 
-                if(y2 > (bounds[1] - 40) || y2 < 40){
+                if(y2 > (bounds[1] - 40) || y2 < 40) {
                     newscale = min(newscale, abs(scale * ((bounds[1] - 40) / y2)));
                 }
 
@@ -301,24 +389,28 @@ int main (int argc, char** argv)
             SDL_Flip(screen);
         }
         else {
-            if(!map_updated) {
-                SDL_FillRect(screen, &destination, background);
-
+            bool needs_flip = false;
+            if(!selector_updated) {
+                int sx = selectorcords.x;
+                int sy = selectorcords.y;
                 float step = rectsize / float(range - 1);
-                int sx = destination.x - 1;
-                int sy = destination.y - 30;
                 for(int i = 0; i < range - 1; i++) {
+                    float shade = (i >= range_low && i <= range_high) ? 1.0 : 0.5;
                     for(int y = 0; y < 30; y++) {
                         GradientLine(screen, floor(sx + i * step), floor(sy + y), ceil(sx + (i + 1) * step), ceil(sy + y),
-                            colormap[i][0], colormap[i][1], colormap[i][2],
-                            colormap[i + 1][0], colormap[i + 1][1], colormap[i + 1][2]);
+                            colormap[i][0] * shade, colormap[i][1] * shade, colormap[i][2] * shade,
+                            colormap[i + 1][0] * shade, colormap[i + 1][1] * shade, colormap[i + 1][2] * shade);
                     }
                 }
-
-                BuildMap(bitmap, spectrum, colormap, max_intensity, curve, intensity_mode);
-                SDL_Surface* scaled = ScaleSurface(bitmap, rectsize, rectsize);
-                SDL_BlitSurface(scaled, NULL, screen, &destination);
-                SDL_Flip(screen);
+                needs_flip = true;
+                selector_updated = true;
+            }
+            if(!map_updated) {
+                SDL_FillRect(screen, &mapcords, background);
+                BuildMap(bitmap, spectrum, resolution, max_intensity, colormap, intensity_mode,
+                         curve, range_low, range_high, zoom, res_zoom, res_levels);
+                SDL_BlitSurface(bitmap, NULL, screen, &mapcords);
+                needs_flip = true;
                 map_updated = true;
             }
             if(!graph_updated) {
@@ -330,21 +422,30 @@ int main (int argc, char** argv)
                 if(sx != -1) {
                     SDL_FillRect(screen, &graphcords, background);
 
+                    int count = min(range - 1, range_high - range_low + 1);
+                    float step = (w - 1) / float(count);
+
+                    int factor = bitmap->w / (resolution >> (res_zoom + zoom));
+                    int size = bitmap->w / factor * (1 << zoom);
+                    int start = (size - (size >> zoom)) / 2;
+                    int cx = start + sx / factor;
+                    int cy = start + sy / factor;
+
                     double total_i = 0;
-                    for(int n = 0; n < range; n++)
-                        if(spectrum[sx][sy][n] > total_i)
-                            total_i = spectrum[sx][sy][n];
+                    for(int n = range_low; n <= range_low + count; n++)
+                        if(spectrum[res_zoom][cx][cy][n] > total_i)
+                            total_i = spectrum[res_zoom][cx][cy][n];
 
-                    float ldy = getintensity(spectrum[sx][sy][0], total_i, 0) * h;
+                    float ldy = getintensity(spectrum[res_zoom][cx][cy][range_low], total_i) * h;
                     float dy = 0;
-                    float step = w / (float)range;
 
-                    for(int n = 0; n < range - 1; n++) {
-                        float dy = getintensity(spectrum[sx][sy][n + 1], total_i, 0) * h;
+                    for(int n = 0; n < count; n++) {
+                        int id = n + range_low;
+                        float dy = getintensity(spectrum[res_zoom][cx][cy][id + 1], total_i) * h;
 
                         GradientLine(screen, rint(x + step * n), rint(y - ldy), rint(x + step * (n + 1)), rint(y - dy),
-                            colormap[n][0], colormap[n][1], colormap[n][2],
-                            colormap[n + 1][0], colormap[n + 1][1], colormap[n + 1][2]);
+                            colormap[id][0], colormap[id][1], colormap[id][2],
+                            colormap[id + 1][0], colormap[id + 1][1], colormap[id + 1][2]);
                         ldy = dy;
                     }
                 }
@@ -353,9 +454,12 @@ int main (int argc, char** argv)
                 GradientLine(screen, x - 1, y + 2, x - 1, y - h, 0, 0, 0, 0, 0, 0);
                 GradientLine(screen, x, y, x + w, y, 0, 0, 0, 0, 0, 0);
                 GradientLine(screen, x, y + 1, x + w, y + 1, 0, 0, 0, 0, 0, 0);
-                SDL_Flip(screen);
+                needs_flip = true;
                 graph_updated = true;
             }
+
+            if(needs_flip)
+                SDL_Flip(screen);
         }
     } // end main loop
 

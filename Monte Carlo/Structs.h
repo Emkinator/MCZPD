@@ -57,7 +57,7 @@ namespace std {
             int threads;
             int gridsize;
             int range;
-            int passes;
+            long long int passes;
             int timelimit;
             int chunk;
             int layerCount;
@@ -81,7 +81,7 @@ namespace std {
 
         public:
             int gridSize;
-            long int count;
+            long long int count;
             double*** photonDispersion;
             void PrintStatus(const char * title, int width);
             OutputClass(int size, int range);

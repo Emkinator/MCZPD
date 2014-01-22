@@ -16,9 +16,9 @@ using namespace std;
 
 void Thread(int thread_id, clock_t start, InputClass* in, OutputClass* ret, ofstream* filestr, mutex* lock)
 {
-    int passes = in->passes;
+    long long int passes = in->passes;
+    long long int total = passes;
     int chunk = in->chunk;
-    int total = passes;
     int progress = 0;
     while(passes > 0) {
         for(int i = 0; i < in->range; i++) {
@@ -28,7 +28,8 @@ void Thread(int thread_id, clock_t start, InputClass* in, OutputClass* ret, ofst
             }
         }
         passes -= chunk;
-        chunk = min(passes, chunk);
+        if(passes < chunk)
+            chunk = passes;
 
         float timeprogress = (float(clock() - start) / CLOCKS_PER_SEC) / in->timelimit;
         float done = max(float(total - passes)/total, timeprogress);
@@ -76,7 +77,7 @@ int main()
         "   " << ret.count * in.range * in.threads << " photons simulated." << endl;
 
     ret.PrintStatus("Outputting", 80);
-    WriteCSV(&ret, "grid", ret.gridSize, ret.gridSize, in.range);
+    WriteCSV(&ret, &in, "grid", ret.gridSize, ret.gridSize, in.range);
     filestr.close();
     return 0;
 }

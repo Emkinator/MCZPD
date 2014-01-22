@@ -1,8 +1,8 @@
-passes = 1000 /simulation cycle count
-timelimit = 20
-wtolerance = 1e-5
-resolution = 256
-zoom = 8
+passes = 1000000000000000 /simulation cycle count
+timelimit = 42000 /14 hours
+wtolerance = 1e-4
+resolution = 512
+zoom = 4
 threads = 1
 /Layer parameters
 count = 7

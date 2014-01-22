@@ -15,6 +15,13 @@
 
 using namespace std;
 
+bool ClickedIn(SDL_Event event, SDL_Rect bounds)
+{
+    return (event.button.x >= bounds.x && event.button.x < bounds.x + bounds.w &&
+            event.button.y >= bounds.y && event.button.y < bounds.y +bounds.h &&
+            event.button.button == SDL_BUTTON_LEFT);
+}
+
 int Adjust(double color, double factor)
 {
     if(color > 0)
@@ -87,7 +94,10 @@ void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int 
 {
     float dx = x2-x1;
     float dy = y2-y1;
-    int steps = (abs(dx) > abs(dy)) ? abs(dx) : abs(dy);
+    float dc1 = ec1 - sc1;
+    float dc2 = ec2 - sc2;
+    float dc3 = ec3 - sc3;
+    int steps = max(abs(dx), abs(dy));
     if(!steps) steps = 1;
 
     float x = x1;
@@ -96,19 +106,19 @@ void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int 
     float c2 = sc2;
     float c3 = sc3;
 
-    float ax = dx / steps;
-    float ay = dy / steps;
-    float ac1 = (ec1 - sc1) / steps;
-    float ac2 = (ec2 - sc2) / steps;
-    float ac3 = (ec3 - sc3) / steps;
+    dx /= steps;
+    dy /= steps;
+    dc1 /= steps;
+    dc2 /= steps;
+    dc3 /= steps;
 
     for(int i = 0; i < steps; i++) {
-        x += ax;
-        y += ay;
-        c1 += ac1;
-        c2 += ac2;
-        c3 += ac3;
-        pixelRGBA(dst,x,y,c1,c2,c3,255);
+        c1 += dc1;
+        c2 += dc2;
+        c3 += dc3;
+        x += dx;
+        y += dy;
+        pixelRGBA(dst, x, y, c1, c2, c3, 255);
     }
 }
 
@@ -116,29 +126,6 @@ Uint32 getpixel32(SDL_Surface *surface, int x, int y)
 { //source: http://www.libsdl.org/release/SDL-1.2.15/docs/html/guidevideo.html#GUIDEVIDEOINTRO
     Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
     return *(Uint32 *)p;
-}
-
-void putpixel32(SDL_Surface *surface, int x, int y, Uint32 pixel)
-{ //source: http://www.libsdl.org/release/SDL-1.2.15/docs/html/guidevideo.html#GUIDEVIDEOINTRO
-    Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
-    *(Uint32 *)p = pixel;
-}
-
-SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height)
-{ //source: http://www.sdltutorials.com/sdl-scale-surface
-    SDL_Surface *_ret = SDL_CreateRGBSurface(Surface->flags, Width, Height, Surface->format->BitsPerPixel,
-        Surface->format->Rmask, Surface->format->Gmask, Surface->format->Bmask, Surface->format->Amask);
-    double _stretch_factor_x = (static_cast<double>(Width)  / static_cast<double>(Surface->w));
-    double _stretch_factor_y = (static_cast<double>(Height) / static_cast<double>(Surface->h));
-
-    for(Sint32 y = 0; y < Surface->h; y++)
-        for(Sint32 x = 0; x < Surface->w; x++)
-            for(Sint32 o_y = 0; o_y < _stretch_factor_y; ++o_y)
-                for(Sint32 o_x = 0; o_x < _stretch_factor_x; ++o_x)
-                    putpixel32(_ret, static_cast<Sint32>(_stretch_factor_x * x) + o_x,
-                        static_cast<Sint32>(_stretch_factor_y * y) + o_y, getpixel32(Surface, x, y));
-
-    return _ret;
 }
 
 vector<string> explode(const string& str, const char& ch) { //source: http://stackoverflow.com/questions/890164/how-can-i-split-a-string-by-a-delimiter-into-an-array

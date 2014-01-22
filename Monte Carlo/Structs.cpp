@@ -44,7 +44,7 @@ InputClass::InputClass()
 
     threads = read("threads", 0, -1);
     passes = max(read("passes", 0, -1) / threads / range, 1.0);
-    chunk = min(max(1, passes / 100), 600);
+    chunk = min(max(1, int(passes / 100)), 600);
     timelimit = read("timelimit", 0, -1);
 
     for(int i = 0; i < layerCount; i++) {

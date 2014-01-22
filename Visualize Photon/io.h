@@ -15,8 +15,9 @@ struct pcords {
     double z;
 };
 
-int GetStepCount(char* filename);
+int GetStepCount(const char* filename);
 void ReadCords(pcords* cords, int c);
-void ReadMap(double*** spectrum, double &max_intensity, int resolution);
+int GetResolution();
+void ReadMap(double**** spectrum, double* max_intensity, int resolution);
 
 #endif // IO_H_INCLUDED
