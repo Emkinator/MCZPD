@@ -1,8 +1,8 @@
-passes = 1000000000000000 /simulation cycle count
+passes = 1000000 /simulation cycle count
 timelimit = 42000 /14 hours
 wtolerance = 1e-4
 resolution = 512
-zoom = 4
+zoom = 8
 threads = 1
 /Layer parameters
 count = 7
@@ -27,9 +27,9 @@ mus = 45
 g = 0.8
 volume = 
 {
-	0
-	0
 	0.01
+	0
+	0
 	0.1
 	0.2
 }

@@ -21,24 +21,20 @@
 #include "Structure.h"
 
 #define range       36
+#define dbug(var) << #var": " << (var)
+#define out(var) (var) << " "
 
 using namespace std;
 
 //#define abs(x) ((x ^ (x >> 31)) - (x >> 31))
-
-double getintensity(double a, double b)
-{
-    if(b < 1e-60) return 0;
-    return a / b;
-}
 
 double getintensity2(double a, double exp)
 {
     return pow(a, exp);//log2(0.05 + 0.95 * intensity/total_i) + 4.4));
 }
 
-void BuildMap(SDL_Surface* bitmap, double**** spectrum, int resolution, double* max_i, int colormap[][3],
-    int mode, int curve, int range_low, int range_high, int zoom, int res_zoom, int max_zoom)
+void BuildMap(SDL_Surface* bitmap, double***** spectrum, double** intensity, int resolution, double max_i, int colormap[][3],
+    int mode, int curve, int range_low, int range_high, int zoom, int res_zoom, int max_zoom, int layer)
 {
     SDL_Rect pixel;
     int factor = bitmap->w / (resolution >> (res_zoom + zoom));
@@ -49,19 +45,17 @@ void BuildMap(SDL_Surface* bitmap, double**** spectrum, int resolution, double* 
         for(int y = start; y < stop; y++) {
             float r = 255, g = 255, b = 255;
             double total_i = 0;
-            for(int n = range_low; n <= range_high; n++)
-                total_i += spectrum[res_zoom][x][y][n];
             if(mode < 2) {
                 r = 0, g = 0, b = 0;
                 for(int n = range_low; n <= range_high; n++) {
-                    double temp = getintensity(spectrum[res_zoom][x][y][n], total_i);
+                    double temp = spectrum[layer][res_zoom][x][y][n] / intensity[x][y];
                     r += temp * colormap[n][0];
                     g += temp * colormap[n][1];
                     b += temp * colormap[n][2];
                 }
             }
             if(mode > 0) {
-                double temp = getintensity2(total_i / max_i[res_zoom], 1.0 / curve);
+                double temp = getintensity2(intensity[x][y] / max_i, 1.0 / curve);
                 r *= temp;
                 g *= temp;
                 b *= temp;
@@ -115,26 +109,37 @@ int main (int argc, char** argv)
     int colormap[range][3];
     GenerateColorMap(colormap);
 
-    int resolution = GetResolution();
+    int resolution = 0;
+    int max_layers = 1;
+    int layer = 0;
+    GetData(resolution, max_layers);
     int res_levels = ceil(log2(resolution) + 1);
     int res_zoom = 0;
     int zoom = 0;
 
-    double**** spectrum = new double***[res_levels];
+    double***** spectrum = new double****[max_layers];
 
-    for(int n = 0; n < res_levels; n++) {
-        int res = resolution >> n;
-        spectrum[n] = new double**[res];
-        for(int x = 0; x < res; x++) {
-            spectrum[n][x] = new double*[res];
-            for(int y = 0; y < res; y++) {
-                spectrum[n][x][y] = new double[range];
+    for(int l = 0; l < max_layers; l++) {
+        spectrum[l] = new double ***[res_levels];
+        for(int n = 0; n < res_levels; n++) {
+            int res = resolution >> n;
+            spectrum[l][n] = new double**[res];
+            for(int x = 0; x < res; x++) {
+                spectrum[l][n][x] = new double*[res];
+                for(int y = 0; y < res; y++) {
+                    spectrum[l][n][x][y] = new double[range];
+                }
             }
         }
     }
 
-    double* max_intensity = new double[res_levels];
-    ReadMap(spectrum, max_intensity, resolution);
+    double** intensity = new double*[resolution];
+    for(int x = 0; x < resolution; x++) {
+        intensity[x] = new double[resolution];
+    }
+
+    double max_intensity = 0;
+    ReadMap(spectrum, resolution, max_layers);
     SDL_ShowCursor(true);
     int curve = 10;
 
@@ -265,6 +270,14 @@ int main (int argc, char** argv)
                                 if(zoom + res_zoom < res_levels - 1) zoom++;
                                 map_updated = false;
                                 break;
+                            case SDLK_PERIOD:
+                                if(layer < max_layers - 1) layer++;
+                                map_updated = false;
+                                break;
+                            case SDLK_COMMA:
+                                if(layer > 0) layer--;
+                                map_updated = false;
+                                break;
                             case SDLK_m:
                                 mode = 0;
                                 SDL_FillRect(screen, 0, background);
@@ -273,6 +286,10 @@ int main (int argc, char** argv)
                                 selector_updated = true;
                                 selecting = false;
                                 continue;
+                                break;
+                            case SDLK_r:
+                                ReadMap(spectrum, resolution, max_layers);
+                                map_updated = false;
                                 break;
                         }
                     }
@@ -407,8 +424,10 @@ int main (int argc, char** argv)
             }
             if(!map_updated) {
                 SDL_FillRect(screen, &mapcords, background);
-                BuildMap(bitmap, spectrum, resolution, max_intensity, colormap, intensity_mode,
-                         curve, range_low, range_high, zoom, res_zoom, res_levels);
+                GetIntensity(spectrum, intensity, max_intensity, range_low, range_high,
+                    resolution, res_zoom, layer, max_layers);
+                BuildMap(bitmap, spectrum, intensity, resolution, max_intensity, colormap, intensity_mode,
+                    curve, range_low, range_high, zoom, res_zoom, res_levels, layer);
                 SDL_BlitSurface(bitmap, NULL, screen, &mapcords);
                 needs_flip = true;
                 map_updated = true;
@@ -433,15 +452,15 @@ int main (int argc, char** argv)
 
                     double total_i = 0;
                     for(int n = range_low; n <= range_low + count; n++)
-                        if(spectrum[res_zoom][cx][cy][n] > total_i)
-                            total_i = spectrum[res_zoom][cx][cy][n];
+                        if(spectrum[layer][res_zoom][cx][cy][n] > total_i)
+                            total_i = spectrum[layer][res_zoom][cx][cy][n];
 
-                    float ldy = getintensity(spectrum[res_zoom][cx][cy][range_low], total_i) * h;
+                    float ldy = spectrum[layer][res_zoom][cx][cy][range_low] / total_i * h;
                     float dy = 0;
 
                     for(int n = 0; n < count; n++) {
                         int id = n + range_low;
-                        float dy = getintensity(spectrum[res_zoom][cx][cy][id + 1], total_i) * h;
+                        float dy = spectrum[layer][res_zoom][cx][cy][id + 1] / total_i * h;
 
                         GradientLine(screen, rint(x + step * n), rint(y - ldy), rint(x + step * (n + 1)), rint(y - dy),
                             colormap[id][0], colormap[id][1], colormap[id][2],

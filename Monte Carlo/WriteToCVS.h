@@ -11,45 +11,58 @@
 
 using namespace std;
 
-void WriteCSV(OutputClass* a, InputClass* in, const char* fileName, int nx, int ny, int nz)
+void WriteCSV(OutputClass* out, InputClass* in, const char* fileName, int nx, int ny, int nz)
 {
     ofstream file;
     string fullName(fileName);
     fullName += ".csv";
     file.open(fullName.c_str());
-    file << nx << "," << in->stepcount << "," << a->count * in->range * in->threads
-        << "," << in->zoom << "," << in->specular << endl;
+    file << nx << "," << in->stepcount << "," << out->count * in->range * in->threads
+        << "," << in->zoom << "," << in->specular << "," << in->layerCount << endl;
     ostringstream buffer;
     int approx_count = 0;
 
-    int last = 0;
-    int progress = 0;
+    double last = 0;
+    double progress = 0;
 
-    for(int x = 0; x < nx; x++){
-        for(int y = 0; y < ny; y++){
-            buffer << a->photonDispersion[x][y][0];
-            for(int z = 1; z < nz; z++){
-                buffer <<  "," << a->photonDispersion[x][y][z];
+    for(int layer = in->layerCount - 1; layer >= 0; layer--) {
+        for(int x = 0; x < nx; x++) {
+            for(int y = 0; y < ny; y++) {
+                int z = 0;
+                int last = 0;
+                double value;
+                do {
+                    value = out->photonDispersion[x][y][z][layer];
+                    if(value > 1e-60) {
+                        while(last < z) {
+                            buffer <<  ',';
+                            last++;
+                        }
+                        buffer << value;
+                    }
+                    z++;
+                } while(z < nz);
+
+                buffer << endl;
+                approx_count += 130;
             }
-            buffer << endl;
-            approx_count += 130;
-        }
 
-        if(approx_count > 1024 * 1024) { //1MB
-            file << buffer.str();
-            buffer.str("");
-            buffer.clear();
-            approx_count = 0;
+            if(approx_count > 1024 * 1024) { //1MB
+                file << buffer.str();
+                buffer.str("");
+                buffer.clear();
+                approx_count = 0;
+            }
+            //progress output
+            progress = double(x + nx * (in->layerCount - layer)) / (nx * in->layerCount) * 80;
+            if(progress >= last + 1) {
+                cout << "|";
+                last = progress;
+            }
         }
-        //progress output
-        progress += ny * nz;
-        if(progress > nx * ny * nz * last / 80) {
-            cout << "|";
-            last++;
-        }
-
     }
     cout << endl;
+    file << buffer.str();
     file.close();
 }
 

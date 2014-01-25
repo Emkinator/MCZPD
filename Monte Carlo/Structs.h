@@ -21,6 +21,7 @@ namespace std {
             double w;           //weight
             bool alive;         //wether the photon packet is active
             short layer;        //which layer the photon packet is in
+            short maxlayer;
             double s;           //current step size
             double sLeft;       //step size left
             PhotonClass():
@@ -33,6 +34,7 @@ namespace std {
                 w (1.0),
                 alive(1),
                 layer(0),
+                maxlayer(0),
                 s(0.0),
                 sLeft(0.0)
             {}
@@ -73,6 +75,8 @@ namespace std {
             void ReadAbsorbance();
             ~InputClass();
             InputClass();
+            InputClass(const InputClass&) = default;
+            InputClass& operator = (const InputClass& i) = default;
     };
 
     class OutputClass
@@ -81,10 +85,13 @@ namespace std {
 
         public:
             int gridSize;
+            int range;
             long long int count;
-            double*** photonDispersion;
+            double**** photonDispersion;
             void PrintStatus(const char * title, int width);
-            OutputClass(int size, int range);
+            OutputClass(int size, int range, int layers);
+            OutputClass(const OutputClass&) = default;
+            OutputClass& operator = (const OutputClass& i) = default;
             ~OutputClass();
     };
 

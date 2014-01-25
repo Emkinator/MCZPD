@@ -167,19 +167,24 @@ LayerClass::~LayerClass()
     delete[] mua;
 }
 
-OutputClass::OutputClass(int size, int range)
+OutputClass::OutputClass(int size, int range, int layers)
 :
     gridSize(size),
     count(0),
-    photonDispersion(NULL)
+    photonDispersion(NULL),
+    range(range)
 {
-    photonDispersion = new double**[size];
+    photonDispersion = new double***[size];
     for(int x = 0; x < size; x++) {
-        photonDispersion[x] = new double*[size];
+        photonDispersion[x] = new double**[size];
         for(int y = 0; y < size; y++) {
-            photonDispersion[x][y] = new double[range];
-            for(int z = 0; z < range; z++)
-                photonDispersion[x][y][z] = 0.0;
+            photonDispersion[x][y] = new double*[range];
+            for(int z = 0; z < range; z++) {
+                photonDispersion[x][y][z] = new double[layers];
+                for(int layer = 0; layer < layers; layer++) {
+                    photonDispersion[x][y][z][layer] = 0.0;
+                }
+            }
         }
     }
 }
@@ -188,6 +193,9 @@ OutputClass::~OutputClass()
 {
     for(int x = 0; x < gridSize; x++) {
         for(int y = 0; y < gridSize; y++) {
+            for(int z = 0; z < range; z++) {
+                delete[] photonDispersion[x][y][z];
+            }
             delete[] photonDispersion[x][y];
         }
         delete[] photonDispersion[x];

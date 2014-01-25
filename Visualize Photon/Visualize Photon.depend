@@ -31,7 +31,7 @@
 	<utility>
 	"ReadConfig.h"
 
-1390404466 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
+1390675822 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
 	<fstream>
 	<iostream>
 	<string>
@@ -40,7 +40,7 @@
 	<sstream>
 	"utility.h"
 
-1390334552 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
+1390416193 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
@@ -239,7 +239,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1390412065 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
+1390676393 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -255,7 +255,7 @@
 	"ReadConfigs.h"
 	"Structure.h"
 
-1390406390 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
+1390675188 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
 	<fstream>
 	<string>
 	<cmath>
@@ -267,7 +267,7 @@
 	<math.h>
 	<SDL.h>
 
-1321815748 c:\users\karlis\documents\github\mczpd\visualize photon\vmath.h
+1390416269 c:\users\karlis\documents\github\mczpd\visualize photon\vmath.h
 	<cmath>
 	<cstring>
 	<iostream>
@@ -298,7 +298,7 @@
 	<iostream>
 	<fstream>
 
-1390334559 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
+1390657602 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
@@ -314,22 +314,22 @@
 	<thread>
 	<mutex>
 
-1390000559 c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.h
+1390416268 c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.h
 	<fstream>
 	<string>
 
-1390160581 c:\users\karlis\documents\github\mczpd\visualize photon\structure.h
+1390416268 c:\users\karlis\documents\github\mczpd\visualize photon\structure.h
 	<fstream>
 	"ReadConfigs.h"
 
-1390161266 source:c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.cpp
+1390416268 source:c:\users\karlis\documents\github\mczpd\visualize photon\readconfigs.cpp
 	"ReadConfigs.h"
 	<fstream>
 	<iostream>
 	<string.h>
 	<sstream>
 
-1390161206 source:c:\users\karlis\documents\github\mczpd\visualize photon\structure.cpp
+1390657602 source:c:\users\karlis\documents\github\mczpd\visualize photon\structure.cpp
 	"Structure.h"
 	"ReadConfigs.h"
 	<stdlib.h>

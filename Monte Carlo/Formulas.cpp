@@ -170,11 +170,12 @@ void CrossMaybe(InputClass* in, PhotonClass* photon, OutputClass* out, ofstream*
         int tmp2 = out->gridSize / 2;
         int px = clamp(0, int(photon->x * in->zoom * tmp2) + tmp2, out->gridSize - 1);
         int py = clamp(0, int(photon->y * in->zoom * tmp2) + tmp2, out->gridSize - 1);
-        out->photonDispersion[px][py][wl] += photon->w - tmp;
+        out->photonDispersion[px][py][wl][photon->maxlayer] += photon->w - tmp;
         photon->w = tmp;
         photon->uz = -uz;
     }
     else if(random() > r) { //let trough at an angle
+        if(layer > photon->maxlayer) photon->maxlayer = layer;
         photon->layer += dir; //layer id change
         photon->ux *= n1/n2;
         photon->uy *= n1/n2;

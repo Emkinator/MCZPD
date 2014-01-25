@@ -134,15 +134,14 @@ vector<string> explode(const string& str, const char& ch) { //source: http://sta
 
     for (string::const_iterator it = str.begin(); it != str.end(); it++) {
         if (*it == ch) {
+            result.push_back(next);
             if (!next.empty()) {
-                result.push_back(next);
                 next.clear();
             }
         } else {
             next += *it;
         }
     }
-    if (!next.empty())
-         result.push_back(next);
+    result.push_back(next);
     return result;
 }

@@ -50,67 +50,94 @@ void ReadCords(pcords* cords, int c)
     file.close();
 }
 
-int GetResolution()
+void GetData(int& resolution, int& max_layers)
 {
     ifstream file;
     file.open("../Monte Carlo/grid.csv");
     string line;
     getline(file, line);
-    int pos = line.find(",");
-    if(pos > 0) {
-        return atoi(line.substr(0, pos).c_str());
+    vector<string> result = explode(line, ',');
+    if(result.size() > 0) {
+        resolution = atoi(result[0].c_str());
     }
-    return 0;
+    if(result.size() > 5) {
+        max_layers = atoi(result[5].c_str());
+    }
+    file.close();
 }
 
-void ReadMap(double**** spectrum, double *max_intensity, int resolution)
+void GetIntensity(double***** spectrum, double** intensity, double max_intensity, int range_low, int range_high, int resolution, int res_zoom, int layer, int max_layers)
+{
+    int res = resolution >> res_zoom;
+    double temp_max = 0;
+
+    for(int x = 0; x < res; x++) {
+        for(int y = 0; y < res; y++) {
+            double sum = 0;
+            for(int s = range_low; s <= range_high; s++) {
+                sum += spectrum[layer][res_zoom][x][y][s];
+            }
+            intensity[x][y] = sum;
+            if(sum > temp_max)
+                temp_max = sum;
+        }
+    }
+    max_intensity = temp_max;
+}
+
+void ReadMap(double***** spectrum, int resolution, int max_layers)
 {
 
     ifstream file;
     file.open("../Monte Carlo/grid.csv");
     string line;
     getline(file, line); //ignoring 1st line due to it having some other data
-    getline(file, line); //ignoring 2nd due to pile up of out of bounds values there
-    for(int n = 0; n < range; n++)
-        spectrum[0][0][0][n] = 0;
 
-    int i = 1;
-    while(file.good() && i < resolution*resolution) {
+    int i = 0;
+    int l = max_layers - 1;
+    while(file.good()) {
         getline(file, line);
         int x = i / resolution;
         int y = i % resolution;
-        double this_intensity = 0;
         vector<string> result = explode(line, ',');
 
-        for (size_t j = 0; j < result.size() && j < range; j++) {
-            spectrum[0][x][y][j] = atof(result[j].c_str());
-
-            this_intensity += spectrum[0][x][y][j];
-        }
-
-        if(this_intensity > max_intensity[0]) {
-            max_intensity[0] = this_intensity;
-        }
-        i++;
-    }
-
-    int n = 1;
-    for(int res = resolution / 2; res > 0; res /= 2) {
-        double temp_max = 0.0;
-
-        for(int x = 0; x < res; x++) {
-            for(int y = 0; y < res; y++) {
-                for(int s = 0; s < range; s++) {
-                    double temp = (spectrum[n - 1][x * 2][y * 2][s] + spectrum[n - 1][x * 2 + 1][y * 2][s]
-                        + spectrum[n - 1][x * 2][y * 2 + 1][s] + spectrum[n - 1][x * 2 + 1][y * 2 + 1][s]) / 4.0;
-                    if(temp > temp_max)
-                        temp_max = temp;
-                    spectrum[n][x][y][s] = temp;
-                }
+        for (size_t j = 0; j < range; j++) {
+            if(j < result.size() && result[j] != "" && result[j] != "0") {
+                spectrum[l][0][x][y][j] = atof(result[j].c_str());
+            }
+            else {
+                spectrum[l][0][x][y][j] = 0;
+            }
+            if(l < max_layers - 1) {
+                spectrum[l][0][x][y][j] += spectrum[l + 1][0][x][y][j];
             }
         }
-        max_intensity[n] = temp_max;
-        n++;
+        i++;
+        if(i == resolution*resolution) {
+            l--;
+            i = 0;
+            if(l < 0) break;
+        }
+    }
+
+    for(int l = 0; l < max_layers; l++) {
+        for(int n = 0; n < range; n++)
+            spectrum[l][0][0][0][n] = 0; //ignoring out-of-bounds pileup in corner
+    }
+
+    for(int l = 0; l < max_layers; l++) {
+        int n = 1;
+        for(int res = resolution / 2; res > 0; res /= 2) {
+            for(int x = 0; x < res; x++) {
+                for(int y = 0; y < res; y++) {
+                    for(int s = 0; s < range; s++) {
+                        spectrum[l][n][x][y][s] =  (spectrum[l][n - 1][x * 2][y * 2][s] + spectrum[l][n - 1][x * 2 + 1][y * 2][s]
+                            + spectrum[l][n - 1][x * 2][y * 2 + 1][s] + spectrum[l][n - 1][x * 2 + 1][y * 2 + 1][s]) / 4.0;
+                    }
+                }
+            }
+            n++;
+        }
     }
     file.close();
 }

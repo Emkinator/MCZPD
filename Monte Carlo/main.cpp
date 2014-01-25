@@ -52,7 +52,7 @@ int main()
     clock_t start = clock();
 
     InputClass in;
-    OutputClass ret(in.gridsize, in.range);
+    OutputClass ret(in.gridsize, in.range, in.layerCount);
 
     ofstream filestr("simlog.txt");
     if(filestr.fail() == 1) {
