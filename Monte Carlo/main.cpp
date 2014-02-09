@@ -51,6 +51,7 @@ int main()
     srand(time(NULL));
     clock_t start = clock();
 
+    cout << "Loading config and allocating memory..." << endl;
     InputClass in;
     OutputClass ret(in.gridsize, in.range, in.layerCount);
 

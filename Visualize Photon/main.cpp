@@ -13,6 +13,7 @@
 #include <iostream>
 #include <cmath>
 #include <utility>
+#include <string>
 #include "utility.h"
 #include "io.h"
 #include "SDL_gfxPrimitives.h"
@@ -25,7 +26,6 @@
 #define out(var) (var) << " "
 
 using namespace std;
-
 //#define abs(x) ((x ^ (x >> 31)) - (x >> 31))
 
 double getintensity2(double a, double exp)
@@ -82,7 +82,7 @@ int main (int argc, char** argv)
 {
     freopen("CON", "wt", stdout);
     // initialize SDL video
-    if (SDL_Init(SDL_INIT_VIDEO) < 0 ) {
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         printf( "Unable to init SDL: %s\n", SDL_GetError() );
         return 1;
     }
@@ -108,7 +108,6 @@ int main (int argc, char** argv)
 
     int colormap[range][3];
     GenerateColorMap(colormap);
-
     int resolution = 0;
     int max_layers = 1;
     int layer = 0;
@@ -142,7 +141,6 @@ int main (int argc, char** argv)
     ReadMap(spectrum, resolution, max_layers);
     SDL_ShowCursor(true);
     int curve = 10;
-
     Uint32 background = 0xffffffff;
 
     double scale = 10000;
@@ -162,6 +160,7 @@ int main (int argc, char** argv)
     while(rectsize * 2 < bounds[1] - 30) rectsize *= 2;
 
     SDL_Surface *bitmap = SDL_CreateRGBSurface(SDL_HWSURFACE, rectsize, rectsize, 32, 0xff000000, 0xff0000, 0xff00, 0xff);
+    SDL_FillRect(screen, 0, background);
     SDL_Rect mapcords = {
         30,
         (bounds[1] - rectsize) / 2,
@@ -175,10 +174,10 @@ int main (int argc, char** argv)
         30
     };
     SDL_Rect graphcords = {
-        mapcords.x + mapcords.w + 30,
-        mapcords.y,
-        bounds[0] - (mapcords.x + mapcords.w + 30) - 30,
-        mapcords.h - 1
+        mapcords.x + mapcords.w,
+        mapcords.y - 30,
+        bounds[0] - (mapcords.x + mapcords.w + 30) - 90 + 90,
+        mapcords.h - 1 + 60
     };
     int intensity_mode = 0; //0 - just colors, 1 - both, 2 - just intensity
     bool map_updated = false;
@@ -192,7 +191,7 @@ int main (int argc, char** argv)
     SDL_Event event;
 
     bool done = false;
-    int mode = 0;
+    int mode = 1;
     while (!done) {
         // message processing loop
         while(SDL_PollEvent(&event)) {
@@ -348,10 +347,10 @@ int main (int argc, char** argv)
 
             scale = newscale;
 
-            lineRGBA(screen, 0, 50, bounds[0], 50, 0,0,0,255); // air/tissue boundary
+            lineColor(screen, 0, 50, bounds[0], 50, 0xff); // air/tissue boundary
             for(int i = 0; i < in.layerCount; i++) {
                 int z = 50 + in.layers[i][1] * scale;
-                lineRGBA(screen, 0, z, bounds[0], z, 0,0,0,255);
+                lineColor(screen, 0, z, bounds[0], z, 0xff);
             }
 
             for(int i = 0; i<n; i++) {
@@ -433,10 +432,10 @@ int main (int argc, char** argv)
                 map_updated = true;
             }
             if(!graph_updated) {
-                int x = graphcords.x;
-                int y = graphcords.y + graphcords.h;
-                int w = graphcords.w;
-                int h = graphcords.h;
+                int x = graphcords.x + 60;
+                int y = (graphcords.y + 30) + (graphcords.h - 60);
+                int w = graphcords.w - 90;
+                int h = graphcords.h - 60;
 
                 if(sx != -1) {
                     SDL_FillRect(screen, &graphcords, background);
@@ -450,29 +449,37 @@ int main (int argc, char** argv)
                     int cx = start + sx / factor;
                     int cy = start + sy / factor;
 
-                    double total_i = 0;
+                    double max_i = 0;
                     for(int n = range_low; n <= range_low + count; n++)
-                        if(spectrum[layer][res_zoom][cx][cy][n] > total_i)
-                            total_i = spectrum[layer][res_zoom][cx][cy][n];
+                        if(spectrum[layer][res_zoom][cx][cy][n] > max_i)
+                            max_i = spectrum[layer][res_zoom][cx][cy][n];
 
-                    float ldy = spectrum[layer][res_zoom][cx][cy][range_low] / total_i * h;
+                    float ldy = spectrum[layer][res_zoom][cx][cy][range_low] / max_i * h;
                     float dy = 0;
+
+                    for(int n = 0; n <= 8; n++) {
+                        hlineColor(screen, x, x + w, y - (h * (n / 8.0)), 0xff);
+                        char * str = (char *)(convert(max_i * n / 8, false).c_str());
+                        stringColor(screen, x - 120, y - (h * (n / 8.0)), str, 0xff);
+                    }
 
                     for(int n = 0; n < count; n++) {
                         int id = n + range_low;
-                        float dy = spectrum[layer][res_zoom][cx][cy][id + 1] / total_i * h;
+                        float dy = spectrum[layer][res_zoom][cx][cy][id + 1] / max_i * h;
 
-                        GradientLine(screen, rint(x + step * n), rint(y - ldy), rint(x + step * (n + 1)), rint(y - dy),
-                            colormap[id][0], colormap[id][1], colormap[id][2],
-                            colormap[id + 1][0], colormap[id + 1][1], colormap[id + 1][2]);
+                        aalineRGBA(screen, x + step * n, y - ldy, x + step * (n + 1), y - dy,
+                            colormap[id][0], colormap[id][1], colormap[id][2], 255);
                         ldy = dy;
+
+                        vlineColor(screen, x + step * n, y - 1, y + 2, 0xff);
+                        if(count < 15 || (n & 1) == 0) {
+                            char * str = (char *)(convert(400 + id * 10).c_str());
+                            stringColor(screen, x + step * n, y + 5, str, 0xff);
+                        }
                     }
                 }
-
-                GradientLine(screen, x, y + 2, x, y - h, 0, 0, 0, 0, 0, 0);
-                GradientLine(screen, x - 1, y + 2, x - 1, y - h, 0, 0, 0, 0, 0, 0);
-                GradientLine(screen, x, y, x + w, y, 0, 0, 0, 0, 0, 0);
-                GradientLine(screen, x, y + 1, x + w, y + 1, 0, 0, 0, 0, 0, 0);
+                rectangleColor(screen, x, y, x + w, y + 1, 0xff);
+                rectangleColor(screen, x, y - h, x + 1, y, 0xff);
                 needs_flip = true;
                 graph_updated = true;
             }

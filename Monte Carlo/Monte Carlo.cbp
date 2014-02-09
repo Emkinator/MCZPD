@@ -28,7 +28,10 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-O3" />
 					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
 					<Add option="-std=c++11" />
 					<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
 				</Compiler>
@@ -39,7 +42,6 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
 			<Add option="-std=c++0x" />
 			<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
 		</Compiler>

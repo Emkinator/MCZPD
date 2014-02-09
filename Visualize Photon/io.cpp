@@ -66,7 +66,7 @@ void GetData(int& resolution, int& max_layers)
     file.close();
 }
 
-void GetIntensity(double***** spectrum, double** intensity, double max_intensity, int range_low, int range_high, int resolution, int res_zoom, int layer, int max_layers)
+void GetIntensity(double***** spectrum, double** intensity, double& max_intensity, int range_low, int range_high, int resolution, int res_zoom, int layer, int max_layers)
 {
     int res = resolution >> res_zoom;
     double temp_max = 0;
@@ -91,7 +91,10 @@ void ReadMap(double***** spectrum, int resolution, int max_layers)
     ifstream file;
     file.open("../Monte Carlo/grid.csv");
     string line;
-    getline(file, line); //ignoring 1st line due to it having some other data
+    do {
+        getline(file, line);
+    } while(line.size() < 1 || (line.c_str())[0] == '/');
+    //ignoring 1st line due to it having some other data + comment lines
 
     int i = 0;
     int l = max_layers - 1;
@@ -132,7 +135,7 @@ void ReadMap(double***** spectrum, int resolution, int max_layers)
                 for(int y = 0; y < res; y++) {
                     for(int s = 0; s < range; s++) {
                         spectrum[l][n][x][y][s] =  (spectrum[l][n - 1][x * 2][y * 2][s] + spectrum[l][n - 1][x * 2 + 1][y * 2][s]
-                            + spectrum[l][n - 1][x * 2][y * 2 + 1][s] + spectrum[l][n - 1][x * 2 + 1][y * 2 + 1][s]) / 4.0;
+                            + spectrum[l][n - 1][x * 2][y * 2 + 1][s] + spectrum[l][n - 1][x * 2 + 1][y * 2 + 1][s]);
                     }
                 }
             }

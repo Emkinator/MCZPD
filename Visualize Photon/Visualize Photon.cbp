@@ -41,7 +41,7 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
+			<Add option="-std=c++0x" />
 			<Add directory="C:/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>

@@ -7,6 +7,7 @@
 #include <cmath>
 #include <vector>
 #include <sstream>
+#include <iostream>
 #include <utility>
 #include "SDL_gfxPrimitives.h"
 
@@ -14,6 +15,74 @@
 #define gamma       0.80
 
 using namespace std;
+
+string convert(double x, bool align_left = true)
+{ //its hard to find easy stock converters that could change the significant digit count
+    const char * digits = "0123456789";
+    const int len = 16;
+    char result[len];
+    char * at = result + len - 2;
+
+    int power = log10(x);
+    if(x != x) {//NaN
+        *at-- = 'N';
+        *at-- = 'a';
+        *at-- = 'N';
+    }
+    else if(power > 255 || power < -256) {
+        *at-- = '0';
+    }
+    else {
+        if(power > 3 || power < 0) {
+            if(power < 0)
+                power--;
+
+            int temp = (power < 0) ? -power : power;
+            do {
+                *at-- = digits[temp % 10];
+                temp /= 10;
+            } while(temp);
+
+            if(power < 0)
+                *at-- = '-';
+            *at-- = 'e';
+
+            x /= pow(10, power);
+        }
+        int decimal = int(x * 10) % 10;
+        if(decimal) {
+            *at-- = digits[decimal];
+            *at-- = '.';
+        }
+
+        int temp = (x < 0) ? -x : x;
+        do {
+            *at-- = digits[temp % 10];
+            temp /= 10;
+        } while(temp);
+
+        if(x < 0)
+            *at-- = '-';
+    }
+
+    if(align_left) {
+        int n = 0;
+        at++;
+        while(at < result + len - 1) {
+            result[n++] = *at++;
+        }
+        for(; n < len - 1; n++) {
+            result[n] = ' ';
+        }
+    }
+    else {
+        while(at >= result)
+            *at-- = ' ';
+    }
+    result[len - 1] = 0;
+    string ret = result;
+    return ret;
+}
 
 bool ClickedIn(SDL_Event event, SDL_Rect bounds)
 {
@@ -92,19 +161,19 @@ void GenerateColorMap(int colormap[range][3])
 
 void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int sc1, int sc2, int sc3, int ec1, int ec2, int ec3) //color ranges from 0 to 255, black to white
 {
-    float dx = x2-x1;
-    float dy = y2-y1;
-    float dc1 = ec1 - sc1;
-    float dc2 = ec2 - sc2;
-    float dc3 = ec3 - sc3;
+    double dx = x2 - x1;
+    double dy = y2 - y1;
+    double dc1 = ec1 - sc1;
+    double dc2 = ec2 - sc2;
+    double dc3 = ec3 - sc3;
     int steps = max(abs(dx), abs(dy));
     if(!steps) steps = 1;
 
-    float x = x1;
-    float y = y1;
-    float c1 = sc1;
-    float c2 = sc2;
-    float c3 = sc3;
+    double x = x1;
+    double y = y1;
+    double c1 = sc1;
+    double c2 = sc2;
+    double c3 = sc3;
 
     dx /= steps;
     dy /= steps;
@@ -123,8 +192,8 @@ void GradientLine(SDL_Surface* dst, float x1, float y1, float x2, float y2, int 
 }
 
 Uint32 getpixel32(SDL_Surface *surface, int x, int y)
-{ //source: http://www.libsdl.org/release/SDL-1.2.15/docs/html/guidevideo.html#GUIDEVIDEOINTRO
-    Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
+{
+    Uint8 * p = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
     return *(Uint32 *)p;
 }
 

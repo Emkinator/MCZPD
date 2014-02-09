@@ -15,6 +15,7 @@
 
 using namespace std;
 
+string convert(double x, bool align_left = true);
 bool ClickedIn(SDL_Event event, SDL_Rect bounds);
 int Adjust(double color, double factor);
 void GetColor(int f, int n, int colormap[][3]);

@@ -31,7 +31,7 @@
 	<utility>
 	"ReadConfig.h"
 
-1390675822 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
+1391034448 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
 	<fstream>
 	<iostream>
 	<string>
@@ -40,7 +40,7 @@
 	<sstream>
 	"utility.h"
 
-1390416193 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
+1391553003 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
@@ -239,7 +239,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1390676393 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
+1391553370 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -248,6 +248,7 @@
 	<iostream>
 	<cmath>
 	<utility>
+	<string>
 	"utility.h"
 	"io.h"
 	"SDL_gfxPrimitives.h"
@@ -255,7 +256,7 @@
 	"ReadConfigs.h"
 	"Structure.h"
 
-1390675188 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
+1391034456 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
 	<fstream>
 	<string>
 	<cmath>
@@ -298,13 +299,14 @@
 	<iostream>
 	<fstream>
 
-1390657602 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
+1391553769 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
 	<cmath>
 	<vector>
 	<sstream>
+	<iostream>
 	<utility>
 	"SDL_gfxPrimitives.h"
 

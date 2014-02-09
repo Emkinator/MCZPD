@@ -1,8 +1,8 @@
-passes = 1000000 /simulation cycle count
-timelimit = 42000 /14 hours
+passes = 10000000 /simulation cycle count
+timelimit = 36000 /10 hours
 wtolerance = 1e-4
 resolution = 512
-zoom = 8
+zoom = 4
 threads = 1
 /Layer parameters
 count = 7
@@ -14,11 +14,11 @@ mus = 100
 g = 0.86
 volume = 
 {
-	0
-	0
-	0
-	0
-	0.02
+	0 /Oksihemoglobîns
+	0 /Deoksihemoglobîns
+	0 /Bilirubîns
+	0 /Melanîns
+	0.02 /Ûdens
 }
 [1]
 z = 90
@@ -27,9 +27,9 @@ mus = 45
 g = 0.8
 volume = 
 {
+	0
+	0
 	0.01
-	0
-	0
 	0.1
 	0.2
 }
