@@ -114,6 +114,7 @@ int main (int argc, char** argv)
     long long int photoncount = 0;
     double specular = 0;
     GetData(resolution, max_layers, photoncount, specular);
+    double photonmass = photoncount * (1.0 - specular);
     int res_levels = ceil(log2(resolution) + 1);
     int res_zoom = 0;
     int zoom = 0;
@@ -186,7 +187,6 @@ int main (int argc, char** argv)
     bool graph_updated = false;
     bool selector_updated = false;
     bool selecting = false;
-    bool log_scale = false;
     bool flipped = false;
     int sx = -1, sy = -1;
     int range_low = 0;
@@ -302,10 +302,6 @@ int main (int argc, char** argv)
                             case SDLK_r:
                                 ReadMap(spectrum, resolution, max_layers);
                                 map_updated = false;
-                                break;
-                            case SDLK_l:
-                                log_scale = !log_scale;
-                                graph_updated = false;
                                 break;
                             case SDLK_f:
                                 flipped = !flipped;
@@ -485,34 +481,29 @@ int main (int argc, char** argv)
                         else if(spectrum[layer][res_zoom][cx][cy][n] < min_i)
                             min_i = spectrum[layer][res_zoom][cx][cy][n];
                     }
+                    if(max_i == 0) {
+                        max_i = 1e-60;
+                    }
 
                     int max_exp = ceil(log10(max_i));
                     double nearest;
                     if(flipped) {
-                        max_i = photoncount * (1.0 - specular);
-                        nearest = max_i;
+                        max_i = photonmass / range;
                     }
                     else {
+                        min_i = 0;
                         nearest = pow(10.0, max_exp);
                         max_i = ceil(max_i / nearest * 10) * nearest / 10;
                     }
 
-                    float ldy;
-                    if(log_scale) {
-                        ldy = max(0.0, log10(spectrum[layer][res_zoom][cx][cy][range_low]) + (10 - max_exp)) / 10 * h;
-                    }
-                    else {
-                        if(max_i)
-                            ldy = spectrum[layer][res_zoom][cx][cy][range_low] / max_i * h;
-                        else
-                            ldy = 0;
-                    }
+                    float ldy = spectrum[layer][res_zoom][cx][cy][range_low] / max_i;
+
                     if(flipped)
-                        ldy = -ldy;
+                        ldy = 1.0 - ldy;
                     float dy = 0;
 
                     int steps;
-                    if(log_scale || flipped) {
+                    if(flipped) {
                         steps = 10;
                     }
                     else {
@@ -522,35 +513,27 @@ int main (int argc, char** argv)
                     }
 
                     for(int n = 0; n <= steps; n++) {
-                        double step;
-                        if(flipped)
-                            step = 1.0000001 * n / steps;
-                        else if(log_scale)
-                            step = pow(10.0, max_exp - steps + n);
-                        else
-                            step = max_i * n / steps * 1.0000001;
+                        double value;
+                        if(flipped) {
+                            value = 1.0 * n / steps * 1.0000000001;
+                        }
+                        else {
+                            value = (max_i * n / steps + min_i) * 1.0000001;
+                        }
                         hlineColor(screen, x, x + w, y - (h * (n / float(steps))), 0xff);
-                        convert(str, step, false);
+                        convert(str, value, false);
                         stringColor(screen, x - 120, y - (h * (n / float(steps))), str, 0xff);
                     }
 
                     for(int n = 0; n < count; n++) {
                         int id = n + range_low;
-                        if(log_scale) {
-                            dy = max(0.0, log10(spectrum[layer][res_zoom][cx][cy][id]) + (10 - max_exp)) / 10 * h;
-                        }
-                        else {
-                            if(max_i)
-                                dy = spectrum[layer][res_zoom][cx][cy][id] / max_i * h;
-                            else
-                                dy = 0;
-                        }
-                        int ty = y;
-                        if(flipped) {
-                            ty -= graphcords.h - 60;
-                            dy = -dy;
-                        }
-                        aalineRGBA(screen, x + step * n, ty - ldy, x + step * (n + 1), ty - dy,
+
+                        dy = spectrum[layer][res_zoom][cx][cy][id] / max_i;
+
+                        if(flipped)
+                            dy = 1.0 - dy;
+
+                        aalineRGBA(screen, x + step * n, y - ldy * h, x + step * (n + 1), y - dy * h,
                             colormap[id][0], colormap[id][1], colormap[id][2], 255);
                         ldy = dy;
 
