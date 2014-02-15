@@ -65,12 +65,12 @@ int main()
     ret.PrintStatus("Simulating", 80);
     mutex lock;
     //thread threads[in.threads];
-    for(int i; i < in.threads; i++) {
+    for(int i = 0; i < in.threads; i++) {
         //threads[i] = thread(Thread, i, start, &in, &ret, &filestr, &lock);
         Thread(i, start, &in, &ret, &filestr, &lock);
     }
 
-    for(int i; i < in.threads; i++) {
+    for(int i = 0; i < in.threads; i++) {
         //threads[i].join();
     }
 

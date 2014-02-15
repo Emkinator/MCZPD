@@ -9,7 +9,7 @@
 #define COS90 1.0E-6
 #define PI 3.14159265359
 #define sign(num) (-(num < 0) | 1)
-#define random() (rand() / float(RAND_MAX))
+#define random() (rand() / double(RAND_MAX))
 #define clamp(minv,x,maxv) max(minv, min(maxv, x))
 
 using namespace std;
@@ -123,9 +123,9 @@ double FresnelReflect(double n1, double n2, double ca1, double* uzt) //Internal 
 	}
 	else{
 		double sa1, sa2, ca2; // sine of the incident and transmission angles & cos of transmisson angle
-		sa1 = sqrt(1-ca1*ca1); //simpler than looks, just pythagoras from r^2 = x^2 + x^2
+		sa1 = sqrt(1-ca1*ca1); //r^2 = x^2 + x^2
 		sa2 = sa1*n1/n2;
-		if(sa2>=1.0){ //double check for total internal reflection, todo: check for better solution
+		if(sa2>=1.0){ //double check for total internal reflection
 			*uzt = 0.0;
 			r = 1.0;
 		}

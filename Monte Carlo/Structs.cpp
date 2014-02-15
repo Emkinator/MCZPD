@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define read(name, layer, index) atof(ip.GetValue(layer,name,index).c_str())
+#define read(var, name, layer, index) ip.GetValue(var,layer,name,index)
 
 vector<string> explode(const string& str, const char& ch);
 
@@ -31,24 +31,28 @@ InputClass::InputClass()
     timelimit(0xffffffff),
     chunk(1),
     absorbance(NULL),
-    specular(0)
+    specular(0),
+    absorbance_modifier(1)
 {
     ConfigClass ip = ConfigClass("config.txt"); //layer parameters
-    gridsize = read("resolution", 0, -1);
-    zoom = read("zoom", 0, -1);
-    chromophores = read("chromophores", 0, -1);
-    wtolerance = read("wtolerance", 0, -1);
+    read(gridsize, "resolution", 0, -1);
+    read(zoom, "zoom", 0, -1);
+    read(chromophores, "chromophores", 0, -1);
+    read(wtolerance, "wtolerance", 0, -1);
 
-    layerCount = read("count", 0, -1);
+    read(layerCount, "count", 0, -1);
     layers = new LayerClass[layerCount];
 
-    threads = read("threads", 0, -1);
-    passes = max(read("passes", 0, -1) / threads / range, 1.0);
+    read(threads, "threads", 0, -1);
+    read(passes, "passes", 0, -1);
+    passes = max(int(passes / threads / range), 1);
     chunk = min(max(1, int(passes / 100)), 600);
-    timelimit = read("timelimit", 0, -1);
+    read(timelimit, "timelimit", 0, -1);
+    read(absorbance_modifier, "absorbance_modifier", 0, -1);
 
     for(int i = 0; i < layerCount; i++) {
-        double z = read("z", i, -1);
+        int z;
+        read(z, "z", i, -1);
         if(i > 0) {
             layers[i].z[0] = layers[i-1].z[1];
             layers[i].z[1] = layers[i-1].z[1] + z * 0.001; //conversion from micrometers to mm
@@ -57,13 +61,13 @@ InputClass::InputClass()
             layers[i].z[0] = 0;
             layers[i].z[1] = z *0.001;
         }
-        layers[i].n = read("n", i, -1);
-        layers[i].mus = read("mus", i,-1);
-        layers[i].g = read("g", i, -1);
+        read(layers[i].n, "n", i, -1);
+        read(layers[i].mus, "mus", i,-1);
+        read(layers[i].g, "g", i, -1);
 
         layers[i].volume = new double[chromophores];
         for(int j = 0; j < chromophores; j++) {
-            layers[i].volume[j] = read("volume", i, j);
+            read(layers[i].volume[j], "volume", i, j);
         }
     }
 
@@ -89,12 +93,10 @@ void InputClass::ReadAbsorbance()
 
     while(file.good() && i < range) {
         getline(file, line);
-        int n = 0;
 
         vector<string> result = explode(line, ',');
         for (size_t j = 0; j < result.size() && j < range; j++) {
-            absorbance[i][j] = atof(result[j].c_str());
-            n++;
+            absorbance[i][j] = atof(result[j].c_str()) / absorbance_modifier;
         }
         i++;
     }
@@ -106,7 +108,6 @@ void InputClass::ReadAbsorbance()
             int wl = 400 + n * 10;
             double base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
             layers[i].mua[n] = this->CalculateAbsorbance(base_absorbance, i, n);
-            //cout<<i<<" "<<n<<" "<<layers[i].mua[n] << endl;
         }
     }
 }

@@ -10,7 +10,9 @@ class ConfigClass
     private:
         string fName;
     public:
-        string GetValue(int layer, string fieldName, int index = -1);
+        void GetValue(int& value, int layer, string fieldName, int index = -1);
+        void GetValue(long long int& value, int layer, string fieldName, int index = -1);
+        void GetValue(double& value, int layer, string fieldName, int index = -1);
         ConfigClass(const char* fileName);
 
 };

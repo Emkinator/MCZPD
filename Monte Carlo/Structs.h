@@ -65,6 +65,7 @@ namespace std {
             int layerCount;
             int chromophores;
             long long int stepcount;
+            double absorbance_modifier;
             double specular;
             double wtolerance;
             double zoom;

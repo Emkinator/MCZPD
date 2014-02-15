@@ -16,11 +16,10 @@
 
 using namespace std;
 
-string convert(double x, bool align_left = true)
+void convert(char * result, double x, bool align_left = true)
 { //its hard to find easy stock converters that could change the significant digit count
     const char * digits = "0123456789";
     const int len = 16;
-    char result[len];
     char * at = result + len - 2;
 
     int power = log10(x);
@@ -43,8 +42,10 @@ string convert(double x, bool align_left = true)
                 temp /= 10;
             } while(temp);
 
-            if(power < 0)
+            if(power < 0) {
                 *at-- = '-';
+                power++;
+            }
             *at-- = 'e';
 
             x /= pow(10, power);
@@ -80,8 +81,6 @@ string convert(double x, bool align_left = true)
             *at-- = ' ';
     }
     result[len - 1] = 0;
-    string ret = result;
-    return ret;
 }
 
 bool ClickedIn(SDL_Event event, SDL_Rect bounds)

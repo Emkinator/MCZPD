@@ -50,7 +50,7 @@ void ReadCords(pcords* cords, int c)
     file.close();
 }
 
-void GetData(int& resolution, int& max_layers)
+void GetData(int& resolution, int& max_layers, long long int& photons, double& specular)
 {
     ifstream file;
     file.open("../Monte Carlo/grid.csv");
@@ -59,6 +59,12 @@ void GetData(int& resolution, int& max_layers)
     vector<string> result = explode(line, ',');
     if(result.size() > 0) {
         resolution = atoi(result[0].c_str());
+    }
+    if(result.size() > 2) {
+        photons = atoi(result[2].c_str());
+    }
+    if(result.size() > 4) {
+        specular = atof(result[4].c_str());
     }
     if(result.size() > 5) {
         max_layers = atoi(result[5].c_str());

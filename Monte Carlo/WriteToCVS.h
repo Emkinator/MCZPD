@@ -39,12 +39,12 @@ void WriteCSV(OutputClass* out, InputClass* in, const char* fileName, int nx, in
                             last++;
                         }
                         buffer << value;
+                        approx_count += 16;
                     }
                     z++;
                 } while(z < nz);
 
                 buffer << endl;
-                approx_count += 130;
             }
 
             if(approx_count > 1024 * 1024) { //1MB

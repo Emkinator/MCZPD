@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string.h>
 #include <sstream>
+#include <stdlib.h>
 
 #define SSTR( x ) dynamic_cast< ostringstream & >( \
         ( ostringstream() << dec << x ) ).str()
@@ -14,7 +15,7 @@ ConfigClass::ConfigClass(const char* fileName)
     fName = fileName;
 }
 
-string ConfigClass::GetValue(int layer, string fieldName, int index)
+void ConfigClass::GetValue(double& value, int layer, string fieldName, int index)
 {
     ifstream file;
     file.open(fName.c_str());
@@ -27,7 +28,7 @@ string ConfigClass::GetValue(int layer, string fieldName, int index)
     bool labels_matter = false;
     bool in_array = false;
     bool right_array = false;
-    int array_index = 0;
+    int array_index = -1;
     while(file.good()) {
         getline(file, line);
 
@@ -79,5 +80,21 @@ string ConfigClass::GetValue(int layer, string fieldName, int index)
         }
     }
     file.close();
-    return output;
+    if(output != "") {
+        value = atof(output.c_str());
+    }
+}
+
+void ConfigClass::GetValue(int& value, int layer, string fieldName, int index)
+{
+    double temp = value;
+    GetValue(temp, layer, fieldName, index);
+    value = temp;
+}
+
+void ConfigClass::GetValue(long long int& value, int layer, string fieldName, int index)
+{
+    double temp = value;
+    GetValue(temp, layer, fieldName, index);
+    value = temp;
 }

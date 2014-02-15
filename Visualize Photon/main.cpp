@@ -111,7 +111,9 @@ int main (int argc, char** argv)
     int resolution = 0;
     int max_layers = 1;
     int layer = 0;
-    GetData(resolution, max_layers);
+    long long int photoncount = 0;
+    double specular = 0;
+    GetData(resolution, max_layers, photoncount, specular);
     int res_levels = ceil(log2(resolution) + 1);
     int res_zoom = 0;
     int zoom = 0;
@@ -184,6 +186,8 @@ int main (int argc, char** argv)
     bool graph_updated = false;
     bool selector_updated = false;
     bool selecting = false;
+    bool log_scale = false;
+    bool flipped = false;
     int sx = -1, sy = -1;
     int range_low = 0;
     int range_high = range - 1;
@@ -255,27 +259,35 @@ int main (int argc, char** argv)
                             case SDLK_LEFTBRACKET:
                                 if(res_zoom > 0) res_zoom--;
                                 map_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_RIGHTBRACKET:
                                 if(res_zoom < res_levels - 1) res_zoom++;
                                 if(res_zoom + zoom >= res_levels) zoom--;
                                 map_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_MINUS:
                                 if(zoom > 0) zoom--;
                                 map_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_EQUALS:
                                 if(zoom + res_zoom < res_levels - 1) zoom++;
                                 map_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_PERIOD:
                                 if(layer < max_layers - 1) layer++;
                                 map_updated = false;
+                                graph_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_COMMA:
                                 if(layer > 0) layer--;
                                 map_updated = false;
+                                graph_updated = false;
+                                flipped = false;
                                 break;
                             case SDLK_m:
                                 mode = 0;
@@ -284,10 +296,25 @@ int main (int argc, char** argv)
                                 map_updated = true;
                                 selector_updated = true;
                                 selecting = false;
+                                flipped = false;
                                 continue;
                                 break;
                             case SDLK_r:
                                 ReadMap(spectrum, resolution, max_layers);
+                                map_updated = false;
+                                break;
+                            case SDLK_l:
+                                log_scale = !log_scale;
+                                graph_updated = false;
+                                break;
+                            case SDLK_f:
+                                flipped = !flipped;
+                                if(flipped) {
+                                    layer = 0;
+                                    zoom = 0;
+                                    res_zoom = res_levels - 1;
+                                }
+                                graph_updated = false;
                                 map_updated = false;
                                 break;
                         }
@@ -448,32 +475,88 @@ int main (int argc, char** argv)
                     int start = (size - (size >> zoom)) / 2;
                     int cx = start + sx / factor;
                     int cy = start + sy / factor;
+                    char str[16];
 
                     double max_i = 0;
-                    for(int n = range_low; n <= range_low + count; n++)
+                    double min_i = 0;
+                    for(int n = range_low; n <= range_low + count; n++) {
                         if(spectrum[layer][res_zoom][cx][cy][n] > max_i)
                             max_i = spectrum[layer][res_zoom][cx][cy][n];
+                        else if(spectrum[layer][res_zoom][cx][cy][n] < min_i)
+                            min_i = spectrum[layer][res_zoom][cx][cy][n];
+                    }
 
-                    float ldy = spectrum[layer][res_zoom][cx][cy][range_low] / max_i * h;
+                    int max_exp = ceil(log10(max_i));
+                    double nearest;
+                    if(flipped) {
+                        max_i = photoncount * (1.0 - specular);
+                        nearest = max_i;
+                    }
+                    else {
+                        nearest = pow(10.0, max_exp);
+                        max_i = ceil(max_i / nearest * 10) * nearest / 10;
+                    }
+
+                    float ldy;
+                    if(log_scale) {
+                        ldy = max(0.0, log10(spectrum[layer][res_zoom][cx][cy][range_low]) + (10 - max_exp)) / 10 * h;
+                    }
+                    else {
+                        if(max_i)
+                            ldy = spectrum[layer][res_zoom][cx][cy][range_low] / max_i * h;
+                        else
+                            ldy = 0;
+                    }
+                    if(flipped)
+                        ldy = -ldy;
                     float dy = 0;
 
-                    for(int n = 0; n <= 8; n++) {
-                        hlineColor(screen, x, x + w, y - (h * (n / 8.0)), 0xff);
-                        char * str = (char *)(convert(max_i * n / 8, false).c_str());
-                        stringColor(screen, x - 120, y - (h * (n / 8.0)), str, 0xff);
+                    int steps;
+                    if(log_scale || flipped) {
+                        steps = 10;
+                    }
+                    else {
+                        steps = round(max_i / nearest * 10);
+                        while(steps * 2 < 10)
+                            steps *= 2;
+                    }
+
+                    for(int n = 0; n <= steps; n++) {
+                        double step;
+                        if(flipped)
+                            step = 1.0000001 * n / steps;
+                        else if(log_scale)
+                            step = pow(10.0, max_exp - steps + n);
+                        else
+                            step = max_i * n / steps * 1.0000001;
+                        hlineColor(screen, x, x + w, y - (h * (n / float(steps))), 0xff);
+                        convert(str, step, false);
+                        stringColor(screen, x - 120, y - (h * (n / float(steps))), str, 0xff);
                     }
 
                     for(int n = 0; n < count; n++) {
                         int id = n + range_low;
-                        float dy = spectrum[layer][res_zoom][cx][cy][id + 1] / max_i * h;
-
-                        aalineRGBA(screen, x + step * n, y - ldy, x + step * (n + 1), y - dy,
+                        if(log_scale) {
+                            dy = max(0.0, log10(spectrum[layer][res_zoom][cx][cy][id]) + (10 - max_exp)) / 10 * h;
+                        }
+                        else {
+                            if(max_i)
+                                dy = spectrum[layer][res_zoom][cx][cy][id] / max_i * h;
+                            else
+                                dy = 0;
+                        }
+                        int ty = y;
+                        if(flipped) {
+                            ty -= graphcords.h - 60;
+                            dy = -dy;
+                        }
+                        aalineRGBA(screen, x + step * n, ty - ldy, x + step * (n + 1), ty - dy,
                             colormap[id][0], colormap[id][1], colormap[id][2], 255);
                         ldy = dy;
 
                         vlineColor(screen, x + step * n, y - 1, y + 2, 0xff);
                         if(count < 15 || (n & 1) == 0) {
-                            char * str = (char *)(convert(400 + id * 10).c_str());
+                            convert(str, 400 + id * 10);
                             stringColor(screen, x + step * n, y + 5, str, 0xff);
                         }
                     }

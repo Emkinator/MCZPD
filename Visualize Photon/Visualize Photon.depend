@@ -31,7 +31,7 @@
 	<utility>
 	"ReadConfig.h"
 
-1391034448 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
+1392490790 source:c:\users\karlis\documents\github\mczpd\visualize photon\io.cpp
 	<fstream>
 	<iostream>
 	<string>
@@ -40,7 +40,7 @@
 	<sstream>
 	"utility.h"
 
-1391553003 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
+1391948255 c:\users\karlis\documents\github\mczpd\visualize photon\utility.h
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
@@ -239,7 +239,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1391553370 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
+1392240774 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -299,7 +299,7 @@
 	<iostream>
 	<fstream>
 
-1391553769 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
+1392240910 source:c:\users\karlis\documents\github\mczpd\visualize photon\utility.cpp
 	<SDL/SDL.h>
 	<SDL.h>
 	<string>
