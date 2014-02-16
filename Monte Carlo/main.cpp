@@ -76,7 +76,7 @@ int main()
     }
 
     cout << "Average step count:" << in.stepcount / (ret.count * in.threads) <<
-        "   " << ret.count * in.range * in.threads << " photons simulated." << endl;
+        "   " << ret.count * in.threads << " photons simulated." << endl;
 
     ret.PrintStatus("Outputting", 80);
     WriteCSV(&ret, &in, "grid", ret.gridSize, ret.gridSize, in.range);

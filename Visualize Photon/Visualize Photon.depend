@@ -239,7 +239,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1392496187 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
+1392572405 source:c:\users\karlis\documents\github\mczpd\visualize photon\main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -256,7 +256,7 @@
 	"ReadConfigs.h"
 	"Structure.h"
 
-1392490806 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
+1392571301 c:\users\karlis\documents\github\mczpd\visualize photon\io.h
 	<fstream>
 	<string>
 	<cmath>

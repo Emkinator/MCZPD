@@ -17,7 +17,7 @@ void WriteCSV(OutputClass* out, InputClass* in, const char* fileName, int nx, in
     string fullName(fileName);
     fullName += ".csv";
     file.open(fullName.c_str());
-    file << nx << "," << in->stepcount << "," << out->count * in->range * in->threads
+    file << nx << "," << in->stepcount << "," << out->count * in->threads
         << "," << in->zoom << "," << in->specular << "," << in->layerCount << endl;
     ostringstream buffer;
     int approx_count = 0;

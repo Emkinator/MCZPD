@@ -111,7 +111,7 @@ int main (int argc, char** argv)
     int resolution = 0;
     int max_layers = 1;
     int layer = 0;
-    long long int photoncount = 0;
+    double photoncount = 0;
     double specular = 0;
     GetData(resolution, max_layers, photoncount, specular);
     double photonmass = photoncount * (1.0 - specular);
