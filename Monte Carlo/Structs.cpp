@@ -12,8 +12,6 @@
 
 using namespace std;
 
-#define read(var, name, layer, index) ip.GetValue(var,layer,name,index)
-
 vector<string> explode(const string& str, const char& ch);
 
 InputClass::InputClass()
@@ -34,25 +32,34 @@ InputClass::InputClass()
     specular(0),
     absorbance_modifier(1)
 {
-    ConfigClass ip = ConfigClass("config.txt"); //layer parameters
-    read(gridsize, "resolution", 0, -1);
-    read(zoom, "zoom", 0, -1);
-    read(chromophores, "chromophores", 0, -1);
-    read(wtolerance, "wtolerance", 0, -1);
+    ConfigClass ip("config.txt"); //layer parameters
+    ip.GetValue(gridsize, "resolution", 0);
+    ip.GetValue(zoom, "zoom", 0);
+    ip.GetValue(chromophores, "chromophores", 0);
+    ip.GetValue(wtolerance, "wtolerance", 0);
 
-    read(layerCount, "count", 0, -1);
+    ip.GetValue(layerCount, "count", 0);
     layers = new LayerClass[layerCount];
 
-    read(threads, "threads", 0, -1);
-    read(passes, "passes", 0, -1);
-    passes = max(int(passes / threads / range), 1);
-    chunk = min(max(1, int(passes / 100)), 600);
-    read(timelimit, "timelimit", 0, -1);
-    read(absorbance_modifier, "absorbance_modifier", 0, -1);
+    ip.GetValue(threads, "threads", 0);
+    ip.GetValue(passes, "passes", 0);
+    passes = max(int(passes / threads), 1);
+    chunk = min(max(1, int(passes / 100)), 6000);
+    ip.GetValue(timelimit, "timelimit", 0);
+    ip.GetValue(absorbance_modifier, "absorbance_modifier", 0);
 
+    ConfigClass light("light_source.txt");
+    double total_light = 0;
+    for(int i = 0; i < range; i++) {
+        light.GetValue(light_bias[i], "light_source", 0, i);
+        total_light += light_bias[i];
+    }
+    for(int i = 0; i < range; i++) {
+        light_bias[i] /= total_light;
+    }
     for(int i = 0; i < layerCount; i++) {
         int z;
-        read(z, "z", i, -1);
+        ip.GetValue(z, "z", i, -1);
         if(i > 0) {
             layers[i].z[0] = layers[i-1].z[1];
             layers[i].z[1] = layers[i-1].z[1] + z * 0.001; //conversion from micrometers to mm
@@ -61,18 +68,16 @@ InputClass::InputClass()
             layers[i].z[0] = 0;
             layers[i].z[1] = z *0.001;
         }
-        read(layers[i].n, "n", i, -1);
-        read(layers[i].mus, "mus", i,-1);
-        read(layers[i].g, "g", i, -1);
+        ip.GetValue(layers[i].n, "n", i);
+        ip.GetValue(layers[i].mus, "mus", i);
+        ip.GetValue(layers[i].g, "g", i);
 
         layers[i].volume = new double[chromophores];
         for(int j = 0; j < chromophores; j++) {
-            read(layers[i].volume[j], "volume", i, j);
+            ip.GetValue(layers[i].volume[j], "volume", i, j);
         }
     }
-
     this->ReadAbsorbance();
-
     specular = SpecularReflect(1, layers[0].n);
 }
 
@@ -82,7 +87,6 @@ void InputClass::ReadAbsorbance()
     file.open("mua.txt");
     string line;
     int i = 0;
-
     absorbance = new double*[range];
     for(int i = 0; i < range; i++) {
         absorbance[i] = new double[chromophores];
@@ -90,12 +94,11 @@ void InputClass::ReadAbsorbance()
             absorbance[i][j] = 0;
         }
     }
-
     while(file.good() && i < range) {
         getline(file, line);
 
         vector<string> result = explode(line, ',');
-        for (size_t j = 0; j < result.size() && j < range; j++) {
+        for (size_t j = 0; j < result.size() && j < chromophores; j++) {
             absorbance[i][j] = atof(result[j].c_str()) / absorbance_modifier;
         }
         i++;

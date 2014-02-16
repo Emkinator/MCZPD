@@ -1,10 +1,10 @@
-passes = 10000000 /simulation cycle count
+passes = 1e6 /simulation cycle count
 timelimit = 36000 /10 hours
-wtolerance = 1e-4
-resolution = 512
-zoom = 1
-threads = 1
-absorbance_modifier = 100
+wtolerance = 1e-4 /at which weight to kill the photon
+resolution = 512 /must be 2^n
+zoom = 1 / size = 1/zoom [mm]
+threads = 1 /multitasking not implemented yet due to annoying compilers
+absorbance_modifier = 100 /divides all mua values, which can change plot definition
 /Layer parameters
 count = 7
 chromophores = 5 /total number of chromofores

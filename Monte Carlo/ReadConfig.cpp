@@ -11,11 +11,11 @@
 using namespace std;
 
 ConfigClass::ConfigClass(const char* fileName)
-{
-    fName = fileName;
-}
+:
+    fName(fileName)
+{}
 
-void ConfigClass::GetValue(double& value, int layer, string fieldName, int index)
+string ConfigClass::ReadValue(string fieldName, int layer, int index)
 {
     ifstream file;
     file.open(fName.c_str());
@@ -80,21 +80,5 @@ void ConfigClass::GetValue(double& value, int layer, string fieldName, int index
         }
     }
     file.close();
-    if(output != "") {
-        value = atof(output.c_str());
-    }
-}
-
-void ConfigClass::GetValue(int& value, int layer, string fieldName, int index)
-{
-    double temp = value;
-    GetValue(temp, layer, fieldName, index);
-    value = temp;
-}
-
-void ConfigClass::GetValue(long long int& value, int layer, string fieldName, int index)
-{
-    double temp = value;
-    GetValue(temp, layer, fieldName, index);
-    value = temp;
+    return output;
 }
