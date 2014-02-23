@@ -3,11 +3,12 @@ timelimit = 36000 /10 hours
 wtolerance = 1e-4 /at which weight to kill the photon
 resolution = 512 /must be 2^n
 zoom = 1 / size = 1/zoom [mm]
-threads = 1 /multitasking not implemented yet due to annoying compilers
-absorbance_modifier = 100 /divides all mua values, which can change plot definition
+threads = 1 /multithreading not implemented yet due to annoying compilers
+absorbance_modifier = 0.1 /divides all molar extinction coefficient values to convert them to different units
 /Layer parameters
 count = 7
 chromophores = 5 /total number of chromofores
+
 [0]
 z = 25
 n = 1.5
@@ -20,6 +21,13 @@ volume =
 	0 /Bilirubîns
 	0 /Melanîns
 	0.02 /Ûdens
+}
+molarMass =
+{
+	430 /hemoglobins actual molar mass (64500) divided by 150 (g of Hb per liter of blood) 
+	430
+	584.66 /bilirubins
+	318.28 /melanins
 }
 [1]
 z = 90
@@ -41,9 +49,9 @@ mus = 30
 g = 0.9
 volume = 
 {
-	0.02
-	0.02
-	0
+	0.0024
+	0.0016
+	0.2
 	0
 	0.5
 }
@@ -54,8 +62,8 @@ mus = 35
 g = 0.95
 volume = 
 {
-	0.15
-	0.15
+	0.02025
+	0.0135
 	0
 	0
 	0.6
@@ -67,8 +75,8 @@ mus = 25
 g = 0.8
 volume = 
 {
-	0.025
-	0.025
+	0.003375
+	0.00225
 	0
 	0
 	0.7
@@ -80,8 +88,8 @@ mus = 30
 g = 0.95
 volume = 
 {
-	0.07
-	0.07
+	0.0105
+	0.007
 	0
 	0
 	0.7
@@ -93,8 +101,8 @@ mus = 5
 g = 0.75
 volume = 
 {
-	0.03
-	0.03
+	0.00405
+	0.0027
 	0
 	0
 	0.65

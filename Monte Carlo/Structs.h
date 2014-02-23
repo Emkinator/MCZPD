@@ -68,6 +68,7 @@ class InputClass
         double wtolerance;
         double zoom;
         double** absorbance;
+        double* molarMass;
         LayerClass* layers;
         double light_bias[36];
         double CalculateAbsorbance(double base_absorbance, int layer, int waveindex);

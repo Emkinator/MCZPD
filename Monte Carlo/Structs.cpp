@@ -8,6 +8,7 @@
 #include <vector>
 #include <sstream>
 #include <utility>
+#include <cstring>
 #include "formulas.h"
 
 using namespace std;
@@ -30,7 +31,8 @@ InputClass::InputClass()
     chunk(1),
     absorbance(NULL),
     specular(0),
-    absorbance_modifier(1)
+    absorbance_modifier(1),
+    molarMass(NULL)
 {
     ConfigClass ip("config.txt"); //layer parameters
     ip.GetValue(gridsize, "resolution", 0);
@@ -47,6 +49,11 @@ InputClass::InputClass()
     chunk = min(max(1, int(passes / 100)), 6000);
     ip.GetValue(timelimit, "timelimit", 0);
     ip.GetValue(absorbance_modifier, "absorbance_modifier", 0);
+    molarMass = new double[chromophores-1];
+    for(int i = 0; i<chromophores-1; i++){
+        ip.GetValue(molarMass[i],"molarMass",0,i);
+        cout << molarMass[i] << endl;
+    }
 
     ConfigClass light("light_source.txt");
     double total_light = 0;
@@ -112,16 +119,18 @@ void InputClass::ReadAbsorbance()
             double base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
             layers[i].mua[n] = this->CalculateAbsorbance(base_absorbance, i, n);
         }
+        cout << endl;
     }
 }
 
 double InputClass::CalculateAbsorbance(double base_absorbance, int layer, int waveindex)
 {
+
     double x = 0.0;
     double temp;
     for(int i = 0; i < chromophores; i++) {
-        temp = absorbance[waveindex][i] * layers[layer].volume[i];
-        for(int j = 0; j < i; j++) {
+        temp = (absorbance[waveindex][i] * 2.303 * layers[layer].volume[i] / molarMass[i]  ) * layers[layer].volume[i];
+        for(int j = 0; j < i+1; j++) {
             temp *= (1.0 - layers[layer].volume[j]);
         }
 
@@ -133,6 +142,7 @@ double InputClass::CalculateAbsorbance(double base_absorbance, int layer, int wa
         temp *= (1.0 - layers[layer].volume[i]);
     }
     x += temp;
+    cout << x << endl;
     return x;
 }
 

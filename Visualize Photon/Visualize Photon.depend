@@ -339,3 +339,88 @@
 	<iostream>
 	<fstream>
 
+1390415929 source:c:\users\emk\documents\github\mczpd\visualize photon\readconfigs.cpp
+	"ReadConfigs.h"
+	<fstream>
+	<iostream>
+	<string.h>
+	<sstream>
+
+1390415929 c:\users\emk\documents\github\mczpd\visualize photon\readconfigs.h
+	<fstream>
+	<string>
+
+1390415929 source:c:\users\emk\documents\github\mczpd\visualize photon\structure.cpp
+	"Structure.h"
+	"ReadConfigs.h"
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
+
+1390415929 c:\users\emk\documents\github\mczpd\visualize photon\structure.h
+	<fstream>
+	"ReadConfigs.h"
+
+1392491842 source:c:\users\emk\documents\github\mczpd\visualize photon\utility.cpp
+	<SDL/SDL.h>
+	<SDL.h>
+	<string>
+	<cmath>
+	<vector>
+	<sstream>
+	<iostream>
+	<utility>
+	"SDL_gfxPrimitives.h"
+
+1392578144 source:c:\users\emk\documents\github\mczpd\visualize photon\io.cpp
+	<fstream>
+	<iostream>
+	<string>
+	<cmath>
+	<utility>
+	<sstream>
+	"utility.h"
+
+1392491842 c:\users\emk\documents\github\mczpd\visualize photon\utility.h
+	<SDL/SDL.h>
+	<SDL.h>
+	<string>
+	<cmath>
+	<vector>
+	<sstream>
+	<utility>
+
+1392585123 source:c:\users\emk\documents\github\mczpd\visualize photon\main.cpp
+	<cstdlib>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL.h>
+	<fstream>
+	<iostream>
+	<cmath>
+	<utility>
+	<string>
+	"utility.h"
+	"io.h"
+	"SDL_gfxPrimitives.h"
+	"vmath.h"
+	"ReadConfigs.h"
+	"Structure.h"
+
+1392578144 c:\users\emk\documents\github\mczpd\visualize photon\io.h
+	<fstream>
+	<string>
+	<cmath>
+	<utility>
+	<sstream>
+	"utility.h"
+
+1388097942 c:\users\emk\documents\github\mczpd\visualize photon\vmath.h
+	<cmath>
+	<cstring>
+	<iostream>
+	<sstream>
+	<string>
+	<cassert>
+
