@@ -50,7 +50,7 @@ void ReadCords(pcords* cords, int c)
     file.close();
 }
 
-void GetData(int& resolution, int& max_layers, double& photons, double& specular)
+void GetData(int& resolution, int& max_layers, double& photons, double& specular, double& scale)
 {
     ifstream file;
     file.open("../Monte Carlo/grid.csv");
@@ -63,6 +63,9 @@ void GetData(int& resolution, int& max_layers, double& photons, double& specular
     if(result.size() > 2) {
         photons = atof(result[2].c_str());
     }
+    if(result.size() > 3) {
+        scale = atof(result[2].c_str());
+    }
     if(result.size() > 4) {
         specular = atof(result[4].c_str());
     }
@@ -72,10 +75,58 @@ void GetData(int& resolution, int& max_layers, double& photons, double& specular
     file.close();
 }
 
-void GetIntensity(double***** spectrum, double** intensity, double& max_intensity, int range_low, int range_high, int resolution, int res_zoom, int layer, int max_layers)
+void ExportIntensityGraph(double***** spectrum, int range_low, int range_high, int resolution, int res_levels, int layer)
+{
+    double avg_distance = 0;
+    double* graph = new double[resolution / 2];
+    for(int n = 0; n < resolution / 2; n++) {
+        graph[n] = 0;
+    }
+
+    for(int x = 0; x < resolution; x++) {
+        for(int y = 0; y < resolution; y++) {
+            double sum = 0;
+            for(int s = range_low; s <= range_high; s++) {
+                sum += spectrum[layer][0][x][y][s];
+            }
+            if(sum != 0) {
+                int mid = resolution / 2;
+                double dist = sqrt((mid - x)*(mid - x) + (mid - y)*(mid - y));
+                avg_distance += dist * sum;
+
+                int whole = dist; //auto-rounding
+                double fraction = dist - whole;
+                if(whole + 1 < resolution / 2) {
+                    graph[whole] += sum * (1 - fraction);
+                    graph[whole + 1] += sum * fraction;
+                }
+            }
+        }
+    }
+
+    double total_mass = 0;
+    for(int s = range_low; s <= range_high; s++) {
+        total_mass += spectrum[layer][res_levels - 1][0][0][s];
+    }
+    avg_distance /= total_mass;
+    cout << avg_distance << endl;
+
+    ofstream file;
+    file.open("intensity.csv");
+    //file << graph[0];
+    for(int n = 0; n < resolution / 2; n++) {
+        file << graph[n] << endl;
+    }
+    //file << endl;
+    file.close();
+    delete[] graph;
+}
+
+void GetIntensity(double***** spectrum, double** intensity, double& max_intensity, int range_low, int range_high, int resolution, int res_zoom, int res_levels, int layer, int max_layers)
 {
     int res = resolution >> res_zoom;
     double temp_max = 0;
+
 
     for(int x = 0; x < res; x++) {
         for(int y = 0; y < res; y++) {
@@ -111,15 +162,14 @@ void ReadMap(double***** spectrum, int resolution, int max_layers)
         vector<string> result = explode(line, ',');
 
         for (size_t j = 0; j < range; j++) {
+            double temp = 0;
             if(j < result.size() && result[j] != "" && result[j] != "0") {
-                spectrum[l][0][x][y][j] = atof(result[j].c_str());
-            }
-            else {
-                spectrum[l][0][x][y][j] = 0;
+                temp = atof(result[j].c_str());
             }
             if(l < max_layers - 1) {
-                spectrum[l][0][x][y][j] += spectrum[l + 1][0][x][y][j];
+               temp += spectrum[l + 1][0][x][y][j];
             }
+            spectrum[l][0][x][y][j] = temp;
         }
         i++;
         if(i == resolution*resolution) {
@@ -133,6 +183,7 @@ void ReadMap(double***** spectrum, int resolution, int max_layers)
         for(int n = 0; n < range; n++)
             spectrum[l][0][0][0][n] = 0; //ignoring out-of-bounds pileup in corner
     }
+
 
     for(int l = 0; l < max_layers; l++) {
         int n = 1;

@@ -24,7 +24,8 @@
 #define range       36
 #define dbug(var) << #var": " << (var)
 #define out(var) (var) << " "
-
+#define RGBtoColor(r,g,b) ((static_cast<int>(r) << 16) | (static_cast<int>(g) << 8) | (static_cast<int>(b)) | 0xff000000)
+#define saturate(color, mul) (color + mul * (255 - color))
 using namespace std;
 //#define abs(x) ((x ^ (x >> 31)) - (x >> 31))
 
@@ -91,7 +92,7 @@ int main (int argc, char** argv)
     atexit(SDL_Quit);
 
     // create a new window
-    int bounds[] = {1200, 700, 100}; //100 is just dummy for middle Z point
+    int bounds[] = {1200, 720, 100}; //100 is just dummy for middle Z point
     SDL_Surface* screen = SDL_SetVideoMode(bounds[0], bounds[1], 32, SDL_HWSURFACE|SDL_DOUBLEBUF); //|SDL_FULLSCREEN);
     if (!screen) {
         printf("Unable to set %ix%i video: %s\n", bounds[0], bounds[1], SDL_GetError());
@@ -113,7 +114,9 @@ int main (int argc, char** argv)
     int layer = 0;
     double photoncount = 0;
     double specular = 0;
-    GetData(resolution, max_layers, photoncount, specular);
+    double units = 0;
+    GetData(resolution, max_layers, photoncount, specular, units);
+    units = 1 / units;
     double photonmass = photoncount * (1.0 - specular);
     int res_levels = ceil(log2(resolution) + 1);
     int res_zoom = 0;
@@ -156,6 +159,7 @@ int main (int argc, char** argv)
     Vector3f zaxis(0, 0, 1);
     Vector3f p1(0, 0, 0);
     Vector3f p2(0, 0, 0);
+    int skin_color[3] = {187, 135, 111};
     int n = 1;
     bool paused = false;
 
@@ -313,6 +317,9 @@ int main (int argc, char** argv)
                                 graph_updated = false;
                                 map_updated = false;
                                 break;
+                            case SDLK_e:
+                                ExportIntensityGraph(spectrum, range_low, range_high, resolution, res_levels, layer);
+                                break;
                         }
                     }
                     break;
@@ -370,11 +377,24 @@ int main (int argc, char** argv)
 
             scale = newscale;
 
-            lineColor(screen, 0, 50, bounds[0], 50, 0xff); // air/tissue boundary
+            SDL_Rect filler = {
+                0,
+                47,
+                bounds[0],
+                3
+            };
+            SDL_FillRect(screen, &filler, 0xff000000); // air/tissue boundary
             for(int i = 0; i < in.layerCount; i++) {
                 int z = 50 + in.layers[i][1] * scale;
-                lineColor(screen, 0, z, bounds[0], z, 0xff);
+                float modifier = 1.0 - float(i + 1) / in.layerCount;
+                filler.y += filler.h;
+                filler.h = z - filler.y;
+                SDL_FillRect(screen, &filler, RGBtoColor(saturate(skin_color[0], modifier),
+                        saturate(skin_color[1], modifier), saturate(skin_color[2], modifier)));
             }
+            filler.y += filler.h;
+            filler.h = bounds[1] - filler.y;
+            SDL_FillRect(screen, &filler, RGBtoColor(skin_color[0], skin_color[1], skin_color[2]));
 
             for(int i = 0; i<n; i++) {
                 p1.x = cords[i].x * scale;
@@ -388,8 +408,8 @@ int main (int argc, char** argv)
                 float x2 = xaxis.dotProduct(p2) + bounds[0] / 2;
                 float y1 = zaxis.dotProduct(p1) + 50;
                 float y2 = zaxis.dotProduct(p2) + 50;
-                int c1 = min(180, max(0, (int)yaxis.dotProduct(p1) + 188));
-                int c2 = min(180, max(0, (int)yaxis.dotProduct(p2) + 188));
+                int c1 = min(120, max(0, (int)yaxis.dotProduct(p1) + 128));
+                int c2 = min(120, max(0, (int)yaxis.dotProduct(p2) + 128));
 
                 if(x2 > (bounds[0] - 40) || x2 < 40) {
                     newscale = min(newscale, abs(scale * ((bounds[0] - 40) / x2)));
@@ -447,7 +467,7 @@ int main (int argc, char** argv)
             if(!map_updated) {
                 SDL_FillRect(screen, &mapcords, background);
                 GetIntensity(spectrum, intensity, max_intensity, range_low, range_high,
-                    resolution, res_zoom, layer, max_layers);
+                    resolution, res_zoom, res_levels, layer, max_layers);
                 BuildMap(bitmap, spectrum, intensity, resolution, max_intensity, colormap, intensity_mode,
                     curve, range_low, range_high, zoom, res_zoom, res_levels, layer);
                 SDL_BlitSurface(bitmap, NULL, screen, &mapcords);
