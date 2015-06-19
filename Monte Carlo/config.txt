@@ -1,10 +1,17 @@
 passes = 1e6 /simulation cycle count
-timelimit = 36000 /10 hours
+timelimit = 18000 /5 hours
 wtolerance = 1e-4 /at which weight to kill the photon
 resolution = 512 /must be 2^n
-zoom = 1 / size = 1/zoom [mm]
-threads = 1 /multithreading not implemented yet due to annoying compilers
-absorbance_modifier = 0.1 /divides all molar extinction coefficient values to convert them to different units
+zoom = 0.08 / size = 1/zoom [mm]
+threads = 4 /thread count
+absorbance_modifier = 0.2 /divides all molar extinction coefficient values to convert them to different units
+molarMass =
+{
+	430 /hemoglobins actual molar mass (64500) divided by 150 (g of Hb per liter of blood) 
+	430
+	584.66 /bilirubins
+	318.28 /melanins
+}
 /Layer parameters
 count = 7
 chromophores = 5 /total number of chromofores
@@ -21,13 +28,6 @@ volume =
 	0 /Bilirubîns
 	0 /Melanîns
 	0.02 /Ûdens
-}
-molarMass =
-{
-	430 /hemoglobins actual molar mass (64500) divided by 150 (g of Hb per liter of blood) 
-	430
-	584.66 /bilirubins
-	318.28 /melanins
 }
 [1]
 z = 90

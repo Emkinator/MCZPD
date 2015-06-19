@@ -42,8 +42,8 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++0x" />
-			<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++" />
+			<Add option="-std=c++11" />
+			<Add option="-pthread  -std=gnu++11 -fexceptions -Weffc++ -lstdc++" />
 		</Compiler>
 		<Linker>
 			<Add option="-Weffc++" />

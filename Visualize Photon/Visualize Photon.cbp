@@ -43,6 +43,7 @@
 		<Compiler>
 			<Add option="-std=c++0x" />
 			<Add directory="C:/SDL-1.2.15/include" />
+			<Add directory="sprig" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDLmain -lSDL -Wswitch" />
@@ -53,7 +54,10 @@
 			<Add library="gdi32" />
 			<Add library="winmm" />
 			<Add library="dxguid" />
+			<Add library="sprig\libsprig.a" />
+			<Add library="sprig\sprig.lib" />
 			<Add directory="C:/SDL-1.2.15/lib" />
+			<Add directory="sprig" />
 		</Linker>
 		<Unit filename="ReadConfigs.cpp" />
 		<Unit filename="ReadConfigs.h" />

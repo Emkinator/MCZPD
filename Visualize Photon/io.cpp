@@ -75,7 +75,7 @@ void GetData(int& resolution, int& max_layers, double& photons, double& specular
     file.close();
 }
 
-void ExportIntensityGraph(double***** spectrum, int range_low, int range_high, int resolution, int res_levels, int layer)
+void ExportIntensityGraph(double***** spectrum, int range_low, int range_high, int resolution, int res_levels, int layer, double units)
 {
     double avg_distance = 0;
     double* graph = new double[resolution / 2];
@@ -108,14 +108,15 @@ void ExportIntensityGraph(double***** spectrum, int range_low, int range_high, i
     for(int s = range_low; s <= range_high; s++) {
         total_mass += spectrum[layer][res_levels - 1][0][0][s];
     }
-    avg_distance /= total_mass;
+    avg_distance /= total_mass * resolution;
+    avg_distance *= units;
     cout << avg_distance << endl;
 
     ofstream file;
     file.open("intensity.csv");
     //file << graph[0];
     for(int n = 0; n < resolution / 2; n++) {
-        file << graph[n] << endl;
+        file << double(n) / resolution * units << "," << graph[n] << endl;
     }
     //file << endl;
     file.close();

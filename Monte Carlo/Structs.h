@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class mutex {}; //dummy until i sort the compilers for multithreading
+//class mutex {}; //dummy until i sort the compilers for multithreading
 
 class PhotonClass
 {

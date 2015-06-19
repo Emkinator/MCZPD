@@ -42,7 +42,7 @@ void Thread(int thread_id, clock_t start, InputClass* in, OutputClass* ret, ofst
             break;
     }
     {
-        //lock_guard<mutex> lk(*lock);
+        lock_guard<mutex> lk(*lock);
         ret->count += (total - passes);
     }
 }
@@ -65,18 +65,17 @@ int main()
 
     ret.PrintStatus("Simulating", 80);
     mutex lock;
-    //thread threads[in.threads];
+    thread threads[in.threads];
     for(int i = 0; i < in.threads; i++) {
-        //threads[i] = thread(Thread, i, start, &in, &ret, &filestr, &lock);
-        Thread(i, start, &in, &ret, &filestr, &lock);
+        threads[i] = thread(Thread, i, start, &in, &ret, &filestr, &lock);
     }
 
     for(int i = 0; i < in.threads; i++) {
-        //threads[i].join();
+        threads[i].join();
     }
 
-    cout << "Average step count:" << in.stepcount / (ret.count * in.threads) <<
-        "   " << ret.count * in.threads << " photons simulated." << endl;
+    cout << "Average step count:" << in.stepcount / ret.count <<
+        "   " << ret.count << " photons simulated." << endl;
 
     ret.PrintStatus("Outputting", 80);
     WriteCSV(&ret, &in, "grid", ret.gridSize, ret.gridSize, in.range);

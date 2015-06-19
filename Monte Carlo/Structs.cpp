@@ -52,7 +52,6 @@ InputClass::InputClass()
     molarMass = new double[chromophores-1];
     for(int i = 0; i<chromophores-1; i++){
         ip.GetValue(molarMass[i],"molarMass",0,i);
-        cout << molarMass[i] << endl;
     }
 
     ConfigClass light("light_source.txt");
@@ -119,7 +118,6 @@ void InputClass::ReadAbsorbance()
             double base_absorbance = 0.0244 + 8.53 * exp(-(wl - 154) / 66.2);
             layers[i].mua[n] = this->CalculateAbsorbance(base_absorbance, i, n);
         }
-        cout << endl;
     }
 }
 
@@ -142,7 +140,6 @@ double InputClass::CalculateAbsorbance(double base_absorbance, int layer, int wa
         temp *= (1.0 - layers[layer].volume[i]);
     }
     x += temp;
-    cout << x << endl;
     return x;
 }
 

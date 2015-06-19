@@ -20,6 +20,7 @@
 #include "vmath.h"
 #include "ReadConfigs.h"
 #include "Structure.h"
+#include "sprig/sprig.h"
 
 #define range       36
 #define dbug(var) << #var": " << (var)
@@ -92,8 +93,8 @@ int main (int argc, char** argv)
     atexit(SDL_Quit);
 
     // create a new window
-    int bounds[] = {1200, 720, 100}; //100 is just dummy for middle Z point
-    SDL_Surface* screen = SDL_SetVideoMode(bounds[0], bounds[1], 32, SDL_HWSURFACE|SDL_DOUBLEBUF); //|SDL_FULLSCREEN);
+    int bounds[] = {1366, 768, 100}; //100 is just dummy for middle Z point
+    SDL_Surface* screen = SDL_SetVideoMode(bounds[0], bounds[1], 32, SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN); //|SDL_FULLSCREEN);
     if (!screen) {
         printf("Unable to set %ix%i video: %s\n", bounds[0], bounds[1], SDL_GetError());
         return 1;
@@ -167,6 +168,9 @@ int main (int argc, char** argv)
     while(rectsize * 2 < bounds[1] - 30) rectsize *= 2;
 
     SDL_Surface *bitmap = SDL_CreateRGBSurface(SDL_HWSURFACE, rectsize, rectsize, 32, 0xff000000, 0xff0000, 0xff00, 0xff);
+    SDL_Surface *label = SDL_CreateRGBSurface(SDL_HWSURFACE, 256, 8, 32, 0xff000000, 0xff0000, 0xff00, 0xff);
+    SDL_FillRect(label, 0, background);
+    stringRGBA(label, 0, 0, "Normalized absorbance", 0, 0, 0, 255);
     SDL_FillRect(screen, 0, background);
     SDL_Rect mapcords = {
         30,
@@ -318,7 +322,7 @@ int main (int argc, char** argv)
                                 map_updated = false;
                                 break;
                             case SDLK_e:
-                                ExportIntensityGraph(spectrum, range_low, range_high, resolution, res_levels, layer);
+                                //ExportIntensityGraph(spectrum, range_low, range_high, resolution, res_levels, layer, units);
                                 break;
                         }
                     }
@@ -423,7 +427,7 @@ int main (int argc, char** argv)
                 x2 = min(bounds[0], max(0, (int)x2));
                 y1 = min(bounds[1], max(0, (int)y1));
                 y2 = min(bounds[1], max(0, (int)y2));
-                GradientLine(screen, x1, y1, x2, y2, c1, c1, c1, c2, c2, c2);
+                GradientLine(screen, x1, y1, x2, y2, c1, 0, 0, c2, 0, 0);
             }
 
             tick = SDL_GetTicks();
@@ -471,10 +475,14 @@ int main (int argc, char** argv)
                 BuildMap(bitmap, spectrum, intensity, resolution, max_intensity, colormap, intensity_mode,
                     curve, range_low, range_high, zoom, res_zoom, res_levels, layer);
                 SDL_BlitSurface(bitmap, NULL, screen, &mapcords);
+                char * number = "12.5";//new char[16];
+                //convert(number, 1.0/units, false);
+                stringRGBA(screen, mapcords.x + mapcords.w - 275, mapcords.y + mapcords.h + 5, (char *)((string)number + " mm").c_str(), 0, 0, 0, 255);
                 needs_flip = true;
                 map_updated = true;
             }
             if(!graph_updated) {
+
                 int x = graphcords.x + 60;
                 int y = (graphcords.y + 30) + (graphcords.h - 60);
                 int w = graphcords.w - 90;
@@ -568,6 +576,9 @@ int main (int argc, char** argv)
                 rectangleColor(screen, x, y - h, x + 1, y, 0xff);
                 needs_flip = true;
                 graph_updated = true;
+
+                SPG_TransformX(label, screen, -90.0, 1.0, 1.0, 128, 4, graphcords.x + 26, graphcords.y + graphcords.h / 2 - 30, SPG_TSAFE);
+                stringColor(screen, graphcords.x + graphcords.w / 2, graphcords.y + graphcords.h - 10, "Wavelength, nm", 0xff);
             }
 
             if(needs_flip)
